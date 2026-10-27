@@ -1,0 +1,47 @@
+{
+  "scope": "Main Figure 3 and the first two rows of ED Figure 3; numerical solver correction, no basin shading.",
+  "fields": 20,
+  "composition_points_per_field": 3074,
+  "total_composition_points": 61480,
+  "maximum_reputation_residual": 9.999986949615902e-13,
+  "maximum_equilibrium_strategy_residual": 1.694769452602569e-14,
+  "legacy_flagged_composition_points": 3026,
+  "correction": "All-good continuous RK4 with a posteriori true RHS residual gate; stages dt=.1 x20000, dt=.2 x80000, dt=.2 x200000.",
+  "slowest_case": "one_step_SJ",
+  "maximum_steps": 113866,
+  "neutral_set": {
+    "case": "without_inertia_SC",
+    "samples": 21,
+    "max_strategy_residual": 1.7425120303587445e-13,
+    "max_tangent_linearization_residual": 1.5889548368070202e-09,
+    "transverse_eigenvalue_range": [
+      -0.0378116688499483,
+      0.019291668915868
+    ]
+  },
+  "executed_code_cells": 5,
+  "no_hand_drawn_shading": true,
+  "marker_colors": {
+    "without_inertia": "#6B6B6B",
+    "one_step": "#0077BB",
+    "multi_step": "#D55E00"
+  },
+  "edge_marker_semantics": "Filled markers indicate tangent stability; transverse classification is saved separately.",
+  "exported_figures": {
+    "figure3": {
+      "pdf": 13,
+      "svg": 13
+    },
+    "ed3_simplex": {
+      "pdf": 9,
+      "svg": 9
+    }
+  },
+  "legacy_graphical_markers": {
+    "count": 88,
+    "source_SVG_panels": 20,
+    "method": "Colored circle centers extracted from path bounding boxes; inverse triangle transform; counts agree with original saved notebook log."
+  },
+  "no_machine_specific_paths": true,
+  "configuration_file": "data/simplex_dynamics/configuration.json"
+}

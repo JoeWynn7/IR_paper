@@ -1,0 +1,46 @@
+{
+  "norm": "SJ",
+  "b_over_c": 5.0,
+  "e1": 0.02,
+  "e2": 0.02,
+  "beta": 1.0,
+  "multistep_depths": [
+    4,
+    3
+  ],
+  "comparators": {
+    "one_step": [
+      1,
+      1,
+      1.0,
+      1.0
+    ],
+    "aggregation": {
+      "M": 2,
+      "Q": 1
+    },
+    "quantitative": {
+      "R": 5,
+      "S": 0
+    }
+  },
+  "delta_grid": "4,001 full-range points plus near-zero refinements; 5,015 unique points",
+  "alpha_scan": "1,001 regular points plus boundary neighborhoods; 1,006 unique values",
+  "resident_selection": "Highest attracting scalar self-consistent root, approached from all-good",
+  "safety_interpretation": "Numerical search over the iid O-DISC family, not arbitrary mutant strategies",
+  "source_notebook": "figure6_opportunistic_two_panel_bc5.ipynb",
+  "source_notebook_sha256": "435fcb57df1e32589e9ebe2cf62f7f8f285e61e3203271fed4640e93727d9eb9",
+  "source_folder": "figure6_opportunistic_two_panel_bc5_20261009_outputs",
+  "source_data_sha256": {
+    "panel_a_curves.csv": "8b28de4aad97df8ca1113b529008b95bd7613d16e0a6f6a11cc025e47b11123c",
+    "panel_a_summary.csv": "eb315f31a0ae34558f49f802f1a78fb25e53fa17f1154e19a6838d6ce8a15dbf",
+    "multistep_full_alpha_summary.csv": "fc43ea3aae2c51d62ab8ab388417cc0b9626dbb4da26ce2245804a7d48569202",
+    "readout_boundaries.csv": "2b389aa82ce535043516588a75ac30dfbbc2020ef48f29782c179819aabd2a96",
+    "validation_checks.csv": "a263e472e6638b6ff64e52ac121f3872f4245a11d33ff0d253325e375dfb8e37",
+    "metadata.json": "75c486e83d905f0f7612fc59fc841a4393ea141f1ca9dda030988c58f126428c",
+    "multistep_full_alpha_delta_map.npz": "b122038b0dea14224fa56051aecffceee96e4bcf6a46a4ca2e6890c183520b0f"
+  },
+  "display": "Matches final visible two-panel PDF: no near-zero inset; adds readable labels and legend directly.",
+  "data_origin": "Saved source tables, independently checked. The full alpha scan was not rerun.",
+  "source_marker_note": "The source metadata disables repeated markers along the curves; open circles at nonzero crossings are separate and are retained."
+}

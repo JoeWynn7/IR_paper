@@ -1,0 +1,195 @@
+{
+  "scope": "Independent algebraic reconstruction of saved equations; no trajectory or parameter-grid integrations rerun.",
+  "simplex": {
+    "without_inertia_SC": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "without_inertia_SH": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999917560676863e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "without_inertia_SJ": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "without_inertia_SS": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "one_step_SC": {
+      "points": 3074,
+      "max_reputation_rhs": 1.0000264505372058e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "one_step_SH": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999633499707672e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "one_step_SJ": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "one_step_SS": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "multi_step_SC": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "multi_step_SH": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "multi_step_SJ": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "multi_step_SS": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000310945187266e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "tolerance_only_SC": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "tolerance_only_SH": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999986949615902e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "tolerance_only_SJ": {
+      "points": 3074,
+      "max_reputation_rhs": 1.0001999228848035e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "tolerance_only_SS": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    },
+    "strictness_only_SC": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "strictness_only_SH": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999970686583315e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "strictness_only_SJ": {
+      "points": 3074,
+      "max_reputation_rhs": 9.999778782798785e-13,
+      "max_saved_vector_error": 0.0
+    },
+    "strictness_only_SS": {
+      "points": 3074,
+      "max_reputation_rhs": 1.000088900582341e-12,
+      "max_saved_vector_error": 0.0
+    }
+  },
+  "ED2": {
+    "alpha_beta_summary.csv": {
+      "rows": 103684,
+      "max_selected_root_residual": 6.661338147750939e-16
+    },
+    "k1_k2_summary.csv": {
+      "rows": 324,
+      "max_selected_root_residual": 8.881784197001252e-16
+    }
+  },
+  "ED3": {
+    "SC": {
+      "reputation_rhs": 1.000000082740371e-10,
+      "r_ALLC": 4.440892098500626e-16,
+      "r_ALLD": 1.0408340855860843e-16,
+      "lambda_ALLD": 2.220446049250313e-15,
+      "lambda_ALLC": 2.220446049250313e-15
+    },
+    "SH": {
+      "reputation_rhs": 1.0000011929633956e-10,
+      "r_ALLC": 5.551115123125783e-16,
+      "r_ALLD": 1.0408340855860843e-16,
+      "lambda_ALLD": 2.220446049250313e-15,
+      "lambda_ALLC": 1.4085954624931674e-15
+    },
+    "SJ": {
+      "reputation_rhs": 1.000000082740371e-10,
+      "r_ALLC": 5.551115123125783e-16,
+      "r_ALLD": 4.440892098500626e-16,
+      "lambda_ALLD": 2.220446049250313e-15,
+      "lambda_ALLC": 1.4085954624931674e-15
+    },
+    "SS": {
+      "reputation_rhs": 1.0000011929633956e-10,
+      "r_ALLC": 4.440892098500626e-16,
+      "r_ALLD": 2.498001805406602e-16,
+      "lambda_ALLD": 2.220446049250313e-15,
+      "lambda_ALLC": 1.4155343563970746e-15
+    }
+  },
+  "ED5": {
+    "no_inertia_SC": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999996386511611e-10
+    },
+    "no_inertia_SH": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999993472176172e-10
+    },
+    "no_inertia_SJ": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999963079820873e-10
+    },
+    "no_inertia_SS": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999967520712971e-10
+    },
+    "one_step_full_SC": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999983618946828e-10
+    },
+    "one_step_full_SH": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999994166065562e-10
+    },
+    "one_step_full_SJ": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999996386511611e-10
+    },
+    "one_step_full_SS": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999991945619513e-10
+    },
+    "multistep_full_SC": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999947536698528e-10
+    },
+    "multistep_full_SH": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999995276288587e-10
+    },
+    "multistep_full_SJ": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999994166065562e-10
+    },
+    "multistep_full_SS": {
+      "points": 58081,
+      "max_reputation_rhs": 9.999996386511611e-10
+    }
+  }
+}

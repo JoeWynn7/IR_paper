@@ -1,0 +1,114 @@
+{
+  "scope": "Twelve N90 snapshots were recomputed from the notebook simulation kernel. The 196-condition depth plane reuses saved one-replicate data.",
+  "snapshot_events": 32400000,
+  "snapshot_wall_seconds": 2.7102988330007065,
+  "seed": 2027,
+  "snapshot_matches": [
+    {
+      "norm": "SC",
+      "regime": "without_inertia",
+      "reference": "SC_no_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SC",
+      "regime": "one_step",
+      "reference": "SC_full_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SC",
+      "regime": "multi_step",
+      "reference": "SC_k1_2_k2_0_validation_matrices.npz",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SH",
+      "regime": "without_inertia",
+      "reference": "SH_no_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SH",
+      "regime": "one_step",
+      "reference": "SH_full_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SH",
+      "regime": "multi_step",
+      "reference": "SH_k1_3_k2_0_validation_matrices.npz",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SJ",
+      "regime": "without_inertia",
+      "reference": "SJ_no_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SJ",
+      "regime": "one_step",
+      "reference": "SJ_full_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SJ",
+      "regime": "multi_step",
+      "reference": "SJ_k1_4_k2_3_validation_matrices.npz",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SS",
+      "regime": "without_inertia",
+      "reference": "SS_no_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SS",
+      "regime": "one_step",
+      "reference": "SS_full_inertia_expressed_reputation.svg",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    },
+    {
+      "norm": "SS",
+      "regime": "multi_step",
+      "reference": "SS_k1_1_k2_2_validation_matrices.npz",
+      "mismatched_cells": 0,
+      "sampled_cells": 2700
+    }
+  ],
+  "scientific_depth_scan_rerun": false,
+  "historical_assembly_note": "SJ multi-step is the reproducible seed-2027 validation snapshot; it differs from the earlier PPT-assembled SJ image. All other eleven snapshot strips match the earlier assembled image.",
+  "notebook_default_reuse_execution": "passed",
+  "executed_code_cells": 8,
+  "pdf_count": 17,
+  "svg_count": 17,
+  "image_formats": [
+    "pdf",
+    "svg"
+  ],
+  "machine_specific_paths_in_notebook": false,
+  "raw_embedded_cache": false,
+  "notebook_data_dependencies": [
+    "data/figure2/snapshot_config.json",
+    "data/figure2/*_without_inertia.npz",
+    "data/figure2/*_one_step.npz",
+    "data/figure2/*_multi_step.npz",
+    "data/figure2/path_length_plane_raw.csv",
+    "data/figure2/path_length_plane_summary.csv",
+    "data/figure2/path_length_plane_config.json"
+  ],
+  "pdf_visual_review": "All 17 PDFs rendered; composite and single-panel contact sheet inspected."
+}

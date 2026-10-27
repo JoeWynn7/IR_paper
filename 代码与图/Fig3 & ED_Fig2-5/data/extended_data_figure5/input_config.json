@@ -1,0 +1,45 @@
+{
+  "b_over_c": 5.0,
+  "max_error": 0.45,
+  "grid_points": 241,
+  "relax_dt": 0.18,
+  "relax_tolerance": 1e-09,
+  "max_relax_steps": 120000,
+  "invasion_tolerance": 1e-10,
+  "norms": {
+    "SC": [
+      1.0,
+      0.0
+    ],
+    "SH": [
+      0.0,
+      0.0
+    ],
+    "SJ": [
+      0.0,
+      1.0
+    ],
+    "SS": [
+      1.0,
+      1.0
+    ]
+  },
+  "multistep_depths": {
+    "SC": [
+      2,
+      0
+    ],
+    "SH": [
+      3,
+      0
+    ],
+    "SJ": [
+      4,
+      3
+    ],
+    "SS": [
+      1,
+      2
+    ]
+  }
+}

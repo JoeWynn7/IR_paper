@@ -1,0 +1,21 @@
+{
+  "scope": "ED6 default notebook execution, original-source identity, three approved numerical reconstructions, unchanged remaining rows, model-source AST and figure exports.",
+  "executed_code_cells": 5,
+  "notebook_errors": 0,
+  "pdf": 5,
+  "svg": 5,
+  "original_source_table_identical": true,
+  "source_sha256": "95bc1763e464fceb4fe91eefeebc427da3c24bd3381d1a3db084c74519967c6a",
+  "unchanged_original_row_lines": 253,
+  "recalculated_rows": 3,
+  "all_current_observable_stable": true,
+  "model_AST": "All extracted numerical definitions match source24 after documentation removal, except explicit historical shifted-Halton sampler.",
+  "sampler": "Shifted-Halton fallback explicitly implemented; historical analytic SC baseline control matches.",
+  "convergence_limit": "Mean-cooperation gate only. SH(1,1) residual_q99 remains about1.93e-4; this is not full per-trajectory convergence.",
+  "provenance_limit": "Historical interpolation environment unknown. New rows are current-environment numerical reconstructions, not exact continuation.",
+  "full_scan_repeated": false,
+  "visual_review": "All five PDFs rendered; combined figure and four-panel contact sheet inspected without clipping or overlap.",
+  "presentation": "Final-source blue heatmap and dotted local-protection cells; titles, axes, labeled colorbar and legend included directly.",
+  "saved_reconstruction_initial_arrays_exact_match": true,
+  "sampler_coordinate_arithmetic": "Third coordinate uses 1 - uv.sum(axis=1), matching saved reconstructed initial arrays exactly."
+}

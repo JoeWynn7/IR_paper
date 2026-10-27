@@ -1,0 +1,2 @@
+task_id,norm,alpha,beta,k1,k2,b_over_c,e1,e2,mesh_resolution,n_initial,expected_cooperation,cooperative_basin,conditional_cooperation,observable_stable,residual_q99,strategy_steps,R_L,R_U,lambda_ALLD,lambda_ALLC,disc_locally_protected
+SS_k1_01_k2_02,SS,1.0,1.0,1,2,5.0,0.02,0.02,23,512,0.742907858657003,0.76171875,0.975304288394038,1,6.479005116442846e-05,24000,1.0000362077692349,4.000111437598798,-3.89497243545501,0.0015529885005252,0

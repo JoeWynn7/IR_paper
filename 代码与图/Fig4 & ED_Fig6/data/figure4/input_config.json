@@ -1,0 +1,46 @@
+{
+  "model": {
+    "b_over_c": 5.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "alpha": 1.0,
+    "beta": 1.0
+  },
+  "display_K_max": 8,
+  "source_K_max": 10,
+  "source_notebook": "Fig5_total_depth_best_allocations.ipynb, final spread-layout cell 8",
+  "source_csv": "25_total_depth_publication.csv",
+  "source_sha256": "eed2b7ccc44987ef8d396c5d5d8bbbc52923ba2aa2d03ff97b90a8f1cda7d8c2",
+  "sampler": "Shifted Halton (source fallback), reflected into the simplex",
+  "seed": 2026,
+  "sampler_evidence": "Analytic SC no-inertia control matches the source summary at floating-point precision. Complete historical runtime and interpolation topology are not archived.",
+  "settings": {
+    "mesh_resolution": 23,
+    "n_initial": 512,
+    "chunk_steps": 4000,
+    "max_chunks": 64,
+    "stable_checks": 2,
+    "mean_tolerance": 2e-05
+  },
+  "original_max_chunks": 8,
+  "recalculated_rows": [
+    {
+      "norm": "SC",
+      "k1": 1,
+      "k2": 1
+    },
+    {
+      "norm": "SH",
+      "k1": 1,
+      "k2": 1
+    },
+    {
+      "norm": "SS",
+      "k1": 1,
+      "k2": 1
+    }
+  ],
+  "data_origin": "177 original displayed rows and three accepted current-environment reconstructions. Original full table retained under source/.",
+  "excluded_source_rows": "All K=9,10 rows are outside the final displayed scope. The original failed SH(2,8) at K=10 remains only in source/.",
+  "interpretation_limit": "Observable stability uses repeated changes of the ensemble mean, not a requirement that every strategy trajectory converges."
+}

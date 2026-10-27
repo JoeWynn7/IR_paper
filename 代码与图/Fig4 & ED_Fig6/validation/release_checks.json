@@ -1,0 +1,58 @@
+{
+  "scope": "Read-only saved-array/equation, source-row, notebook, document-link and export checks; no new trajectory integrations.",
+  "independent_markov_response_cases": 50,
+  "maximum_markov_response_difference": 4.440892098500626e-16,
+  "saved_reconstruction_arrays": {
+    "SC": {
+      "independent_max_reputation_residual": 9.999712169417307e-10,
+      "independent_max_rhs_difference": 7.482468827478203e-16,
+      "initial_array_matches_explicit_sampler": true
+    },
+    "SH": {
+      "independent_max_reputation_residual": 9.999538399998315e-10,
+      "independent_max_rhs_difference": 4.996003610813204e-16,
+      "initial_array_matches_explicit_sampler": true
+    },
+    "SS": {
+      "independent_max_reputation_residual": 9.99651799706014e-10,
+      "independent_max_rhs_difference": 7.072846870559576e-16,
+      "initial_array_matches_explicit_sampler": true
+    }
+  },
+  "overlapping_conditions": 172,
+  "overlap_numerical_fields_identical": true,
+  "unchanged_original_row_texts": {
+    "figure4": 177,
+    "extended_data_figure6": 253
+  },
+  "winning_allocation_labels_unchanged": 36,
+  "hatching_matches_raw_strict_invasion_signs": true,
+  "notebooks": {
+    "Extended_Data_Figure6.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0,
+      "default_recompute": false
+    },
+    "Figure4_Total_Depth.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0,
+      "default_recompute": false
+    }
+  },
+  "relative_document_links_checked": 16,
+  "figure_counts": {
+    "figure4": {
+      "pdf": 5,
+      "svg": 5
+    },
+    "extended_data_figure6": {
+      "pdf": 5,
+      "svg": 5
+    }
+  },
+  "svg_xml_valid": true,
+  "limits": "Only three failed conditions were recalculated; source mean stability does not require every trajectory to equilibrate. Original interpolation environment unavailable.",
+  "pdf_readable_single_pages": 10,
+  "visual_review": "All ten PDFs rendered. Both combined figures and both individual-panel contact sheets inspected. Regenerated Figure4 previews are pixel-identical to the reviewed versions.",
+  "results_guide": "English guide reviewed independently against source tables, sampler-control and targeted reconstruction evidence; no new dynamical experiment or statistical test added."
+}

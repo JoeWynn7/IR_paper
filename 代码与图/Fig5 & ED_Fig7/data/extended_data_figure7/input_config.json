@@ -1,0 +1,79 @@
+{
+  "baseline": {
+    "beta": 1.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "bar_b_over_c": 5.0
+  },
+  "benefit_range": [
+    2.0,
+    8.0
+  ],
+  "benefit_points": 161,
+  "alpha_base_points": 601,
+  "mechanisms": {
+    "one_step": {
+      "SC": [
+        1,
+        1
+      ],
+      "SH": [
+        1,
+        1
+      ],
+      "SJ": [
+        1,
+        1
+      ],
+      "SS": [
+        1,
+        1
+      ]
+    },
+    "multistep_full": {
+      "SC": [
+        2,
+        0
+      ],
+      "SH": [
+        3,
+        0
+      ],
+      "SJ": [
+        4,
+        3
+      ],
+      "SS": [
+        1,
+        2
+      ]
+    }
+  },
+  "reference_point": {
+    "alpha": 0.8,
+    "b_over_c": 5.0
+  },
+  "security_tolerance": 1e-10,
+  "resident_branch": "Largest strictly stable fixed point of the scalar reputation closure",
+  "source_notebook": "figure5_ED_robustness_two_versions.ipynb",
+  "source_data": "Final_available/robustness_outputs",
+  "original_metadata": "source/metadata.json (describes the larger historical 26-figure project)",
+  "displayed_background": "Resident intended cooperation",
+  "calculation_scope": "IID O-DISC; no persistent or temporally correlated mutant behavior",
+  "endpoint_convention": "The stored fold endpoints are excluded; domain and neutral-invasion endpoints are included.",
+  "files": {
+    "c_complete_cooperation_profiles.csv": "d6976fb130a04afe9ea02a88ea3e83f63a275b27367ef23e93c3607ef423ba1d",
+    "c_secure_alpha_intervals.csv": "c6dd84a6c6fcd8aa2d09eea7d75b82c92ace810fee4cbaeea7c29e842b37ee69",
+    "benefit_alpha_intervals_both_mechanisms.csv": "822ade4cd9a51cc7cc658468a149581f0556e363fa19f4698eca5fc2e54fdd2a",
+    "reference_point_08_5.csv": "d46f9321a047fc18335a24ed158d464c308f3faf9acdb206af02038efe875ee8",
+    "validation_checks.csv": "ff93a6e93a774b221181a3a8de3fb097d304bacc620dfa7ae45b83cbe46d0d53",
+    "onestep_SC_shared_fields.npz": "54f9105759765fca40a55a84c68801ef4909332879e65c660e2b5c468f14093e",
+    "onestep_SH_shared_fields.npz": "be9d514cef0210e8bc3ebfbd851082e8bc756722c518bc631a3aa663835463d0",
+    "onestep_SJ_shared_fields.npz": "237a991a312e85bc06d60730ff5645e04d6be0f327c20394661842475a67935c",
+    "onestep_SS_shared_fields.npz": "38145f0cf58d9cd4b3febadd74cdd7ca0acba01520f3c0484b83fb1ded4a7a95",
+    "d_SC_shared_fields.npz": "bc04126f1b810321b612fe23ab1084dd6c08b5957401102c3935de0ed0ece72e",
+    "d_SH_shared_fields.npz": "112612f42b5f51a94f2f6f38b14e9d18d5f9041238c2818d72aaa08baf0c0cc2",
+    "d_SJ_shared_fields.npz": "27206a7efb5459a682a61752b0f11d3af4fb12407bd31ec1a4283edc03caa80a",
+    "d_SS_shared_fields.npz": "1305350b5688ddcb25df765c9ee6a739f8ee450230443977b98ac7e2bf0c2e65"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Published exact fallback checked at all 181 repaired points; full model checked at four corners per norm. Full 801-point grids were not recomputed.",
+  "fallback_points": 181,
+  "max_fallback_residual": 5.329070518200751e-15,
+  "max_fallback_r_difference": 9.520162436160717e-13,
+  "corner_checks": [
+    {
+      "norm": "SC",
+      "corner_points": 4,
+      "max_field_difference": 5.934778002369967e-09
+    },
+    {
+      "norm": "SH",
+      "corner_points": 4,
+      "max_field_difference": 5.371396660791561e-10
+    },
+    {
+      "norm": "SJ",
+      "corner_points": 4,
+      "max_field_difference": 9.107048448697697e-10
+    },
+    {
+      "norm": "SS",
+      "corner_points": 4,
+      "max_field_difference": 1.972215724066473e-09
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "cases": [
+    {
+      "case": "without_inertia_SC",
+      "regime": "without_inertia",
+      "parameters": {
+        "norm": "SC",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "without_inertia_SH",
+      "regime": "without_inertia",
+      "parameters": {
+        "norm": "SH",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "without_inertia_SJ",
+      "regime": "without_inertia",
+      "parameters": {
+        "norm": "SJ",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "without_inertia_SS",
+      "regime": "without_inertia",
+      "parameters": {
+        "norm": "SS",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "one_step_SC",
+      "regime": "one_step",
+      "parameters": {
+        "norm": "SC",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "one_step_SH",
+      "regime": "one_step",
+      "parameters": {
+        "norm": "SH",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "one_step_SJ",
+      "regime": "one_step",
+      "parameters": {
+        "norm": "SJ",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "one_step_SS",
+      "regime": "one_step",
+      "parameters": {
+        "norm": "SS",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "multi_step_SC",
+      "regime": "multi_step",
+      "parameters": {
+        "norm": "SC",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 2,
+        "k2": 0
+      }
+    },
+    {
+      "case": "multi_step_SH",
+      "regime": "multi_step",
+      "parameters": {
+        "norm": "SH",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 3,
+        "k2": 0
+      }
+    },
+    {
+      "case": "multi_step_SJ",
+      "regime": "multi_step",
+      "parameters": {
+        "norm": "SJ",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 4,
+        "k2": 3
+      }
+    },
+    {
+      "case": "multi_step_SS",
+      "regime": "multi_step",
+      "parameters": {
+        "norm": "SS",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 2
+      }
+    },
+    {
+      "case": "tolerance_only_SC",
+      "regime": "tolerance_only",
+      "parameters": {
+        "norm": "SC",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "tolerance_only_SH",
+      "regime": "tolerance_only",
+      "parameters": {
+        "norm": "SH",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "tolerance_only_SJ",
+      "regime": "tolerance_only",
+      "parameters": {
+        "norm": "SJ",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "tolerance_only_SS",
+      "regime": "tolerance_only",
+      "parameters": {
+        "norm": "SS",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 1.0,
+        "beta": 0.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "strictness_only_SC",
+      "regime": "strictness_only",
+      "parameters": {
+        "norm": "SC",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "strictness_only_SH",
+      "regime": "strictness_only",
+      "parameters": {
+        "norm": "SH",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "strictness_only_SJ",
+      "regime": "strictness_only",
+      "parameters": {
+        "norm": "SJ",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    },
+    {
+      "case": "strictness_only_SS",
+      "regime": "strictness_only",
+      "parameters": {
+        "norm": "SS",
+        "b": 5.0,
+        "c": 1.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "alpha": 0.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1
+      }
+    }
+  ],
+  "plot_settings": {
+    "grid_nx": 84,
+    "grid_ny": 74,
+    "stream_seed_depth": 20,
+    "edge_scan_points": 501,
+    "interior_seed_depth": 7,
+    "edge_interior_merge_tolerance": 0.02,
+    "reputation_tolerance": 1e-12,
+    "legacy_max_iter": 1000,
+    "show_equilibria": true,
+    "show_legend": false,
+    "show_parameter_title": false
+  },
+  "reputation_equation": "dr/dtau = R(phi) - r",
+  "initial_reputations": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "rk4_stages": [
+    {
+      "dt": 0.1,
+      "max_steps": 20000
+    },
+    {
+      "dt": 0.2,
+      "max_steps": 80000
+    },
+    {
+      "dt": 0.2,
+      "max_steps": 200000
+    }
+  ],
+  "legacy_equation": "synchronous mean and squared-mean iteration",
+  "edge_markers": "tangent stability; transverse eigenvalues saved separately"
+}

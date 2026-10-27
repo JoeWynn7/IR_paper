@@ -1,0 +1,91 @@
+{
+  "scope": "Saved-data integrity, all-profile scalar residual/stability, eight reference values and small independent direct-delta checks; no full scan rerun.",
+  "source_data_hashes_match": true,
+  "source_files": 13,
+  "stored_resident_samples": 4822,
+  "resident_max_absolute_residual": 7.216449660063518e-16,
+  "resident_max_relative_residual": 2.2904850276306563e-13,
+  "maximum_scalar_flow_derivative": -0.0008227383116925502,
+  "strict_stability_tolerance": -1e-09,
+  "reference_delta_checks": [
+    {
+      "norm": "SC",
+      "mechanism": "one_step",
+      "analytic_minimum": 0.37932922135972297,
+      "sampled_minimum": 0.37932922135972297,
+      "sampled_difference": 0.0,
+      "iid_secure": true
+    },
+    {
+      "norm": "SC",
+      "mechanism": "multistep_full",
+      "analytic_minimum": 0.20715962932651805,
+      "sampled_minimum": 0.20715962932651805,
+      "sampled_difference": 0.0,
+      "iid_secure": true
+    },
+    {
+      "norm": "SH",
+      "mechanism": "one_step",
+      "analytic_minimum": 5.0110255742255796e-05,
+      "sampled_minimum": 5.01102557425794e-05,
+      "sampled_difference": 3.2360724343261094e-16,
+      "iid_secure": false
+    },
+    {
+      "norm": "SH",
+      "mechanism": "multistep_full",
+      "analytic_minimum": 0.20681784628877609,
+      "sampled_minimum": 0.20681784628877609,
+      "sampled_difference": 0.0,
+      "iid_secure": true
+    },
+    {
+      "norm": "SJ",
+      "mechanism": "one_step",
+      "analytic_minimum": -0.08972272649756924,
+      "sampled_minimum": -0.0897227264973217,
+      "sampled_difference": 2.4753810112798647e-13,
+      "iid_secure": false
+    },
+    {
+      "norm": "SJ",
+      "mechanism": "multistep_full",
+      "analytic_minimum": 0.20366053411674784,
+      "sampled_minimum": 0.2036605341167478,
+      "sampled_difference": -2.7755575615628914e-17,
+      "iid_secure": true
+    },
+    {
+      "norm": "SS",
+      "mechanism": "one_step",
+      "analytic_minimum": 0.3700979366958144,
+      "sampled_minimum": 0.3700979366958144,
+      "sampled_difference": 0.0,
+      "iid_secure": true
+    },
+    {
+      "norm": "SS",
+      "mechanism": "multistep_full",
+      "analytic_minimum": 0.5114271802612276,
+      "sampled_minimum": 0.5114271802612276,
+      "sampled_difference": 0.0,
+      "iid_secure": true
+    }
+  ],
+  "security_classification_matches_saved_delta_c_at_b_over_c_5": true,
+  "source_boundary_table_rows": 1288,
+  "fold_endpoint_convention": "Excluded; shown as open circles on the strip plot.",
+  "executed_code_cells": 5,
+  "notebook_errors": 0,
+  "full_parameter_scan_repeated": false,
+  "outputs": {
+    "individual": 9,
+    "combined": 1,
+    "pdf": 10,
+    "svg": 10
+  },
+  "visual_review": "All ten PDFs rendered; combined, strip, and eight map panels inspected.",
+  "limitations": "Largest stable branch is selected by source root algorithm; finite checks do not prove every full-grid root search exhaustive. Numerical security tolerance applies. Tests concern IID O-DISC, not all mutant strategies.",
+  "small_recomputation": "SC one-step at b/c=5: 13 alpha nodes including fold-adjacent nodes; recomputed lower and upper limits match saved interval within 2e-12."
+}

@@ -1,0 +1,3 @@
+case,sample,f_ALLC,f_ALLD,f_DISC,reputation_residual,strategy_residual,tangent_linearization_residual,transverse_eigenvalue,condition
+without_inertia_SC,0,0.0,0.7874149659863945,0.21258503401360548,9.707096237931978e-13,1.692277329700249e-13,1.5889548368070204e-09,0.019291668915868036,SC; alpha=beta=0; f_DISC=c/(b*(A_CG-A_DG))
+without_inertia_SC,20,0.7874149659863945,0.0,0.21258503401360548,9.410250356722827e-13,1.6400108784236657e-13,1.5501326583029037e-09,-0.03781166884994837,SC; alpha=beta=0; f_DISC=c/(b*(A_CG-A_DG))

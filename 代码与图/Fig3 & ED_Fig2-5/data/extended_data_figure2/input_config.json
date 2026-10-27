@@ -1,0 +1,29 @@
+{
+  "e1": 0.02,
+  "e2": 0.02,
+  "alpha": 1.0,
+  "beta": 1.0,
+  "multi_depths": {
+    "SC": [
+      2,
+      0
+    ],
+    "SH": [
+      3,
+      0
+    ],
+    "SJ": [
+      4,
+      3
+    ],
+    "SS": [
+      1,
+      2
+    ]
+  },
+  "max_depth": 8,
+  "alpha_beta_grid": 161,
+  "root_grid": 2001,
+  "plane_root_grid": 401,
+  "stability_tolerance": 1e-07
+}

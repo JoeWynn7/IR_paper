@@ -1,0 +1,58 @@
+{
+  "b_over_c": 5.0,
+  "norm": "SJ",
+  "e1": 0.02,
+  "e2": 0.02,
+  "beta": 1.0,
+  "multistep_architecture": [
+    4,
+    3
+  ],
+  "alpha_range": [
+    0,
+    1
+  ],
+  "cooperation_observable": "intended cooperation r_R; before execution errors",
+  "resident_branch": "highest stable / decrease alpha from an all-good resident at alpha=1",
+  "main_internal_legend": false,
+  "panel_c": false,
+  "boundary_records": [
+    {
+      "mechanism": "multistep_full",
+      "alpha_lower_fold": 0.5669858454289226,
+      "r_at_fold": 0.8515374489117342,
+      "fold_residual": 1.1102230246251565e-15,
+      "alpha_upper": 0.8036039714620472,
+      "r_at_upper": 0.9869060267112,
+      "upper_local_slope": -9.861172145964936e-15,
+      "upper_curve_largest_roundoff": 4.500334939354921e-14
+    },
+    {
+      "mechanism": "one_step",
+      "alpha_lower_fold": 0.8524459887840774,
+      "r_at_fold": 0.9596344346762952,
+      "fold_residual": 1.7763568394002505e-15,
+      "alpha_upper": 0.988514211867302,
+      "r_at_upper": 0.9944507669377,
+      "upper_local_slope": -2.4289367042828357e-15,
+      "upper_curve_largest_roundoff": 0.0
+    }
+  ],
+  "self_contained": true,
+  "all_checks_passed": true,
+  "main_panel_a_ylim": [
+    -0.15,
+    0.28
+  ],
+  "main_panel_a_negative_tails_clipped": true,
+  "panel_a_curve_markers": false,
+  "panel_b_height_ratio": [
+    1,
+    1
+  ],
+  "text_free_exports": [
+    "panel_a",
+    "panel_b"
+  ],
+  "scope": "iid O-DISC; specified benchmark configurations, not an optimized or matched-memory comparison"
+}

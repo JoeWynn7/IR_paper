@@ -1,0 +1,70 @@
+{
+  "configuration": {
+    "N": 150,
+    "repetitions": 30,
+    "sweeps": 1000,
+    "burnin": 800,
+    "interval": 5,
+    "base_seed": 20260918,
+    "e1": 0.02,
+    "e2": 0.02,
+    "alpha": 1.0,
+    "beta": 1.0,
+    "k_min": 0,
+    "k_max": 6,
+    "workers": 6
+  },
+  "norms": {
+    "SC": [
+      1.0,
+      0.0
+    ],
+    "SH": [
+      0.0,
+      0.0
+    ],
+    "SJ": [
+      0.0,
+      1.0
+    ],
+    "SS": [
+      1.0,
+      1.0
+    ]
+  },
+  "data_source": "external replicate-level CSV",
+  "observer_pool": "DISC observers; self-images retained",
+  "donor_recipient": "distinct",
+  "observer": "independently sampled; may equal donor or recipient",
+  "sweep_definition": "n_DISC * N events",
+  "uncertainty": "2000 bootstrap resamples of replicate means; seed 2026091801; pointwise 95% intervals",
+  "convergence": "both half-window drift 95% intervals strictly inside (-0.01, 0.01)",
+  "operational_criterion": {
+    "min_separation": 0.8,
+    "max_disagreement": 0.1
+  },
+  "selection_rule": "minimum K, greater separation, lower disagreement, k1, k2",
+  "extended_runs_this_execution": [],
+  "final_nonconverged_architectures": [],
+  "representative_architectures": {
+    "SC": [
+      2,
+      0
+    ],
+    "SH": [
+      3,
+      0
+    ],
+    "SJ": [
+      4,
+      3
+    ],
+    "SS": [
+      1,
+      2
+    ]
+  },
+  "python": "3.11.3",
+  "numpy": "1.24.3",
+  "pandas": "2.0.0"
+}

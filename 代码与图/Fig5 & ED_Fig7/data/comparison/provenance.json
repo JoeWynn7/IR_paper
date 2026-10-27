@@ -1,0 +1,7 @@
+{
+  "source_name": "24_k1_k2_publication.csv",
+  "source_notebook": "Extended_Data_Figure6.ipynb",
+  "source_sha256": "dc43161a5ebb3158f42b77e7f210aba4bd04882f09493f0ed31d93d873e4f35c",
+  "selection": "SS, k1=1, k2=2, alpha=beta=1, b/c=5, e1=e2=0.02",
+  "purpose": "Compare prior unconditional-mutant invasion flags with the present IID O-DISC family."
+}

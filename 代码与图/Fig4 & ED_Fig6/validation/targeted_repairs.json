@@ -1,0 +1,152 @@
+{
+  "scope": "Only three failed conditions, SC/SH/SS k1=k2=1, reconstructed and extended. No full parameter scan.",
+  "all_recalculated_observable_gates_passed": true,
+  "gate": "Original mean realized-cooperation change <=2e-5 for two consecutive chunks; this is not a full per-trajectory strategy convergence criterion.",
+  "reputation_gate": "Every mesh and final reputation solve residual <=1e-9.",
+  "initial_sampler": "Historical shifted-Halton fallback identified through analytic SC baseline control.",
+  "initial_arrays_equal_across_norms": true,
+  "original_prefix_exactly_reproduced": false,
+  "archival_gap": "Historical initial/final trajectory arrays and interpolation topology are not saved; source equations and sampler are identified, but current trajectories are reconstructions, not exact continuation.",
+  "source_data_sha256": "95bc1763e464fceb4fe91eefeebc427da3c24bd3381d1a3db084c74519967c6a",
+  "sampler_control": {
+    "stats": {
+      "expected_cooperation": 0.6097647422007304,
+      "cooperative_basin": 0.6328125,
+      "conditional_cooperation": 0.9622082782155299,
+      "observable_stable": 1,
+      "residual_q99": 4.7597813515679995e-08,
+      "strategy_steps": 16000,
+      "R_L": 1.062925169734868,
+      "R_U": 1.0629251702380058,
+      "lambda_ALLD": -1.2263243309209102,
+      "lambda_ALLC": 2.403595669079092,
+      "disc_locally_protected": 0
+    },
+    "deltas": {
+      "expected_cooperation": 0.0,
+      "cooperative_basin": 0.0,
+      "conditional_cooperation": 1.1102230246251565e-16,
+      "observable_stable": 0.0,
+      "residual_q99": 0.0,
+      "strategy_steps": 0.0,
+      "R_L": 0.0,
+      "R_U": 0.0,
+      "lambda_ALLD": 0.0,
+      "lambda_ALLC": 0.0,
+      "disc_locally_protected": 0.0
+    }
+  },
+  "conditions": [
+    {
+      "norm": "SC",
+      "new_values": {
+        "norm": "SC",
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1,
+        "b_over_c": 5.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "mesh_resolution": 23,
+        "n_initial": 512,
+        "expected_cooperation": 0.5892760519086482,
+        "cooperative_basin": 0.603515625,
+        "conditional_cooperation": 0.976403266689592,
+        "observable_stable": 1,
+        "residual_q99": 1.358908659394951e-05,
+        "strategy_steps": 40000,
+        "R_L": 1.0008115087662814,
+        "R_U": 6.306997400503757,
+        "lambda_ALLD": -3.9014555465065457,
+        "lambda_ALLC": -0.0007556667884732348,
+        "disc_locally_protected": 1
+      },
+      "original_horizon_reconstruction_deltas": {
+        "expected_cooperation": -0.0019071506793861825,
+        "cooperative_basin": -0.001953125,
+        "conditional_cooperation": -6.648552897114968e-08,
+        "residual_q99": -9.773875392646029e-08,
+        "strategy_steps": 0.0,
+        "observable_stable": 0.0
+      },
+      "max_mesh_reputation_residual": 9.999712169417307e-10,
+      "max_final_reputation_residual": 9.990736783878351e-10,
+      "elapsed_seconds": 18.365608958003577
+    },
+    {
+      "norm": "SH",
+      "new_values": {
+        "norm": "SH",
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1,
+        "b_over_c": 5.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "mesh_resolution": 23,
+        "n_initial": 512,
+        "expected_cooperation": 0.024831903371707195,
+        "cooperative_basin": 0.025390625,
+        "conditional_cooperation": 0.9754550545142497,
+        "observable_stable": 1,
+        "residual_q99": 0.00019312084328360974,
+        "strategy_steps": 44000,
+        "R_L": 1.000812330061507,
+        "R_U": 5.640925687499676,
+        "lambda_ALLD": -3.8975097911344885,
+        "lambda_ALLC": -0.0005263995234658658,
+        "disc_locally_protected": 1
+      },
+      "original_horizon_reconstruction_deltas": {
+        "expected_cooperation": 2.788403503581338e-07,
+        "cooperative_basin": 0.0,
+        "conditional_cooperation": 8.561852338218046e-10,
+        "residual_q99": 1.0859435320818996e-07,
+        "strategy_steps": 0.0,
+        "observable_stable": 0.0
+      },
+      "max_mesh_reputation_residual": 9.99832908848454e-10,
+      "max_final_reputation_residual": 9.99953839782991e-10,
+      "elapsed_seconds": 24.35547325000516
+    },
+    {
+      "norm": "SS",
+      "new_values": {
+        "norm": "SS",
+        "alpha": 1.0,
+        "beta": 1.0,
+        "k1": 1,
+        "k2": 1,
+        "b_over_c": 5.0,
+        "e1": 0.02,
+        "e2": 0.02,
+        "mesh_resolution": 23,
+        "n_initial": 512,
+        "expected_cooperation": 0.6979881698905614,
+        "cooperative_basin": 0.71484375,
+        "conditional_cooperation": 0.9764201303667951,
+        "observable_stable": 1,
+        "residual_q99": 1.869219429890632e-05,
+        "strategy_steps": 36000,
+        "R_L": 1.001127877275343,
+        "R_U": 6.344091601229601,
+        "lambda_ALLD": -3.8999833244470143,
+        "lambda_ALLC": -0.000768897988890318,
+        "disc_locally_protected": 1
+      },
+      "original_horizon_reconstruction_deltas": {
+        "expected_cooperation": -1.4311384965992602e-08,
+        "cooperative_basin": 0.0,
+        "conditional_cooperation": -2.0057739358314564e-08,
+        "residual_q99": -1.4020346805363606e-07,
+        "strategy_steps": 0.0,
+        "observable_stable": 0.0
+      },
+      "max_mesh_reputation_residual": 9.99651799706014e-10,
+      "max_final_reputation_residual": 9.773255087164312e-10,
+      "elapsed_seconds": 11.17001750000054
+    }
+  ]
+}

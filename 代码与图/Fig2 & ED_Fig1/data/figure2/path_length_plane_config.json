@@ -1,0 +1,36 @@
+{
+  "norms": [
+    "SC",
+    "SH",
+    "SJ",
+    "SS"
+  ],
+  "tolerance_depths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "strictness_depths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "n_disc": 50,
+  "n_allc": 50,
+  "n_alld": 50,
+  "e1": 0.02,
+  "e2": 0.02,
+  "sweeps_total": 1000.0,
+  "sweeps_burnin": 800.0,
+  "sample_interval_sweeps": 5.0,
+  "n_reps": 1,
+  "seed": 2027
+}

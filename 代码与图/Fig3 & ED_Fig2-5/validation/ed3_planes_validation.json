@@ -1,0 +1,37 @@
+{
+  "scope": "Lossless saved-data conversion, 181 targeted resident repairs, independent branch checks, default notebook execution and visual export QA; no full cooperation or invasion-grid rerun.",
+  "cooperation_rows": 6724,
+  "cooperation_all_saved_observable_gates_passed": true,
+  "invasion_points": 2566404,
+  "original_failed_points": 181,
+  "failed_by_norm": {
+    "SC": 144,
+    "SH": 15,
+    "SJ": 22
+  },
+  "repaired_point_residual_max": 1.7116862669824101e-15,
+  "current_grid_residual_max": 9.999999699833448e-11,
+  "max_absolute_r_DISC_change": 0.9555834251900801,
+  "max_absolute_lambda_ALLD_change": 4.284313160127561,
+  "max_absolute_lambda_ALLC_change": 3.309436234841601,
+  "changed_invasion_classes": 7,
+  "changed_class_counts": {
+    "SC": 1,
+    "SH": 2,
+    "SJ": 4
+  },
+  "independent_Radau_points": 11,
+  "independent_Radau_max_r_difference": 4.116018414990208e-09,
+  "independent_Radau_residual_max": 1.000088900582341e-12,
+  "original_source_csv_unchanged": true,
+  "data_storage": "Float64 or original integer arrays; every original failed row retained with corrected fields in invasion_repairs.csv.",
+  "notebook_executed_code_cells": 5,
+  "notebook_errors": 0,
+  "outputs": {
+    "pdf": 9,
+    "svg": 9
+  },
+  "visual_review": "All nine PDFs rendered; combined figure and individual-panel contact sheet inspected without clipping or overlap.",
+  "repair_method": "One-step degree-six scalar self-consistency polynomial; real roots refined with Newton; highest attracting root selected. Independent all-good continuous ODE checks include every changed-class point and slow or large-change examples.",
+  "unresolved_provenance": "The exact historical execution entry point for dense41 cooperation and the original 801-point invasion grid is not uniquely identified. Current supplied values and targeted corrections are explicit."
+}

@@ -1,0 +1,32 @@
+{
+  "model": {
+    "b_over_c": 5.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "k1": 1,
+    "k2": 1
+  },
+  "invasion_points": 801,
+  "cooperation_points": 41,
+  "invasion_source": "ESS_all_norms_N801.csv",
+  "invasion_source_sha256": "4f10ae1cb46e6dbf86719f79e5a6755bc882643ae022b234a72c385eab7122f5",
+  "cooperation_source": "23_alpha_beta_dense41.csv",
+  "cooperation_source_sha256": "3e2462bb8cb24c3ae25017a5c9d75a6597f443419b3acc688162825311f21586",
+  "invasion_storage": "All fields retained as float64 or integer grids. The 181 originally failed points have documented corrections; all other values are unchanged. Source values are recoverable using invasion_repairs.csv.",
+  "repairs": {
+    "points": 181,
+    "by_norm": {
+      "SC": 144,
+      "SH": 15,
+      "SJ": 22,
+      "SS": 0
+    },
+    "region_changes": 7,
+    "max_resident_change": 0.9555834251900801,
+    "max_repaired_residual": 1.7116862669824101e-15,
+    "independent_ode_checks": 11
+  },
+  "cooperation_measure": "Basin-weighted realized cooperation",
+  "cooperation_upstream": "The final dense41 computation entry point has not been uniquely identified. Supplied rows retain all saved settings and convergence diagnostics.",
+  "invasion_upstream": "Fields imported from saved output, then 181 failed resident solves repaired without changing the model. The exact historical 801-point execution entry point is not identified; the notebook defines a residual-checked regeneration path."
+}
