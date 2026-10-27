@@ -208,9 +208,9 @@ For DISC, these terms account for agreement that the recipient is good, the two 
 
 At fixed strategy frequencies, stationary reputations satisfy
 
-$$
-r_I^*=\mathcal R\!\left(\varphi_I(\boldsymbol r^*,\boldsymbol f)\right).
-$$
+```math
+r_I^{*}=\mathcal R\!\left(\varphi_I(\boldsymbol r^{*},\boldsymbol f)\right).
+```
 
 The analysis uses initially good records. A self-consistent branch can be selected from $r_I(0)=1$ using the auxiliary relaxation
 
