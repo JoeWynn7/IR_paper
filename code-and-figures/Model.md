@@ -155,8 +155,7 @@ $$
 Weighting these states by their good-readout probabilities gives the stationary reputation response
 
 $$
-\mathcal R(u)=\sum_{\ell\in\mathcal L}\pi_\ell(u)\sigma_\ell
-=
+\mathcal R(u)=\sum_{\ell\in\mathcal L}\pi_\ell(u)\sigma_\ell=
 \frac{
 u^{k_2+1}\left[1+\sum_{m=1}^{k_1}(\alpha v)^m\right]
 +v^{k_1+1}\sum_{n=1}^{k_2}u^n(1-\beta^n)
