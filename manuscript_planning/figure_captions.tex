@@ -1,0 +1,132 @@
+% Figure captions for the Results (generated from Results_Presentation.md; keep in sync)
+% Requires amsmath, graphicx.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Fig1}
+\caption{\textbf{Instantaneous and inertial updating of private reputations.}
+\textbf{a}, Instantaneous updating. An observer's binary image of a target (G, good; B, bad) is replaced after every recorded assessment: a single negative assessment changes G to B, and a single positive assessment changes B to G.
+\textbf{b}, Inertial updating with a direct-reset internal record. Between the established states G and B, the record contains $k_1$ warning states $\mathrm{W}_1,\dots,\mathrm{W}_{k_1}$ on the path to losing good standing and $k_2$ suspicion (recovery) states $\mathrm{S}_1,\dots,\mathrm{S}_{k_2}$ on the path to regaining it. Negative assessments (red arrows) advance the record towards B and positive assessments (blue arrows) towards G; an assessment that supports the established judgement resets the record directly to that state. Losing good standing therefore requires $k_1+1$ consecutive negative assessments, and regaining it requires $k_2+1$ consecutive positive assessments, counted within one observer's record of one target. When consulted, warning state $\mathrm{W}_m$ is read as good with probability $\alpha^m$ (tolerance strength $\alpha$) and suspicion state $\mathrm{S}_n$ is read as bad with probability $\beta^n$ (strictness strength $\beta$); G is always read as good and B as bad. The depths $(k_1,k_2)$ determine when a reversal is completed, and the readout parameters $(\alpha,\beta)$ determine how intermediate evidence affects current treatment. Instantaneous updating is recovered for $k_1=k_2=0$ or for $\alpha=\beta=0$. Each observer keeps its own records and assesses a donor's realized action by applying the shared social norm to its own image of the recipient.}
+\label{fig:model}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Fig2}
+\caption{\textbf{Directional inertia makes private reputations informative and shared.}
+Finite populations with equal numbers of unconditional cooperators (ALLC), unconditional defectors (ALLD) and discriminators (DISC); strategies are fixed, all internal records start in state G, $e_1=e_2=0.02$, and in each interaction one observer is drawn uniformly from the DISC players.
+\textbf{a}--\textbf{d}, Private reputation matrices under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}) at the end of single runs (30 players per strategy, $N=90$; 1{,}000 sweeps; seed 2027). Rows are the 30 DISC observers and columns the targets, grouped as DISC, ALLC and ALLD; blue denotes a good and white a bad binary image. Top row, without inertia (one-step record with $\alpha=\beta=0$, equivalent to instantaneous updating); middle row, full one-step inertia, $(k_1,k_2)=(1,1)$ with $\alpha=\beta=1$; bottom row, selected multi-step inertia with $\alpha=\beta=1$ and the depths shown above each block.
+\textbf{e}--\textbf{h}, Reputation separation and observer disagreement over tolerance depth $k_1$ and strictness depth $k_2$ ($0\le k_1,k_2\le6$; full readout; 50 players per strategy, $N=150$; one run per condition; 1{,}000 sweeps, burn-in 800, sampling every 5 sweeps). Colour shows the separation $\Delta g=\tfrac12(g_{\mathrm{DISC}}+g_{\mathrm{ALLC}})-g_{\mathrm{ALLD}}$, where $g_I$ is the mean probability that a DISC observer reads a type-$I$ target as good. Circle area scales with the square of the mean disagreement $\bar d$, the probability that two distinct DISC observers read the same target differently, averaged over the three strategies. Black and red outlines mark no inertia, $(0,0)$, and one-step inertia, $(1,1)$; stars mark the pair with the smallest total depth $K=k_1+k_2$ that satisfies $\Delta g\ge0.8$ and $\bar d\le0.1$ (the same pairs are selected from 30 independent replicates; Extended Data Fig.~\ref{edfig:recognition}).}
+\label{fig:recognition}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Fig3}
+\caption{\textbf{Inertia stabilizes discriminators, but defection remains an attractor.}
+Replicator dynamics of ALLC, ALLD and DISC on the strategy simplex (vertices labelled by the corresponding pure population) under SC, SH, SJ and SS (columns). At every strategy composition, stationary reputations are obtained by relaxation from the all-good state and determine payoffs; streamlines show the resulting field.
+\textbf{a}--\textbf{d}, Without inertia ($\mathcal{R}(u)=u$). \textbf{e}--\textbf{h}, Full one-step inertia, $(k_1,k_2)=(1,1)$, $\alpha=\beta=1$. \textbf{i}--\textbf{l}, Selected multi-step inertia, $\alpha=\beta=1$, with $(k_1,k_2)=(2,0)$ for SC, $(3,0)$ for SH, $(4,3)$ for SJ and $(1,2)$ for SS.
+Filled circles, stable equilibria (all are strict local sinks except the end point of the neutral segment in \textbf{a}); open circles, unstable equilibria. The dashed line in \textbf{a} is a continuum of neutrally stable equilibria at $f_{\mathrm{DISC}}=c/[b(A_{\mathrm{CG}}-A_{\mathrm{DG}})]\approx0.213$, where $A_{\mathrm{CG}}$ and $A_{\mathrm{DG}}$ are the probabilities of a positive assessment for intended cooperation and defection towards a recipient regarded as good. ALLD is a strict local sink in every panel. Abrupt changes of the field near the DISC vertex in \textbf{f} and \textbf{g} arise where the high-reputation branch ends at a fold (Extended Data Fig.~\ref{edfig:geometry}). $b/c=5$, $e_1=e_2=0.02$.}
+\label{fig:simplex}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Fig4}
+\caption{\textbf{How inertia is allocated matters more than how much inertia there is.}
+Mean long-run cooperation $\bar\rho$ for every allocation of a total depth $K=k_1+k_2\le8$ between tolerance depth $k_1$ and strictness depth $k_2$ under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}) (full readout, $\alpha=\beta=1$; 45 allocations per norm). $\bar\rho$ is the realized cooperation $\rho=(1-e_1)(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}\bar r)$ at the end of the replicator dynamics, averaged over 512 initial strategy compositions sampled uniformly by area from the simplex (shifted Halton sequence); reputations are relaxed from the all-good state at every composition. Point colour gives the allocation fraction $k_1/K$ (orange, all strictness; blue, all tolerance; the value 0.5 is used at $K=0$); small horizontal offsets separate overlapping points. The black line connects the allocation with the largest $\bar\rho$ at each $K$, labelled $(k_1,k_2)$. Every trajectory converges either to a state without cooperation or to an attractor with positive cooperation, so $\bar\rho\approx\omega_C\bar\rho_C$, where $\omega_C$ is the fraction of initial compositions in the cooperative basin and $\bar\rho_C$ the cooperation level reached within it. The maximum possible value is $1-e_1=0.98$. $b/c=5$, $e_1=e_2=0.02$.}
+\label{fig:depth}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Fig5}
+\caption{\textbf{Full tolerance can be exploited by occasional defectors.}
+A rare opportunistic discriminator (O-DISC) in a resident DISC population omits intended cooperation towards a recipient it regards as good independently with probability $\delta$ in each interaction ($\delta=0$, DISC; $\delta=1$, ALLD). The normalized invasion payoff is $\Lambda(\delta)=(\Pi_{\mathrm X}-\Pi_{\mathrm R})/[c(1-e_1)]=\delta r_{\mathrm R}-(b/c)(r_{\mathrm R}-r_{\mathrm X})$, where $r_{\mathrm R}$ and $r_{\mathrm X}$ are the stationary probabilities that a resident and the mutant are regarded as good; $\Lambda>0$ means that the mutant can invade. SJ, $b/c=5$, $e_1=e_2=0.02$, $\beta=1$.
+\textbf{a}, $\Lambda(\delta)$ for full one-step inertia ($(k_1,k_2)=(1,1)$, $\alpha=1$), multi-step inertia ($(4,3)$) with $\alpha=1$ and $\alpha=0.8$, an aggregation rule (good if at least one of the last two assessments is positive) and a quantitative score (integer score in $[-5,5]$ changed by $\pm1$ per assessment, read as good if non-negative). Open circles mark the upper ends $\delta_c$ of the positive-invasion intervals ($0.008$, $0.365$, $0.137$ and $0.383$ for one-step, multi-step with $\alpha=1$, aggregation and quantitative, respectively); multi-step inertia with $\alpha=0.8$ has no positive interval. Curves are clipped below $\Lambda=-0.15$.
+\textbf{b}, Dependence on the tolerance readout $\alpha$ for $(k_1,k_2)=(4,3)$. Top, $\delta_c$ (zero when no positive interval exists); bottom, resident intended cooperation $r_{\mathrm R}$ (realized cooperation is $(1-e_1)r_{\mathrm R}$). The resident is no longer invadable by any O-DISC mutant for $0.567<\alpha\le0.804$ (green). The lower boundary is a fold of the high-reputation branch (open circle; below it the resident occupies the low branch), and the upper boundary is a neutral-invasion boundary. Resident reputations are taken from the highest strictly stable self-consistent root.}
+\label{fig:opportunism}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig1}
+\caption{\textbf{Replicated recognition analysis and sensitivity of the selected depths to the recognition criteria.}
+Finite populations of 50 players per strategy ($N=150$), all records initially G, full readout ($\alpha=\beta=1$), $e_1=e_2=0.02$; 30 independent runs for each of the 49 depth pairs $0\le k_1,k_2\le6$ under each norm (5{,}880 runs). Most runs use 1{,}000 sweeps with burn-in 800 and sampling every 5 sweeps; two slowly relaxing SJ conditions use longer windows.
+\textbf{a}--\textbf{d}, Mean separation $\Delta g$ against mean disagreement $\bar d$ (definitions as in Fig.~\ref{fig:recognition}) under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}); colour gives the total depth $K=k_1+k_2$. The shaded region satisfies $\Delta g\ge0.8$ and $\bar d\le0.1$. Stars mark the selected pair, chosen by minimum $K$ among qualifying pairs, then by larger $\Delta g$, smaller $\bar d$, and smaller $k_1$ and $k_2$: SC $(2,0)$, $\Delta g=0.919$, $\bar d=0.064$; SH $(3,0)$, $0.906$, $0.069$; SJ $(4,3)$, $0.881$, $0.081$; SS $(1,2)$, $0.917$, $0.056$ (pointwise 95\% bootstrap intervals, 2{,}000 resamples of replicate means, are narrower than $\pm0.001$). Insets show all 49 pairs; crosses mark no inertia, $(0,0)$.
+\textbf{e}--\textbf{h}, Pair selected under alternative thresholds for the maximum disagreement (horizontal) and minimum separation (vertical); cell colour gives its $K$. Gold outlines mark the default thresholds, and dark outlines enclose threshold combinations that select the same pair as the default. A more conservative rule that applies the thresholds to the bootstrap interval limits selects the same four pairs at the default thresholds. All 196 architectures pass a drift criterion requiring the change in $\Delta g$ and $\bar d$ between the two halves of the sampling window to lie within $\pm0.01$.}
+\label{edfig:recognition}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig2}
+\caption{\textbf{Reputational bistability of a discriminator population and robustness to initial reputations.}
+\textbf{a}--\textbf{d}, Homogeneous DISC population under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}). Curves show the reputation drift $\dot r_{\mathrm{DISC}}=\mathcal{R}(\varphi_{\mathrm{DISC}}(r_{\mathrm{DISC}}))-r_{\mathrm{DISC}}$, where $\varphi_{\mathrm{DISC}}$ is the probability of a positive assessment and $\mathcal{R}$ the stationary reputation response of the record, without inertia (grey), with full one-step inertia (blue) and with selected multi-step inertia (orange; depths indicated, $\alpha=\beta=1$). Phase lines above each panel show the direction of the drift; filled and open circles denote stable and unstable self-consistent reputations. With one-step inertia SC, SH and SJ have two stable reputations (low roots $0.0009$, $0.0008$ and $0.5$; high roots $0.995$--$0.996$); every multi-step case has a single high stable reputation.
+\textbf{e}, Mean long-run cooperation $\bar\rho$ when reputations start all good (solid bars) or all bad (hatched bars) and then follow the strategy dynamics quasi-statically; 512 initial strategy compositions sampled uniformly by area (shifted Halton sequence). Values differ only for one-step SH ($0.076$ versus $0$), one-step SJ ($0.225$ versus $0$) and multi-step SJ ($0.699$ versus $0.706$; four initial compositions near the ALLC vertex reach an inverted reputation state from all-bad records). $b/c=5$, $e_1=e_2=0.02$.}
+\label{edfig:homogeneous}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig3}
+\caption{\textbf{Reputation of a discriminator population across readout parameters and inertia depths.}
+Colour shows the highest stable self-consistent good reputation $r^*$ of a homogeneous DISC population; hatching marks parameter combinations with two stable reputations (bistability). Because colour shows the highest root, a hatched cell does not imply that this root is reached from every initial reputation.
+\textbf{a}--\textbf{d}, One-step depths $(k_1,k_2)=(1,1)$ over tolerance strength $\alpha$ and strictness strength $\beta$ ($161\times161$ grid) under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}).
+\textbf{e}--\textbf{h}, Full readout ($\alpha=\beta=1$) over depths $0\le k_1,k_2\le8$. Squares mark no inertia (black) and full one-step inertia (blue); stars mark the selected multi-step depths. Bistability occurs in 60 (SC), 60 (SH), 30 (SJ) and 3 (SS) of 81 depth pairs; under SJ it occurs exactly where $k_2\ge k_1\ge1$. Large strictness depth relative to tolerance depth leaves only a low reputation (white cells). The selected depths lie in monostable, high-reputation cells. $e_1=e_2=0.02$.}
+\label{edfig:planes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig4}
+\caption{\textbf{Mean cooperation and local protection of discriminators across inertia depths.}
+Mean long-run cooperation $\bar\rho$ (colour; computed as in Fig.~\ref{fig:depth}) for all depth pairs $0\le k_1,k_2\le7$ with full readout ($\alpha=\beta=1$) under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}); 512 initial strategy compositions per pair. Dots mark pairs at which a pure DISC population is locally protected, that is, rare ALLD and rare ALLC both have negative invasion payoffs ($\lambda_{\mathrm{ALLD}}<-10^{-10}$ and $\lambda_{\mathrm{ALLC}}\le10^{-10}$, with resident reputations refined to a residual below $10^{-13}$). Protection requires $k_1\ge1$, and $k_2\le1$ when $k_1=1$, under all four norms (50 of 64 pairs each). Highest values: SC $(5,0)$, $\bar\rho=0.888$; SH $(7,0)$, $0.813$; SJ $(7,6)$, $0.743$; SS $(2,7)$, $0.836$. Protection and cooperation need not coincide; for example, SS $(1,2)$ has $\bar\rho=0.741$ although pure DISC is invaded by ALLC, because the attractor is a stable ALLC--DISC mixture. $b/c=5$, $e_1=e_2=0.02$.}
+\label{edfig:depthplane}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig5}
+\caption{\textbf{Reputation geometry along the edge between defectors and discriminators.}
+Self-consistent reputations on the ALLD--DISC edge ($f_{\mathrm{ALLC}}=0$, $0.01\le f_{\mathrm{DISC}}\le1$) without inertia (grey), with full one-step inertia (blue) and with selected multi-step inertia (orange; depths indicated, $\alpha=\beta=1$). On this edge the self-consistency problem reduces exactly to one equation in the mean reputation; all roots are located on a grid of 8{,}001 values and refined by bisection, and stability is that of the auxiliary reputation flow.
+\textbf{a}--\textbf{d}, DISC reputation $r_{\mathrm{DISC}}$ against DISC frequency under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}); solid lines, stable; dashed lines, unstable; diamonds, folds (saddle-node points).
+\textbf{e}--\textbf{h}, Normalized payoff advantage of DISC over ALLD, $(\Pi_{\mathrm{DISC}}-\Pi_{\mathrm{ALLD}})/[c(1-e_1)]=(b/c)f_{\mathrm{DISC}}(r_{\mathrm{DISC}}-r_{\mathrm{ALLD}})-\bar r$, on the branch reached from all-good reputations. Filled circles, edge equilibria (continuous sign changes); triangles, discontinuous sign changes where the high-reputation branch ends at a fold. With one-step inertia the high branch of SC, SH and SJ exists only for $f_{\mathrm{DISC}}\ge0.896$, $0.972$ and $0.770$, respectively. Selected multi-step inertia removes the fold under SJ (edge equilibrium at $f_{\mathrm{DISC}}=0.283$), moves it to $f_{\mathrm{DISC}}=0.511$ under SH (hysteresis between folds at $0.511$ and $0.923$), and yields a unique smooth branch under SC (edge equilibrium at $0.080$, compared with $0.213$ without inertia). SS has no fold; its edge equilibrium moves from $0.357$ (no inertia) to $0.239$ (one-step) and $0.207$ (multi-step). $b/c=5$, $e_1=e_2=0.02$.}
+\label{edfig:geometry}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig6}
+\caption{\textbf{Tolerance, not strictness, stabilizes discriminators.}
+All panels use one-step depths, $(k_1,k_2)=(1,1)$, and show SC, SH, SJ and SS in columns.
+\textbf{a}--\textbf{h}, Replicator dynamics as in Fig.~\ref{fig:simplex} for tolerance-only readout, $(\alpha,\beta)=(1,0)$ (\textbf{a}--\textbf{d}), and strictness-only readout, $(\alpha,\beta)=(0,1)$ (\textbf{e}--\textbf{h}). Filled circles, equilibria that are stable along the boundary on which they lie; open circles, unstable equilibria. Pure DISC is a strict local sink under all four norms with tolerance-only readout and under none with strictness-only readout; the filled ALLC--DISC edge equilibria in \textbf{e} and \textbf{h} are unstable to invasion by ALLD (transverse eigenvalues $0.092$ and $0.037$).
+\textbf{i}--\textbf{l}, Mean long-run cooperation $\bar\rho$ (computed as in Fig.~\ref{fig:depth}) over the readout plane ($41\times41$ grid; 512 initial compositions per point; non-linear colour scale). \textbf{m}--\textbf{p}, Local invasion of a pure DISC population by rare ALLD and ALLC ($801\times801$ grid). Pink, ALLD not excluded ($\lambda_{\mathrm{ALLD}}\ge-10^{-10}$, including neutrality); purple, ALLD excluded but ALLC invades ($\lambda_{\mathrm{ALLC}}>10^{-10}$); green, pure DISC resists both. Dashed and solid white curves mark zero invasion payoff for ALLD and ALLC, respectively. Resident reputations are relaxed from the all-good state and refined to a residual below $10^{-13}$. $b/c=5$, $e_1=e_2=0.02$.}
+\label{edfig:readout}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig7}
+\caption{\textbf{Dependence on the benefit-to-cost ratio.}
+Mean long-run cooperation $\bar\rho$ (realized cooperation averaged over initial strategy compositions) against $b/c$ under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}) without inertia (grey), with full one-step inertia (blue) and with selected multi-step inertia (orange; $\alpha=\beta=1$). Each of the 45 values of $b/c$ between $1.001$ and $10$ uses eight independent scrambled Sobol samples of 512 area-uniform initial compositions; lines interpolate the means (monotone cubic interpolation) and shading shows $\pm1$ s.e.m. across the eight sample means. Solid segments mark ratios at which a pure DISC population is locally protected against rare ALLD and ALLC, $R_L<b/c<R_U$, and dashed segments ratios at which it is not; labels give the thresholds within the plotted range, and arrows indicate $R_U>10$. Without inertia the protection interval is empty. The vertical dotted line marks the reference value $b/c=5$. $e_1=e_2=0.02$.}
+\label{edfig:benefit}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig8}
+\caption{\textbf{Local protection of discriminators across implementation and assessment errors.}
+Invasion of a pure DISC population by rare ALLD and rare ALLC over implementation error $e_1$ and assessment error $e_2$ ($241\times241$ grid on $[0,0.45]^2$) under SC, SH, SJ and SS (columns) without inertia (\textbf{a}--\textbf{d}), with full one-step inertia (\textbf{e}--\textbf{h}) and with selected multi-step inertia (\textbf{i}--\textbf{l}; $\alpha=\beta=1$). Pink, ALLD not excluded ($\lambda_{\mathrm{ALLD}}\ge-10^{-10}$, including neutrality); purple, ALLD excluded but ALLC invades ($\lambda_{\mathrm{ALLC}}>10^{-10}$); green, pure DISC resists both. White curves mark zero invasion payoffs (dashed, ALLD; solid, ALLC). Resident reputations are relaxed from the all-good state and refined to a residual below $10^{-13}$. Along $e_2=0$ under SC and SH the resident reached from all-good reputations is the all-bad state, at which ALLD is exactly neutral. Green occupies 60\% (SC), 67\% (SH), 31\% (SJ) and 0.3\% (SS) of the grid with multi-step inertia, $0.5$--$1.6\%$ with one-step inertia, and only the error-free corner without inertia. $b/c=5$.}
+\label{edfig:errors}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{ED_Fig9}
+\caption{\textbf{Security against occasional defectors across norms, readouts and benefit-to-cost ratios.}
+Security of a resident DISC population against the rare opportunistic mutant of Fig.~\ref{fig:opportunism} for all $\delta\in(0,1]$, with full one-step inertia, $(k_1,k_2)=(1,1)$, and selected multi-step inertia (SC $(2,0)$, SH $(3,0)$, SJ $(4,3)$, SS $(1,2)$); $\beta=1$, $e_1=e_2=0.02$.
+\textbf{a}, Tolerance readout $\alpha$ at $b/c=5$. Colour shows resident intended cooperation $r_{\mathrm R}$; black outlines enclose the readout values at which the resident is secure. Open circles mark interval ends at folds of the high-reputation branch, which are excluded. Secure intervals: one-step SC $(0.432,0.967]$, SH $(0.865,0.990]$, SJ $(0.852,0.989]$, SS $[0,0.965]$; multi-step SC $[0,0.807]$, SH $(0.591,0.806]$, SJ $(0.567,0.804]$, SS $[0,1]$.
+\textbf{b}--\textbf{e}, Security over $\alpha$ and $b/c\in[2,8]$ under SC (\textbf{b}), SH (\textbf{c}), SJ (\textbf{d}) and SS (\textbf{e}) for one-step (top) and multi-step (bottom) inertia. Colour, $r_{\mathrm R}$ (independent of $b/c$); black curves, boundaries of the secure region; circles, reference point $(\alpha,b/c)=(0.8,5)$, at which all multi-step settings are secure with $r_{\mathrm R}=0.978$--$0.990$, whereas one-step SH and SJ are not secure ($r_{\mathrm R}=0.0007$ and $0.47$). Security is evaluated for independent omissions only and does not imply resistance to ALLC or to other mutant strategies.}
+\label{edfig:opportunism}
+\end{figure}
