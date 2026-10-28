@@ -1,0 +1,5 @@
+libirsim.so
+__pycache__/
+results/states_depth/
+results/states_readout/
+results/states_ratio/

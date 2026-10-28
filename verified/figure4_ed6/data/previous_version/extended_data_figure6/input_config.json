@@ -1,0 +1,65 @@
+{
+  "model": {
+    "b_over_c": 5.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "alpha": 1.0,
+    "beta": 1.0
+  },
+  "depths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "initial_conditions": {
+    "n_initial": 512,
+    "seed": 2026,
+    "sampler": "Historical shifted-Halton fallback, explicitly implemented using base2/base3 radical inverses and RandomState(seed) shift, followed by simplex reflection."
+  },
+  "original_settings": {
+    "mesh_resolution": 23,
+    "strategy_dt": 0.1,
+    "SC_instantaneous_dt": 0.05,
+    "chunk_steps": 4000,
+    "max_chunks": 8,
+    "stable_checks": 2,
+    "mean_tolerance": 2e-05
+  },
+  "regeneration_settings": {
+    "mesh_resolution": 23,
+    "n_initial": 512,
+    "chunk_steps": 4000,
+    "max_chunks": 64,
+    "stable_checks": 2,
+    "mean_tolerance": 2e-05
+  },
+  "source_table": "source/24_k1_k2_publication.csv",
+  "source_table_sha256": "95bc1763e464fceb4fe91eefeebc427da3c24bd3381d1a3db084c74519967c6a",
+  "computation_source": "24_server_k1_k2_scan.py",
+  "computation_source_sha256": "1dcf6fdb8e7088b75e77be5141045d50c5a53cedde6c301d5befef1751e5939c",
+  "plotting_source": "28_k1_k2_discrete_cooperation_ess.ipynb, final appended blue plotting cell",
+  "plotting_source_sha256": "d23d949d62b87cfe005b7d1c0d6d46da8d0ae31cf0c17a33ca016ccada4f2af1",
+  "cooperation_measure": "Mean realized cooperation across 512 initial strategy compositions",
+  "protection_rule": "Both raw local payoff advantages strictly negative, without a separate invasion tolerance",
+  "convergence_scope": "Repeated ensemble-mean cooperation changes only; this does not require each strategy residual to vanish.",
+  "repairs": {
+    "conditions": [
+      "SC(1,1)",
+      "SH(1,1)",
+      "SS(1,1)"
+    ],
+    "current_table_sha256": "dc43161a5ebb3158f42b77e7f210aba4bd04882f09493f0ed31d93d873e4f35c",
+    "old_new_records": "../repairs/old_new_comparison.csv",
+    "new_rows": "../repairs/corrections.csv",
+    "method": "User-approved current-environment reconstruction using identified shifted-Halton initial compositions; original equations and mean gate; longer horizon. Original interpolation topology is unavailable, so this is not exact historical continuation.",
+    "unchanged_original_row_lines": 253,
+    "all_current_observable_stable": true
+  },
+  "sampler_identification": "Source-compatible analytic Scoring (0,0) run exactly reproduces the historical mean, cooperative fraction, residual and 16000 strategy steps.",
+  "historical_environment_limit": "The original Delaunay triangulation version/topology is not identified. Current-environment full-one-step prefix values do not exactly reproduce the original record."
+}

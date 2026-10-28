@@ -1,0 +1,46 @@
+{
+  "scope": "Existing ED2 tables and ED4 repeated runs were reused. Only ED4 aggregation and ED2 drift curves were calculated; full parameter integrations were not rerun.",
+  "notebooks": {
+    "Extended_Data_Figure2.ipynb": {
+      "executed_code_cells": 5,
+      "execution_errors": 0,
+      "pdf": 13,
+      "svg": 13,
+      "full_recompute": false,
+      "visual_review": "All PDFs rendered; combined figure and individual contact sheets inspected."
+    },
+    "Extended_Data_Figure4.ipynb": {
+      "executed_code_cells": 5,
+      "execution_errors": 0,
+      "pdf": 5,
+      "svg": 5,
+      "full_recompute": false,
+      "visual_review": "All PDFs rendered; combined figure and individual contact sheets inspected."
+    }
+  },
+  "data_checks": {
+    "three_curve_equilibria.csv": {
+      "identical_to_source": true,
+      "rows": 18
+    },
+    "alpha_beta_summary.csv": {
+      "identical_to_source": true,
+      "rows": 103684
+    },
+    "k1_k2_summary.csv": {
+      "identical_to_source": true,
+      "rows": 324
+    },
+    "k1_k2_all_equilibria.csv": {
+      "identical_to_source": true,
+      "rows": 630
+    },
+    "ED4_summary": {
+      "rows": 540,
+      "max_mean_difference": 3.851859888774472e-34,
+      "max_sem_difference": 7.703719777548943e-34,
+      "all_saved_gates_passed": true
+    },
+    "configuration_note": "The ED4 method description now names its mean, individual-change and residual-q99 gates; scientific parameters and saved numerical data are unchanged."
+  }
+}

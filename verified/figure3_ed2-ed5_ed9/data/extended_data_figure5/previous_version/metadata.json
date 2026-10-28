@@ -1,0 +1,59 @@
+{
+  "source_notebook": "Fig3_e1_e2_error_shields_three_inertia_3x4.ipynb",
+  "equation": "all-good scalar reputation relaxation; RK4",
+  "data_source": "external numerical grids",
+  "python": "3.11.3",
+  "numpy": "1.24.3",
+  "configuration": {
+    "b_over_c": 5.0,
+    "max_error": 0.45,
+    "grid_points": 241,
+    "relax_dt": 0.18,
+    "relax_tolerance": 1e-09,
+    "max_relax_steps": 120000,
+    "invasion_tolerance": 1e-10,
+    "norms": {
+      "SC": [
+        1.0,
+        0.0
+      ],
+      "SH": [
+        0.0,
+        0.0
+      ],
+      "SJ": [
+        0.0,
+        1.0
+      ],
+      "SS": [
+        1.0,
+        1.0
+      ]
+    },
+    "multistep_depths": {
+      "SC": [
+        2,
+        0
+      ],
+      "SH": [
+        3,
+        0
+      ],
+      "SJ": [
+        4,
+        3
+      ],
+      "SS": [
+        1,
+        2
+      ]
+    }
+  },
+  "total_grid_points": 696972,
+  "categories": {
+    "0": "ALLD not excluded",
+    "1": "ALLD excluded; ALLC invades",
+    "2": "DISC resists both"
+  },
+  "classification": "ALLD non-exclusion takes precedence; finite numerical tolerances apply."
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Existing figure5 data and notebook default execution; selected resident/curve recomputation, fold and upper-boundary checks, quantitative-chain identities. Full alpha scan not rerun.",
+  "notebook_executed_code_cells": 5,
+  "notebook_errors": 0,
+  "pdf": 3,
+  "svg": 3,
+  "panel_a_cases": {
+    "one_step": {
+      "resident_reputation": 0.0,
+      "mutant_reputation_max": 3.3306690738754696e-16,
+      "invasion_advantage_max": 1.9984014443252818e-15
+    },
+    "multistep_full": {
+      "resident_reputation": 0.0,
+      "mutant_reputation_max": 5.551115123125783e-16,
+      "invasion_advantage_max": 2.886579864025407e-15
+    },
+    "multistep_adjusted": {
+      "resident_reputation": 0.0,
+      "mutant_reputation_max": 4.440892098500626e-16,
+      "invasion_advantage_max": 2.220446049250313e-15
+    },
+    "aggregation": {
+      "resident_reputation": 1.1102230246251565e-16,
+      "mutant_reputation_max": 3.122502256758253e-16,
+      "invasion_advantage_max": 2.220446049250313e-15
+    },
+    "quantitative": {
+      "resident_reputation": 1.1102230246251565e-16,
+      "mutant_reputation_max": 6.661338147750939e-16,
+      "invasion_advantage_max": 3.774758283725532e-15
+    }
+  },
+  "five_quantitative_chain_checks_max_error": 7.294512216482474e-16,
+  "readout_scan_points_checked": 1006,
+  "readout_scan_max_fixed_point_residual": 9.747758156208874e-14,
+  "readout_scan_max_flow_derivative": -0.001315748772816705,
+  "refined_interior_crossings_checked": 198,
+  "refined_interior_crossing_max_error": 1.7186252421197423e-13,
+  "saved_alpha_delta_map_shape": [
+    1006,
+    1001
+  ],
+  "saved_map_max_formula_difference": 5.329070518200751e-15,
+  "saved_map_threshold_mismatches_above_tolerance": 0,
+  "alpha_lower_fold": 0.5669858454289226,
+  "alpha_upper": 0.8036039714620472,
+  "source_validation_records": 2017,
+  "source_max_payoff_reconstruction_error": 4.871386740702219e-13,
+  "safety_limit": "Saved analysis uses a finite nonuniform delta grid, sign-change bracketing and pointwise checks; no exhaustive proof against all possible narrower positive intervals is claimed.",
+  "presentation": "Final visible PDF has two panels and no inset; open circles indicate nonzero crossings. Negative tails are clipped below -0.15 in the graph, while all curve values remain in CSV.",
+  "visual_review": "All three final PDFs rendered; both single panels and combined figure inspected after the final English titles were added.",
+  "all_five_resident_flow_derivatives_negative": true
+}

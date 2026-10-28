@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="443.62425pt" height="145.915503pt" viewBox="0 0 443.62425 145.915503" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-27T18:03:18.207961</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 145.915503 
+L 443.62425 145.915503 
+L 443.62425 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 38.98425 111.744 
+L 440.74425 111.744 
+L 440.74425 2.88 
+L 38.98425 2.88 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 138.009602 111.744 
+L 138.009602 2.88 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d0d0d0; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 239.86425 111.744 
+L 239.86425 2.88 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d0d0d0; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 341.718898 111.744 
+L 341.718898 2.88 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d0d0d0; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_4"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="58.78932" y="121.516" transform="rotate(-0 58.78932 121.516)">None</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_5"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="87.082278" y="121.516" transform="rotate(-0 87.082278 121.516)">One</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="115.375236" y="121.516" transform="rotate(-0 115.375236 121.516)">Multi</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7"/>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="160.643968" y="121.516" transform="rotate(-0 160.643968 121.516)">None</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="188.936926" y="121.516" transform="rotate(-0 188.936926 121.516)">One</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="217.229884" y="121.516" transform="rotate(-0 217.229884 121.516)">Multi</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="262.498616" y="121.516" transform="rotate(-0 262.498616 121.516)">None</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_11"/>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="290.791574" y="121.516" transform="rotate(-0 290.791574 121.516)">One</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="319.084532" y="121.516" transform="rotate(-0 319.084532 121.516)">Multi</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_13"/>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="364.353264" y="121.516" transform="rotate(-0 364.353264 121.516)">None</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_14"/>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="392.646222" y="121.516" transform="rotate(-0 392.646222 121.516)">One</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_15"/>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="420.93918" y="121.516" transform="rotate(-0 420.93918 121.516)">Multi</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_16">
+      <path d="M 38.98425 111.744 
+L 440.74425 111.744 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d9d9d9; stroke-opacity: 0.45; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17">
+      <defs>
+       <path id="m7cb55bfb04" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7cb55bfb04" x="38.98425" y="111.744" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: end" x="31.98425" y="114.88" transform="rotate(-0 31.98425 114.88)">0.00</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_18">
+      <path d="M 38.98425 85.824 
+L 440.74425 85.824 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d9d9d9; stroke-opacity: 0.45; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m7cb55bfb04" x="38.98425" y="85.824" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: end" x="31.98425" y="88.96" transform="rotate(-0 31.98425 88.96)">0.25</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_20">
+      <path d="M 38.98425 59.904 
+L 440.74425 59.904 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d9d9d9; stroke-opacity: 0.45; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m7cb55bfb04" x="38.98425" y="59.904" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: end" x="31.98425" y="63.04" transform="rotate(-0 31.98425 63.04)">0.50</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_22">
+      <path d="M 38.98425 33.984 
+L 440.74425 33.984 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d9d9d9; stroke-opacity: 0.45; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m7cb55bfb04" x="38.98425" y="33.984" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: end" x="31.98425" y="37.12" transform="rotate(-0 31.98425 37.12)">0.75</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_24">
+      <path d="M 38.98425 8.064 
+L 440.74425 8.064 
+" clip-path="url(#p54392f693b)" style="fill: none; stroke: #d9d9d9; stroke-opacity: 0.45; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m7cb55bfb04" x="38.98425" y="8.064" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 8px; font-family: 'TeX Gyre Heros'; text-anchor: end" x="31.98425" y="11.2" transform="rotate(-0 31.98425 11.2)">1.00</text>
+     </g>
+    </g>
+    <g id="text_18">
+     <!-- Mean cooperation, $\bar\rho$ -->
+     <g transform="translate(10.328 100.442) rotate(-90)">
+      <text>
+       <tspan x="0" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">M</tspan>
+       <tspan x="7.913528" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">e</tspan>
+       <tspan x="13.195541" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">a</tspan>
+       <tspan x="18.477554" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">n</tspan>
+       <tspan x="23.759567" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'"> </tspan>
+       <tspan x="26.400574" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">c</tspan>
+       <tspan x="31.150589" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">o</tspan>
+       <tspan x="36.432602" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">o</tspan>
+       <tspan x="41.714615" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">p</tspan>
+       <tspan x="46.996628" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">e</tspan>
+       <tspan x="52.278641" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">r</tspan>
+       <tspan x="55.442154" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">a</tspan>
+       <tspan x="60.724167" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">t</tspan>
+       <tspan x="63.365173" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">i</tspan>
+       <tspan x="65.474182" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">o</tspan>
+       <tspan x="70.756195" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">n</tspan>
+       <tspan x="76.038208" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'">,</tspan>
+       <tspan x="78.679214" y="-0.078125" style="font-size: 9.5px; font-family: 'TeX Gyre Heros'"> </tspan>
+       <tspan x="86.187408" y="-0.25" style="font-size: 9.5px; font-family: 'STIXGeneral'">̄</tspan>
+       <tspan x="81.320221" y="-0.078125" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">ρ</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 38.98425 111.744 
+L 38.98425 2.88 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 38.98425 111.744 
+L 440.74425 111.744 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 47.896532 111.744 
+L 58.081996 111.744 
+L 58.081996 48.523624 
+L 47.896532 48.523624 
+z
+" clip-path="url(#p54392f693b)" style="fill: #6b6b6b; stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 59.496644 111.744 
+L 69.682109 111.744 
+L 69.682109 48.523624 
+L 59.496644 48.523624 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h2e49a86177); stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 76.189489 111.744 
+L 86.374954 111.744 
+L 86.374954 50.453305 
+L 76.189489 50.453305 
+z
+" clip-path="url(#p54392f693b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 87.789602 111.744 
+L 97.975067 111.744 
+L 97.975067 50.453305 
+L 87.789602 50.453305 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h219e57509b); stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 104.482447 111.744 
+L 114.667912 111.744 
+L 114.667912 22.048412 
+L 104.482447 22.048412 
+z
+" clip-path="url(#p54392f693b)" style="fill: #d55e00; stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 116.08256 111.744 
+L 126.268025 111.744 
+L 126.268025 22.048412 
+L 116.08256 22.048412 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h39d9dbd54a); stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 149.75118 111.744 
+L 159.936644 111.744 
+L 159.936644 111.744 
+L 149.75118 111.744 
+z
+" clip-path="url(#p54392f693b)" style="fill: #6b6b6b; stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 161.351292 111.744 
+L 171.536757 111.744 
+L 171.536757 111.744 
+L 161.351292 111.744 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h2e49a86177); stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; text-anchor: middle; fill: #303030" x="160.643968" y="107.7264" transform="rotate(-0 160.643968 107.7264)">0</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 178.044137 111.744 
+L 188.229602 111.744 
+L 188.229602 103.843421 
+L 178.044137 103.843421 
+z
+" clip-path="url(#p54392f693b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 189.64425 111.744 
+L 199.829715 111.744 
+L 199.829715 111.743899 
+L 189.64425 111.743899 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h219e57509b); stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(185.01127 101.251421) rotate(-90)">0.076</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(196.611382 109.151899) rotate(-90)">0.000</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 206.337095 111.744 
+L 216.52256 111.744 
+L 216.52256 40.103661 
+L 206.337095 40.103661 
+z
+" clip-path="url(#p54392f693b)" style="fill: #d55e00; stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 217.937208 111.744 
+L 228.122673 111.744 
+L 228.122673 40.103661 
+L 217.937208 40.103661 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h39d9dbd54a); stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 251.605827 111.744 
+L 261.791292 111.744 
+L 261.791292 111.744 
+L 251.605827 111.744 
+z
+" clip-path="url(#p54392f693b)" style="fill: #6b6b6b; stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 263.20594 111.744 
+L 273.391405 111.744 
+L 273.391405 111.744 
+L 263.20594 111.744 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h2e49a86177); stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; text-anchor: middle; fill: #303030" x="262.498616" y="107.7264" transform="rotate(-0 262.498616 107.7264)">0</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 279.898785 111.744 
+L 290.08425 111.744 
+L 290.08425 88.43675 
+L 279.898785 88.43675 
+z
+" clip-path="url(#p54392f693b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 291.498898 111.744 
+L 301.684363 111.744 
+L 301.684363 111.744 
+L 291.498898 111.744 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h219e57509b); stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(286.865918 85.84475) rotate(-90)">0.225</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(298.46603 109.152) rotate(-90)">0.000</text>
+   </g>
+   <g id="patch_21">
+    <path d="M 308.191743 111.744 
+L 318.377208 111.744 
+L 318.377208 39.309769 
+L 308.191743 39.309769 
+z
+" clip-path="url(#p54392f693b)" style="fill: #d55e00; stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 319.791856 111.744 
+L 329.97732 111.744 
+L 329.97732 38.515969 
+L 319.791856 38.515969 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h39d9dbd54a); stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(315.158875 36.717769) rotate(-90)">0.699</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.6px; font-family: 'TeX Gyre Heros'; fill: #303030" transform="translate(326.758988 35.923969) rotate(-90)">0.706</text>
+   </g>
+   <g id="patch_23">
+    <path d="M 353.460475 111.744 
+L 363.64594 111.744 
+L 363.64594 55.401592 
+L 353.460475 55.401592 
+z
+" clip-path="url(#p54392f693b)" style="fill: #6b6b6b; stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 365.060588 111.744 
+L 375.246053 111.744 
+L 375.246053 55.401592 
+L 365.060588 55.401592 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h2e49a86177); stroke: #6b6b6b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 381.753433 111.744 
+L 391.938898 111.744 
+L 391.938898 39.577918 
+L 381.753433 39.577918 
+z
+" clip-path="url(#p54392f693b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 393.353546 111.744 
+L 403.539011 111.744 
+L 403.539011 39.577918 
+L 393.353546 39.577918 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h219e57509b); stroke: #0077bb; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 410.046391 111.744 
+L 420.231856 111.744 
+L 420.231856 34.915642 
+L 410.046391 34.915642 
+z
+" clip-path="url(#p54392f693b)" style="fill: #d55e00; stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 421.646504 111.744 
+L 431.831968 111.744 
+L 431.831968 34.915642 
+L 421.646504 34.915642 
+z
+" clip-path="url(#p54392f693b)" style="fill: url(#h39d9dbd54a); stroke: #d55e00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9.5px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="87.082278" y="140.9648" transform="rotate(-0 87.082278 140.9648)">Scoring</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 9.5px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="188.936926" y="140.9648" transform="rotate(-0 188.936926 140.9648)">Shunning</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9.5px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="290.791574" y="140.9648" transform="rotate(-0 290.791574 140.9648)">Stern Judging</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9.5px; font-family: 'TeX Gyre Heros'; text-anchor: middle" x="392.646222" y="140.9648" transform="rotate(-0 392.646222 140.9648)">Simple Standing</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p54392f693b">
+   <rect x="38.98425" y="2.88" width="401.76" height="108.864"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="h2e49a86177" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#ffffff"/>
+   <path d="M -36 36 
+L 36 -36 
+M -34 38 
+L 38 -34 
+M -32 40 
+L 40 -32 
+M -30 42 
+L 42 -30 
+M -28 44 
+L 44 -28 
+M -26 46 
+L 46 -26 
+M -24 48 
+L 48 -24 
+M -22 50 
+L 50 -22 
+M -20 52 
+L 52 -20 
+M -18 54 
+L 54 -18 
+M -16 56 
+L 56 -16 
+M -14 58 
+L 58 -14 
+M -12 60 
+L 60 -12 
+M -10 62 
+L 62 -10 
+M -8 64 
+L 64 -8 
+M -6 66 
+L 66 -6 
+M -4 68 
+L 68 -4 
+M -2 70 
+L 70 -2 
+M 0 72 
+L 72 0 
+M 2 74 
+L 74 2 
+M 4 76 
+L 76 4 
+M 6 78 
+L 78 6 
+M 8 80 
+L 80 8 
+M 10 82 
+L 82 10 
+M 12 84 
+L 84 12 
+M 14 86 
+L 86 14 
+M 16 88 
+L 88 16 
+M 18 90 
+L 90 18 
+M 20 92 
+L 92 20 
+M 22 94 
+L 94 22 
+M 24 96 
+L 96 24 
+M 26 98 
+L 98 26 
+M 28 100 
+L 100 28 
+M 30 102 
+L 102 30 
+M 32 104 
+L 104 32 
+M 34 106 
+L 106 34 
+M 36 108 
+L 108 36 
+" style="fill: #6b6b6b; stroke: #6b6b6b; stroke-width: 0.5; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+  <pattern id="h219e57509b" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#ffffff"/>
+   <path d="M -36 36 
+L 36 -36 
+M -34 38 
+L 38 -34 
+M -32 40 
+L 40 -32 
+M -30 42 
+L 42 -30 
+M -28 44 
+L 44 -28 
+M -26 46 
+L 46 -26 
+M -24 48 
+L 48 -24 
+M -22 50 
+L 50 -22 
+M -20 52 
+L 52 -20 
+M -18 54 
+L 54 -18 
+M -16 56 
+L 56 -16 
+M -14 58 
+L 58 -14 
+M -12 60 
+L 60 -12 
+M -10 62 
+L 62 -10 
+M -8 64 
+L 64 -8 
+M -6 66 
+L 66 -6 
+M -4 68 
+L 68 -4 
+M -2 70 
+L 70 -2 
+M 0 72 
+L 72 0 
+M 2 74 
+L 74 2 
+M 4 76 
+L 76 4 
+M 6 78 
+L 78 6 
+M 8 80 
+L 80 8 
+M 10 82 
+L 82 10 
+M 12 84 
+L 84 12 
+M 14 86 
+L 86 14 
+M 16 88 
+L 88 16 
+M 18 90 
+L 90 18 
+M 20 92 
+L 92 20 
+M 22 94 
+L 94 22 
+M 24 96 
+L 96 24 
+M 26 98 
+L 98 26 
+M 28 100 
+L 100 28 
+M 30 102 
+L 102 30 
+M 32 104 
+L 104 32 
+M 34 106 
+L 106 34 
+M 36 108 
+L 108 36 
+" style="fill: #0077bb; stroke: #0077bb; stroke-width: 0.5; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+  <pattern id="h39d9dbd54a" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#ffffff"/>
+   <path d="M -36 36 
+L 36 -36 
+M -34 38 
+L 38 -34 
+M -32 40 
+L 40 -32 
+M -30 42 
+L 42 -30 
+M -28 44 
+L 44 -28 
+M -26 46 
+L 46 -26 
+M -24 48 
+L 48 -24 
+M -22 50 
+L 50 -22 
+M -20 52 
+L 52 -20 
+M -18 54 
+L 54 -18 
+M -16 56 
+L 56 -16 
+M -14 58 
+L 58 -14 
+M -12 60 
+L 60 -12 
+M -10 62 
+L 62 -10 
+M -8 64 
+L 64 -8 
+M -6 66 
+L 66 -6 
+M -4 68 
+L 68 -4 
+M -2 70 
+L 70 -2 
+M 0 72 
+L 72 0 
+M 2 74 
+L 74 2 
+M 4 76 
+L 76 4 
+M 6 78 
+L 78 6 
+M 8 80 
+L 80 8 
+M 10 82 
+L 82 10 
+M 12 84 
+L 84 12 
+M 14 86 
+L 86 14 
+M 16 88 
+L 88 16 
+M 18 90 
+L 90 18 
+M 20 92 
+L 92 20 
+M 22 94 
+L 94 22 
+M 24 96 
+L 96 24 
+M 26 98 
+L 98 26 
+M 28 100 
+L 100 28 
+M 30 102 
+L 102 30 
+M 32 104 
+L 104 32 
+M 34 106 
+L 106 34 
+M 36 108 
+L 108 36 
+" style="fill: #d55e00; stroke: #d55e00; stroke-width: 0.5; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+ </defs>
+</svg>

@@ -1,0 +1,79 @@
+{
+  "scope": "Default notebook execution, data consistency, export format and release-file checks. Full depth and repeated-recognition simulations were not rerun.",
+  "notebooks": {
+    "Figure2.ipynb": {
+      "code_cells": 8,
+      "executed_code_cells": 8,
+      "english_source": true,
+      "relative_paths": true,
+      "embedded_raw_data": false,
+      "execution_errors": 0
+    },
+    "Extended_Data_Figure1.ipynb": {
+      "code_cells": 6,
+      "executed_code_cells": 6,
+      "english_source": true,
+      "relative_paths": true,
+      "embedded_raw_data": false,
+      "execution_errors": 0
+    }
+  },
+  "figures": {
+    "figure2": {
+      "pdf": 17,
+      "svg": 17,
+      "svg_xml_valid": true,
+      "visual_review": "Combined figure and all individual panels rendered and inspected."
+    },
+    "extended_data_figure1": {
+      "pdf": 9,
+      "svg": 9,
+      "svg_xml_valid": true,
+      "visual_review": "Combined figure and all individual panels rendered and inspected."
+    }
+  },
+  "data": {
+    "figure2": {
+      "snapshots": 12,
+      "shape": [
+        30,
+        90
+      ],
+      "seed": 2027,
+      "snapshot_simulation_events": 32400000,
+      "depth_raw_rows": 196,
+      "depth_summary_rows": 196,
+      "depth_replicates_per_condition": 1,
+      "depth_saved_values_match_source": true
+    },
+    "extended_data_figure1": {
+      "raw_rows": 5880,
+      "architectures": 196,
+      "replicates_per_architecture": 30,
+      "sampling_windows": [
+        {
+          "sweep_count": 1000,
+          "burnin": 800,
+          "interval": 5,
+          "n_samples": 41,
+          "replicates": 5820
+        },
+        {
+          "sweep_count": 3000,
+          "burnin": 2400,
+          "interval": 5,
+          "n_samples": 121,
+          "replicates": 30
+        },
+        {
+          "sweep_count": 50000,
+          "burnin": 40000,
+          "interval": 5,
+          "n_samples": 2001,
+          "replicates": 30
+        }
+      ],
+      "recomputed_statistics_match_source_atol": 1e-12
+    }
+  }
+}

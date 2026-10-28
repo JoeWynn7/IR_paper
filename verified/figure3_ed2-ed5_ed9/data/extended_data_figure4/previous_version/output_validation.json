@@ -1,0 +1,10 @@
+{
+  "raw_rows": 4320,
+  "summary_rows": 540,
+  "invasion_rules": 12,
+  "all_saved_observable_stability_gates_passed": true,
+  "statistics_recomputed": true,
+  "full_strategy_integrations_rerun": false,
+  "cooperation_measure": "intended",
+  "uncertainty": "SEM of eight independent run means"
+}

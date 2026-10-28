@@ -1,0 +1,11 @@
+norm,condition,f_DISC,r_DISC_jump,kind
+SC,without,0.2125,2.7653998519103218e-05,continuous (edge equilibrium)
+SC,one,0.8955,0.8583093695364613,discontinuous (fold)
+SC,multi,0.0795,0.0005341053111440064,continuous (edge equilibrium)
+SH,one,0.9715,0.9685449246263214,discontinuous (fold)
+SH,multi,0.5105,0.6747526744698642,discontinuous (fold)
+SJ,one,0.7745,0.4651158807918041,discontinuous (fold)
+SJ,multi,0.2825,0.0027422162842141162,continuous (edge equilibrium)
+SS,without,0.3565,8.387931898135026e-05,continuous (edge equilibrium)
+SS,one,0.2385,0.00020088794247696828,continuous (edge equilibrium)
+SS,multi,0.2065,0.0002937906003956936,continuous (edge equilibrium)

@@ -1,0 +1,312 @@
+{
+  "figures/ed3_simplex/ED3_simplex_combined.pdf": {
+    "pages": 1,
+    "width_pt": 810.4789692848,
+    "height_pt": 368.0432991887
+  },
+  "figures/ed3_simplex/strictness_only_SC.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/strictness_only_SH.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/strictness_only_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/strictness_only_SS.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/tolerance_only_SC.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/tolerance_only_SH.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/tolerance_only_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/ed3_simplex/tolerance_only_SS.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/extended_data_figure2/Extended_Data_Figure2_combined.pdf": {
+    "pages": 1,
+    "width_pt": 1052.0825,
+    "height_pt": 729.69055
+  },
+  "figures/extended_data_figure2/panel_a_SC_drift.pdf": {
+    "pages": 1,
+    "width_pt": 283.484125,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_b_SH_drift.pdf": {
+    "pages": 1,
+    "width_pt": 285.0935,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_c_SJ_drift.pdf": {
+    "pages": 1,
+    "width_pt": 278.390375,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_d_SS_drift.pdf": {
+    "pages": 1,
+    "width_pt": 278.390375,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_e_SC_readout.pdf": {
+    "pages": 1,
+    "width_pt": 296.51675,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_f_SH_readout.pdf": {
+    "pages": 1,
+    "width_pt": 296.51675,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_g_SJ_readout.pdf": {
+    "pages": 1,
+    "width_pt": 296.51675,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_h_SS_readout.pdf": {
+    "pages": 1,
+    "width_pt": 296.51675,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_i_SC_depth.pdf": {
+    "pages": 1,
+    "width_pt": 288.876125,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_j_SH_depth.pdf": {
+    "pages": 1,
+    "width_pt": 288.876125,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_k_SJ_depth.pdf": {
+    "pages": 1,
+    "width_pt": 288.876125,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure2/panel_l_SS_depth.pdf": {
+    "pages": 1,
+    "width_pt": 288.876125,
+    "height_pt": 234.58375
+  },
+  "figures/extended_data_figure3_planes/Extended_Data_Figure3_planes_combined.pdf": {
+    "pages": 1,
+    "width_pt": 908.618175,
+    "height_pt": 495.7377584746
+  },
+  "figures/extended_data_figure3_planes/cooperation_SC.pdf": {
+    "pages": 1,
+    "width_pt": 302.433695,
+    "height_pt": 251.11125
+  },
+  "figures/extended_data_figure3_planes/cooperation_SH.pdf": {
+    "pages": 1,
+    "width_pt": 302.433695,
+    "height_pt": 251.11125
+  },
+  "figures/extended_data_figure3_planes/cooperation_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 302.433695,
+    "height_pt": 251.11125
+  },
+  "figures/extended_data_figure3_planes/cooperation_SS.pdf": {
+    "pages": 1,
+    "width_pt": 302.433695,
+    "height_pt": 251.11125
+  },
+  "figures/extended_data_figure3_planes/invasion_SC.pdf": {
+    "pages": 1,
+    "width_pt": 240.5001875,
+    "height_pt": 290.96975
+  },
+  "figures/extended_data_figure3_planes/invasion_SH.pdf": {
+    "pages": 1,
+    "width_pt": 240.5001875,
+    "height_pt": 290.96975
+  },
+  "figures/extended_data_figure3_planes/invasion_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 240.5001875,
+    "height_pt": 290.96975
+  },
+  "figures/extended_data_figure3_planes/invasion_SS.pdf": {
+    "pages": 1,
+    "width_pt": 240.5001875,
+    "height_pt": 290.96975
+  },
+  "figures/extended_data_figure4/Extended_Data_Figure4_combined.pdf": {
+    "pages": 1,
+    "width_pt": 688.22975,
+    "height_pt": 446.9272
+  },
+  "figures/extended_data_figure4/panel_SC.pdf": {
+    "pages": 1,
+    "width_pt": 273.746125,
+    "height_pt": 183.95375
+  },
+  "figures/extended_data_figure4/panel_SH.pdf": {
+    "pages": 1,
+    "width_pt": 273.746125,
+    "height_pt": 183.95375
+  },
+  "figures/extended_data_figure4/panel_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 273.746125,
+    "height_pt": 183.95375
+  },
+  "figures/extended_data_figure4/panel_SS.pdf": {
+    "pages": 1,
+    "width_pt": 273.746125,
+    "height_pt": 183.95375
+  },
+  "figures/extended_data_figure5/Extended_Data_Figure5_combined.pdf": {
+    "pages": 1,
+    "width_pt": 881.46,
+    "height_pt": 653.7091603586
+  },
+  "figures/extended_data_figure5/multistep_full_SC.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/multistep_full_SH.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/multistep_full_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/multistep_full_SS.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/no_inertia_SC.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/no_inertia_SH.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/no_inertia_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/no_inertia_SS.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/one_step_full_SC.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/one_step_full_SH.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/one_step_full_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/extended_data_figure5/one_step_full_SS.pdf": {
+    "pages": 1,
+    "width_pt": 223.248125,
+    "height_pt": 230.4825
+  },
+  "figures/figure3/Figure3_combined.pdf": {
+    "pages": 1,
+    "width_pt": 810.4789692848,
+    "height_pt": 548.4757012858
+  },
+  "figures/figure3/multi_step_SC.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/multi_step_SH.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/multi_step_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/multi_step_SS.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/one_step_SC.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/one_step_SH.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/one_step_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/one_step_SS.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/without_inertia_SC.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/without_inertia_SH.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/without_inertia_SJ.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  },
+  "figures/figure3/without_inertia_SS.pdf": {
+    "pages": 1,
+    "width_pt": 185.76,
+    "height_pt": 157.5387471322
+  }
+}

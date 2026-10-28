@@ -1,0 +1,69 @@
+{
+  "release_date": "2026-10-27",
+  "notebooks": {
+    "Extended_Data_Figure2.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0
+    },
+    "Extended_Data_Figure3_Planes.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0
+    },
+    "Extended_Data_Figure4.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0
+    },
+    "Extended_Data_Figure5.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0
+    },
+    "Figure3_Simplex_Dynamics.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0
+    }
+  },
+  "figure_counts": {
+    "figure3": {
+      "pdf": 13,
+      "svg": 13
+    },
+    "ed3_simplex": {
+      "pdf": 9,
+      "svg": 9
+    },
+    "extended_data_figure2": {
+      "pdf": 13,
+      "svg": 13
+    },
+    "extended_data_figure3_planes": {
+      "pdf": 9,
+      "svg": 9
+    },
+    "extended_data_figure4": {
+      "pdf": 5,
+      "svg": 5
+    },
+    "extended_data_figure5": {
+      "pdf": 13,
+      "svg": 13
+    }
+  },
+  "individual_panels": 56,
+  "combined_figures": 6,
+  "total_pdf": 62,
+  "total_svg": 62,
+  "svg_xml_valid": true,
+  "relative_markdown_links_checked": 11,
+  "public_text_and_notebook_sources": "English; no private-machine absolute paths or embedded raw-data block.",
+  "raster_export_files": 0,
+  "original_ED3_source_hashes_match": {
+    "ESS_all_norms_N801.csv": "4f10ae1cb46e6dbf86719f79e5a6755bc882643ae022b234a72c385eab7122f5",
+    "23_alpha_beta_dense41.csv": "3e2462bb8cb24c3ae25017a5c9d75a6597f443419b3acc688162825311f21586"
+  },
+  "numerical_checks": "See saved_equation_checks.json and figure-specific validation files.",
+  "recomputed_scope": "All 20 simplex fields, 181 failed ED3 invasion points, all twelve ED5 error planes, ED2 drift curves and ED4 summary statistics.",
+  "not_recomputed": "Full ED2 parameter scans, full ED3 cooperation scan and invasion grids, ED4 trajectory ensemble.",
+  "historical_provenance_limit": "The exact historical execution entry points for the final dense41 cooperation and original 801-point invasion tables remain unidentified.",
+  "pdf_readable_single_pages": 62,
+  "results_guide": "Results_Figure3_and_ED2_to_ED5.md; see results_guide_checks.json for document checks."
+}

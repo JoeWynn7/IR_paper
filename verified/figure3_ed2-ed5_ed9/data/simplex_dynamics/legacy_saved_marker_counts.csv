@@ -1,0 +1,21 @@
+case,legacy_saved_marker_count,source,interpretation
+without_inertia_SC,12,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+without_inertia_SH,3,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+without_inertia_SJ,3,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+without_inertia_SS,5,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+one_step_SC,5,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+one_step_SH,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+one_step_SJ,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+one_step_SS,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+multi_step_SC,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+multi_step_SH,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+multi_step_SJ,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+multi_step_SS,5,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+tolerance_only_SC,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+tolerance_only_SH,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+tolerance_only_SJ,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+tolerance_only_SS,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+strictness_only_SC,4,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+strictness_only_SH,3,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+strictness_only_SJ,3,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.
+strictness_only_SS,5,Fig3_simplex_dynamics.ipynb saved batch stdout,Historical marker count; may include samples from non-isolated sets.

@@ -1,0 +1,25 @@
+{
+  "model": {
+    "b_over_c": 5.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "k1": 1,
+    "k2": 1
+  },
+  "invasion_points": 801,
+  "cooperation_points": 41,
+  "invasion_source": "Extended_Data_Figure3_Planes.ipynb (all-good relaxation, polynomial fallback, Newton refinement)",
+  "invasion_relaxation": {
+    "dt": 0.18,
+    "tolerance": 1e-11,
+    "max_steps": 120000,
+    "polish_tolerance": 1e-13,
+    "polish_max_step": 1e-06
+  },
+  "invasion_classification": "region 0: lambda_ALLD >= -1e-10 (ALLD not excluded); region 1: lambda_ALLC > 1e-10 (ALLC invades); region 2: DISC resists both",
+  "cooperation_source": "cooperation_readout_plane.csv",
+  "cooperation_sha256": "741d99d365821cb593e7efacda38e4de1c85829d8bbd9f4dba909ce7e678682a",
+  "cooperation_measure": "Mean long-run realized cooperation over 512 shifted-Halton initial compositions (seed 2026)",
+  "cooperation_generator": "../../../engine/scan.py readout; ../../../engine/postprocess.py readout",
+  "previous_version": "previous_version/ (earlier cooperation table, repair records and configuration)"
+}

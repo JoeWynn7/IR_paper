@@ -1,0 +1,37 @@
+{
+  "model": {
+    "b_over_c": 5.0,
+    "e1": 0.02,
+    "e2": 0.02,
+    "alpha": 1.0,
+    "beta": 1.0,
+    "k1": 1,
+    "k2": 1
+  },
+  "numerical": {
+    "mesh_resolution": 23,
+    "n_initial": 512,
+    "chunk_steps": 4000,
+    "max_chunks": 64,
+    "stable_checks": 2,
+    "mean_tolerance": 2e-05
+  },
+  "seed": 2026,
+  "sampler": "Source shifted-Halton fallback, base2/base3 radical inverses at indices1..512; RandomState(2026) shift modulo1; reflect points above triangle diagonal.",
+  "strategy_integrator": "Original interpolated RK2 dt=0.1; per-trajectory interpolation residual tolerance 1e-6.",
+  "reputation_integrator": "Original all-good RK4; dt=0.1, 20000 steps, then continuation dt=0.2, 80000 steps; residual tolerance 1e-9.",
+  "gate": "Original mean realized-cooperation change <=2e-5 for two consecutive chunks; no stronger gate substituted.",
+  "modification": "Only max_chunks increased from 8 to 64 for three failed conditions.",
+  "source_code": "24_server_k1_k2_scan.py",
+  "source_code_sha256": "1dcf6fdb8e7088b75e77be5141045d50c5a53cedde6c301d5befef1751e5939c",
+  "source_data": "24_k1_k2_publication.csv",
+  "source_data_sha256": "95bc1763e464fceb4fe91eefeebc427da3c24bd3381d1a3db084c74519967c6a",
+  "sampler_evidence": "Analytic no-inertia SC control reproduces the original24 source summary, including cooperation, basin fraction, steps and residual, to floating-point precision.",
+  "environment": {
+    "python": "3.11.3",
+    "numpy": "1.24.3",
+    "scipy": "1.10.1"
+  },
+  "status": "Accepted current-environment reconstructions of the three failed observable conditions.",
+  "reconstruction_limit": "Original final trajectory arrays and interpolation topology were not saved. The original32k summaries are not reproduced exactly for all conditions. These are new reconstructions from the identified initial sampler, not exact continuations of archived trajectories."
+}

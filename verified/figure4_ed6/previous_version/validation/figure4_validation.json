@@ -1,0 +1,18 @@
+{
+  "executed_code_cells": 5,
+  "errors": 0,
+  "pdf": 5,
+  "svg": 5,
+  "conditions": 180,
+  "observed_maxima": 36,
+  "unchanged_source_row_texts": 177,
+  "accepted_reconstructed_rows": 3,
+  "source_table_sha256": "eed2b7ccc44987ef8d396c5d5d8bbbc52923ba2aa2d03ff97b90a8f1cda7d8c2",
+  "display_depths": "K=0..8; original K9,10 rows excluded",
+  "local_protection_flags": "Source strict negative ALLD and ALLC advantages; preserved as data, not a plotted Figure4 category.",
+  "winning_allocation_labels_unchanged": true,
+  "changed_envelope_value": "SS K2, (1,1), 0.6980023101907575 -> 0.6979881698905614",
+  "visual_review": "Five PDFs rendered and inspected; unchanged rendering after final default execution.",
+  "full_scan_repeated": false,
+  "convergence_scope": "Source repeated ensemble-mean change gate; every strategy trajectory is not required to converge."
+}

@@ -1,0 +1,5 @@
+# Fold and branch-selection analysis
+
+Copy of the technical report and scripts of the fold/branch analysis (also in `analysis/fold_investigation/` at the repository root). The analytical and branch results (fold locations, bistable ranges, branch selection by all-good relaxation, monotonicity arguments for SC and SH) are used unchanged in Extended Data Figure 8.
+
+Status of numerical values: sampled-cooperation values quoted in the report that were obtained with interpolated replicator fields (resolution-23 meshes, `code/dyn_mesh.py`) predate the correction described in `../../VERIFICATION_REPORT.md`. The verified values are those in `../../figure4_ed6/data/` and `../../figure3_ed2-ed5_ed9/data/` (for example, one-step SH 0.0762 rather than 0.0249). The initial-reputation population comparison in the report used a finite reputation timescale (`code/dyn.py`, tracking with four inner RK4 steps); the verified comparison (quasi-static tracking) is in `../../figure3_ed2-ed5_ed9/data/extended_data_figure2/population_initial_reputation.csv`.

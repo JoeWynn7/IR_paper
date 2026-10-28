@@ -1,0 +1,61 @@
+{
+  "source_notebook": "Extended_Data_Figure5.ipynb",
+  "equation": "all-good scalar reputation relaxation (RK4) followed by step-limited Newton refinement",
+  "data_source": "external numerical grids",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "configuration": {
+    "b_over_c": 5.0,
+    "max_error": 0.45,
+    "grid_points": 241,
+    "relax_dt": 0.18,
+    "relax_tolerance": 1e-09,
+    "max_relax_steps": 120000,
+    "invasion_tolerance": 1e-10,
+    "polish_tolerance": 1e-13,
+    "polish_max_step": 1e-06,
+    "norms": {
+      "SC": [
+        1.0,
+        0.0
+      ],
+      "SH": [
+        0.0,
+        0.0
+      ],
+      "SJ": [
+        0.0,
+        1.0
+      ],
+      "SS": [
+        1.0,
+        1.0
+      ]
+    },
+    "multistep_depths": {
+      "SC": [
+        2,
+        0
+      ],
+      "SH": [
+        3,
+        0
+      ],
+      "SJ": [
+        4,
+        3
+      ],
+      "SS": [
+        1,
+        2
+      ]
+    }
+  },
+  "total_grid_points": 696972,
+  "categories": {
+    "0": "ALLD not excluded",
+    "1": "ALLD excluded; ALLC invades",
+    "2": "DISC resists both"
+  },
+  "classification": "ALLD non-exclusion (lambda_ALLD >= -1e-10) takes precedence over ALLC invasion (lambda_ALLC > 1e-10); resident residual <= 1e-13."
+}

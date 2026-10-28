@@ -1,0 +1,18 @@
+SC 0.025 0.2 starts 8 agreement 8 / 8 steps 7720 563s
+  start [0.005 0.59  0.406] engine rho 0.9700 numpy rho 0.9700 final f [0.788 0.    0.212]
+  start [0.216 0.067 0.717] engine rho 0.9700 numpy rho 0.9700 final f [0.788 0.    0.212]
+  start [0.603 0.121 0.276] engine rho 0.9700 numpy rho 0.9700 final f [0.788 0.    0.212]
+  start [0.146 0.248 0.606] engine rho 0.9700 numpy rho 0.9700 final f [0.788 0.    0.212]
+  start [0.906 0.031 0.063] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+  start [0.069 0.645 0.286] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+  start [0.133 0.639 0.227] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+  start [0.958 0.026 0.016] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+
+SC 0.0 0.1 starts 6 agreement 6 / 6 steps 3486 268s
+  start [0.167 0.122 0.711] engine rho 0.9699 numpy rho 0.9699 final f [0.79 0.   0.21]
+  start [0.035 0.215 0.75 ] engine rho 0.9699 numpy rho 0.9699 final f [0.79 0.   0.21]
+  start [0.04  0.084 0.876] engine rho 0.9699 numpy rho 0.9699 final f [0.79 0.   0.21]
+  start [0.906 0.031 0.063] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+  start [0.11  0.574 0.317] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+  start [0.001 0.82  0.179] engine rho 0.0000 numpy rho 0.0000 final f [0. 1. 0.]
+

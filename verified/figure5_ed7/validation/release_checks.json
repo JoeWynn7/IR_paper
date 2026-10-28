@@ -1,0 +1,75 @@
+{
+  "scope": "Stored-data, sampled-equation, shared-point, source-hash, notebook, document-link and export checks. No complete parameter scan rerun.",
+  "numerical_examples": 24,
+  "direct_versus_rational_max_error": 2.2648549702353193e-14,
+  "maximum_rational_minimum_minus_1001_point_sample": 0.0,
+  "figure5_curve_rows": 25075,
+  "curve_formula_max_error": 3.5416114485542494e-13,
+  "figure5_alpha_delta_map_shape": [
+    1006,
+    1001
+  ],
+  "map_formula_max_error": 5.329070518200751e-15,
+  "shared_SJ_multistep_alpha_points": 203,
+  "shared_security_classification_disagreements": 0,
+  "shared_max_reputation_difference": 4.000133557724439e-13,
+  "SJ_multistep_boundary_tables_agree": true,
+  "previous_ED6_SS_iid_versus_ALLC_reference_consistent": true,
+  "original_source_hashes_match": {
+    "figure5/panel_a_curves.csv": "8b28de4aad97df8ca1113b529008b95bd7613d16e0a6f6a11cc025e47b11123c",
+    "figure5/panel_a_summary.csv": "eb315f31a0ae34558f49f802f1a78fb25e53fa17f1154e19a6838d6ce8a15dbf",
+    "figure5/multistep_full_alpha_summary.csv": "fc43ea3aae2c51d62ab8ab388417cc0b9626dbb4da26ce2245804a7d48569202",
+    "figure5/readout_boundaries.csv": "2b389aa82ce535043516588a75ac30dfbbc2020ef48f29782c179819aabd2a96",
+    "figure5/validation_checks.csv": "a263e472e6638b6ff64e52ac121f3872f4245a11d33ff0d253325e375dfb8e37",
+    "figure5/metadata.json": "75c486e83d905f0f7612fc59fc841a4393ea141f1ca9dda030988c58f126428c",
+    "figure5/multistep_full_alpha_delta_map.npz": "b122038b0dea14224fa56051aecffceee96e4bcf6a46a4ca2e6890c183520b0f",
+    "extended_data_figure7/c_complete_cooperation_profiles.csv": "d6976fb130a04afe9ea02a88ea3e83f63a275b27367ef23e93c3607ef423ba1d",
+    "extended_data_figure7/c_secure_alpha_intervals.csv": "c6dd84a6c6fcd8aa2d09eea7d75b82c92ace810fee4cbaeea7c29e842b37ee69",
+    "extended_data_figure7/benefit_alpha_intervals_both_mechanisms.csv": "822ade4cd9a51cc7cc658468a149581f0556e363fa19f4698eca5fc2e54fdd2a",
+    "extended_data_figure7/reference_point_08_5.csv": "d46f9321a047fc18335a24ed158d464c308f3faf9acdb206af02038efe875ee8",
+    "extended_data_figure7/validation_checks.csv": "ff93a6e93a774b221181a3a8de3fb097d304bacc620dfa7ae45b83cbe46d0d53",
+    "extended_data_figure7/onestep_SC_shared_fields.npz": "54f9105759765fca40a55a84c68801ef4909332879e65c660e2b5c468f14093e",
+    "extended_data_figure7/onestep_SH_shared_fields.npz": "be9d514cef0210e8bc3ebfbd851082e8bc756722c518bc631a3aa663835463d0",
+    "extended_data_figure7/onestep_SJ_shared_fields.npz": "237a991a312e85bc06d60730ff5645e04d6be0f327c20394661842475a67935c",
+    "extended_data_figure7/onestep_SS_shared_fields.npz": "38145f0cf58d9cd4b3febadd74cdd7ca0acba01520f3c0484b83fb1ded4a7a95",
+    "extended_data_figure7/d_SC_shared_fields.npz": "bc04126f1b810321b612fe23ab1084dd6c08b5957401102c3935de0ed0ece72e",
+    "extended_data_figure7/d_SH_shared_fields.npz": "112612f42b5f51a94f2f6f38b14e9d18d5f9041238c2818d72aaa08baf0c0cc2",
+    "extended_data_figure7/d_SJ_shared_fields.npz": "27206a7efb5459a682a61752b0f11d3af4fb12407bd31ec1a4283edc03caa80a",
+    "extended_data_figure7/d_SS_shared_fields.npz": "1305350b5688ddcb25df765c9ee6a739f8ee450230443977b98ac7e2bf0c2e65"
+  },
+  "notebooks": {
+    "Extended_Data_Figure7.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0,
+      "default_recompute": false
+    },
+    "Figure5_Opportunistic_Invasion.ipynb": {
+      "executed_code_cells": 5,
+      "errors": 0,
+      "default_recompute": false
+    }
+  },
+  "relative_document_links_checked": 19,
+  "figure_counts": {
+    "figure5": {
+      "pdf": 3,
+      "svg": 3
+    },
+    "extended_data_figure7": {
+      "pdf": 10,
+      "svg": 10
+    }
+  },
+  "svg_xml_valid": true,
+  "limits": "ED7 numerical polynomial-root filter excludes interior roots below delta=1e-8; finite checks do not prove every possible extremum or root found. Figure5 uses a finite delta grid. Tests are confined to the IID O-DISC family.",
+  "five_figure5_resident_flow_derivatives": {
+    "one_step": -0.6347766631569502,
+    "multistep_full": -0.9999053277969878,
+    "multistep_adjusted": -0.5969505247641534,
+    "aggregation": -0.8420208315093558,
+    "quantitative": -0.9999986315655571
+  },
+  "pdf_readable_single_pages": 13,
+  "visual_review": "All thirteen PDFs rendered; both combined figures, all ED7 panels and both Figure5 panels inspected after final export.",
+  "guide_review": "Independent provenance and numerical review passed; clarifications added for fold selection, finite root filter and the sign of the reputation payoff term."
+}

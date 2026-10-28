@@ -1,0 +1,16 @@
+{
+  "file": "Results_Figure3_and_ED2_to_ED5.md",
+  "language": "English",
+  "scope": "Explanatory guide and bounded interpretation of the existing Figure3 and ED2-ED5 outputs; no new integrations or statistical tests.",
+  "words": 3613,
+  "relative_links_checked": 27,
+  "math_blocks": 10,
+  "numerical_examples": "ED3 corner values, ED5 saved category counts and positive-error boundary statement checked against external arrays; ED2/ED4/simplex values independently reviewed against saved code and tables.",
+  "review": "Independent read-only reviews of simplex equations/stability and ED2/ED4 methods and interpretation passed.",
+  "limitations_retained": [
+    "ED3 historical generator not uniquely located",
+    "Reused cooperation ensembles were not rerun with the corrected simplex solver",
+    "No basin areas inferred from streamplots",
+    "Local rare-mutant protection does not establish universal evolutionary stability"
+  ]
+}

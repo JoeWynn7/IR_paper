@@ -1,0 +1,9 @@
+norm,mechanism,alpha,b_over_c,r_R,iid_secure
+SC,one_step,0.8,5.0,0.9835705807235057,True
+SC,multistep_full,0.8,5.0,0.9897816332022363,True
+SH,one_step,0.8,5.0,0.0007279026524586536,False
+SH,multistep_full,0.8,5.0,0.9863409290745082,True
+SJ,one_step,0.8,5.0,0.47024667250859487,False
+SJ,multistep_full,0.8,5.0,0.9865090650308928,True
+SS,one_step,0.8,5.0,0.9839265380632736,True
+SS,multistep_full,0.8,5.0,0.9778864137403679,True
