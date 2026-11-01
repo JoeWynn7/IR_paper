@@ -10,7 +10,10 @@
 | `data/extended_data_figure8/selected_branch.csv` | All-good-selected reputations and payoff advantage at each grid point (residual $\le10^{-12}$). |
 | `data/extended_data_figure8/folds.csv` | Saddle-node points (a stable and an unstable root meeting). |
 | `data/extended_data_figure8/payoff_sign_changes.csv` | Sign changes of the payoff advantage on the selected branch: continuous (edge equilibria) or discontinuous (loss of the high branch at a fold). |
-| `figures/extended_data_figure8/Extended_Data_Figure8.{pdf,svg,png}` | Figure (7.5 in wide). |
+| `figures/extended_data_figure8/Extended_Data_Figure8.{pdf,svg,png}` | Composite figure, 180 mm wide (double column), PNG at 600 dpi. |
+| `figures/extended_data_figure8/panels/panel_<letter>_<norm>_<reputation\|payoff>.{pdf,svg,png}` | The eight panels without any text (axis ticks kept; no tick labels, axis labels, titles or letters), transparent background, one common canvas size whose axes match the composite at 100% scale; for manual assembly. |
+| `figures/extended_data_figure8/panels/legend_keys.{pdf,svg,png}` | The eight legend symbols, evenly spaced, without text. |
+| `figures/extended_data_figure8/previous_version/` | Superseded composite (7.5 in wide), kept for comparison. |
 
 ## Results shown
 
