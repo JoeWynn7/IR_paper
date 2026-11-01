@@ -9,6 +9,7 @@ Reference parameters unless an axis varies them: $b/c=5$, $e_1=e_2=0.02$; reputa
 | `Extended_Data_Figure3_Planes.ipynb` | ED3 readout planes: mean long-run cooperation (41×41) and local invasion of pure DISC (801×801) | `figures/extended_data_figure3_planes/` |
 | `Extended_Data_Figure4.ipynb` | ED4: mean long-run cooperation versus $b/c$ (8×512 initial compositions per point) | `figures/extended_data_figure4/` |
 | `Extended_Data_Figure5.ipynb` | ED5: invasion classes over $(e_1,e_2)$ (241×241) | `figures/extended_data_figure5/` |
+| `ED_Fig3.ipynb` | Assembled ED3 (simplexes with cooperative basins, cooperation plane, invasion plane) in the typography of the revised ED2/ED9, plus text-free single panels for manual assembly. Plotting only: loads the data of `Figure3_Simplex_Dynamics.ipynb` and `Extended_Data_Figure3_Planes.ipynb`; basins from `../engine` (cached in `data/extended_data_figure3_basins/`) | `figures/extended_data_figure3/` |
 
 Combined figures and every single panel are saved as PDF and SVG; the revised ED2 and ED9 are also saved as 300-dpi PNG and follow the typography of the assembled manuscript figures.
 
