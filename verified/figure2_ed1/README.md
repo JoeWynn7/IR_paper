@@ -9,7 +9,7 @@ Panel definitions and a brief interpretation are provided in [Results_Figure2_an
 Use Python 3.11 with the packages in `requirements.txt`. Open the notebooks from this directory and run their cells in order. The supplied data are used by default; no raw data are embedded in the notebook source.
 
 - `Figure2.ipynb`: 12 reputation-matrix panels, four depth-plane panels, and one combined figure.
-- `Extended_Data_Figure1.ipynb`: four recognition panels, four threshold-selection panels, a vertical depth colour bar shared by both rows, and one combined figure. The eight panels and the colour bar are bare (tick marks only, no numbers or text) for manual assembly and share the axes size of the combined figure, which is drawn at 183 mm. Set `PANEL_CELL_LABELS=True` to keep the (k1,k2) labels in the threshold maps.
+- `Extended_Data_Figure1.ipynb`: four recognition panels, four threshold-selection panels, a vertical depth colour bar shared by both rows, and one combined figure. The eight panels and the colour bar are bare (tick marks only, no numbers or text) for manual assembly. By default (`PANEL_GEOMETRY='original'`) each panel file has the size, axes position and line weights of the original single panels, so it replaces them one for one; `PANEL_GEOMETRY='combined'` gives the axes size of the combined figure, which is drawn at 183 mm. Set `PANEL_CELL_LABELS=True` to keep the (k1,k2) labels in the threshold maps.
 
 Figures are saved only as PDF and SVG in `figures/figure2/` and `figures/extended_data_figure1/`. Numerical data and configurations are stored in the corresponding subdirectories of `data/`.
 
