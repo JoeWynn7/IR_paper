@@ -3,3 +3,4 @@ pandas==2.0.0
 matplotlib==3.7.1
 numba==0.60.0
 ipython==8.12.0
+pillow==10.0.1  # Matplotlib 3.7.1 writes corrupted images into PDFs with Pillow >= 10.1
