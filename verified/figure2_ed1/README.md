@@ -6,9 +6,9 @@ Panel definitions and a brief interpretation are provided in [Results_Figure2_an
 
 ## Run
 
-Use Python 3.11 with the packages in `requirements.txt`. Open the notebooks from this directory and run their cells in order. The supplied data are used by default; no raw data are embedded in the notebook source.
+Use Python 3.11 with the packages in `requirements.txt`. Open the notebooks from this directory and run their cells in order. No raw data are embedded in the notebook source.
 
-- `Figure2.ipynb`: 12 reputation-matrix panels, four depth-plane panels, seven key elements, and one combined figure. The combined figure is drawn at the final double-column width (183 mm) in the shared paper style. The single panels and key elements (`matrix_*`, `depth_*`, `key_*`) contain no text or numbers (depth panels keep their tick marks) and are drawn at the size they have in the combined figure, so they can be assembled by hand at 100% scale.
+- `Figure2.ipynb`: runs in four steps (model; generate and save data; load the saved data; plot and save figures). By default it simulates all Figure 2 data (about 4 minutes), saves them to `data/figure2/`, reads them back and draws the figures from the saved files. It produces 12 reputation-matrix panels, four depth-plane panels, seven key elements, and one combined figure. The combined figure is drawn at the final double-column width (183 mm) in the shared paper style. The single panels and key elements (`matrix_*`, `depth_*`, `key_*`) contain no text or numbers (depth panels keep their tick marks) and are drawn at the size they have in the combined figure, so they can be assembled by hand at 100% scale.
 - `Extended_Data_Figure1.ipynb`: four recognition panels, four threshold-selection panels, and one combined figure.
 
 Figures are saved only as PDF and SVG in `figures/figure2/` and `figures/extended_data_figure1/`. Numerical data and configurations are stored in the corresponding subdirectories of `data/`.
@@ -27,10 +27,10 @@ The depth-plane data and the repeated recognition data are separate experiments.
 
 ## Regenerate simulation data
 
-- In `Figure2.ipynb`, set `RECOMPUTE_MATRICES=True` to simulate the 12 snapshots. Set `RECOMPUTE_DEPTH_SCAN=True` to repeat the 196-condition depth scan.
+- `Figure2.ipynb` regenerates its data by default: `RECOMPUTE_MATRICES=True` simulates the 12 snapshots and `RECOMPUTE_DEPTH_SCAN=True` repeats the 196-condition depth scan. Set either flag to `False` to plot the data already saved in `data/figure2/` instead. A full regeneration reproduces the supplied data: the 12 matrices are identical, and depth-scan values agree to within 1.1e-16.
 - In `Extended_Data_Figure1.ipynb`, set `RECOMPUTE=True` to repeat the recognition simulations and extend cases that fail the drift criterion.
 
-The full depth scan and repeated recognition simulations are computationally intensive. Missing or incompatible input data raise an error rather than triggering simulations automatically. Regeneration writes to the same relative output directories, so retain a separate copy of supplied data before replacing them.
+The repeated recognition simulations are computationally intensive. When a flag is `False`, missing or incompatible input data raise an error rather than triggering simulations automatically. Regeneration writes to the same relative output directories, so retain a separate copy of supplied data before replacing them.
 
 ## Data
 
@@ -39,4 +39,4 @@ The full depth scan and repeated recognition simulations are computationally int
 - `recognition_raw.csv` contains 5,880 replicate-level records, including actual run lengths, sampling windows, and half-window drift values. The notebook regenerates summary statistics, selected architectures, and threshold sensitivity from this external table.
 - Bootstrap uncertainty uses 2,000 resamples of independent replicate means and seed 2026091801. The selection rule minimizes total depth after imposing the specified separation and disagreement criteria.
 
-The notebooks have been executed with the supplied data. The 12 matrix simulations were also regenerated. Full depth and repeated-recognition simulations were not rerun for this release.
+`Figure2.ipynb` has been executed with full regeneration of the matrices and the depth scan; the regenerated data match the supplied data as stated above, so the supplied files are kept. `Extended_Data_Figure1.ipynb` has been executed with the supplied data; the repeated-recognition simulations were not rerun for this release.
