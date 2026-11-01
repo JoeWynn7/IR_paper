@@ -10,7 +10,7 @@ Reference parameters unless an axis varies them: $b/c=5$, $e_1=e_2=0.02$; reputa
 | `Extended_Data_Figure4.ipynb` | ED4: mean long-run cooperation versus $b/c$ (8×512 initial compositions per point) | `figures/extended_data_figure4/` |
 | `Extended_Data_Figure5.ipynb` | ED5: invasion classes over $(e_1,e_2)$ (241×241) | `figures/extended_data_figure5/` |
 
-Combined figures and every single panel are saved as PDF and SVG; the revised ED2 and ED9 are also saved as 300-dpi PNG and follow the typography of the assembled manuscript figures.
+Combined figures and every single panel are saved as PDF and SVG; the revised ED2, ED4 and ED9 are also saved as 300-dpi PNG and follow the typography of the assembled manuscript figures. The ED4 single panels (`panel_<norm>`) contain data and axis ticks only (no numbers or text) on identical canvases, for manual assembly.
 
 ## Data
 
