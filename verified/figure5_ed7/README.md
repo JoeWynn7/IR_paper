@@ -7,7 +7,7 @@ Start with [Results_Figure5_and_ED7.md](Results_Figure5_and_ED7.md) for the mode
 | Notebook | Contents |
 |---|---|
 | [Figure5_Opportunistic_Invasion.ipynb](Figure5_Opportunistic_Invasion.ipynb) | Two individual panels and one composite for manuscript Figure 5. |
-| [Extended_Data_Figure7.ipynb](Extended_Data_Figure7.ipynb) | The cross-norm strip panel, eight one-step/multi-step maps, and one composite. |
+| [Extended_Data_Figure7.ipynb](Extended_Data_Figure7.ipynb) | The cross-norm strip panel, eight one-step/multi-step maps and the colour scale (single panels: tick marks only, no numbers or text, for manual assembly), and one composite (PDF, SVG, 300-dpi PNG). |
 
 Run the notebooks from this directory using Python 3.11 and the packages in `requirements.txt`. By default they load supplied external data and perform small checks; they do not repeat the complete parameter scans. `RECOMPUTE=True` explicitly repeats the displayed calculations and may be expensive. Keep a separate copy of the supplied data before regeneration.
 
@@ -15,7 +15,7 @@ Run the notebooks from this directory using Python 3.11 and the packages in `req
 
 - Both figures test an independent, identically distributed (IID) O-DISC family. A mutant independently skips an intended cooperative act toward an individually perceived good recipient with probability $\delta$. These figures do not use the separately excluded time-correlated or persistent opportunism variants.
 - Figure 5 shows normalized mutant payoff advantages for SJ and a readout scan at $b/c=5$. The full one-step mechanism has a narrow positive-invasion window near $\delta=0$, even though it is difficult to see at the plotted scale.
-- ED7 shows intended resident cooperation in green; black outlines indicate resistance to the tested IID O-DISC family. They do not establish resistance to every mutant. The first rows of the original result set also contained an alternative invasion-window background; only the cooperation-background version was selected for the final ED7.
+- ED7 shows intended resident cooperation on the sequential blue scale used by the other cooperation maps (green is reserved for the secure interval in Figure 5b); black outlines indicate resistance to the tested IID O-DISC family. They do not establish resistance to every mutant. The first rows of the original result set also contained an alternative invasion-window background; only the cooperation-background version was selected for the final ED7.
 - Some lower boundaries are resident-branch folds and are excluded. The original assembled figure's uniformly closed-interval legend is not valid for those boundaries. Current strip panels mark excluded fold endpoints with open circles; endpoint flags are retained in the data.
 
 ## Data and verification

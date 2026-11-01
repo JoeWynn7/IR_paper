@@ -39,7 +39,7 @@
   },
   "notebooks": {
     "Extended_Data_Figure7.ipynb": {
-      "executed_code_cells": 5,
+      "executed_code_cells": 7,
       "errors": 0,
       "default_recompute": false
     },
@@ -56,8 +56,9 @@
       "svg": 3
     },
     "extended_data_figure7": {
-      "pdf": 10,
-      "svg": 10
+      "pdf": 11,
+      "svg": 11,
+      "png": 1
     }
   },
   "svg_xml_valid": true,
@@ -69,7 +70,7 @@
     "aggregation": -0.8420208315093558,
     "quantitative": -0.9999986315655571
   },
-  "pdf_readable_single_pages": 13,
-  "visual_review": "All thirteen PDFs rendered; both combined figures, all ED7 panels and both Figure5 panels inspected after final export.",
+  "pdf_readable_single_pages": 14,
+  "visual_review": "All fourteen PDFs rendered; both combined figures, all ED7 panels and both Figure5 panels inspected after final export. ED7 single panels and colour scale contain no text (checked in PDF and SVG).",
   "guide_review": "Independent provenance and numerical review passed; clarifications added for fold selection, finite root filter and the sign of the reputation payoff term."
 }

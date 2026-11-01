@@ -1,53 +1,58 @@
 {
   "figures/extended_data_figure7/Extended_Data_Figure7_combined.pdf": {
     "pages": 1,
-    "width_pt": 911.460925,
-    "height_pt": 575.1966127049
+    "width_pt": 510.1031494140625,
+    "height_pt": 476.260009765625
+  },
+  "figures/extended_data_figure7/colorbar.pdf": {
+    "pages": 1,
+    "width_pt": 142.55999755859375,
+    "height_pt": 11.880000114440918
   },
   "figures/extended_data_figure7/panel_a_cross_norm.pdf": {
     "pages": 1,
-    "width_pt": 572.001825,
-    "height_pt": 278.948875
+    "width_pt": 369.3599853515625,
+    "height_pt": 173.75999450683594
   },
   "figures/extended_data_figure7/panel_b_SC_multistep_full.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_b_SC_one_step.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_c_SH_multistep_full.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_c_SH_one_step.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_d_SJ_multistep_full.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_d_SJ_one_step.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_e_SS_multistep_full.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/extended_data_figure7/panel_e_SS_one_step.pdf": {
     "pages": 1,
-    "width_pt": 287.19325,
-    "height_pt": 262.036875
+    "width_pt": 106.68000030517578,
+    "height_pt": 82.19999694824219
   },
   "figures/figure5/Figure5_combined.pdf": {
     "pages": 1,
