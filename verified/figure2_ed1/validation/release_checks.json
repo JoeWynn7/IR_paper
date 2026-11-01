@@ -2,8 +2,8 @@
   "scope": "Default notebook execution, data consistency, export format and release-file checks. Full depth and repeated-recognition simulations were not rerun.",
   "notebooks": {
     "Figure2.ipynb": {
-      "code_cells": 8,
-      "executed_code_cells": 8,
+      "code_cells": 10,
+      "executed_code_cells": 10,
       "english_source": true,
       "relative_paths": true,
       "embedded_raw_data": false,
@@ -20,8 +20,8 @@
   },
   "figures": {
     "figure2": {
-      "pdf": 17,
-      "svg": 17,
+      "pdf": 24,
+      "svg": 24,
       "svg_xml_valid": true,
       "visual_review": "Combined figure and all individual panels rendered and inspected."
     },

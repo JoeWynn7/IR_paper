@@ -8,7 +8,7 @@ Panel definitions and a brief interpretation are provided in [Results_Figure2_an
 
 Use Python 3.11 with the packages in `requirements.txt`. Open the notebooks from this directory and run their cells in order. The supplied data are used by default; no raw data are embedded in the notebook source.
 
-- `Figure2.ipynb`: 12 reputation-matrix panels, four depth-plane panels, and one combined figure.
+- `Figure2.ipynb`: 12 reputation-matrix panels, four depth-plane panels, seven key elements, and one combined figure. The combined figure is drawn at the final double-column width (183 mm) in the shared paper style. The single panels and key elements (`matrix_*`, `depth_*`, `key_*`) contain no text or numbers (depth panels keep their tick marks) and are drawn at the size they have in the combined figure, so they can be assembled by hand at 100% scale.
 - `Extended_Data_Figure1.ipynb`: four recognition panels, four threshold-selection panels, and one combined figure.
 
 Figures are saved only as PDF and SVG in `figures/figure2/` and `figures/extended_data_figure1/`. Numerical data and configurations are stored in the corresponding subdirectories of `data/`.
