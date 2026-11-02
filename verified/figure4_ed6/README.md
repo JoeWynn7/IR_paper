@@ -5,7 +5,7 @@ Mean long-run cooperation as a function of the depths $(k_1,k_2)$ of the direct-
 | Notebook | Outputs |
 |---|---|
 | `Figure4_Total_Depth.ipynb` | Figure 4: all 180 allocations with $k_1+k_2\le8$; four norm panels and a combined figure (`figures/figure4/`). |
-| `Extended_Data_Figure6.ipynb` | Extended Data Figure 6: all 256 pairs with $0\le k_1,k_2\le7$; four norm panels and a combined figure (`figures/extended_data_figure6/`). |
+| `Extended_Data_Figure6.ipynb` | Extended Data Figure 6: all 256 pairs with $0\le k_1,k_2\le7$; four text-free norm panels (cells, protection dots and ticks only, identical canvases) and a matching text-free colour bar for manual assembly, and a combined figure in PDF, SVG and 300-dpi PNG (`figures/extended_data_figure6/`). |
 
 ## Data
 
