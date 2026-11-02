@@ -1,0 +1,554 @@
+% =====================================================================
+% Methods (body only). Can be \input{Methods_body} in place of the
+% Methods section of Manuscript_formal_20261028.tex, or compiled
+% stand-alone through Methods.tex. Bibliography keys used here are
+% listed in Methods_references.tex.
+% Figure labels follow Manuscript_formal_20261028.tex.
+% Notation follows Supplementary Note 1 (single notation system).
+% =====================================================================
+\section*{Methods}
+\label{sec:methods}
+
+\subsection*{Donation game, strategies and private assessment}
+
+We consider an infinitely large, well-mixed population in which randomly
+chosen donors and recipients play a donation game. A donor either cooperates,
+paying a cost $c>0$ to give the recipient a benefit $b>c$, or defects, which has
+no payoff consequences. Individuals use one of three strategies
+$I\in\{\mathrm{ALLC},\mathrm{ALLD},\mathrm{DISC}\}$ with frequencies $f_I$,
+$\sum_I f_I=1$. ALLC intends to cooperate with every recipient, ALLD intends to
+defect against every recipient, and DISC intends to cooperate if and only if it
+regards the recipient as good. All individuals share one social norm and one
+reputation mechanism (the depths $k_1,k_2$ and readout parameters
+$\alpha,\beta$ defined below); strategy evolution changes only the frequencies
+$f_I$.
+
+Reputations are private~\cite{okada2018,hilbe2018,radzvilavicius2019}: every
+individual keeps its own record of every other individual. In each
+interaction, an observer drawn independently of donor and recipient assesses
+the donor. A DISC donor chooses its action using its own image of the
+recipient, whereas the observer judges the donor's realized action using the
+observer's own image of the recipient, so the two can disagree. We use
+second-order norms~\cite{ohtsuki2004}. Cooperation with a recipient regarded as
+good is assessed positively and defection against such a recipient negatively;
+towards a recipient regarded as bad, cooperation and defection are assessed
+positively with probabilities $p$ and $q$, respectively. Scoring (SC), Shunning
+(SH), Stern Judging (SJ) and Simple Standing (SS) correspond to
+$(p,q)=(1,0)$, $(0,0)$, $(0,1)$ and $(1,1)$.
+
+Intended cooperation fails and becomes defection with probability $e_1$;
+intended defection is always implemented. After applying the norm, the
+observer records the opposite assessment with probability $e_2$. The two errors
+are independent, and benefits and costs accrue only for realized cooperation.
+Let $P^+_{A\mid Y}$ denote the probability that the recorded assessment is
+positive, given the donor's intended action $A\in\{\mathrm C,\mathrm D\}$ and
+the observer's image $Y\in\{\mathrm G,\mathrm B\}$ of the recipient. With
+$\epsilon=(1-e_1)(1-e_2)+e_1e_2$,
+\begin{equation}
+\begin{aligned}
+P^+_{\mathrm C\mid\mathrm G}&=\epsilon, &
+P^+_{\mathrm C\mid\mathrm B}&=e_2+(1-2e_2)\bigl[(1-e_1)p+e_1q\bigr],\\
+P^+_{\mathrm D\mid\mathrm G}&=e_2, &
+P^+_{\mathrm D\mid\mathrm B}&=e_2+(1-2e_2)q
+\end{aligned}
+\label{eq:m-assessment}
+\end{equation}
+(Supplementary Note~2). Implementation error is already averaged into
+Eq.~\eqref{eq:m-assessment}. If the observer regards the recipient as good with
+probability $r$, intended cooperation and intended defection are therefore
+assessed positively with probabilities
+\begin{equation}
+\Phi_{\mathrm C}(r)=rP^+_{\mathrm C\mid\mathrm G}+(1-r)P^+_{\mathrm C\mid\mathrm B},
+\qquad
+\Phi_{\mathrm D}(r)=rP^+_{\mathrm D\mid\mathrm G}+(1-r)P^+_{\mathrm D\mid\mathrm B},
+\label{eq:m-action-assessment}
+\end{equation}
+and their difference, the assessment contrast, is
+$\Delta\Phi(r)=\Phi_{\mathrm C}(r)-\Phi_{\mathrm D}(r)=\kappa\,[r+(p-q)(1-r)]$
+with $\kappa=(1-e_1)(1-2e_2)$. Unless stated otherwise, $b=5$, $c=1$ and
+$e_1=e_2=0.02$.
+
+\subsection*{Inertial reputation records and binary readout}
+
+Observer $i$ holds a latent record $L_{ij}$ of target $j$ in the state space
+\begin{equation}
+\mathcal L=\{\mathrm G,\mathrm W_1,\dots,\mathrm W_{k_1},\mathrm B,
+\mathrm S_1,\dots,\mathrm S_{k_2}\},\qquad k_1,k_2\in\{0,1,2,\dots\}.
+\label{eq:m-states}
+\end{equation}
+After each interaction, only the observer's record of the donor changes, and
+only through the recorded assessment. A negative assessment moves
+$\mathrm G\to\mathrm W_1\to\dots\to\mathrm W_{k_1}\to\mathrm B$ and leaves
+$\mathrm B$ unchanged; a positive assessment moves
+$\mathrm B\to\mathrm S_1\to\dots\to\mathrm S_{k_2}\to\mathrm G$ and leaves
+$\mathrm G$ unchanged. A positive assessment returns every warning state
+$\mathrm W_m$ directly to $\mathrm G$, and a negative assessment returns every
+recovery state $\mathrm S_n$ directly to $\mathrm B$ (direct reset). If
+$k_1=0$, a negative assessment moves $\mathrm G$ directly to $\mathrm B$; if
+$k_2=0$, a positive assessment moves $\mathrm B$ directly to $\mathrm G$.
+Losing good standing therefore requires $k_1+1$, and regaining it $k_2+1$,
+consecutive assessments of the same target by the same observer. We call $k_1$
+the tolerance depth, $k_2$ the strictness depth and $K=k_1+k_2$ the total
+depth; a record has $K+2$ states (complete transition table in Supplementary Note~3 and
+Supplementary Table~S5).
+
+Actions and assessments use a binary image that is sampled from the record
+whenever the record is consulted. The image is good with probability
+\begin{equation}
+\sigma(\mathrm G)=1,\qquad \sigma(\mathrm W_m)=\alpha^m,\qquad
+\sigma(\mathrm B)=0,\qquad \sigma(\mathrm S_n)=1-\beta^n,
+\qquad 0\le\alpha,\beta\le1 .
+\label{eq:m-readout}
+\end{equation}
+Consultations are independent given the current state and do not change it.
+The tolerance strength $\alpha$ sets how often a warning state is still treated
+as good, and the strictness strength $\beta$ how often a recovery state is
+still treated as bad. We compare three settings: no inertia,
+$(k_1,k_2)=(0,0)$; full one-step inertia, $(k_1,k_2)=(1,1)$ with
+$\alpha=\beta=1$; and the selected multi-step architectures with full readout,
+$(2,0)$, $(3,0)$, $(4,3)$ and $(1,2)$ for SC, SH, SJ and SS (selected from
+simulated reputation statistics; see below). Setting $\alpha=\beta=0$ at any
+depths also yields instantaneous updating, because the image then always
+equals the last recorded assessment. At one-step depths, $(\alpha,\beta)=(1,0)$
+and $(0,1)$ give tolerance-only and strictness-only readout.
+
+\subsection*{Stationary reputation map}
+
+Consider one record whose successive recorded assessments are independent and
+positive with probability $u$. Its state then follows a Markov chain with
+transition matrix $T(u)=uT^{+}+(1-u)T^{-}$, where $T^{+}$ and $T^{-}$ encode the
+deterministic updates after positive and negative assessments. For $0<u<1$ the
+chain is irreducible and aperiodic. Write $v=1-u$. Because $\mathrm W_m$ can be
+entered only from $\mathrm W_{m-1}$ (with $\mathrm W_0\equiv\mathrm G$) after a
+negative assessment, and $\mathrm S_n$ only from $\mathrm S_{n-1}$ (with
+$\mathrm S_0\equiv\mathrm B$) after a positive one, the stationary distribution
+satisfies $\pi_{\mathrm W_m}=v^m\pi_{\mathrm G}$ and
+$\pi_{\mathrm S_n}=u^n\pi_{\mathrm B}$. The only transitions from the
+good-standing states $\{\mathrm G,\mathrm W_m\}$ to the bad-standing states
+$\{\mathrm B,\mathrm S_n\}$ complete a run of $k_1+1$ negative assessments, and
+the only reverse transitions complete a run of $k_2+1$ positive assessments.
+Balancing these two fluxes gives $v^{k_1+1}\pi_{\mathrm G}=u^{k_2+1}\pi_{\mathrm B}$,
+and normalization yields
+\begin{equation}
+\pi_{\mathrm G}=\frac{u^{k_2+1}}{Z(u)},\quad
+\pi_{\mathrm W_m}=\frac{v^{m}u^{k_2+1}}{Z(u)},\quad
+\pi_{\mathrm B}=\frac{v^{k_1+1}}{Z(u)},\quad
+\pi_{\mathrm S_n}=\frac{u^{n}v^{k_1+1}}{Z(u)},\qquad
+Z(u)=v^{k_1}+u^{k_2}-v^{k_1}u^{k_2}
+\label{eq:m-stationary}
+\end{equation}
+(Supplementary Note~4). Averaging the readout probabilities over this
+distribution defines the reputation map, the stationary probability that the
+target is regarded as good when it is assessed positively with probability $u$:
+\begin{equation}
+\mathcal R(u)\equiv\mathcal R(u;\alpha,\beta,k_1,k_2)
+=\sum_{\ell\in\mathcal L}\pi_\ell(u)\,\sigma(\ell)
+=\frac{u^{k_2+1}\sum_{m=0}^{k_1}(\alpha v)^m
++v^{k_1+1}\sum_{n=1}^{k_2}u^n\bigl(1-\beta^n\bigr)}
+{v^{k_1}+u^{k_2}-v^{k_1}u^{k_2}} .
+\label{eq:m-reputation-map}
+\end{equation}
+Empty sums are zero, and $\mathcal R(0)=0$ and $\mathcal R(1)=1$ by continuity.
+Without inertia, $\mathcal R(u)=u$. For one-step inertia,
+$\mathcal R(u)=\{u^2[1+\alpha(1-u)]+(1-\beta)u(1-u)^2\}/(1-u+u^2)$, and with
+full readout, $\mathcal R(u)=u^{k_2}(1-v^{k_1+1})/Z(u)$. The map increases with
+$\alpha$ and decreases with $\beta$. Two properties are used repeatedly below:
+for $k_1\ge1$, $\mathcal R'(1)=1-\alpha$, where the prime denotes $\mathrm d/\mathrm du$;
+and for $k_2=0$, $\mathcal R$ is concave on $[0,1]$
+(Supplementary Note~4).
+
+\subsection*{Self-consistent private reputations}
+
+Let $r_I$ be the probability that a randomly chosen observer regards a randomly
+chosen type-$I$ individual as good, and $\bar r=\sum_I f_I r_I$. We close the
+private-assessment problem with two mean-field assumptions, as in previous
+analyses of private assessment~\cite{okada2018,radzvilavicius2019,kessinger2023,michelmata2024,kawakatsu2024}.
+First, the donor's and the observer's images of a recipient are independent
+given the recipient's strategy. Both then regard a random recipient as good
+with probability $h_{\mathrm{GG}}=\sum_J f_J r_J^2$, both regard it as bad with
+probability $h_{\mathrm{BB}}=\sum_J f_J(1-r_J)^2$, and each of the two ordered
+disagreements occurs with probability $h_{\mathrm{GB}}=\sum_J f_J r_J(1-r_J)$.
+A type-$I$ donor is therefore assessed positively with probability
+\begin{equation}
+\begin{aligned}
+u_{\mathrm{ALLC}}&=\Phi_{\mathrm C}(\bar r),\qquad
+u_{\mathrm{ALLD}}=\Phi_{\mathrm D}(\bar r),\\
+u_{\mathrm{DISC}}&=h_{\mathrm{GG}}P^+_{\mathrm C\mid\mathrm G}
++h_{\mathrm{GB}}\bigl(P^+_{\mathrm C\mid\mathrm B}+P^+_{\mathrm D\mid\mathrm G}\bigr)
++h_{\mathrm{BB}}P^+_{\mathrm D\mid\mathrm B}.
+\end{aligned}
+\label{eq:m-strategy-assessment}
+\end{equation}
+Second, the assessments entering a record of a type-$I$ individual are treated
+as independent with this common probability $u_I$, so that each record has
+the stationary response of Eq.~\eqref{eq:m-reputation-map}. Stationary
+reputations then satisfy the self-consistency equations
+\begin{equation}
+r_I^*=\mathcal R\bigl(u_I(\boldsymbol r^*;\boldsymbol f)\bigr),
+\qquad I\in\{\mathrm{ALLC},\mathrm{ALLD},\mathrm{DISC}\}.
+\label{eq:m-self-consistency}
+\end{equation}
+Equation~\eqref{eq:m-self-consistency} can have several solutions. Consistent
+with records that start in good standing, we select at every composition the
+solution reached by the auxiliary relaxation
+\begin{equation}
+\frac{\mathrm d r_I}{\mathrm d\tau}=\mathcal R(u_I)-r_I,\qquad r_I(0)=1 .
+\label{eq:m-relaxation}
+\end{equation}
+The variable $\tau$ is a computational time, unrelated to evolutionary time
+$t$. The fixed points of Eq.~\eqref{eq:m-relaxation} coincide with the
+stationary states of the mean-field dynamics of the full distribution of
+latent states, $\mathrm d\boldsymbol\pi_I/\mathrm dt'=\boldsymbol\pi_I[T(u_I)-\mathbf I]$
+with $r_I=\boldsymbol\pi_I\boldsymbol\sigma$ (Supplementary Note~5). Stability
+statements refer to Eq.~\eqref{eq:m-relaxation}; where checked, they agreed
+with the linearization of the full latent-state system.
+
+In a homogeneous DISC population with reputation $r$, a resident donor regards
+its recipient as good with probability $r$, independently of the observer, and
+Eq.~\eqref{eq:m-strategy-assessment} reduces to
+\begin{equation}
+u_{\mathrm R}(r)=r\,\Phi_{\mathrm C}(r)+(1-r)\,\Phi_{\mathrm D}(r).
+\label{eq:m-resident-assessment}
+\end{equation}
+Resident reputations are the roots of
+$F(r)\equiv\mathcal R[u_{\mathrm R}(r)]-r$, and their stability in
+Eq.~\eqref{eq:m-relaxation} is given by the sign of $F'(r)$. A fold of a
+resident branch satisfies $F(r)=F'(r)=0$, that is
+$\mathcal R'[u_{\mathrm R}(r)]\,u_{\mathrm R}'(r)=1$. We denote by $r_{\mathrm R}^*$
+the highest strictly stable root, which coincides with the root reached by
+relaxation from $r=1$ unless the highest root is a fold, and write
+$u_{\mathrm R}^*=u_{\mathrm R}(r_{\mathrm R}^*)$,
+$\Phi_A^*=\Phi_A(r_{\mathrm R}^*)$ and
+$\Delta\Phi^*=\Delta\Phi(r_{\mathrm R}^*)$. Resident reputations do not depend
+on $b/c$.
+
+\subsection*{Strategy evolution and cooperation}
+
+Reputations are assumed to equilibrate quickly relative to strategy change. At
+each strategy composition, payoffs are evaluated with the selected stationary
+reputations. Per unit time, in which each individual acts on average once as
+donor and once as recipient, the expected payoffs are
+\begin{equation}
+\begin{aligned}
+\Pi_{\mathrm{ALLC}}&=(1-e_1)\bigl[b\,(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r^*_{\mathrm{ALLC}})-c\bigr],\\
+\Pi_{\mathrm{ALLD}}&=(1-e_1)\,b\,(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r^*_{\mathrm{ALLD}}),\\
+\Pi_{\mathrm{DISC}}&=(1-e_1)\bigl[b\,(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r^*_{\mathrm{DISC}})-c\,\bar r^*\bigr],
+\end{aligned}
+\label{eq:m-payoffs}
+\end{equation}
+and strategy frequencies follow the replicator dynamics~\cite{hofbauer1998}
+\begin{equation}
+\frac{\mathrm d f_I}{\mathrm dt}=f_I\bigl(\Pi_I-\bar\Pi\bigr),\qquad
+\bar\Pi=\sum_J f_J\Pi_J .
+\label{eq:m-replicator}
+\end{equation}
+The intended and realized cooperation rates are
+$\rho_{\mathrm{int}}=f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}\bar r^*$ and
+$\rho=(1-e_1)\rho_{\mathrm{int}}$, and $\bar\Pi=(b-c)\rho$. In a homogeneous DISC
+population, $\rho_{\mathrm{int}}=r^*_{\mathrm R}$; realized cooperation
+cannot exceed $1-e_1=0.98$.
+
+To compare parameter settings globally, we integrate Eq.~\eqref{eq:m-replicator}
+from $n_{\mathrm{init}}=512$ initial compositions sampled uniformly by area from
+the simplex, using the same compositions for all settings that are compared.
+In every scan, each trajectory ended either in the zero-cooperation set (the
+ALLD vertex together with the low-reputation segment of the ALLD--DISC edge,
+along which the dynamics drift slowly towards ALLD; final $\rho\le7\times10^{-4}$)
+or at an attractor with positive cooperation (final $\rho\ge0.34$, and
+$0.974$--$0.980$ in nearly all conditions). We therefore define the cooperative
+basin as the set of initial compositions whose trajectories reach an attractor
+with positive cooperation, and classify a trajectory as cooperative if its
+final $\rho\ge0.01$; any threshold inside the observed gap gives the same
+classification, and the gap was checked for every condition. We report the
+mean long-run cooperation $\bar\rho$ (the average of the final $\rho$ over
+initial compositions), the cooperative-basin size $\omega_{\mathrm C}$ (the
+fraction of cooperative trajectories) and the cooperation level
+$\bar\rho_{\mathrm C}$ within the basin, with
+$\bar\rho\approx\omega_{\mathrm C}\bar\rho_{\mathrm C}$. For the total-depth
+comparison, the envelope at total depth $K$ is the largest $\bar\rho$ among the
+$K+1$ allocations with $k_1+k_2=K$.
+
+\subsection*{Invasion of a discriminator population}
+
+We consider a homogeneous DISC population at $r^*_{\mathrm R}$ and a rare
+mutant $\mathrm X$ that uses the residents' norm and record mechanism. Because
+the mutant is rare, it interacts with residents only and leaves their
+reputations and assessments unchanged. Suppose that $\mathrm X$ intends to help
+a resident recipient with probability $\chi_{\mathrm X}$, independently of the
+observer's image of that recipient, and acts independently across interactions.
+It is then assessed positively with probability
+$u_{\mathrm X}=\chi_{\mathrm X}\Phi^*_{\mathrm C}+(1-\chi_{\mathrm X})\Phi^*_{\mathrm D}$,
+its stationary reputation is $r^*_{\mathrm X}=\mathcal R(u_{\mathrm X})$, and its
+normalized payoff advantage over residents is (Supplementary Note~7)
+\begin{equation}
+\Lambda_{\mathrm X}\equiv\frac{\Pi_{\mathrm X}-\Pi_{\mathrm R}}{c(1-e_1)}
+=\bigl(r^*_{\mathrm R}-\chi_{\mathrm X}\bigr)
+-\frac{b}{c}\bigl(r^*_{\mathrm R}-r^*_{\mathrm X}\bigr),
+\label{eq:m-mutant-identity}
+\end{equation}
+the cooperation cost saved minus the benefit lost through reputation. The
+resident itself corresponds to $\chi=r^*_{\mathrm R}$ and
+$u=u^*_{\mathrm R}=r^*_{\mathrm R}\Phi^*_{\mathrm C}+(1-r^*_{\mathrm R})\Phi^*_{\mathrm D}$.
+
+\textit{Unconditional mutants.} ALLD ($\chi=0$) has reputation
+$\mathcal R(\Phi^*_{\mathrm D})$ and ALLC ($\chi=1$) has reputation
+$\mathcal R(\Phi^*_{\mathrm C})$, where
+$\Phi^*_{\mathrm D}=r^*_{\mathrm R}P^+_{\mathrm D\mid\mathrm G}+(1-r^*_{\mathrm R})P^+_{\mathrm D\mid\mathrm B}$
+and $\Phi^*_{\mathrm C}$ analogously. When ALLD is regarded worse and ALLC
+better than the residents, Eq.~\eqref{eq:m-mutant-identity} implies that the
+discriminator population resists both mutants if and only if
+\begin{equation}
+R_{\mathrm L}\equiv
+\frac{r^*_{\mathrm R}}
+{r^*_{\mathrm R}-\mathcal R\bigl[r^*_{\mathrm R}P^+_{\mathrm D\mid\mathrm G}
++(1-r^*_{\mathrm R})P^+_{\mathrm D\mid\mathrm B}\bigr]}
+<\frac bc<
+\frac{1-r^*_{\mathrm R}}
+{\mathcal R\bigl[r^*_{\mathrm R}P^+_{\mathrm C\mid\mathrm G}
++(1-r^*_{\mathrm R})P^+_{\mathrm C\mid\mathrm B}\bigr]-r^*_{\mathrm R}}
+\equiv R_{\mathrm U}.
+\label{eq:m-window}
+\end{equation}
+If ALLD is not regarded worse than the residents, no $b/c$ excludes it; if ALLC
+is not regarded better, it cannot invade. Because
+$u^*_{\mathrm R}=r^*_{\mathrm R}\Phi^*_{\mathrm C}+(1-r^*_{\mathrm R})\Phi^*_{\mathrm D}$,
+the interval in Eq.~\eqref{eq:m-window} is non-empty if and only if
+$r^*_{\mathrm R}\mathcal R(\Phi^*_{\mathrm C})+(1-r^*_{\mathrm R})\mathcal R(\Phi^*_{\mathrm D})
+<\mathcal R(u^*_{\mathrm R})$, that is, if $\mathcal R$ at the resident's
+assessment probability lies above the chord joining its values at
+$\Phi^*_{\mathrm D}$ and $\Phi^*_{\mathrm C}$. Without inertia,
+$\mathcal R$ is linear and $R_{\mathrm L}=R_{\mathrm U}=1/\Delta\Phi^*$, so no
+benefit-to-cost ratio protects a discriminator population (Supplementary
+Note~7). Numerically, we classify local outcomes from the signs of the
+unnormalized payoff differences
+$\lambda_{\mathrm{ALLD}}=\Pi_{\mathrm{ALLD}}-\Pi_{\mathrm R}$ and
+$\lambda_{\mathrm{ALLC}}=\Pi_{\mathrm{ALLC}}-\Pi_{\mathrm R}$ (with $c=1$), which also
+covers cases without finite thresholds: ALLD is not excluded if
+$\lambda_{\mathrm{ALLD}}\ge-10^{-10}$; otherwise ALLC invades if
+$\lambda_{\mathrm{ALLC}}>10^{-10}$; otherwise the residents resist both.
+
+\textit{Opportunistic discriminators.} An opportunistic discriminator (O-DISC)
+behaves like DISC, except that each intended cooperation towards a recipient it
+regards as good is replaced, independently and before implementation error, by
+intended defection with probability $\delta\in[0,1]$. Thus
+$\chi=(1-\delta)r^*_{\mathrm R}$, and $\delta=0$ and $\delta=1$ recover DISC and
+ALLD. The mutant's positive-assessment probability and reputation are
+\begin{equation}
+u_{\mathrm X}(\delta)=u^*_{\mathrm R}-\delta\,r^*_{\mathrm R}\,\Delta\Phi^*,
+\qquad
+r^*_{\mathrm X}(\delta)=\mathcal R\bigl[u_{\mathrm X}(\delta)\bigr],
+\label{eq:m-odisc-reputation}
+\end{equation}
+and Eq.~\eqref{eq:m-mutant-identity} gives the normalized invasion payoff and
+its slope at the resident,
+\begin{equation}
+\Lambda(\delta)=\delta\,r^*_{\mathrm R}
+-\frac{b}{c}\bigl[r^*_{\mathrm R}-r^*_{\mathrm X}(\delta)\bigr],
+\qquad
+\Lambda'(0)=r^*_{\mathrm R}\Bigl[1-\frac{b}{c}\,\Delta\Phi^*\,
+\mathcal R'(u^*_{\mathrm R})\Bigr].
+\label{eq:m-odisc-invasion}
+\end{equation}
+A positive $\Lambda(\delta)$ means that the mutant can invade; $\Lambda(0)=0$,
+and $\Lambda(1)$ is the normalized ALLD advantage. For $r^*_{\mathrm R}>0$,
+$\Lambda(\delta)=\delta r^*_{\mathrm R}[1-(b/c)H(\delta)]$, where
+$H(\delta)=[r^*_{\mathrm R}-r^*_{\mathrm X}(\delta)]/(\delta r^*_{\mathrm R})$ is the
+reputation lost per unit of withheld cooperation, extended continuously by
+$H(0)=\Delta\Phi^*\mathcal R'(u^*_{\mathrm R})$. The residents therefore exclude
+every O-DISC mutant if and only if
+\begin{equation}
+\min_{0\le\delta\le1}\frac{r^*_{\mathrm R}-r^*_{\mathrm X}(\delta)}{\delta\,r^*_{\mathrm R}}
+\;\ge\;\frac{c}{b},
+\label{eq:m-security}
+\end{equation}
+with equality permitting neutral mutants. Because $H(\delta)$ equals
+$\Delta\Phi^*$ times the slope of the chord of $\mathcal R$ between
+$u_{\mathrm X}(\delta)$ and $u^*_{\mathrm R}$, for $\Delta\Phi^*>0$ the minimum
+is attained at $\delta\to0$ whenever $\mathcal R$ is concave on that interval
+(always for $k_2=0$), and Eq.~\eqref{eq:m-security} then reduces to
+$\Lambda'(0)\le0$; in general, the whole interval must be checked. Near an
+all-good resident with $k_1\ge1$, $\mathcal R'(u^*_{\mathrm R})\approx1-\alpha$,
+so full tolerance readout makes weak opportunism cheap. In the error-free limit with $\beta=1$ and $k_1\ge1$, an
+all-good resident excludes every O-DISC mutant if and only if
+$\alpha\le1-c/b$, for every norm and every $k_2$ (Supplementary Note~8); at
+$b/c=5$ this bound is the readout $\alpha=0.8$ used in Fig.~\ref{fig:opportunism}
+and Extended Data Fig.~\ref{ed:opportunism-security}.
+
+For fixed norm, depths, $\beta$ and errors, a readout $\alpha$ is secure if a
+strictly stable high-reputation resident exists and satisfies
+Eq.~\eqref{eq:m-security}. The lower boundary $\alpha_{\mathrm L}$ of a secure
+interval, when it is not $\alpha=0$, is a fold of the high-reputation branch,
+$F(r,\alpha)=\partial_rF(r,\alpha)=0$ with
+$F(r,\alpha)=\mathcal R[u_{\mathrm R}(r);\alpha,\beta,k_1,k_2]-r$; the fold
+itself is excluded and does not depend on $b/c$. The upper boundary
+$\alpha_{\mathrm U}$, when it is not $\alpha=1$, is where
+Eq.~\eqref{eq:m-security} holds with equality. In every case we computed it was
+determined by $\delta\to0$, that is by
+$(b/c)\,\Delta\Phi(r)\,\mathcal R'[u_{\mathrm R}(r);\alpha_{\mathrm U}]=1$
+together with $F(r,\alpha_{\mathrm U})=0$. When the fold and the local condition
+meet, the secure interval closes; this happens at
+$b/c=u'_{\mathrm R}(r)/\Delta\Phi(r)$ evaluated at the fold, which equals 2 for
+Shunning (Supplementary Note~8).
+
+\textit{Alternative reputation filters.} For Fig.~\ref{fig:opportunism}a we
+replace $\mathcal R$ by the stationary response of two alternative mechanisms
+while keeping the norm, errors, resident selection and
+Eqs.~\eqref{eq:m-odisc-reputation}--\eqref{eq:m-odisc-invasion} unchanged.
+Aggregation, adapted from ref.~\cite{michelmata2024}, assigns a good image if at
+least $Q$ of $M$ independently sampled assessments are positive,
+$\mathcal R_{\mathrm{agg}}(u)=\sum_{j=Q}^{M}\binom Mj u^j(1-u)^{M-j}$, with
+$(M,Q)=(2,1)$, so that $\mathcal R_{\mathrm{agg}}(u)=2u-u^2$. Quantitative
+assessment, adapted from ref.~\cite{schmid2023}, keeps an integer score
+$z\in\{-z_{\max},\dots,z_{\max}\}$ that moves up or down by one after a positive
+or negative assessment (attempts to leave the range leave the score unchanged)
+and is read as good if $z\ge z_0$; with $t=u/(1-u)$,
+$\mathcal R_{\mathrm{score}}(u)=\sum_{j=z_{\max}+z_0}^{2z_{\max}}t^j\big/\sum_{j=0}^{2z_{\max}}t^j$,
+and we use $z_{\max}=5$, $z_0=0$. Neither mechanism was optimized or matched in
+memory to the inertial record.
+
+\subsection*{Finite-population reputation simulations}
+
+Individual-based simulations test reputation formation without the mean-field
+closure, at fixed strategy composition; they do not simulate strategy
+evolution. A population of $N$ individuals contains fixed numbers $n_I$ of each
+strategy. Every DISC individual stores a latent record of every individual,
+including itself, and all records start in $\mathrm G$. Records held by ALLC and
+ALLD individuals are not stored because they never affect actions or
+assessments. In each event: (i) a donor is drawn uniformly from the population
+and a recipient uniformly from the remaining $N-1$ individuals, and an observer
+is drawn independently and uniformly from the DISC individuals (the observer
+may coincide with donor or recipient); (ii) the donor forms its intended
+action, a DISC donor by sampling its own image of the recipient from
+Eq.~\eqref{eq:m-readout}; (iii) implementation error is applied; (iv) the
+observer independently samples its own image of the recipient, applies the norm
+to the realized action and reverses the assessment with probability $e_2$; and
+(v) the observer's record of the donor is updated. A sweep consists of
+$n_{\mathrm{DISC}}N$ events, one update per stored record on average.
+
+At sampled times we use $s_{ij}=\sigma(L_{ij})$, which averages exactly over
+readout randomness. For target $j$, the mean goodness and the probability that
+two distinct DISC observers give different images are
+\begin{equation}
+g_j=\frac{1}{n_{\mathrm{DISC}}}\sum_i s_{ij},\qquad
+d_j=\binom{n_{\mathrm{DISC}}}{2}^{-1}\sum_{i<i'}
+\bigl[s_{ij}(1-s_{i'j})+(1-s_{ij})s_{i'j}\bigr],
+\label{eq:m-finite-estimators}
+\end{equation}
+where $i,i'$ run over DISC observers. Averaging over type-$I$ targets gives
+$g_I$ and $d_I$, which are then averaged over sampling times. The reputational
+separation and mean disagreement are
+\begin{equation}
+\Delta g=\frac{g_{\mathrm{DISC}}+g_{\mathrm{ALLC}}}{2}-g_{\mathrm{ALLD}},
+\qquad
+\bar d=\sum_I\frac{n_I}{N}\,d_I .
+\label{eq:m-recognition}
+\end{equation}
+Unlike the mean-field theory, the simulations retain target-specific variation
+and correlations between the private records of different observers.
+
+The recognition analyses use equal strategy numbers, $\alpha=\beta=1$ and
+$0\le k_1,k_2\le6$. Each run lasts 1,000 sweeps and is sampled every five sweeps
+from sweep 800 to sweep 1,000 (41 samples). The depth maps in
+Fig.~\ref{fig:recognition}e--h use one run per condition with $N=150$. The
+replicated analysis (Extended Data Fig.~\ref{ed:recognition-selection}) uses 30
+independent runs per condition with $N=150$ and reports means across runs, with
+pointwise 95\% percentile intervals from 2,000 bootstrap resamples of the run
+means. A condition is eligible for selection if, for both $\Delta g$ and
+$\bar d$, the bootstrap interval of the difference between the second- and
+first-half means of the sampling window lies within $(-0.01,0.01)$. Two slowly
+relaxing SJ conditions required longer runs: $(k_1,k_2)=(4,5)$ with 3,000 sweeps
+(sampled from sweep 2,400) and $(3,5)$ with 50,000 sweeps (sampled from sweep
+40,000); all 196 conditions then passed. Among eligible conditions with
+$\Delta g\ge0.8$ and $\bar d\le0.1$, we select the smallest $K$, breaking ties
+by larger $\Delta g$, then smaller $\bar d$, $k_1$ and $k_2$. This gives the
+four architectures listed above. The stars in Fig.~\ref{fig:recognition}e--h
+apply the same cutoffs and tie-breaking rule to the single-run maps, without
+the drift criterion, and identify the same four architectures. Selection uses
+reputation statistics only.
+The robustness analysis varies the separation cutoff from 0.70 to 0.90 and the
+disagreement cutoff from 0.050 to 0.150 in steps of 0.05 and 0.025. The
+illustrative image matrices in Fig.~\ref{fig:recognition}a--d are final states of
+single runs with $N=90$ after 1,000 sweeps.
+
+\subsection*{Numerical procedures and figure-specific settings}
+
+All panels use $b/c=5$ and $e_1=e_2=0.02$ unless an axis varies them;
+Supplementary Note~12 (Supplementary Table~S11) lists every setting, grid and
+tolerance.
+$\mathcal R$ and $\mathcal R'$ are evaluated in closed form. Homogeneous-DISC
+roots (Fig.~\ref{fig:opportunism}; Extended Data
+Figs.~\ref{ed:resident-reputation}a--d, \ref{ed:reputation-planes} and
+\ref{ed:opportunism-security}) are located by evaluating $F(r)$ on a fine
+uniform grid, refining sign changes by bracketing and classifying roots by the
+sign of $F'(r)$. At mixed compositions, Eq.~\eqref{eq:m-relaxation} is
+integrated from $r_I=1$ by fourth-order Runge--Kutta steps until
+$\max_I|\mathcal R(u_I)-r_I|\le10^{-11}$ ($10^{-12}$ for
+Fig.~\ref{fig:strategy-dynamics}). For local invasion (Extended Data
+Figs.~\ref{ed:benefit-cost}--\ref{ed:readout-evolution}), the resident
+relaxation is followed by step-limited Newton refinement, which keeps the
+branch reached from $r=1$, to residual $\le10^{-13}$.
+
+All sampled-cooperation results (Fig.~\ref{fig:memory-allocation}; Extended
+Data Figs.~\ref{ed:resident-reputation}e, \ref{ed:benefit-cost},
+\ref{ed:depth-evolution} and \ref{ed:readout-evolution}e--h) use one engine.
+Selected reputations are tabulated exactly on a triangular lattice with 120
+subdivisions and interpolated linearly only inside cells in which no reputation
+component varies by more than 0.02; elsewhere, including every cell crossed by
+a fold, they are computed exactly at the requested composition. Payoffs and the
+replicator field are always computed from these reputations, never
+interpolated. Trajectories are integrated with the explicit midpoint rule
+($\Delta t=0.2$) until $\rho_{\mathrm{int}}$ changes by at most $10^{-7}$ over
+each of three consecutive intervals of 100 time units, or for at most
+$4\times10^4$ time units. Halving the step, refining the lattice and tightening
+the tolerances changed $\bar\rho$ by at most $1.3\times10^{-5}$ and no outcome
+class. Initial compositions are 512 points of a randomly shifted Halton
+sequence (bases 2 and 3; seed 2026) or, for Extended Data
+Fig.~\ref{ed:benefit-cost}, eight independently scrambled 512-point Sobol
+sequences~\cite{virtanen2020} (seeds 2026--2033), mapped area-uniformly onto the
+simplex by reflecting points of the unit square with $x+y>1$. In Extended Data
+Fig.~\ref{ed:benefit-cost}, error bars are standard errors across the eight
+samples and therefore describe the sampling of initial compositions; the
+dynamics are deterministic. Extended Data Fig.~\ref{ed:resident-reputation}e
+initializes reputations once, at $t=0$, as all-good or all-bad and then follows
+them quasi-statically along each trajectory by warm-started relaxation, so that
+a branch is left only where it ends.
+
+In Fig.~\ref{fig:strategy-dynamics} and Extended Data
+Fig.~\ref{ed:readout-evolution}a--d, reputations are relaxed exactly at every
+point of an $84\times74$ grid clipped to the simplex. Vertex stability follows
+from the two rare-strategy growth rates; edge equilibria are located on
+501-point edge scans, and their markers refer to stability along the edge;
+interior equilibria are classified by their Jacobian. Under SC without inertia,
+all three payoffs are equal on the line
+$f_{\mathrm{DISC}}=c/[b(\epsilon-e_2)]\approx0.2126$ (Supplementary Note~6).
+Extended Data Fig.~\ref{ed:reputation-planes} reports the highest stable
+homogeneous-DISC root and marks bistability (one-step readout plane,
+$161\times161$; depth plane, $0\le k_1,k_2\le8$); for every root in the depth
+planes, stability in Eq.~\eqref{eq:m-relaxation} agreed with the linearization of
+the full latent-state dynamics. On the ALLD--DISC edge (Extended Data
+Fig.~\ref{ed:edge-geometry}), Eq.~\eqref{eq:m-self-consistency} reduces exactly
+to one equation in $\bar r$, which is solved for 1,071 values of
+$f_{\mathrm{DISC}}\in[0.01,1]$. Local invasion maps use $241\times241$ points of
+$e_1,e_2\in[0,0.45]$ (Extended Data Fig.~\ref{ed:error-invasion}) and
+$801\times801$ points of $(\alpha,\beta)$ (Extended Data
+Fig.~\ref{ed:readout-evolution}i--l). In Fig.~\ref{fig:opportunism},
+$\Lambda(\delta)$ is evaluated at 5,015 values of $\delta$, concentrated near
+$\delta=0$, with sign changes refined by Brent's method; $\delta_{\mathrm c}$ is
+the upper end of the interval with $\Lambda>0$. Residents of the alternative
+filters are obtained from $r=1$ by damped iteration,
+$r\leftarrow0.8r+0.2\,\mathcal R_{\mathrm X}[u_{\mathrm R}(r)]$ with
+$\mathcal R_{\mathrm X}\in\{\mathcal R_{\mathrm{agg}},\mathcal R_{\mathrm{score}}\}$.
+For Extended Data Fig.~\ref{ed:opportunism-security} ($\ge601$ values of
+$\alpha$, 161 values of $b/c\in[2,8]$, $\beta=1$), $\min_\delta H(\delta)$ is
+found by comparing $H$ at $\delta=0$, $\delta=1$ and all real roots in
+$(10^{-8},1)$ of the numerator of the rational function
+$\mathrm dH/\mathrm d\delta$, and a readout is classified as secure if
+$1-(b/c)\min_\delta H\le10^{-10}$. Fold endpoints are excluded; endpoints at the
+domain boundary or at neutral invasion are included.
+
+\subsection*{Data and code availability}
+
+The code, numerical data and figure scripts used in this study are provided
+with the paper (verified computational package; one notebook per figure, a C
+engine for the strategy dynamics, input configurations, validation records and
+checksums). \textit{[Repository and DOI to be added before submission.]}

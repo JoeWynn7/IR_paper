@@ -1,0 +1,33 @@
+[1] max |closed form - Markov chain| = 6.3e-14
+[2] max derivative-formula error = 2.6e-09; full-readout and passage-time identities hold
+[3] R'(1) = 1 - alpha (k1 >= 1) and concavity for k2 = 0 confirmed
+[4] Table S7: norm setting r_R r_ALLD r_ALLC R_L R_U  | chord gap
+    SC none 0.337838 0.020000 0.960800     1.0629     1.0629 | +0.00e+00
+    SC one  0.996279 0.000808 0.996869     1.0008     6.3070 | +3.12e-03
+    SC sel  0.999940 0.058808 0.999940     1.0625   230.2390 | +5.67e-05
+    SH none 0.020391 0.020000 0.039184    52.1267    52.1267 | +0.00e+00
+    SH one  0.995272 0.000808 0.996111     1.0008     5.6409 | +3.87e-03
+    SH sel  0.999998 0.077632 0.999998     1.0842  4410.3662 | +2.18e-06
+    SJ none 0.500000 0.500000 0.500000        inf        inf | +0.00e+00
+    SJ one  0.995307 0.001215 0.996133     1.0012     5.6865 | +3.84e-03
+    SJ sel  1.000000 0.000001 1.000000     1.0000 20909.9918 | +3.94e-07
+    SS none 0.833333 0.180000 0.964000     1.2755     1.2755 | +0.00e+00
+    SS one  0.996297 0.001122 0.996880     1.0011     6.3441 | +3.10e-03
+    SS sel  0.993660 0.000036 0.995245     1.0000     4.0001 | +4.72e-03
+[6] Fig. 5a (SJ): r_R, Lambda(1), delta_c
+    one-step     r_R=0.9953075 Lambda(1)=-3.9752 delta_c=0.008397
+    (4,3) a=1    r_R=0.9999996 Lambda(1)=-4.0000 delta_c=0.365299
+    (4,3) a=0.8  r_R=0.9865091 Lambda(1)=-3.9460 delta_c=0.000000
+    aggregation  r_R=0.9981879 Lambda(1)=-3.7777 delta_c=0.137033
+    score        r_R=1.0000000 Lambda(1)=-4.0000 delta_c=0.383206
+    alpha_L = 0.5669858 (r = 0.851537); alpha_U = 0.8036040 (r = 0.986906)
+[7] Table S8: r_R(0.8), H(0), min H, (b/c)_crit
+    SC r=0.989782 H(0)=0.207160 minH=0.207160 crit=4.8272
+    SH r=0.986341 H(0)=0.206818 minH=0.206818 crit=4.8352
+    SJ r=0.986509 H(0)=0.203661 minH=0.203660 crit=4.9101
+    SS r=0.977886 H(0)=0.511427 minH=0.511427 crit=1.9553
+[8] SH fold alpha=0.591161: u_R'/DeltaPhi = 2.000000
+[8] SJ fold alpha=0.566986: u_R'/DeltaPhi = 1.970973
+[9] error-free threshold alpha <= 1 - c/b confirmed (all norms, 6 architectures, b/c = 3, 5, 8)
+[10] aggregation (SJ): Lambda = 0.599876 d - 4.377595 d^2, root 0.137033
+     SC neutral line f_DISC = 0.2126

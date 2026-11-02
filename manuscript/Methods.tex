@@ -1,0 +1,51 @@
+% Stand-alone wrapper for Methods_body.tex.
+% Compile with: pdflatex Methods.tex (twice).
+% Figure numbers below follow Manuscript_formal_20261028.tex (Extended Data
+% figures ordered by first citation). Change them here if the order changes.
+\documentclass[fleqn,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[letterpaper,left=2cm,right=2cm,top=2.25cm,bottom=2.25cm]{geometry}
+\usepackage{times,mathptmx}
+\usepackage{amsmath,amssymb,bm,booktabs,microtype}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\titleformat{\section}{\large\sffamily\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.5em}{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+% Equations continue the main-text numbering in the manuscript; here they
+% start at (M1) for readability.
+\renewcommand{\theequation}{M\arabic{equation}}
+% ---- figure labels of the manuscript (main text and Extended Data) ----
+\makeatletter
+\newcommand{\figlabel}[2]{\@namedef{r@#1}{{#2}{}{}{}{}}}
+\makeatother
+\figlabel{fig:model}{1}
+\figlabel{fig:recognition}{2}
+\figlabel{fig:strategy-dynamics}{3}
+\figlabel{fig:memory-allocation}{4}
+\figlabel{fig:opportunism}{5}
+\figlabel{ed:recognition-selection}{1}
+\figlabel{ed:resident-reputation}{2}
+\figlabel{ed:reputation-planes}{3}
+\figlabel{ed:edge-geometry}{4}
+\figlabel{ed:benefit-cost}{5}
+\figlabel{ed:error-invasion}{6}
+\figlabel{ed:depth-evolution}{7}
+\figlabel{ed:readout-evolution}{8}
+\figlabel{ed:opportunism-security}{9}
+\begin{document}
+\raggedbottom
+\begin{center}
+{\large\sffamily\bfseries Indirect reciprocity with inertial reputation updating}\\[0.3em]
+{\sffamily Methods}
+\end{center}
+\input{Methods_body}
+\begin{thebibliography}{99}
+\input{Methods_references}
+\end{thebibliography}
+\end{document}
