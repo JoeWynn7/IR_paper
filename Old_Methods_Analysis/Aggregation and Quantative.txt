@@ -1,0 +1,243 @@
+\section{Effective binary filters for aggregation and quantitative assessment}
+\label{sec:supp_filters}
+
+In the main text and in the invasion analyses, we compare several reputation-updating mechanisms through an effective binary response function $g(u)$, where $u$ denotes the probability that a focal donor receives a positive assessment in a single observation, and $g(u)$ denotes the long-run probability that the donor is regarded as good by an observer after the corresponding reputation-processing mechanism is applied. In this section, we derive the forms of $g(u)$ for aggregation and quantitative assessment.
+
+\subsection{Aggregation of multiple observations}
+\label{subsec:supp_aggregation_derivation}
+
+We first consider the aggregation mechanism introduced in the information-abundant framework. The idea is that an observer does not assign a binary reputation after a single assessment. Instead, the observer collects $M$ independent assessments of the same donor, and then aggregates them into a single binary judgment.
+
+Let $X$ denote the number of positive assessments among the $M$ observations. If each single assessment is positive with probability $u$, then $X \sim \mathrm{Binomial}(M,u)$ and therefore
+\begin{equation}
+\Pr(X=m)=\binom{M}{m}u^m(1-u)^{M-m},\qquad m=0,1,\dots,M.
+\end{equation}
+
+The aggregation rule is specified by a threshold fraction $q\in[0,1]$. The donor is assigned the binary label good if and only if the number of positive assessments is at least $T=\lceil qM\rceil$. Hence, the effective binary good probability is
+\begin{equation}
+g_{\mathrm{agg}}(u)=\Pr(X\ge T)=\sum_{m=T}^{M}\binom{M}{m}
+u^m(1-u)^{M-m}.
+\label{eq:supp_g_agg_general}
+\end{equation}
+
+This is the effective response function for aggregation. It is simply the upper tail of the binomial distribution induced by $M$ independent observations.
+
+\paragraph{Example: the canonical tolerant aggregation rule.}
+A particularly important special case is $M=2$ and $q=1/2$. Then $T=1$, so the donor is regarded as good whenever at least one of the two assessments is positive. From Eq.~\eqref{eq:supp_g_agg_general},
+\begin{equation}
+g_{\mathrm{agg}}(u)=\sum_{m=1}^{2}\binom{2}{m}u^m(1-u)^{2-m}=2u(1-u)+u^2=1-(1-u)^2.
+\label{eq:supp_g_agg_M2_qhalf}
+\end{equation}
+Thus, for the canonical two-observation tolerant rule,
+\begin{equation}
+g_{\mathrm{agg}}(u)=1-(1-u)^2=2u-u^2.
+\end{equation}
+
+\paragraph{Interpretation.}
+This expression makes clear that tolerant aggregation is forgiving at the high-$u$ end, because
+\begin{equation}
+1-g_{\mathrm{agg}}(u)=(1-u)^2.
+\end{equation}
+Thus, a donor with a high single-observation positive-assessment probability remains very likely to be regarded as good after aggregation. At the same time, aggregation is also more permissive than the identity map at intermediate values of $u$, since
+\begin{equation}
+g_{\mathrm{agg}}(u)-u=u(1-u)\ge 0.
+\end{equation}
+This property is relevant for the invasion analyses in the main text.
+
+\subsection{Quantitative assessment}
+\label{subsec:supp_quantitative_derivation}
+
+We now derive the effective binary response function corresponding to quantitative assessment. In this mechanism, an observer does not store a binary reputation directly. Instead, the observer maintains an integer score for each donor and updates this score after each assessment. The binary label good or bad is then obtained by thresholding this integer score.
+
+\subsubsection{Model definition}
+
+Let the observer's score for a donor be $r_t \in \{-R,-R+1,\dots,R\}$, where $R\ge 1$ is the maximal absolute score. At each observation step,
+
+\begin{itemize}
+\item with probability $u$, the donor receives a positive assessment and the score increases by one;
+\item with probability $1-u$, the donor receives a negative assessment and the score decreases by one.
+\end{itemize}
+
+At the upper boundary $R$, a further positive assessment leaves the score unchanged at $R$. At the lower boundary $-R$, a further negative assessment leaves the score unchanged at $-R$. Thus the score dynamics form a finite birth--death chain with reflecting boundaries.
+
+To recover a binary label, we introduce a threshold $S$. The donor is regarded as good if and only if $r_t \ge S$. In the main text and in the canonical comparison, we use the standard symmetric threshold $S=0$.
+
+\subsubsection{Stationary distribution of the score chain}
+
+For convenience, relabel the states by $i=r+R \in \{0,1,\dots,2R\}$. The corresponding Markov chain has transition probabilities 
+\begin{equation}
+P(i\to i+1)=u,
+\qquad
+P(i\to i-1)=1-u,
+\qquad
+0<i<2R,
+\end{equation}
+together with reflecting boundaries $P(0\to 0)=1-u$, $P(0\to 1)=u$ and $P(2R\to 2R)=u$, $P(2R\to 2R-1)=1-u$.
+
+This finite birth--death chain has a unique stationary distribution $\pi_i$. By detailed balance,
+\begin{equation}
+\pi_i\,u=\pi_{i+1}(1-u),
+\qquad
+i=0,1,\dots,2R-1.
+\end{equation}
+Hence
+\begin{equation}
+\pi_{i+1}=\pi_i\,\rho,
+\qquad
+\rho=\frac{u}{1-u}.
+\end{equation}
+Iterating this relation gives
+\begin{equation}
+\pi_i=\pi_0\,\rho^i,
+\qquad
+i=0,1,\dots,2R.
+\end{equation}
+Using the normalization condition
+\begin{equation}
+\sum_{i=0}^{2R}\pi_i=1,
+\end{equation}
+we obtain
+\begin{equation}
+\pi_i
+=
+\frac{\rho^i}{\sum_{m=0}^{2R}\rho^m}.
+\label{eq:supp_quant_stationary_pi}
+\end{equation}
+
+When $\rho\neq 1$, the geometric sum is
+\begin{equation}
+\sum_{m=0}^{2R}\rho^m
+=
+\frac{1-\rho^{2R+1}}{1-\rho}.
+\end{equation}
+Therefore,
+\begin{equation}
+\pi_i
+=
+\frac{(1-\rho)\rho^i}{1-\rho^{2R+1}}.
+\end{equation}
+
+\subsubsection{Effective binary good probability}
+
+The donor is regarded as good whenever the score is at least $S$. In terms of the relabeled state $i=r+R$, this condition becomes $i\ge R+S$. Hence the effective good probability is
+\begin{equation}
+g_{\mathrm{quant}}(u;R,S)
+=
+\sum_{i=R+S}^{2R}\pi_i.
+\end{equation}
+Using Eq.~\eqref{eq:supp_quant_stationary_pi}, we obtain
+\begin{equation}
+g_{\mathrm{quant}}(u;R,S)
+=
+\frac{\sum_{i=R+S}^{2R}\rho^i}{\sum_{m=0}^{2R}\rho^m}.
+\label{eq:supp_quant_tail_general}
+\end{equation}
+
+For $\rho\neq 1$, this can be written explicitly as
+\begin{equation}
+g_{\mathrm{quant}}(u;R,S)
+=
+\frac{\rho^{R+S}\left(1-\rho^{R-S+1}\right)}{1-\rho^{2R+1}},
+\qquad
+\rho=\frac{u}{1-u}.
+\label{eq:supp_g_quant_general_RS}
+\end{equation}
+
+This is the general effective binary response function for quantitative assessment with score range $[-R,R]$ and threshold $S$.
+
+\subsubsection{Canonical case used in the main text}
+
+In the main text, we use the standard symmetric threshold $S=0$. Then Eq.~\eqref{eq:supp_g_quant_general_RS} reduces to
+\begin{equation}
+g_{\mathrm{quant}}(u;R,0)
+=
+\frac{\rho^R(1-\rho^{R+1})}{1-\rho^{2R+1}},
+\qquad
+\rho=\frac{u}{1-u}.
+\label{eq:supp_g_quant_maintext}
+\end{equation}
+
+\paragraph{Special case $R=1$.}
+For $R=1$, we obtain
+\begin{equation}
+g_{\mathrm{quant}}(u;1,0)
+=
+\frac{\rho(1-\rho^2)}{1-\rho^3}.
+\end{equation}
+Using $1-\rho^3=(1-\rho)(1+\rho+\rho^2)$, we can simplify this to
+\begin{equation}
+g_{\mathrm{quant}}(u;1,0)
+=
+\frac{\rho(1+\rho)}{1+\rho+\rho^2}.
+\end{equation}
+Substituting $\rho=u/(1-u)$ yields
+\begin{equation}
+g_{\mathrm{quant}}(u;1,0)
+=
+\frac{u}{1-u+u^2}.
+\label{eq:supp_g_quant_R1}
+\end{equation}
+
+This is the minimal nontrivial quantitative-assessment filter used in the canonical comparisons.
+
+\paragraph{The case $u=1/2$.}
+
+When $u=1/2$, we have $\rho=1$, so Eq.~\eqref{eq:supp_g_quant_general_RS} takes the indeterminate form $0/0$. In that case the stationary distribution is uniform:
+\begin{equation}
+\pi_i=\frac{1}{2R+1},
+\qquad
+i=0,1,\dots,2R.
+\end{equation}
+Hence the number of good states is $2R-(R+S)+1=R-S+1$, so
+\begin{equation}
+g_{\mathrm{quant}}\!\left(\frac12;R,S\right)
+=
+\frac{R-S+1}{2R+1}.
+\label{eq:supp_g_quant_half}
+\end{equation}
+For the canonical threshold $S=0$, this becomes
+\begin{equation}
+g_{\mathrm{quant}}\!\left(\frac12;R,0\right)
+=
+\frac{R+1}{2R+1}.
+\end{equation}
+
+This shows that quantitative assessment with threshold $S=0$ has an intrinsic optimistic bias at the symmetric point $u=1/2$, because the neutral score state $r=0$ is counted as good.
+
+\subsection{Summary}
+\label{subsec:supp_filter_summary}
+
+The two derivations above show that both aggregation and quantitative assessment can be represented in the same reduced binary form $g(u)$ as the baseline and inertia mechanisms.
+
+For aggregation, the effective filter is the upper tail of a binomial distribution,
+\begin{equation}
+g_{\mathrm{agg}}(u)
+=
+\sum_{m=\lceil qM\rceil}^{M}
+\binom{M}{m}
+u^m(1-u)^{M-m}.
+\end{equation}
+
+For quantitative assessment, the effective filter is the stationary good-state mass of a finite score chain,
+\begin{equation}
+g_{\mathrm{quant}}(u;R,S)
+=
+\frac{\rho^{R+S}\left(1-\rho^{R-S+1}\right)}{1-\rho^{2R+1}},
+\qquad
+\rho=\frac{u}{1-u},
+\end{equation}
+with the special case
+\begin{equation}
+g_{\mathrm{quant}}(u;R,0)
+=
+\frac{\rho^R(1-\rho^{R+1})}{1-\rho^{2R+1}}
+\end{equation}
+used in the main text, and
+\begin{equation}
+g_{\mathrm{quant}}(u;1,0)=\frac{u}{1-u+u^2}
+\end{equation}
+used for the canonical $R=1$ comparison.
+
+These expressions allow all four mechanisms to be studied within a unified framework based on the single-observation positive-assessment probability $u$ and the effective good probability $g(u)$.
+
+

@@ -1,0 +1,1072 @@
+\documentclass[fleqn,10pt]{wlscirep}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{float}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{remark}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+
+\usepackage{lineno}
+%\linenumbers
+
+% 在文档开始时，添加一个标记到 .toc 文件，之后的内容不添加到目录
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+
+% 增加目录中章节编号后的空格
+\renewcommand{\cftsecnumwidth}{9.5em}
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}
+  {0em} % 这里设置编号后的间距
+  {#1}
+  
+\allowdisplaybreaks
+
+% \renewcommand{\qedsymbol}{} % 重新定义qedsymbol为空，这样末尾就不会显示方框
+
+
+
+\title{Evolutionary dynamics of indirect reciprocity with inertial reputation transitions}
+
+\author[1,2]{Wenqiang Zhu}
+\author[1,2*]{Other Authors}
+\affil[1]{School of Artificial Intelligence, Beihang University, Beijing, 100191, China}
+\affil[2]{Key laboratory of Mathematics, Informatics and Behavioral Semantics, Beihang University, Beijing 100191, China}
+\affil[*]{Corresponding to: 11~(1.~1); 22 (2.~2)}
+
+
+\begin{abstract}
+Indirect reciprocity is a fundamental mechanism for the evolution of cooperation, wherein individuals help others based on the others’ reputations rather than direct experience. Classic models of indirect reciprocity typically assume binary reputations (good or bad) and deterministic, and publicly or privately evaluates each action under a shared social norm. For example, a single antisocial behavior by a reputable individual can immediately damage their reputation, while one prosocial act by a disreputable individual can fully restore it. In practice, however, human assessments are often more nuanced – people may give second chances or require consistent good behavior to fully trust someone, depending on the player's reputation status prior to assessment. Here, we separate reputation labels from behavioral assessments and incorporate reputation inertia into the reputation transformation system, which is represented by two stages with multiple intermediate states. By adjusting the perception of the intermediate state in the two stages, it is possible to demonstrate tolerance toward "good" people and strictness toward "bad" people. Errors and disagreements are important factors that undermine the effectiveness of indirect reciprocity mechanisms. In our model, we verified the effectiveness of reputation inertia in maintaining and promoting cooperation under public and private assessment. Under second-order norms, if defecting against bad players is considered bad, increasing tolerance inertia can promote cooperation, while strict inertia will always cooperate. If defecting against bad players is considered good, the opposite is true.
+\end{abstract}
+\begin{document}
+
+\flushbottom
+\maketitle
+
+% \thispagestyle{empty}
+
+
+\maketitle
+
+\section*{}
+
+Cooperation among unrelated individuals remains a central puzzle in evolutionary biology and the social sciences because one-shot social dilemmas reward defection at the individual level. Indirect reciprocity provides a canonical solution: individuals help others based on reputation, so that prosocial acts are rewarded by future help from third parties. A large theoretical literature shows that indirect reciprocity can sustain cooperation under shared social norms, but it also emphasizes the fragility of reputation systems when assessments are noisy or private and observers disagree about who deserves help.
+
+Most analytical models of indirect reciprocity treat reputations as binary and update them as if a single action can immediately restore or destroy standing. However, real-world reputational judgments are rarely that frictionless. People often grant second chances to those who were previously in good standing, while demanding repeated prosocial behavior before trusting someone who was previously in bad standing. For example...... These asymmetries suggest that reputation change is not only noisy (due to execution and assessment errors) but also \emph{inertial}: reputations may drift gradually and require consistent evidence to move between fully good and fully bad. Existing models rarely disentangle these two paths or connect them to closed-form evolutionary thresholds.
+
+
+
+Here we introduce a tractable model that makes reputation inertia explicit and analytically transparent. We separate \emph{reputation labels} (a publicly recordable multi-state variable) from the binary \emph{perceived reputation} that donors condition on when choosing actions.
+Reputation labels evolve through two inertial paths: a downward path from ``fully good'' to ``fully bad'' and an upward path from ``fully bad'' back to ``fully good''. Crucially, we allow the intermediate labels on the downward path to be perceived as good with probability $\alpha_i$ (capturing \emph{tolerance} toward previously good individuals) and the intermediate labels on the upward path to be perceived as good with probability $1-\beta_j$ (capturing \emph{strictness} toward previously bad individuals). To reduce dimensionality and enable closed-form results for arbitrary inertia length, we parameterize these paths by geometric sequences $\alpha_i=\alpha^i$ and $\beta_j=\beta^j$ (Methods).
+
+This framework yields a compact ``inertia transform'' that maps an individual's probability of receiving a positive assessment in a random interaction to the probability of being perceived as good at stationarity. We combine this transform with time-scale separation (fast reputation equilibration, slow strategy evolution) to derive payoff expressions and replicator dynamics for three canonical strategies (ALLC, ALLD, DISC). The model delivers (i) threshold conditions for when discriminators (DISC) resist invasion by unconditional defectors and unconditional cooperators, (ii) parameterized phase diagrams showing how tolerance, strictness, and inertia length reshape the stability region of cooperation under different social norms, and (iii) a sharp decomposition of how private assessment penalizes discriminators through observer--donor disagreements.
+
+Beyond documenting that inertia can stabilize cooperation, our analysis identifies \emph{how} inertia does so: by buffering accidental reputational damage to those in good standing (tolerance), by impeding rapid ``reputation laundering'' among those in bad standing (strictness), and by reshaping the self-consistent reputation equilibrium that feeds back into strategic incentives. These mechanisms generate testable predictions for how interventions that increase tolerance toward minor norm violations or increase strictness toward partially rehabilitated actors should shift the boundary between cooperative and non-cooperative regimes.
+
+
+
+\section*{Results}\label{sec_model}
+
+
+\subsection*{Model overview: inertial reputation transitions in indirect reciprocity}
+
+We study indirect reciprocity in a well-mixed population engaging in one-shot donation games.
+In each interaction, a donor can cooperate (pay cost $c$ to give benefit $b>c$ to the recipient) or defect (no cost, no benefit). Donors choose actions according to one of three canonical strategies: always cooperates (ALLC), always defects (ALLD), and cooperates only when the recipient is in ``good'' standing (DISC). The key modeling challenge is therefore to specify how ``good standing'' is formed, updated, and possibly disagreed upon.
+
+
+\section*{Discussion}
+The instinct of selfish organisms seems to contradict the ubiquity of cooperation. Previous mathematical models have been developed to 
+
+Here, we provide a 
+
+We examine the 
+
+More generally, we test 
+
+To verify the robustness of 
+
+Our xxxx theory lays the foundation for exploring a large number of extended mechanisms.
+
+\section*{Methods}
+
+\subsection*{Donation game and strategies}
+We consider a well-mixed population repeatedly engaging in pairwise, one-shot donation games.
+In each interaction, a donor chooses $A\in\{\text{C},\text{D}\}$ against a recipient.
+Cooperation yields payoff $-c$ to the donor and $+b$ to the recipient, with $b>c>0$; defection yields $0$ to both.
+
+
+
+
+\section*{Data availability}
+All data generated or analysed during this study are included within the paper and its supplementary information file. 
+
+\section*{Acknowledgements}
+xxxx
+
+\section*{Author contributions}
+xxxx
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\newpage
+\begin{center}
+  \Huge Supplementary Information for
+\end{center}
+
+\noindent
+\textbf{\Huge Title}
+\vspace{2em}
+
+\noindent
+{\Large xxx, xxx}
+\vspace{1em} % 添加额外的垂直空间
+
+\noindent
+e-mail: xxx~(x.~xx); xxx (x.~xx)
+
+
+% 改变目录的行为，从这里开始将内容添加到目录
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+% 插入目录
+\tableofcontents
+
+\renewcommand{\theequation}{S\arabic{equation}}
+\setcounter{equation}{0}
+
+\let\oldsection\thesection
+\renewcommand{\thesection}{Supplementary Note~\arabic{section}}
+\renewcommand{\thesubsection}{\oldsection.\arabic{subsection}}
+
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}
+
+\newpage
+
+\section*{Model overview}
+
+We develop a model of indirect reciprocity in which social standing has temporal inertia. In classical binary-reputation models, a single assessment can move an individual immediately from good to bad standing, or conversely from bad to good standing. Here, by contrast, moral assessments first move reputations through intermediate warning and suspicion states. These intermediate states encode short-run reputational history while preserving the standard behavioural premise of indirect reciprocity: discriminators condition their actions on whether the recipient is currently perceived as good or bad.
+
+The model has four components. Individuals interact in one-shot donation games. Their implemented actions are evaluated by observers according to a shared social norm. These evaluations update observer-specific reputation labels through an inertial transition rule. Strategy frequencies then evolve through payoff-biased social learning. We assume a separation of time scales: for fixed strategy frequencies, reputations reach a stationary self-consistent state; strategy frequencies evolve on the slower time scale according to the payoffs induced by that reputation state.
+
+\subsection*{Donation game and behavioural strategies}
+
+We consider a well-mixed population in which individuals repeatedly play one-shot donation games. In each interaction, one individual is selected as donor and another as recipient. The donor chooses an intended action $a\in\{C,D\}$, where $C$ denotes cooperation and $D$ denotes defection. Cooperation gives benefit $b$ to the recipient and costs $c$ to the donor, with $b>c>0$. Defection gives no benefit and entails no cost.
+
+Individuals use one of three behavioural strategies: unconditional cooperation $X$, unconditional defection $Y$, and discrimination $Z$. A strategy $I\in\{X,Y,Z\}$ is specified by an action rule $s_I=(s_I(G),s_I(B))$, where $s_I(R)$ is the probability that a donor of type $I$ intends to cooperate with a recipient perceived as having binary reputation $R\in\{G,B\}$. Thus,
+\[
+X=(1,1),\qquad Y=(0,0),\qquad Z=(1,0).
+\]
+Unconditional cooperators always intend to cooperate, unconditional defectors always intend to defect, and discriminators cooperate only with recipients they perceive as good. The frequencies of $X$, $Y$, and $Z$ are denoted by $f_X$, $f_Y$, and $f_Z$, with $f_X+f_Y+f_Z=1$.
+
+We include execution errors in cooperative actions. An intended cooperation fails with probability $e_1$ and is implemented as defection. Intended defection is implemented correctly. Thus, costs and benefits are realized only when cooperation is successfully implemented.
+
+\subsection*{Social norms and assessment errors}
+
+After an interaction, an observer assigns a positive or negative assessment to the donor. We focus on second-order social norms. Such norms evaluate the donor's implemented action together with the observer's perceived binary reputation of the recipient. A norm is represented by $n=(n_{C,G},n_{C,B},n_{D,G},n_{D,B})$, where $n_{a,R}=1$ means that implemented action $a$ toward a recipient perceived as $R$ is normatively positive before assessment error, and $n_{a,R}=0$ means that it is normatively negative.
+
+We impose the standard convention that cooperation with a good recipient is positive and defection against a good recipient is negative: $n_{C,G}=1$ and $n_{D,G}=0$. The two entries for actions toward bad recipients are denoted by $p_n=n_{C,B}$ and $q_n=n_{D,B}$. The four second-order norms considered in the main text are:
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Second-order social norms.} The entries $p_n$ and $q_n$ specify whether cooperation with, and defection against, a recipient perceived as bad are normatively positive.}
+\label{tab:social-norms}
+\begin{tabular}{lcc}
+\hline
+Norm & $p_n=n_{C,B}$ & $q_n=n_{D,B}$ \\
+\hline
+Scoring (SC) & 1 & 0 \\
+Shunning (SH) & 0 & 0 \\
+Stern Judging (SJ) & 0 & 1 \\
+Simple Standing (SS) & 1 & 1 \\
+\hline
+\end{tabular}
+\end{table}
+
+Assessment error occurs independently with probability $e_2$. A normatively positive assessment is recorded as negative with probability $e_2$, and a normatively negative assessment is recorded as positive with probability $e_2$.
+
+Let $d_{a,R}$ be the probability that a donor who intends action $a$ receives a positive assessment when the observer perceives the recipient as $R$. This probability accounts for both execution error and assessment error. Define
+\[
+\varepsilon=(1-e_1)(1-e_2)+e_1e_2,
+\]
+the probability that intended cooperation with a good recipient is ultimately assessed as positive. The four error-corrected positive-assessment probabilities are
+\begin{equation}
+\label{eq:error-corrected-assessment}
+d_{C,G}=\varepsilon,\qquad
+d_{D,G}=e_2,\qquad
+d_{C,B}=e_2+(1-2e_2)\big[(1-e_1)p_n+e_1q_n\big],\qquad
+d_{D,B}=e_2+(1-2e_2)q_n .
+\end{equation}
+For example, intended cooperation with a bad recipient is implemented as cooperation with probability $1-e_1$ and as defection with probability $e_1$. The probability that the implemented action is normatively positive before assessment error is therefore $(1-e_1)p_n+e_1q_n$, which gives the expression for $d_{C,B}$ in Eq.~\eqref{eq:error-corrected-assessment}.
+
+For the four norms in Table~\ref{tab:social-norms}, Eq.~\eqref{eq:error-corrected-assessment} reduces to Table~\ref{tab:error-corrected-assessment}.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Error-corrected positive-assessment probabilities.} Entries give the probability that a donor receives a positive assessment conditional on intended action and the observer's perceived reputation of the recipient.}
+\label{tab:error-corrected-assessment}
+\begin{tabular}{lcccc}
+\hline
+Norm & $d_{C,G}$ & $d_{D,G}$ & $d_{C,B}$ & $d_{D,B}$ \\
+\hline
+Scoring (SC) & $\varepsilon$ & $e_2$ & $\varepsilon$ & $e_2$ \\
+Shunning (SH) & $\varepsilon$ & $e_2$ & $e_2$ & $e_2$ \\
+Stern Judging (SJ) & $\varepsilon$ & $e_2$ & $1-\varepsilon$ & $1-e_2$ \\
+Simple Standing (SS) & $\varepsilon$ & $e_2$ & $1-e_2$ & $1-e_2$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{Reputation labels and binary perception}
+
+Classical models usually identify reputation with a binary state, good or bad. We instead distinguish between an observer's reputation label and the binary perception used in action choice. Each observer assigns each individual a label
+\[
+\ell\in\mathcal{L}=\{\mathcal{G},\mathcal{W}_1,\ldots,\mathcal{W}_{k_1},\mathcal{B},\mathcal{S}_1,\ldots,\mathcal{S}_{k_2}\}.
+\]
+The labels $\mathcal{G}$ and $\mathcal{B}$ denote fully good and fully bad standing. The warning labels $\mathcal{W}_i$ lie on the downward path from good to bad standing, whereas the suspicion labels $\mathcal{S}_j$ lie on the upward path from bad to good standing. The positive integers $k_1$ and $k_2$ are the lengths of these two paths. The minimal inertial model has $k_1=k_2=1$, with label set $\{\mathcal{G},\mathcal{W},\mathcal{B},\mathcal{S}\}$.
+
+The label $\ell$ is converted into a binary perceived reputation through a perception function $\sigma(\ell)=\Pr(\text{perceived as good}\mid \ell)$. We set $\sigma(\mathcal{G})=1$ and $\sigma(\mathcal{B})=0$. Intermediate labels are perceived as good with probabilities
+\[
+\sigma(\mathcal{W}_i)=\alpha_i,\qquad
+\sigma(\mathcal{S}_j)=1-\beta_j .
+\]
+The parameter $\alpha_i$ measures tolerance toward a previously good individual who has entered warning state $\mathcal{W}_i$. The parameter $\beta_j$ measures strictness toward a previously bad individual who has entered suspicion state $\mathcal{S}_j$. Unless otherwise stated, we use geometric perception paths $\alpha_i=\alpha^i$ and $\beta_j=\beta^j$, with $\alpha,\beta\in[0,1]$.
+
+\subsection*{Inertial reputation transitions}
+
+Reputation labels are updated whenever an observer assesses a target individual as donor. A positive assessment moves the target toward good standing. It leaves $\mathcal{G}$ unchanged, restores any warning state $\mathcal{W}_i$ to $\mathcal{G}$, moves $\mathcal{B}$ to $\mathcal{S}_1$, moves $\mathcal{S}_j$ to $\mathcal{S}_{j+1}$ for $1\le j<k_2$, and moves $\mathcal{S}_{k_2}$ to $\mathcal{G}$.
+
+A negative assessment moves the target toward bad standing. It leaves $\mathcal{B}$ unchanged, resets any suspicion state $\mathcal{S}_j$ to $\mathcal{B}$, moves $\mathcal{G}$ to $\mathcal{W}_1$, moves $\mathcal{W}_i$ to $\mathcal{W}_{i+1}$ for $1\le i<k_1$, and moves $\mathcal{W}_{k_1}$ to $\mathcal{B}$.
+
+Thus, isolated contradictory assessments do not immediately reverse an individual's social standing. A previously good individual first becomes warned after a negative assessment, and a previously bad individual first becomes suspected after a positive assessment. Full reversal requires repeated evidence in the same direction.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_inertial_reputation_transitions.png}
+\caption{\textbf{Inertial reputation transitions.} Positive assessments move reputation labels toward $\mathcal{G}$, whereas negative assessments move labels toward $\mathcal{B}$. Warning states preserve memory that an individual was previously in good standing; suspicion states preserve memory that an individual was previously in bad standing.}
+\label{fig:inertial-transition}
+\end{figure}
+
+\subsection*{The inertia transform}
+
+Fix a strategy type $I\in\{X,Y,Z\}$, and let $u_I$ be the probability that a donor of this type receives a positive assessment in a random interaction. Conditional on $u_I=u$, the label dynamics of an observer-target pair form a finite Markov chain. Its stationary distribution satisfies $\pi(\mathcal{W}_i)=(1-u)^i\pi(\mathcal{G})$ and $\pi(\mathcal{S}_j)=u^j\pi(\mathcal{B})$. With
+\[
+D(u)=u^{k_2}+(1-u)^{k_1}-u^{k_2}(1-u)^{k_1},
+\]
+the stationary probabilities are
+\begin{equation}
+\label{eq:stationary-label-distribution}
+\pi(\mathcal{G})=\frac{u^{k_2+1}}{D(u)},\qquad
+\pi(\mathcal{B})=\frac{(1-u)^{k_1+1}}{D(u)},\qquad
+\pi(\mathcal{W}_i)=\frac{(1-u)^iu^{k_2+1}}{D(u)},\qquad
+\pi(\mathcal{S}_j)=\frac{u^j(1-u)^{k_1+1}}{D(u)} .
+\end{equation}
+The effective probability that the target is perceived as good is $G_I=\sum_{\ell\in\mathcal{L}}\pi_I(\ell)\sigma(\ell)$. Since the stationary distribution depends on type $I$ only through $u_I$, this defines an inertia transform $G_I=\Phi(u_I;\alpha,\beta,k_1,k_2)$:
+\begin{equation}
+\label{eq:inertia-transform}
+\Phi(u)=
+\frac{
+u^{k_2+1}
++u^{k_2+1}\sum_{i=1}^{k_1}\alpha_i(1-u)^i
++(1-u)^{k_1+1}\sum_{j=1}^{k_2}u^j(1-\beta_j)
+}{
+u^{k_2}+(1-u)^{k_1}-u^{k_2}(1-u)^{k_1}
+}.
+\end{equation}
+
+For the minimal case $k_1=k_2=1$, this becomes
+\begin{equation}
+\label{eq:minimal-inertia-transform}
+\Phi(u;\alpha,\beta,1,1)=
+\frac{u^2[1+\alpha(1-u)]+(1-\beta)u(1-u)^2}{1-u+u^2}.
+\end{equation}
+Equivalently, the numerator is $(1-\beta)u+(\alpha+2\beta-1)u^2+(1-\alpha-\beta)u^3$. When $\alpha=\beta=0$, warning states are perceived as bad and suspicion states as good, so the effective binary reputation tracks the most recent assessment and $\Phi(u;0,0,1,1)=u$. When $\alpha=\beta=1$, warning states are perceived as good and suspicion states as bad, so complete reversal of perceived standing requires two consecutive contradictory assessments.
+
+\subsection*{Private assessment and reputation self-consistency}
+
+The main text focuses on private assessment. Each observer maintains a separate reputation label for each individual. Therefore, a donor and an observer may disagree about the recipient's reputation. This disagreement is irrelevant for $X$ and $Y$, because their actions do not depend on the donor's perception of the recipient, but it is central for $Z$, because discriminators act according to their own perception whereas observers assess the action according to theirs.
+
+For fixed strategy frequencies, let $G_I$ be the probability that a type-$I$ individual is perceived as good by a randomly sampled observer. The population-average probability of being perceived as good is $\bar G=f_XG_X+f_YG_Y+f_ZG_Z$. Under the mean-field private-assessment closure, two observers' perceptions of the same recipient are conditionally independent given the recipient's strategy. Hence
+\[
+\bar H=f_XG_X^2+f_YG_Y^2+f_ZG_Z^2,\qquad
+\bar B=1-2\bar G+\bar H,\qquad
+\bar D=\bar G-\bar H,
+\]
+where $\bar H$ is the probability that both observers perceive a random recipient as good, $\bar B$ is the probability that both perceive the recipient as bad, and $\bar D$ is the probability of each disagreement direction.
+
+The positive-assessment probabilities for the three strategies are
+\begin{equation}
+\label{eq:positive-assessment-private}
+\begin{aligned}
+u_X &= \bar G d_{C,G}+(1-\bar G)d_{C,B},\\
+u_Y &= \bar G d_{D,G}+(1-\bar G)d_{D,B},\\
+u_Z &= \bar H d_{C,G}+\bar B d_{D,B}+\bar D(d_{C,B}+d_{D,G}).
+\end{aligned}
+\end{equation}
+For discriminators, the three terms in $u_Z$ correspond respectively to donor-observer agreement that the recipient is good, donor-observer agreement that the recipient is bad, and the two possible disagreement cases.
+
+At the label level, reputation dynamics for type $I$ can be written as a master equation. Let $\pi_{I,\ell}(t)$ be the fraction of observer-target pairs in which a type-$I$ target has label $\ell$, and let $T_+$ and $T_-$ be the positive and negative transition maps described above. On the fast reputation time scale,
+\begin{equation}
+\label{eq:label-master-equation}
+\dot{\pi}_{I,\ell}
+=u_I(t)\sum_{\ell':\,T_+(\ell')=\ell}\pi_{I,\ell'}(t)
++[1-u_I(t)]\sum_{\ell':\,T_-(\ell')=\ell}\pi_{I,\ell'}(t)
+-\pi_{I,\ell}(t).
+\end{equation}
+The effective good reputation is $G_I(t)=\sum_{\ell\in\mathcal{L}}\pi_{I,\ell}(t)\sigma(\ell)$.
+
+For the deterministic calculations under time-scale separation, we use the equivalent equilibrium self-consistency condition $G_I=\Phi(u_I)$. Numerically, this self-consistency can be obtained by iterating the map or by integrating the relaxation system
+\begin{equation}
+\label{eq:reduced-reputation-dynamics}
+\dot G_I=\Phi(u_I(t);\alpha,\beta,k_1,k_2)-G_I(t),\qquad I\in\{X,Y,Z\},
+\end{equation}
+with $u_I(t)$ given by Eq.~\eqref{eq:positive-assessment-private}. Reputation equilibria are fixed points of Eq.~\eqref{eq:reduced-reputation-dynamics}.
+
+\subsection*{Payoffs and evolutionary dynamics}
+
+Given strategy frequencies and self-consistent effective reputations $(G_X,G_Y,G_Z)$, payoffs follow from the donation game. A type-$I$ individual receives help from unconditional cooperators with probability $f_X$ and from discriminators with probability $f_ZG_I$. Thus, the expected benefit received by type $I$ is proportional to $b(f_X+f_ZG_I)$. Unconditional cooperators pay cost whenever their intended cooperation is successfully implemented, whereas discriminators pay cost only when they perceive the recipient as good and their cooperation is successfully implemented. Accounting for execution error, the payoffs are
+\begin{equation}
+\label{eq:payoffs}
+\begin{aligned}
+\Pi_X &= (1-e_1)b(f_X+f_ZG_X)-(1-e_1)c,\\
+\Pi_Y &= (1-e_1)b(f_X+f_ZG_Y),\\
+\Pi_Z &= (1-e_1)b(f_X+f_ZG_Z)-(1-e_1)c\bar G .
+\end{aligned}
+\end{equation}
+
+Let $\bar\Pi=f_X\Pi_X+f_Y\Pi_Y+f_Z\Pi_Z$ be the population-average payoff. Strategy frequencies evolve according to replicator dynamics,
+\begin{equation}
+\label{eq:replicator-dynamics}
+\dot f_I=f_I(\Pi_I-\bar\Pi),\qquad I\in\{X,Y,Z\}.
+\end{equation}
+The realised cooperation rate is
+\[
+\rho=(1-e_1)(f_X+f_Z\bar G),
+\]
+the probability that a randomly sampled donor-recipient interaction results in implemented cooperation.
+
+Together, Eqs.~\eqref{eq:error-corrected-assessment}, \eqref{eq:inertia-transform}, \eqref{eq:positive-assessment-private}, \eqref{eq:reduced-reputation-dynamics}, and \eqref{eq:replicator-dynamics} define the deterministic evolutionary model. The inertial reputation mechanism enters through the transform $\Phi$, which converts noisy streams of positive and negative moral assessments into effective social standing.
+
+
+
+\section*{Analytical threshold for discriminator stability}
+
+This section derives an analytical benefit-to-cost threshold for the local evolutionary stability of a population of discriminators. The result is independent of the numerical method used to solve the reputation subsystem. It only requires the stationary effective reputations induced by the inertial reputation transform.
+
+\subsection*{Resident discriminator equilibrium}
+
+Let $r=b/c$ denote the benefit-to-cost ratio. We consider the pure discriminator state, $f_Z=1$ and $f_X=f_Y=0$, and assume that the fast reputation subsystem has a locally attracting resident fixed point. Let $g=G_Z$ be the effective probability that a resident discriminator is perceived as good at this fixed point. Under private assessment, two independently sampled observers both perceive a resident recipient as good with probability $g^2$, both perceive the recipient as bad with probability $(1-g)^2$, and disagree in each direction with probability $g(1-g)$. Hence the positive-assessment probability of a resident discriminator is
+\begin{equation}
+\label{eq:resident-disc-positive-prob}
+U_Z(g)=g^2d_{C,G}+(1-g)^2d_{D,B}+g(1-g)(d_{C,B}+d_{D,G}).
+\end{equation}
+The resident reputation fixed point is therefore characterized by the self-consistency equation
+\begin{equation}
+\label{eq:resident-disc-fixed-point}
+g=\Phi\!\left(U_Z(g);\alpha,\beta,k_1,k_2\right).
+\end{equation}
+If Eq.~\eqref{eq:resident-disc-fixed-point} has multiple locally attracting solutions, the threshold calculation below applies to each branch separately. In the main text, we focus on the cooperative branch, i.e. the attracting solution with high effective good reputation.
+
+\subsection*{Reputations of rare unconditional mutants}
+
+Now introduce a rare mutant into the resident discriminator population. Because the mutant is rare, it does not affect the reputation distribution of resident recipients to first order. Thus, a randomly sampled resident recipient is perceived as good by a randomly sampled observer with probability $g$.
+
+For a rare unconditional cooperator $X$, the donor always intends to cooperate. Its positive-assessment probability is therefore
+\begin{equation}
+\label{eq:allc-mutant-positive-prob}
+U_X(g)=gd_{C,G}+(1-g)d_{C,B}.
+\end{equation}
+For a rare unconditional defector $Y$, the donor always intends to defect, giving
+\begin{equation}
+\label{eq:alld-mutant-positive-prob}
+U_Y(g)=gd_{D,G}+(1-g)d_{D,B}.
+\end{equation}
+The corresponding effective good reputations are
+\begin{equation}
+\label{eq:mutant-effective-reputations}
+x=\Phi\!\left(U_X(g);\alpha,\beta,k_1,k_2\right),\qquad
+y=\Phi\!\left(U_Y(g);\alpha,\beta,k_1,k_2\right).
+\end{equation}
+Here $x$ is the effective good reputation of a rare unconditional cooperator in a resident discriminator population, and $y$ is the effective good reputation of a rare unconditional defector.
+
+\subsection*{Payoff comparison}
+
+At the pure discriminator equilibrium, a resident discriminator receives help from other discriminators with probability $g$ and pays the cost of cooperation with probability $g$. Accounting for execution error, its payoff is
+\[
+\Pi_Z=(1-e_1)g(b-c).
+\]
+A rare unconditional cooperator receives help from resident discriminators with probability $x$ and pays the cost of cooperation in every interaction. A rare unconditional defector receives help with probability $y$ and never pays a cooperation cost. Thus,
+\[
+\Pi_X=(1-e_1)(bx-c),\qquad
+\Pi_Y=(1-e_1)by.
+\]
+For $e_1<1$, the common factor $(1-e_1)c$ is positive and can be removed. In terms of $r=b/c$, the scaled payoffs are
+\begin{equation}
+\label{eq:scaled-payoffs-pure-disc}
+\widetilde\Pi_Z=g(r-1),\qquad
+\widetilde\Pi_X=rx-1,\qquad
+\widetilde\Pi_Y=ry.
+\end{equation}
+
+\subsection*{Threshold theorem}
+
+\textbf{Proposition.}
+Consider a locally attracting resident discriminator reputation equilibrium $g$ satisfying Eq.~\eqref{eq:resident-disc-fixed-point}. Let $x$ and $y$ be the effective good reputations of rare unconditional cooperators and defectors defined in Eq.~\eqref{eq:mutant-effective-reputations}. The resident discriminator state is locally resistant to invasion by both unconditional defectors and unconditional cooperators if and only if
+\begin{equation}
+\label{eq:disc-stability-inequalities}
+r(g-y)>g
+\qquad\text{and}\qquad
+r(x-g)<1-g.
+\end{equation}
+Equivalently, if $g>y$, the lower threshold against unconditional defectors is
+\begin{equation}
+\label{eq:defector-threshold}
+r>\theta_D=\frac{g}{g-y}.
+\end{equation}
+If $x>g$, resistance to unconditional cooperators imposes the upper threshold
+\begin{equation}
+\label{eq:cooperator-threshold}
+r<\theta_C=\frac{1-g}{x-g}.
+\end{equation}
+If $x\le g$, unconditional cooperators have no upper-threshold advantage, and we set $\theta_C=+\infty$. Therefore the cooperative discriminator branch is locally stable for
+\begin{equation}
+\label{eq:disc-stability-interval}
+\max\{1,\theta_D\}<\frac{b}{c}<\theta_C,
+\end{equation}
+with the convention that $\theta_C=+\infty$ whenever $x\le g$.
+
+\textit{Proof.}
+In the replicator equation, the initial growth rate of a rare mutant $M\in\{X,Y\}$ in a resident $Z$ population is $\Pi_M-\Pi_Z$, evaluated at the resident reputation equilibrium and at the mutant reputation induced by that resident environment. Thus, $Z$ resists $Y$ if and only if $\widetilde\Pi_Z>\widetilde\Pi_Y$. Using Eq.~\eqref{eq:scaled-payoffs-pure-disc}, this condition is
+\[
+g(r-1)>ry,
+\]
+which is equivalent to $r(g-y)>g$. A finite positive threshold exists only when $g>y$, in which case Eq.~\eqref{eq:defector-threshold} follows.
+
+Similarly, $Z$ resists $X$ if and only if $\widetilde\Pi_Z>\widetilde\Pi_X$, or
+\[
+g(r-1)>rx-1.
+\]
+Rearranging gives $r(x-g)<1-g$. If $x>g$, this yields the upper threshold in Eq.~\eqref{eq:cooperator-threshold}. If $x\le g$, the left-hand side is non-positive whereas $1-g\ge 0$, so unconditional cooperators cannot invade through a reputational advantage, except for degenerate boundary cases with equality. Combining the two invasion conditions with the donation-game requirement $r>1$ gives Eq.~\eqref{eq:disc-stability-interval}. \hfill$\square$
+
+\subsection*{Interpretation of the thresholds}
+
+The lower threshold $\theta_D$ measures how large the benefit of cooperation must be for discriminators to withstand unconditional defectors. It depends on the reputational separation $g-y$ between residents and defectors. If inertial reputation transitions keep persistent defectors in low standing, $y$ decreases, the separation $g-y$ increases, and $\theta_D$ decreases.
+
+The upper threshold $\theta_C$ captures a different failure mode. If unconditional cooperators receive a higher reputation than discriminators, $x>g$, then sufficiently large benefits make unconditional cooperation attractive because unconditional cooperators receive more help while paying only the direct cost of helping everyone. In this case, cooperation based on discrimination is stable only below $\theta_C$. If $x\le g$, discriminators are not reputationally disadvantaged relative to unconditional cooperators, and this upper bound disappears.
+
+Thus, inertial reputation transitions support cooperation when they simultaneously satisfy two requirements: they preserve enough reputational separation between discriminators and defectors to make $\theta_D$ low, while avoiding an excessive reputational premium for unconditional cooperators that would make $\theta_C$ low. This is the analytical expression of the sensitivity--robustness trade-off.
+
+\subsection*{Algebraic characterization for the minimal inertial model}
+
+For the minimal model $k_1=k_2=1$, the resident fixed point can be written as a single algebraic equation. Define
+\[
+A=d_{C,G}+d_{D,B}-d_{C,B}-d_{D,G},\qquad
+B=d_{C,B}+d_{D,G}-2d_{D,B},\qquad
+C=d_{D,B}.
+\]
+Then Eq.~\eqref{eq:resident-disc-positive-prob} becomes
+\[
+U_Z(g)=Ag^2+Bg+C.
+\]
+Using the four-state inertia transform,
+\[
+\Phi(u;\alpha,\beta,1,1)=
+\frac{(1-\beta)u+(\alpha+2\beta-1)u^2+(1-\alpha-\beta)u^3}{1-u+u^2},
+\]
+the resident fixed point $g=\Phi(U_Z(g))$ is equivalently
+\begin{equation}
+\label{eq:minimal-fixed-point-polynomial}
+g\left[1-U_Z(g)+U_Z(g)^2\right]
+-
+\left[(1-\beta)U_Z(g)+(\alpha+2\beta-1)U_Z(g)^2+(1-\alpha-\beta)U_Z(g)^3\right]=0.
+\end{equation}
+Because $U_Z(g)$ is quadratic in $g$, Eq.~\eqref{eq:minimal-fixed-point-polynomial} is a polynomial equation of degree at most six. Once a locally attracting root $g$ is selected, the mutant reputations $x$ and $y$ follow directly from Eqs.~\eqref{eq:allc-mutant-positive-prob}--\eqref{eq:mutant-effective-reputations}, and the stability interval follows from Eq.~\eqref{eq:disc-stability-interval}.
+
+For longer inertial paths, the same logic applies. The equation $g=\Phi(U_Z(g);\alpha,\beta,k_1,k_2)$ remains an explicit algebraic self-consistency condition; its degree increases with $k_1+k_2$, but the payoff thresholds retain the same form in Eqs.~\eqref{eq:defector-threshold} and \eqref{eq:cooperator-threshold}.
+
+
+\section*{Inertial filtering and the cooperation window}
+
+This section gives two analytical results used in the main text. The first result formalizes how inertial reputation transitions filter noisy moral assessments. The second result translates the resulting effective reputations into a benefit-to-cost interval for the local stability of discriminatory cooperation.
+
+\subsection*{Inertial reputation transitions as a nonlinear signal filter}
+
+Let $u$ be the probability that a donor receives a positive assessment in a random interaction. For fixed $u$, the inertial label dynamics form a finite Markov chain with stationary distribution
+\[
+\pi(\mathcal{G})=\frac{u^{k_2+1}}{D(u)},\qquad
+\pi(\mathcal{B})=\frac{(1-u)^{k_1+1}}{D(u)},
+\]
+\[
+\pi(\mathcal{W}_i)=\frac{(1-u)^iu^{k_2+1}}{D(u)},\qquad
+\pi(\mathcal{S}_j)=\frac{u^j(1-u)^{k_1+1}}{D(u)},
+\]
+where
+\[
+D(u)=u^{k_2}+(1-u)^{k_1}-u^{k_2}(1-u)^{k_1}.
+\]
+The effective probability of being perceived as good is
+\[
+\Phi(u)=\sum_{\ell\in\mathcal{L}}\pi(\ell)\sigma(\ell).
+\]
+Because $\sigma(\mathcal{G})=1$, $\sigma(\mathcal{B})=0$, $\sigma(\mathcal{W}_i)=\alpha_i$, and $\sigma(\mathcal{S}_j)=1-\beta_j$, this transform is
+\begin{equation}
+\label{eq:phi-filtering-definition}
+\Phi(u)=
+\frac{
+u^{k_2+1}
++u^{k_2+1}\sum_{i=1}^{k_1}\alpha_i(1-u)^i
++(1-u)^{k_1+1}\sum_{j=1}^{k_2}u^j(1-\beta_j)
+}{
+u^{k_2}+(1-u)^{k_1}-u^{k_2}(1-u)^{k_1}
+}.
+\end{equation}
+
+The quantity $1-\Phi(1-\delta)$ is the effective probability that an almost always positively assessed individual is perceived as bad, where $\delta$ is the rate of negative signals. Conversely, $\Phi(\eta)$ is the effective probability that an almost always negatively assessed individual is perceived as good, where $\eta$ is the rate of positive signals. These two quantities measure the two sides of reputation error: false exclusion of cooperative individuals and false acceptance of persistent defectors.
+
+\textbf{Proposition 1.}
+For $\delta\downarrow 0$,
+\begin{equation}
+\label{eq:false-bad-exact}
+1-\Phi(1-\delta)=
+\frac{
+(1-\delta)^{k_2+1}\sum_{i=1}^{k_1}(1-\alpha_i)\delta^i
++\delta^{k_1+1}\left[1+\sum_{j=1}^{k_2}(1-\delta)^j\beta_j\right]
+}{
+(1-\delta)^{k_2}+\delta^{k_1}-(1-\delta)^{k_2}\delta^{k_1}
+}.
+\end{equation}
+For $\eta\downarrow 0$,
+\begin{equation}
+\label{eq:false-good-exact}
+\Phi(\eta)=
+\frac{
+\eta^{k_2+1}\left[1+\sum_{i=1}^{k_1}\alpha_i(1-\eta)^i\right]
++(1-\eta)^{k_1+1}\sum_{j=1}^{k_2}\eta^j(1-\beta_j)
+}{
+\eta^{k_2}+(1-\eta)^{k_1}-\eta^{k_2}(1-\eta)^{k_1}
+}.
+\end{equation}
+
+\textit{Proof.}
+The probability of being perceived as bad is the probability of being in $\mathcal{B}$ plus the bad-perception probabilities of warning and suspicion labels:
+\[
+1-\Phi(u)=\pi(\mathcal{B})+\sum_{i=1}^{k_1}\pi(\mathcal{W}_i)(1-\alpha_i)+\sum_{j=1}^{k_2}\pi(\mathcal{S}_j)\beta_j.
+\]
+Substituting the stationary probabilities and setting $u=1-\delta$ gives Eq.~\eqref{eq:false-bad-exact}. Similarly, the probability of being perceived as good is
+\[
+\Phi(u)=\pi(\mathcal{G})+\sum_{i=1}^{k_1}\pi(\mathcal{W}_i)\alpha_i+\sum_{j=1}^{k_2}\pi(\mathcal{S}_j)(1-\beta_j).
+\]
+Substituting the stationary probabilities and setting $u=\eta$ gives Eq.~\eqref{eq:false-good-exact}. \hfill$\square$
+
+Equations~\eqref{eq:false-bad-exact} and \eqref{eq:false-good-exact} show that inertial reputation transitions act as a nonlinear temporal filter. The order of the leading error term depends on how intermediate labels are perceived.
+
+\textbf{Corollary 1.}
+Under geometric perception paths $\alpha_i=\alpha^i$ and $\beta_j=\beta^j$:
+\[
+1-\Phi(1-\delta)=(1-\alpha)\delta+O(\delta^2)
+\quad\text{if }0\le\alpha<1,
+\]
+whereas
+\begin{equation}
+\label{eq:false-bad-high-order}
+1-\Phi(1-\delta)=\left(1+\sum_{j=1}^{k_2}\beta_j\right)\delta^{k_1+1}+O(\delta^{k_1+2})
+\quad\text{if }\alpha=1.
+\end{equation}
+Similarly,
+\[
+\Phi(\eta)=(1-\beta)\eta+O(\eta^2)
+\quad\text{if }0\le\beta<1,
+\]
+whereas
+\begin{equation}
+\label{eq:false-good-high-order}
+\Phi(\eta)=\left(1+\sum_{i=1}^{k_1}\alpha_i\right)\eta^{k_2+1}+O(\eta^{k_2+2})
+\quad\text{if }\beta=1.
+\end{equation}
+In the fully inertial case $\alpha=\beta=1$, these reduce to
+\begin{equation}
+\label{eq:fully-inertial-filtering}
+1-\Phi(1-\delta)=(1+k_2)\delta^{k_1+1}+O(\delta^{k_1+2}),\qquad
+\Phi(\eta)=(1+k_1)\eta^{k_2+1}+O(\eta^{k_2+2}).
+\end{equation}
+
+\textit{Proof.}
+The denominators in Eqs.~\eqref{eq:false-bad-exact} and \eqref{eq:false-good-exact} converge to one as $\delta\downarrow 0$ and $\eta\downarrow 0$, respectively. If $0\le\alpha<1$, then $1-\alpha_1=1-\alpha$ is the first non-zero warning contribution in Eq.~\eqref{eq:false-bad-exact}, which gives the linear term. If $\alpha=1$, all warning labels are perceived as good, so the warning contribution vanishes and the leading term comes from the fully bad state and the bad component of suspicion labels, yielding Eq.~\eqref{eq:false-bad-high-order}. The argument for Eq.~\eqref{eq:false-good-high-order} is symmetric. Setting $\alpha_i=\beta_j=1$ gives Eq.~\eqref{eq:fully-inertial-filtering}. \hfill$\square$
+
+For the minimal four-label model $k_1=k_2=1$, full inertia gives
+\[
+1-\Phi(1-\delta)=2\delta^2+O(\delta^3),\qquad
+\Phi(\eta)=2\eta^2+O(\eta^3).
+\]
+Thus a single erroneous moral signal has only a second-order effect on effective social standing. Longer warning and suspicion paths increase the order of error suppression.
+
+\subsection*{A cooperation window for discriminator stability}
+
+We next connect inertial filtering to evolutionary stability. Let $r=b/c$ and consider the pure discriminator state $f_Z=1$. Suppose that the fast reputation subsystem has a locally attracting resident fixed point. Let $g$ be the effective good reputation of a resident discriminator. Under private assessment, a resident discriminator receives a positive assessment with probability
+\begin{equation}
+\label{eq:disc-resident-u-theory}
+U_Z(g)=g^2d_{C,G}+(1-g)^2d_{D,B}+g(1-g)(d_{C,B}+d_{D,G}),
+\end{equation}
+and $g$ is determined by
+\begin{equation}
+\label{eq:disc-resident-fixed-point-theory}
+g=\Phi(U_Z(g)).
+\end{equation}
+
+Now consider rare unconditional mutants. Since a rare mutant does not change the resident reputation environment to first order, the positive-assessment probabilities of rare unconditional cooperators and defectors are
+\[
+U_X(g)=gd_{C,G}+(1-g)d_{C,B},\qquad
+U_Y(g)=gd_{D,G}+(1-g)d_{D,B}.
+\]
+Their effective good reputations are
+\begin{equation}
+\label{eq:mutant-reputations-theory}
+x=\Phi(U_X(g)),\qquad y=\Phi(U_Y(g)).
+\end{equation}
+
+\textbf{Proposition 2.}
+For a locally attracting discriminator branch with resident reputation $g$ and rare-mutant reputations $x$ and $y$, the pure discriminator state resists invasion by both unconditional defectors and unconditional cooperators if and only if
+\begin{equation}
+\label{eq:window-inequalities-theory}
+r(g-y)>g,\qquad r(x-g)<1-g.
+\end{equation}
+Equivalently, when $g>y$, resistance to unconditional defectors requires
+\begin{equation}
+\label{eq:theta-d-theory}
+r>\theta_D=\frac{g}{g-y}.
+\end{equation}
+When $x>g$, resistance to unconditional cooperators requires
+\begin{equation}
+\label{eq:theta-c-theory}
+r<\theta_C=\frac{1-g}{x-g}.
+\end{equation}
+If $x\le g$, unconditional cooperators impose no upper bound. Therefore the local cooperation window is
+\begin{equation}
+\label{eq:cooperation-window-theory}
+\max\{1,\theta_D\}<\frac{b}{c}<\theta_C,
+\end{equation}
+with $\theta_C=+\infty$ when $x\le g$.
+
+\textit{Proof.}
+At the pure discriminator state, a resident discriminator receives help from other discriminators with probability $g$ and pays the cost of cooperation with probability $g$. Accounting for execution error,
+\[
+\Pi_Z=(1-e_1)g(b-c).
+\]
+A rare unconditional cooperator receives help with probability $x$ and pays the cost in every interaction, whereas a rare unconditional defector receives help with probability $y$ and pays no cost:
+\[
+\Pi_X=(1-e_1)(bx-c),\qquad
+\Pi_Y=(1-e_1)by.
+\]
+For $e_1<1$, the common factor $(1-e_1)c$ is positive. The scaled payoffs are therefore
+\[
+\widetilde\Pi_Z=g(r-1),\qquad
+\widetilde\Pi_X=rx-1,\qquad
+\widetilde\Pi_Y=ry.
+\]
+The initial growth rate of a rare mutant is its payoff advantage over the resident. Thus the discriminator state resists $Y$ exactly when $g(r-1)>ry$, which is equivalent to $r(g-y)>g$. If $g>y$, this gives Eq.~\eqref{eq:theta-d-theory}; if $g\le y$, no finite positive benefit-to-cost ratio can give discriminators a strict payoff advantage over defectors. Similarly, the discriminator state resists $X$ exactly when $g(r-1)>rx-1$, or $r(x-g)<1-g$. If $x>g$, this gives Eq.~\eqref{eq:theta-c-theory}; if $x\le g$, the left-hand side is non-positive and unconditional cooperators have no reputational premium that can overcome their extra cost. Combining these conditions with $r>1$ yields Eq.~\eqref{eq:cooperation-window-theory}. \hfill$\square$
+
+The two thresholds have distinct interpretations. The lower threshold $\theta_D$ is controlled by the reputational separation $g-y$ between discriminators and defectors. Inertial filtering lowers $\theta_D$ when it suppresses the false acceptance of persistent defectors. The upper threshold $\theta_C$ is controlled by the reputational premium $x-g$ of unconditional cooperators over discriminators. Inertial filtering raises or removes this upper bound when it prevents discriminators from being excessively penalized for justified defection. Stable indirect reciprocity therefore requires both sensitivity to persistent defection and robustness to isolated adverse signals.
+
+
+
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+
+\newpage
+
+% \bibliography{refs}
+
+\begin{thebibliography}{10}
+\urlstyle{rm}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname doiprefix\endcsname\relax\def\doiprefix{DOI: }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{nowak2006evolutionary}
+\bibinfo{author}{Nowak, M.~A.}
+\newblock \emph{\bibinfo{title}{Evolutionary dynamics: exploring the equations of life}} (\bibinfo{publisher}{Harvard University Press}, \bibinfo{year}{2006}).
+
+\bibitem{sigmund2010calculus}
+\bibinfo{author}{Sigmund, K.}
+\newblock \emph{\bibinfo{title}{The calculus of selfishness}} (\bibinfo{publisher}{Princeton University Press}, \bibinfo{year}{2010}).
+
+\bibitem{perc2017statistical}
+\bibinfo{author}{Perc, M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Statistical physics of human cooperation}}.
+\newblock {\emph{\JournalTitle{Physics Reports}}} \textbf{\bibinfo{volume}{687}}, \bibinfo{pages}{1--51}, DOI:\href{https://doi.org/10.1016/j.physrep.2017.05.004}{\detokenize{10.1016/j.physrep.2017.05.004}} (\bibinfo{year}{2017}).
+
+\bibitem{nowak1992evolutionary}
+\bibinfo{author}{Nowak, M.~A.} \& \bibinfo{author}{May, R.~M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary games and spatial chaos}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{359}}, \bibinfo{pages}{826--829}, DOI:\href{https://doi.org/10.1038/359826a0}{\detokenize{10.1038/359826a0}} (\bibinfo{year}{1992}).
+
+\bibitem{hauert2004spatial}
+\bibinfo{author}{Hauert, C.} \& \bibinfo{author}{Doebeli, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Spatial structure often inhibits the evolution of cooperation in the snowdrift game}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{428}}, \bibinfo{pages}{643--646}, DOI:\href{https://doi.org/10.1038/nature02360}{\detokenize{10.1038/nature02360}} (\bibinfo{year}{2004}).
+
+\bibitem{perc2010coevolutionary}
+\bibinfo{author}{Perc, M.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Coevolutionary games---a mini review}}.
+\newblock {\emph{\JournalTitle{BioSystems}}} \textbf{\bibinfo{volume}{99}}, \bibinfo{pages}{109--125}, DOI:\href{https://doi.org/10.1016/j.biosystems.2009.10.003}{\detokenize{10.1016/j.biosystems.2009.10.003}} (\bibinfo{year}{2010}).
+
+\bibitem{ohtsuki2006simple}
+\bibinfo{author}{Ohtsuki, H.}, \bibinfo{author}{Hauert, C.}, \bibinfo{author}{Lieberman, E.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{A simple rule for the evolution of cooperation on graphs and social networks}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{441}}, \bibinfo{pages}{502--505}, DOI:\href{https://doi.org/10.1038/nature04605}{\detokenize{10.1038/nature04605}} (\bibinfo{year}{2006}).
+
+\bibitem{taylor2007evolution}
+\bibinfo{author}{Taylor, P.~D.}, \bibinfo{author}{Day, T.} \& \bibinfo{author}{Wild, G.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolution of cooperation in a finite homogeneous graph}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{447}}, \bibinfo{pages}{469--472}, DOI:\href{https://doi.org/10.1038/nature05784}{\detokenize{10.1038/nature05784}} (\bibinfo{year}{2007}).
+
+\bibitem{allen2014games}
+\bibinfo{author}{Allen, B.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Games on graphs}}.
+\newblock {\emph{\JournalTitle{EMS Surveys in Mathematical Sciences}}} \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{113--151}, DOI:\href{https://doi.org/10.4171/EMSS/3}{\detokenize{10.4171/EMSS/3}} (\bibinfo{year}{2014}).
+
+\bibitem{allen2017evolutionary}
+\bibinfo{author}{Allen, B.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics on any population structure}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{544}}, \bibinfo{pages}{227--230}, DOI:\href{https://doi.org/10.1038/nature21723}{\detokenize{10.1038/nature21723}} (\bibinfo{year}{2017}).
+
+\bibitem{allen2019mathematical}
+\bibinfo{author}{Allen, B.} \& \bibinfo{author}{McAvoy, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{A mathematical formalism for natural selection with arbitrary spatial and genetic structure}}.
+\newblock {\emph{\JournalTitle{Journal of Mathematical Biology}}} \textbf{\bibinfo{volume}{78}}, \bibinfo{pages}{1147--1210}, DOI:\href{https://doi.org/10.1007/s00285-018-1305-z}{\detokenize{10.1007/s00285-018-1305-z}} (\bibinfo{year}{2019}).
+
+\bibitem{mcavoy2021fixation}
+\bibinfo{author}{McAvoy, A.} \& \bibinfo{author}{Allen, B.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Fixation probabilities in evolutionary dynamics under weak selection}}.
+\newblock {\emph{\JournalTitle{Journal of Mathematical Biology}}} \textbf{\bibinfo{volume}{82}}, \bibinfo{pages}{14}, DOI:\href{https://doi.org/10.1007/s00285-021-01568-4}{\detokenize{10.1007/s00285-021-01568-4}} (\bibinfo{year}{2021}).
+
+\bibitem{fotouhi2018conjoining}
+\bibinfo{author}{Fotouhi, B.}, \bibinfo{author}{Momeni, N.}, \bibinfo{author}{Allen, B.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Conjoining uncooperative societies facilitates evolution of cooperation}}.
+\newblock {\emph{\JournalTitle{Nature Human Behaviour}}} \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{492--499}, DOI:\href{https://doi.org/10.1038/s41562-018-0368-6}{\detokenize{10.1038/s41562-018-0368-6}} (\bibinfo{year}{2018}).
+
+\bibitem{mcavoy2020social}
+\bibinfo{author}{McAvoy, A.}, \bibinfo{author}{Allen, B.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Social goods dilemmas in heterogeneous societies}}.
+\newblock {\emph{\JournalTitle{Nature Human Behaviour}}} \textbf{\bibinfo{volume}{4}}, \bibinfo{pages}{819--831}, DOI:\href{https://doi.org/10.1038/s41562-020-0881-2}{\detokenize{10.1038/s41562-020-0881-2}} (\bibinfo{year}{2020}).
+
+\bibitem{hauert2006synergy}
+\bibinfo{author}{Hauert, C.}, \bibinfo{author}{Michor, F.}, \bibinfo{author}{Nowak, M.~A.} \& \bibinfo{author}{Doebeli, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Synergy and discounting of cooperation in social dilemmas}}.
+\newblock {\emph{\JournalTitle{Journal of Theoretical Biology}}} \textbf{\bibinfo{volume}{239}}, \bibinfo{pages}{195--202}, DOI:\href{https://doi.org/10.1016/j.jtbi.2005.08.040}{\detokenize{10.1016/j.jtbi.2005.08.040}} (\bibinfo{year}{2006}).
+
+\bibitem{allen2024nonlinear}
+\bibinfo{author}{Allen, B.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Nonlinear social evolution and the emergence of collective action}}.
+\newblock {\emph{\JournalTitle{PNAS Nexus}}} \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{pgae131}, DOI:\href{https://doi.org/10.1093/pnasnexus/pgae131}{\detokenize{10.1093/pnasnexus/pgae131}} (\bibinfo{year}{2024}).
+
+\bibitem{nash1950equilibrium}
+\bibinfo{author}{Nash, J.~F.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Equilibrium points in $n$-person games}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of Sciences}}} \textbf{\bibinfo{volume}{36}}, \bibinfo{pages}{48--49}, DOI:\href{https://doi.org/10.1073/pnas.36.1.48}{\detokenize{10.1073/pnas.36.1.48}} (\bibinfo{year}{1950}).
+
+\bibitem{perc2013evolutionary}
+\bibinfo{author}{Perc, M.}, \bibinfo{author}{G{\'o}mez-Gardenes, J.}, \bibinfo{author}{Szolnoki, A.}, \bibinfo{author}{Flor{\'\i}a, L.~M.} \& \bibinfo{author}{Moreno, Y.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics of group interactions on structured populations: a review}}.
+\newblock {\emph{\JournalTitle{Journal of the Royal Society Interface}}} \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{20120997}, DOI:\href{https://doi.org/10.1098/rsif.2012.0997}{\detokenize{10.1098/rsif.2012.0997}} (\bibinfo{year}{2013}).
+
+\bibitem{wang2024evolutionary}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Perc, M.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics of any multiplayer game on regular graphs}}.
+\newblock {\emph{\JournalTitle{Nature Communications}}} \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{5349}, DOI:\href{https://doi.org/10.1038/s41467-024-49505-5}{\detokenize{10.1038/s41467-024-49505-5}} (\bibinfo{year}{2024}).
+
+\bibitem{szabo2002phase}
+\bibinfo{author}{Szab{\'o}, G.} \& \bibinfo{author}{Hauert, C.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Phase transitions and volunteering in spatial public goods games}}.
+\newblock {\emph{\JournalTitle{Physical Review Letters}}} \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{118101}, DOI:\href{https://doi.org/10.1103/PhysRevLett.89.118101}{\detokenize{10.1103/PhysRevLett.89.118101}} (\bibinfo{year}{2002}).
+
+\bibitem{wang2022reversed}
+\bibinfo{author}{Wang, C.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{A reversed form of public goods game: equivalence and difference}}.
+\newblock {\emph{\JournalTitle{New Journal of Physics}}} \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{123030}, DOI:\href{https://doi.org/10.1088/1367-2630/acab25}{\detokenize{10.1088/1367-2630/acab25}} (\bibinfo{year}{2022}).
+
+\bibitem{wang2022modeling}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Huang, C.}, \bibinfo{author}{Pan, Q.} \& \bibinfo{author}{He, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Modeling the social dilemma of involution on a square lattice}}.
+\newblock {\emph{\JournalTitle{Chaos, Solitons \& Fractals}}} \textbf{\bibinfo{volume}{158}}, \bibinfo{pages}{112092}, DOI:\href{https://doi.org/10.1016/j.chaos.2022.112092}{\detokenize{10.1016/j.chaos.2022.112092}} (\bibinfo{year}{2022}).
+
+\bibitem{hardin1968tragedy}
+\bibinfo{author}{Hardin, G.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The tragedy of the commons}}.
+\newblock {\emph{\JournalTitle{Science}}} \textbf{\bibinfo{volume}{162}}, \bibinfo{pages}{1243--1248}, DOI:\href{https://doi.org/10.1126/science.162.3859.1243}{\detokenize{10.1126/science.162.3859.1243}} (\bibinfo{year}{1968}).
+
+\bibitem{semmann2003volunteering}
+\bibinfo{author}{Semmann, D.}, \bibinfo{author}{Krambeck, H.-J.} \& \bibinfo{author}{Milinski, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Volunteering leads to rock-paper-scissors dynamics in a public goods game}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{425}}, \bibinfo{pages}{390--393}, DOI:\href{https://doi.org/10.1038/nature01986}{\detokenize{10.1038/nature01986}} (\bibinfo{year}{2003}).
+
+\bibitem{hauser2019social}
+\bibinfo{author}{Hauser, O.~P.}, \bibinfo{author}{Hilbe, C.}, \bibinfo{author}{Chatterjee, K.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Social dilemmas among unequals}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{572}}, \bibinfo{pages}{524--527}, DOI:\href{https://doi.org/10.1038/s41586-019-1488-5}{\detokenize{10.1038/s41586-019-1488-5}} (\bibinfo{year}{2019}).
+
+\bibitem{shi2020freedom}
+\bibinfo{author}{Shi, L.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Freedom of choice adds value to public goods}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of Sciences}}} \textbf{\bibinfo{volume}{117}}, \bibinfo{pages}{17516--17521}, DOI:\href{https://doi.org/10.1073/pnas.1921806117}{\detokenize{10.1073/pnas.1921806117}} (\bibinfo{year}{2020}).
+
+\bibitem{otten2022human}
+\bibinfo{author}{Otten, K.}, \bibinfo{author}{Frey, U.~J.}, \bibinfo{author}{Buskens, V.}, \bibinfo{author}{Przepiorka, W.} \& \bibinfo{author}{Ellemers, N.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Human cooperation in changing groups in a large-scale public goods game}}.
+\newblock {\emph{\JournalTitle{Nature Communications}}} \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{6399}, DOI:\href{https://doi.org/10.1038/s41467-022-34160-5}{\detokenize{10.1038/s41467-022-34160-5}} (\bibinfo{year}{2022}).
+
+\bibitem{santos2008social}
+\bibinfo{author}{Santos, F.~C.}, \bibinfo{author}{Santos, M.~D.} \& \bibinfo{author}{Pacheco, J.~M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Social diversity promotes the emergence of cooperation in public goods games}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{454}}, \bibinfo{pages}{213--216}, DOI:\href{https://doi.org/10.1038/nature06940}{\detokenize{10.1038/nature06940}} (\bibinfo{year}{2008}).
+
+\bibitem{wang2023evolution}
+\bibinfo{author}{Wang, C.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolution of cooperation under a generalized death-birth process}}.
+\newblock {\emph{\JournalTitle{Physical Review E}}} \textbf{\bibinfo{volume}{107}}, \bibinfo{pages}{024303}, DOI:\href{https://doi.org/10.1103/PhysRevE.107.024303}{\detokenize{10.1103/PhysRevE.107.024303}} (\bibinfo{year}{2023}).
+
+\bibitem{wang2023conflict}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhu, W.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The conflict between self-interaction and updating passivity in the evolution of cooperation}}.
+\newblock {\emph{\JournalTitle{Chaos, Solitons \& Fractals}}} \textbf{\bibinfo{volume}{173}}, \bibinfo{pages}{113667}, DOI:\href{https://doi.org/10.1016/j.chaos.2023.113667}{\detokenize{10.1016/j.chaos.2023.113667}} (\bibinfo{year}{2023}).
+
+\bibitem{wang2023inertia}
+\bibinfo{author}{Wang, C.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Inertia in spatial public goods games under weak selection}}.
+\newblock {\emph{\JournalTitle{Applied Mathematics and Computation}}} \textbf{\bibinfo{volume}{449}}, \bibinfo{pages}{127941}, DOI:\href{https://doi.org/10.1016/j.amc.2023.127941}{\detokenize{10.1016/j.amc.2023.127941}} (\bibinfo{year}{2023}).
+
+\bibitem{wang2023greediness}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhu, W.} \& \bibinfo{author}{Szolnoki, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{When greediness and self-confidence meet in a social dilemma}}.
+\newblock {\emph{\JournalTitle{Physica A}}} \textbf{\bibinfo{volume}{625}}, \bibinfo{pages}{129033}, DOI:\href{https://doi.org/10.1016/j.physa.2023.129033}{\detokenize{10.1016/j.physa.2023.129033}} (\bibinfo{year}{2023}).
+
+\bibitem{wang2023imitation}
+\bibinfo{author}{Wang, X.}, \bibinfo{author}{Zhou, L.}, \bibinfo{author}{McAvoy, A.} \& \bibinfo{author}{Li, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Imitation dynamics on networks with incomplete information}}.
+\newblock {\emph{\JournalTitle{Nature Communications}}} \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{7453}, DOI:\href{https://doi.org/10.1038/s41467-023-43048-x}{\detokenize{10.1038/s41467-023-43048-x}} (\bibinfo{year}{2023}).
+
+\bibitem{meng2024dynamics}
+\bibinfo{author}{Meng, Y.}, \bibinfo{author}{Cornelius, S.~P.}, \bibinfo{author}{Liu, Y.-Y.} \& \bibinfo{author}{Li, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Dynamics of collective cooperation under personalised strategy updates}}.
+\newblock {\emph{\JournalTitle{Nature Communications}}} \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{3125}, DOI:\href{https://doi.org/10.1038/s41467-024-47380-8}{\detokenize{10.1038/s41467-024-47380-8}} (\bibinfo{year}{2024}).
+
+\bibitem{ibsen2015computational}
+\bibinfo{author}{Ibsen-Jensen, R.}, \bibinfo{author}{Chatterjee, K.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Computational complexity of ecological and evolutionary spatial dynamics}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of Sciences}}} \textbf{\bibinfo{volume}{112}}, \bibinfo{pages}{15636--15641}, DOI:\href{https://doi.org/10.1073/pnas.1511366112}{\detokenize{10.1073/pnas.1511366112}} (\bibinfo{year}{2015}).
+
+\bibitem{allen2013spatial}
+\bibinfo{author}{Allen, B.}, \bibinfo{author}{Gore, J.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Spatial dilemmas of diffusible public goods}}.
+\newblock {\emph{\JournalTitle{Elife}}} \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{e01169}, DOI:\href{https://doi.org/10.7554/eLife.01169}{\detokenize{10.7554/eLife.01169}} (\bibinfo{year}{2013}).
+
+\bibitem{li2014cooperation}
+\bibinfo{author}{Li, A.}, \bibinfo{author}{Wu, B.} \& \bibinfo{author}{Wang, L.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Cooperation with both synergistic and local interactions can be worse than each alone}}.
+\newblock {\emph{\JournalTitle{Scientific Reports}}} \textbf{\bibinfo{volume}{4}}, \bibinfo{pages}{5536}, DOI:\href{https://doi.org/10.1038/srep05536}{\detokenize{10.1038/srep05536}} (\bibinfo{year}{2014}).
+
+\bibitem{li2016evolutionary}
+\bibinfo{author}{Li, A.}, \bibinfo{author}{Broom, M.}, \bibinfo{author}{Du, J.} \& \bibinfo{author}{Wang, L.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics of general group interactions in structured populations}}.
+\newblock {\emph{\JournalTitle{Physical Review E}}} \textbf{\bibinfo{volume}{93}}, \bibinfo{pages}{022407}, DOI:\href{https://doi.org/10.1103/PhysRevE.93.022407}{\detokenize{10.1103/PhysRevE.93.022407}} (\bibinfo{year}{2016}).
+
+\bibitem{su2018understanding}
+\bibinfo{author}{Su, Q.}, \bibinfo{author}{Wang, L.} \& \bibinfo{author}{Stanley, H.~E.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Understanding spatial public goods games on three-layer networks}}.
+\newblock {\emph{\JournalTitle{New Journal of Physics}}} \textbf{\bibinfo{volume}{20}}, \bibinfo{pages}{103030}, DOI:\href{https://doi.org/10.1088/1367-2630/aae6dd}{\detokenize{10.1088/1367-2630/aae6dd}} (\bibinfo{year}{2018}).
+
+\bibitem{su2019spatial}
+\bibinfo{author}{Su, Q.}, \bibinfo{author}{Li, A.}, \bibinfo{author}{Wang, L.} \& \bibinfo{author}{Eugene~Stanley, H.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Spatial reciprocity in the evolution of cooperation}}.
+\newblock {\emph{\JournalTitle{Proceedings of the Royal Society B}}} \textbf{\bibinfo{volume}{286}}, \bibinfo{pages}{20190041}, DOI:\href{https://doi.org/10.1098/rspb.2019.0041}{\detokenize{10.1098/rspb.2019.0041}} (\bibinfo{year}{2019}).
+
+\bibitem{szabo1998evolutionary}
+\bibinfo{author}{Szab{\'o}, G.} \& \bibinfo{author}{T{\H{o}}ke, C.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary prisoner’s dilemma game on a square lattice}}.
+\newblock {\emph{\JournalTitle{Physical Review E}}} \textbf{\bibinfo{volume}{58}}, \bibinfo{pages}{69}, DOI:\href{https://doi.org/10.1103/PhysRevE.58.69}{\detokenize{10.1103/PhysRevE.58.69}} (\bibinfo{year}{1998}).
+
+\bibitem{lieberman2005evolutionary}
+\bibinfo{author}{Lieberman, E.}, \bibinfo{author}{Hauert, C.} \& \bibinfo{author}{Nowak, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics on graphs}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{433}}, \bibinfo{pages}{312--316}, DOI:\href{https://doi.org/10.1038/nature03204}{\detokenize{10.1038/nature03204}} (\bibinfo{year}{2005}).
+
+\bibitem{erdos1959random}
+\bibinfo{author}{Erd{\H{o}}s, P.} \& \bibinfo{author}{R{\'e}nyi, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{On random graphs \uppercase\expandafter{\romannumeral1}}}.
+\newblock {\emph{\JournalTitle{Publ. Math. (Debrecen)}}} \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{290--297} (\bibinfo{year}{1959}).
+
+\bibitem{watts1998collective}
+\bibinfo{author}{Watts, D.~J.} \& \bibinfo{author}{Strogatz, S.~H.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Collective dynamics of `small-world' networks}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{393}}, \bibinfo{pages}{440--442}, DOI:\href{https://doi.org/10.1038/30918}{\detokenize{10.1038/30918}} (\bibinfo{year}{1998}).
+
+\bibitem{barabasi1999emergence}
+\bibinfo{author}{Barab{\'a}si, A.-L.} \& \bibinfo{author}{Albert, R.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Emergence of scaling in random networks}}.
+\newblock {\emph{\JournalTitle{Science}}} \textbf{\bibinfo{volume}{286}}, \bibinfo{pages}{509--512}, DOI:\href{https://doi.org/10.1126/science.286.5439.509}{\detokenize{10.1126/science.286.5439.509}} (\bibinfo{year}{1999}).
+
+\bibitem{krapivsky2000connectivity}
+\bibinfo{author}{Krapivsky, P.~L.}, \bibinfo{author}{Redner, S.} \& \bibinfo{author}{Leyvraz, F.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Connectivity of growing random networks}}.
+\newblock {\emph{\JournalTitle{Physical Review Letters}}} \textbf{\bibinfo{volume}{85}}, \bibinfo{pages}{4629}, DOI:\href{https://doi.org/10.1103/PhysRevLett.85.4629}{\detokenize{10.1103/PhysRevLett.85.4629}} (\bibinfo{year}{2000}).
+
+\bibitem{barrat2000properties}
+\bibinfo{author}{Barrat, A.} \& \bibinfo{author}{Weigt, M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{On the properties of small-world network models}}.
+\newblock {\emph{\JournalTitle{The European Physical Journal B}}} \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{547--560}, DOI:\href{https://doi.org/10.1007/s100510050067}{\detokenize{10.1007/s100510050067}} (\bibinfo{year}{2000}).
+
+\bibitem{sheng2024strategy}
+\bibinfo{author}{Sheng, A.}, \bibinfo{author}{Su, Q.}, \bibinfo{author}{Wang, L.} \& \bibinfo{author}{Plotkin, J.~B.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Strategy evolution on higher-order networks}}.
+\newblock {\emph{\JournalTitle{Nature Computational Science}}} \textbf{\bibinfo{volume}{4}}, \bibinfo{pages}{274--284}, DOI:\href{https://doi.org/10.1038/s43588-024-00621-8}{\detokenize{10.1038/s43588-024-00621-8}} (\bibinfo{year}{2024}).
+
+\bibitem{pinheiro2017intermediate}
+\bibinfo{author}{Pinheiro, F.~L.} \& \bibinfo{author}{Hartmann, D.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Intermediate levels of network heterogeneity provide the best evolutionary outcomes}}.
+\newblock {\emph{\JournalTitle{Scientific Reports}}} \textbf{\bibinfo{volume}{7}}, \bibinfo{pages}{15242}, DOI:\href{https://doi.org/10.1038/s41598-017-15555-7}{\detokenize{10.1038/s41598-017-15555-7}} (\bibinfo{year}{2017}).
+
+\bibitem{santos2006evolutionary}
+\bibinfo{author}{Santos, F.~C.}, \bibinfo{author}{Pacheco, J.~M.} \& \bibinfo{author}{Lenaerts, T.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics of social dilemmas in structured heterogeneous populations}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of Sciences}}} \textbf{\bibinfo{volume}{103}}, \bibinfo{pages}{3490--3494}, DOI:\href{https://doi.org/10.1073/pnas.0508201103}{\detokenize{10.1073/pnas.0508201103}} (\bibinfo{year}{2006}).
+
+\bibitem{maciejewski2014evolutionary}
+\bibinfo{author}{Maciejewski, W.}, \bibinfo{author}{Fu, F.} \& \bibinfo{author}{Hauert, C.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary game dynamics in populations with heterogenous structures}}.
+\newblock {\emph{\JournalTitle{PLoS Computational Biology}}} \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{e1003567}, DOI:\href{https://doi.org/10.1371/journal.pcbi.1003567}{\detokenize{10.1371/journal.pcbi.1003567}} (\bibinfo{year}{2014}).
+
+\bibitem{nr}
+\bibinfo{author}{Rossi, R.~A.} \& \bibinfo{author}{Ahmed, N.~K.}
+\newblock \bibinfo{title}{The network data repository with interactive graph analytics and visualization}.
+\newblock In \emph{\bibinfo{booktitle}{AAAI}} (\bibinfo{year}{2015}).
+
+\bibitem{read1954cultures}
+\bibinfo{author}{Read, K.~E.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Cultures of the central highlands, {New Guinea}}}.
+\newblock {\emph{\JournalTitle{Southwestern Journal of Anthropology}}} \bibinfo{pages}{1--43}, DOI:\href{https://doi.org/10.1086/soutjanth.10.1.3629074}{\detokenize{10.1086/soutjanth.10.1.3629074}} (\bibinfo{year}{1954}).
+
+\bibitem{vickers1981representing}
+\bibinfo{author}{Vickers, M.} \& \bibinfo{author}{Chan, S.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Representing classroom social structure}}.
+\newblock {\emph{\JournalTitle{Victoria Institute of Secondary Education, Melbourne}}}  (\bibinfo{year}{1981}).
+
+\bibitem{ulanowicz1998network}
+\bibinfo{author}{Ulanowicz, R.~E.} \& \bibinfo{author}{DeAngelis, D.~L.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Network analysis of trophic dynamics in {South Florida} ecosystems}}.
+\newblock {\emph{\JournalTitle{FY97: The Florida Bay Ecosystem}}} \bibinfo{pages}{20688--20038} (\bibinfo{year}{1998}).
+
+\bibitem{melian2004food}
+\bibinfo{author}{Meli{\'a}n, C.~J.} \& \bibinfo{author}{Bascompte, J.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Food web cohesion}}.
+\newblock {\emph{\JournalTitle{Ecology}}} \textbf{\bibinfo{volume}{85}}, \bibinfo{pages}{352--358}, DOI:\href{https://doi.org/10.1890/02-0638}{\detokenize{10.1890/02-0638}} (\bibinfo{year}{2004}).
+
+\bibitem{levin2016stress}
+\bibinfo{author}{Levin, I.~I.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Stress response, gut microbial diversity and sexual signals correlate with social interactions}}.
+\newblock {\emph{\JournalTitle{Biology Letters}}} \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{20160352}, DOI:\href{https://doi.org/10.1098/rsbl.2016.0352}{\detokenize{10.1098/rsbl.2016.0352}} (\bibinfo{year}{2016}).
+
+\bibitem{granovetter1973strength}
+\bibinfo{author}{Granovetter, M.~S.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The strength of weak ties}}.
+\newblock {\emph{\JournalTitle{American Journal of Sociology}}} \textbf{\bibinfo{volume}{78}}, \bibinfo{pages}{1360--1380}, DOI:\href{https://doi.org/10.1086/225469}{\detokenize{10.1086/225469}} (\bibinfo{year}{1973}).
+
+\bibitem{newman2001structure}
+\bibinfo{author}{Newman, M.~E.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The structure of scientific collaboration networks}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of Sciences}}} \textbf{\bibinfo{volume}{98}}, \bibinfo{pages}{404--409}, DOI:\href{https://doi.org/10.1073/pnas.98.2.404}{\detokenize{10.1073/pnas.98.2.404}} (\bibinfo{year}{2001}).
+
+\bibitem{hao2024proper}
+\bibinfo{author}{Hao, B.} \& \bibinfo{author}{Kov{\'a}cs, I.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Proper network randomization is key to assessing social balance}}.
+\newblock {\emph{\JournalTitle{Science Advances}}} \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{eadj0104}, DOI:\href{https://doi.org/10.1126/sciadv.adj0104}{\detokenize{10.1126/sciadv.adj0104}} (\bibinfo{year}{2024}).
+
+\bibitem{battiston2021physics}
+\bibinfo{author}{Battiston, F.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The physics of higher-order interactions in complex systems}}.
+\newblock {\emph{\JournalTitle{Nature Physics}}} \textbf{\bibinfo{volume}{17}}, \bibinfo{pages}{1093--1098}, DOI:\href{https://doi.org/10.1038/s41567-021-01371-4}{\detokenize{10.1038/s41567-021-01371-4}} (\bibinfo{year}{2021}).
+
+\bibitem{alvarez2021evolutionary}
+\bibinfo{author}{Alvarez-Rodriguez, U.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolutionary dynamics of higher-order interactions in social networks}}.
+\newblock {\emph{\JournalTitle{Nature Human Behaviour}}} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{586--595}, DOI:\href{https://doi.org/10.1038/s41562-020-01024-1}{\detokenize{10.1038/s41562-020-01024-1}} (\bibinfo{year}{2021}).
+
+\bibitem{civilini2024explosive}
+\bibinfo{author}{Civilini, A.}, \bibinfo{author}{Sadekar, O.}, \bibinfo{author}{Battiston, F.}, \bibinfo{author}{G{\'o}mez-Garde{\~n}es, J.} \& \bibinfo{author}{Latora, V.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Explosive cooperation in social dilemmas on higher-order networks}}.
+\newblock {\emph{\JournalTitle{Physical Review Letters}}} \textbf{\bibinfo{volume}{132}}, \bibinfo{pages}{167401}, DOI:\href{https://doi.org/10.1103/PhysRevLett.132.167401}{\detokenize{10.1103/PhysRevLett.132.167401}} (\bibinfo{year}{2024}).
+
+\bibitem{su2022evolution}
+\bibinfo{author}{Su, Q.}, \bibinfo{author}{McAvoy, A.}, \bibinfo{author}{Mori, Y.} \& \bibinfo{author}{Plotkin, J.~B.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Evolution of prosocial behaviours in multilayer populations}}.
+\newblock {\emph{\JournalTitle{Nature Human Behaviour}}} \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{338--348}, DOI:\href{https://doi.org/10.1038/s41562-021-01241-2}{\detokenize{10.1038/s41562-021-01241-2}} (\bibinfo{year}{2022}).
+
+\bibitem{su2023strategy}
+\bibinfo{author}{Su, Q.}, \bibinfo{author}{McAvoy, A.} \& \bibinfo{author}{Plotkin, J.~B.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Strategy evolution on dynamic networks}}.
+\newblock {\emph{\JournalTitle{Nature Computational Science}}} \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{763--776}, DOI:\href{https://doi.org/10.1038/s43588-023-00509-z}{\detokenize{10.1038/s43588-023-00509-z}} (\bibinfo{year}{2023}).
+
+\bibitem{wu2013dynamic}
+\bibinfo{author}{Wu, B.}, \bibinfo{author}{Traulsen, A.} \& \bibinfo{author}{Gokhale, C.~S.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Dynamic properties of evolutionary multi-player games in finite populations}}.
+\newblock {\emph{\JournalTitle{Games}}} \textbf{\bibinfo{volume}{4}}, \bibinfo{pages}{182--199}, DOI:\href{https://doi.org/10.3390/g4020182}{\detokenize{10.3390/g4020182}} (\bibinfo{year}{2013}).
+
+\bibitem{mcavoy2016structure}
+\bibinfo{author}{McAvoy, A.} \& \bibinfo{author}{Hauert, C.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Structure coefficients and strategy selection in multiplayer games}}.
+\newblock {\emph{\JournalTitle{Journal of Mathematical Biology}}} \textbf{\bibinfo{volume}{72}}, \bibinfo{pages}{203--238}, DOI:\href{https://doi.org/10.1007/s00285-015-0882-3}{\detokenize{10.1007/s00285-015-0882-3}} (\bibinfo{year}{2016}).
+
+\bibitem{clifford1973model}
+\bibinfo{author}{Clifford, P.} \& \bibinfo{author}{Sudbury, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{A model for spatial conflict}}.
+\newblock {\emph{\JournalTitle{Biometrika}}} \textbf{\bibinfo{volume}{60}}, \bibinfo{pages}{581--588}, DOI:\href{https://doi.org/10.1093/biomet/60.3.581}{\detokenize{10.1093/biomet/60.3.581}} (\bibinfo{year}{1973}).
+
+\bibitem{gore2009snowdrift}
+\bibinfo{author}{Gore, J.}, \bibinfo{author}{Youk, H.} \& \bibinfo{author}{Van~Oudenaarden, A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Snowdrift game dynamics and facultative cheating in yeast}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{459}}, \bibinfo{pages}{253--256}, DOI:\href{https://doi.org/10.1038/nature07921}{\detokenize{10.1038/nature07921}} (\bibinfo{year}{2009}).
+
+\bibitem{nowak2010evolution}
+\bibinfo{author}{Nowak, M.~A.}, \bibinfo{author}{Tarnita, C.~E.} \& \bibinfo{author}{Wilson, E.~O.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The evolution of eusociality}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{466}}, \bibinfo{pages}{1057--1062}, DOI:\href{https://doi.org/10.1038/nature09205}{\detokenize{10.1038/nature09205}} (\bibinfo{year}{2010}).
+
+\bibitem{allen2014measures}
+\bibinfo{author}{Allen, B.} \& \bibinfo{author}{Tarnita, C.~E.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Measures of success in a class of evolutionary models with fixed population size and structure}}.
+\newblock {\emph{\JournalTitle{Journal of Mathematical Biology}}} \textbf{\bibinfo{volume}{68}}, \bibinfo{pages}{109--143}, DOI:\href{https://doi.org/10.1007/s00285-012-0622-x}{\detokenize{10.1007/s00285-012-0622-x}} (\bibinfo{year}{2014}).
+
+\bibitem{van2015social}
+\bibinfo{author}{Van~Cleve, J.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Social evolution and genetic interactions in the short and long term}}.
+\newblock {\emph{\JournalTitle{Theoretical Population Biology}}} \textbf{\bibinfo{volume}{103}}, \bibinfo{pages}{2--26}, DOI:\href{https://doi.org/10.1016/j.tpb.2015.05.002}{\detokenize{10.1016/j.tpb.2015.05.002}} (\bibinfo{year}{2015}).
+
+\end{thebibliography}
+
+
+
+
+
+\end{document}
