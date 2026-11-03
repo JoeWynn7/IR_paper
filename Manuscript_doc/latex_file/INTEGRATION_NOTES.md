@@ -1,68 +1,81 @@
-# Integration notes: Manuscript_full_20261103.tex
+# Integration notes: Manuscript_full_20261103.tex (revision 2)
 
-First complete LaTeX draft of *Indirect reciprocity with inertial reputation updating*. It combines the main text, Methods, Extended Data and Supplementary Information in one file. The compiled PDF is `Manuscript_full_20261103.pdf` (48 pages).
+This is the complete LaTeX manuscript: main text, Methods, Extended Data and Supplementary Information in one file. The compiled PDF is `Manuscript_full_20261103.pdf` (about 41 pages). The Overleaf package is `Manuscript_doc/IR_manuscript_overleaf_20261103.zip`.
 
 ## Build
 
-Run these from `Manuscript_doc/latex_file/`:
+- **Overleaf:** upload the ZIP. It compiles as is, because latexmk runs BibTeX for both reference lists automatically.
+- **Locally:** run `latexmk -pdf Manuscript_full_20261103`. The manual sequence is pdflatex, then `bibtex Manuscript_full_20261103`, then `bibtex SI`, then pdflatex twice.
+- **Figures:** the file looks for them in `figures/` (the Overleaf package) and in `../` (this repository). Replacing a PDF in `Manuscript_doc/` therefore updates the repository build.
+- **Draft notes** print in dark red. Set `\draftnotesfalse` to hide them.
 
-```
-pdflatex Manuscript_full_20261103
-bibtex   Manuscript_full_20261103
-bibtex   SI
-pdflatex Manuscript_full_20261103
-pdflatex Manuscript_full_20261103
-```
+## Changes in revision 2
 
-The second `bibtex` run builds the separate Supplementary reference list (`multibib`). Figures are read directly from `Manuscript_doc/` through `\graphicspath{{../}}`, so replacing `Manuscript_doc/Fig3.pdf` updates the manuscript. Draft notes print in dark red. To hide them, set `\draftnotesfalse` in the preamble.
+### Abstract
 
-## Sources and how they were used
+Rewritten after the pattern of recent abstracts by Hilbe and co-authors (Murase & Hilbe 2024 PNAS; Tham, Hilbe & Murase 2026 PNAS; Schmid et al. 2023 Nat. Commun.). It runs: context, then the gap (private assessment and overwrite updating), then "Here we introduce", then the main results in order of importance, then the opportunism trade-off and its remedy, then the broader implication. It is 195 words. For a 150-word limit, the sentence on public reputations and the last sentence can be shortened first.
 
-| Part | Source | Treatment |
+### Main text
+
+- **Terminology.** "Readout" is replaced throughout. Records are now "interpreted" as good or bad images, and α and β are always called the tolerance strength and the strictness strength. Examples:
+  - "full readout" became "α = β = 1";
+  - "secure readout intervals" became "secure intervals of tolerance strength";
+  - "readout plane" became "(α, β) plane".
+
+  The Introduction already used "evidence interpretation", so the new wording matches it. LaTeX labels such as `ed:readout` are unchanged.
+- **Citations** now come before the final punctuation everywhere: "…opportunities\cite{…}." (the `nomove` option of the `cite` package keeps them there). Sentences that ended in "et al." were rephrased so that no period appears twice.
+- **Results.**
+  - The prose was tightened, with clearer transitions between paragraphs.
+  - Specific numbers were reduced to those the argument needs: the selection criteria and architectures, the basin sizes (70–88% against 8% and 23%), R_U ≈ 4 under SS, the SJ window 0 < δ < 0.365, the secure range from about 0.57 to 0.80, and α = 0.8.
+  - Detailed values moved to the SI. A new Supplementary Table lists basin sizes and mean cooperation.
+  - Robustness results (ED Figs. 2e–h and 5–7) are condensed into one paragraph.
+  - A two-sentence closing paragraph links the Results to the Discussion.
+- **Discussion** expanded to about 900 words. It covers:
+  1. evidence dynamics as a second design dimension next to norms;
+  2. why the beneficial direction depends on the norm, and what this implies for norm studies;
+  3. agreement versus discrimination, and how inertia complements opinion synchronization;
+  4. the value of information and diminishing returns of memory;
+  5. the tolerance–accountability trade-off and its consequences for invasion analyses;
+  6. institutional parallels (graduated sanctions) and testable predictions for impression formation;
+  7. limitations, which absorb the former SI note "Scope and limitations";
+  8. a concluding statement.
+- **Figure layout.** Float parameters were relaxed, figures are placed at page tops (`[!t]`) and slightly reduced (Fig. 1 at 60%, Figs. 2, 3 and 5 at 90%, Fig. 4 at 85% of the text width), and legends use a small font. Main figures now share pages with text.
+
+### Supplementary Information (restructured, about 16 pages instead of 22)
+
+| New note | Contents | Former notes |
 |---|---|---|
-| Abstract | none | Temporary abstract written from the Results. To be revised. |
-| Introduction | `Introduction_V2.docx` | Text kept. Two colons and one long sentence were split into full sentences. References 1–42 keep their original order. |
-| Results | `Results_Outline.docx` | Paragraph outline turned into prose. Structure, claims and the four displayed equations are kept. Verified numbers were added (see below). |
-| Discussion | none | Short provisional text (summary, positioning, trade-off, limitations). To be revised. |
-| Methods | `Methods.pdf` | LaTeX rebuilt from the PDF. Duplicated material was removed (see below). |
-| Figure and Extended Data legends | `Results_Outline.docx` | Kept, with the consistency fixes listed below. |
-| Supplementary Information | `Supplementary_Information.pdf` | LaTeX rebuilt with content preserved. Only cross-references, spelling and a few sentence splits changed. |
+| 1 Model and theoretical framework | 1.1 interactions, norms and errors; 1.2 inertial record (incl. reference parameters); 1.3 stationary reputation map; 1.4 private reputations in the population; 1.5 strategy dynamics and cooperation | 1 (conventions), 2, 3, 4, 5, 6 |
+| 2 Invasion of a discriminator population | 2.1 rare mutants; 2.2 unconditional mutants; 2.3 opportunistic discriminators and secure tolerance strengths; 2.4 alternative reputation filters | 7, 8, 9 |
+| 3 Finite-population reputation simulations | event algorithm, estimators, runs, selection | 10 |
+| 4 Numerical methods | — | 11 |
+| 5 Notation | symbol table (moved from the front to the end, as a reference) | 1 |
 
-## Results–Methods deduplication
+- **Removed:** "Figure-by-figure settings" and "Scope and limitations". The key limitations are now in the Discussion.
+- **No duplicate formulas.** The SI cites formulas already displayed in the main text or Methods instead of displaying them again. These are the window (Eq. 1), Λ(δ), Λ′(0), the security criterion, the self-consistency and relaxation equations, the replicator equation and the recognition statistics.
+- **New SI content:**
+  - transverse stability of the line of equilibria for SC without inertia (attracting where f_ALLC (1 − r̄) > f_ALLD r̄, switch at f_ALLC ≈ 0.266);
+  - a table of basin sizes and mean cooperation, taken from `verified/analysis/basin_decomposition/`.
 
-- Eq. (1) is the ALLC/ALLD window, Eq. (2) is Λ(δ), Eq. (3) is Λ′(0) and Eq. (4) is the security criterion H_min ≥ c/b. These appear only in the Results. The Methods cite them instead of repeating the former displays (M14), (M16) and (M17).
-- The conceptual description of Fig. 1 (paths, depths, readout strengths and their meaning) appears only in the Results. The Methods keep only the formal state space, transition rules and readout function. Interpretive sentences that repeated the Results were removed. The O-DISC definition in the Methods now refers back to the Results.
-- Main-text equations are numbered (1)–(20) continuously. SI equations keep the (S1)–(S45) numbering of the SI PDF.
+### Figure checks
 
-## Consistency fixes
+Details are in `Manuscript_doc/figure_checks/README.md`.
 
-1. **Extended Data numbering.** The figure files and `Results_Outline.docx` use ED6 = readout (tolerance only vs strictness only), ED7 = error planes and ED8 = depth plane. They also give ED2 panels e–h. `Methods.pdf` and `Supplementary_Information.pdf` used an older order (ED6 = errors, ED7 = depth, ED8 = readout, "ED2e"). All Methods and SI references now follow the figure files, including Supplementary Tables S2 and S11.
-2. **Fig. 2 legend.** The outline said "black and red outlines". The figure marks one-step inertia (1,1) with a blue outline, so the legend now says black and blue.
-3. **Notation.** The outline's h(α) became H_min, matching the Methods and SI. r\*_D and r\*_C became r\*_ALLD and r\*_ALLC. "Response function" became "reputation map". δ_C became δ_c. α_L, α_U, R_L and R_U now use upright subscripts throughout.
-4. **ED Fig. 9 legend.** The outline said "filled if secure, open otherwise". All reference markers in the figure are identical white circles, so that clause was removed.
-5. **ED Fig. 8 legend.** The outline said SS has high cooperation "in a strictness-weighted region". The panel shows high cooperation whenever k1 ≥ 1, with the highest values for strictness-weighted allocations, and the legend now says this.
-6. **SI Proposition S6.** The SI described a "dashed line in Fig. 3a (top)". The sentence now refers to the Scoring panel of Fig. 3a without describing its graphics, because that panel will change.
-7. **Spelling.** American spelling is used throughout, following the Introduction and Results outline.
+- **Fig. 4 is out of date.** `Manuscript_doc/Fig4.pdf` was drawn from the pre-verification data. The verified data give **(0,1) = 0.5539 against (1,0) = 0.5522 at K = 1** and **(1,5) = 0.7814 against (2,4) = 0.7807 at K = 6** under SS. The verified notebook output already shows the correct labels. A draft note in the Fig. 4 legend flags this.
+- **Fig. 3a (SC).** Recommendation: draw a single line of equilibria, solid where it attracts and dashed where it repels, with a range label (34–99%). A preview is in `figure_checks/`.
+- **ED Figs. 2 and 8** match the verified data.
 
-## Numbers added to the Results
+## Earlier decisions (revision 1, still valid)
 
-Each value below was checked against `verified/` or the SI tables.
-
-- Basin sizes: one-step SH 7.8% and SJ 23.0%. Selected architectures: SC 88.3%, SH 70.5%, SJ 71.3% and SS 76.0% (`verified/analysis/basin_decomposition/basin_decomposition_reference.csv`).
-- Mean cooperation without inertia → selected architecture: SC 0.61 → 0.87, SH 0 → 0.69, SJ 0 → 0.70, SS 0.54 → 0.74 (same file).
-- Fig. 4 envelope under SC: 0.879 at K = 3, 0.888 at K = 5 and 0.875 at K = 8. At K = 8, (0,8) gives 0.000 (`verified/figure4_ed6/data/figure4/`).
-- R_U values come from Supplementary Table S7. Δg and d̄ ranges come from Table S10. Secure intervals and r\*_R(0.8) come from Table S8. H(0) at α = 1 and α = 0.8 comes from SI Note 8.
-
-## References
-
-- `references.bib` holds the 42 Introduction references plus Hofbauer & Sigmund (1998) and Virtanen et al. (2020), which are cited in the Methods. Journal names use Nature-style abbreviations, and automatic abbreviation is switched off. DOIs are included only where the source list gave them. The PNAS article numbers were checked against the PDFs in `Refs/`.
-- The SI cites copies of eight entries under `SI-` keys. This lets the SI list number from 1 without clashing with the main list. If you edit one of these entries, update its copy as well.
+- **Extended Data numbering** follows the figure files: ED6 = tolerance only vs strictness only, ED7 = error planes, ED8 = depth plane, and ED2 has panels e–h.
+- **Fig. 2 legend:** black and blue outlines (not red).
+- **ED Fig. 9 legend:** the "filled/open" marker clause was removed.
+- **Equations (1)–(4)** appear only in the Results and are cited from the Methods. The conceptual description of Fig. 1 appears only in the Results.
+- **Reference keys.** `references.bib` contains the 42 Introduction references plus Hofbauer & Sigmund (1998) and Virtanen et al. (2020). The SI cites duplicate entries with `SI-` keys, so that its reference list numbers from 1. If you edit one of these entries, edit its copy as well.
 
 ## Open items
 
-- **Fig. 3a, Scoring panel.** Not final and to be replaced. The text describes Fig. 3a only qualitatively. Re-check the Fig. 3 legend and SI Proposition S6 after the update.
-- **Abstract and Discussion** are temporary.
-- **SI** needs further revision.
-- **Data and code availability:** repository and DOI still needed.
-- **Back matter:** acknowledgements, author contributions, competing interests and the full author list are placeholders.
-- **Fig. 4 label to check.** The data give (0,1) at 0.554 as the best SS allocation at K = 1, ahead of (1,0) at 0.552. The figure labels (1,0). This is a near tie, but the label could be corrected.
+- Redraw Fig. 4 from the verified data, and the SC panel of Fig. 3a.
+- Abstract and Discussion: further revision as planned.
+- Data and code availability: repository and DOI.
+- Back matter: acknowledgements, author contributions, competing interests and the full author list.
