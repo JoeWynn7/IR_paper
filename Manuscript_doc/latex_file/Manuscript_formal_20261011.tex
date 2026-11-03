@@ -1,0 +1,534 @@
+% Version: 11 October 2026. Rewritten from adopted figures and project discussions.
+% Original sources and figures are unchanged; see writing_notes_zh.md for checks.
+% Standard article packages preserve the original single-column 10pt format.
+\documentclass[fleqn,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[letterpaper,left=2cm,right=2cm,top=2.25cm,bottom=2.25cm]{geometry}
+\usepackage{times,mathptmx}
+\usepackage{amsmath,amssymb,bm,booktabs,graphicx,microtype}
+\usepackage[font=small,labelfont={bf,sf},labelsep=period,justification=raggedright,singlelinecheck=false]{caption}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage{fancyhdr,lastpage}
+\titleformat{\section}{\large\sffamily\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.5em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{13pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\newcommand{\figureasset}[1]{%
+  \IfFileExists{#1}{\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{#1}}%
+  {\fbox{\parbox{0.94\linewidth}{\centering Figure asset \texttt{\detokenize{#1}} is provided in the companion source archive.}}}%
+}
+\title{Indirect reciprocity with inertial reputation updating}
+\author{Wenqiang Zhu\\[0.5em]
+\small School of Artificial Intelligence, Beihang University, Beijing 100191, China\\
+\small Key Laboratory of Mathematics, Informatics and Behavioral Semantics,\\
+\small Beihang University, Beijing 100191, China\\[0.5em]
+\small\textit{Complete author list and correspondence to be added.}}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+\textit{To be completed following the author's outline.}
+\end{abstract}
+\section*{Introduction}
+\textit{To be completed following the author's outline.}
+\section*{Results}
+\subsection*{A framework for inertial reputation updating in indirect reciprocity}
+
+We consider repeated donation games in which a donor can pay a cost $c$ to provide a benefit $b>c$ to a recipient. Unconditional cooperators (ALLC) intend to help every recipient, unconditional defectors (ALLD) never intend to help, and discriminators (DISC) intend to help recipients they regard as good. Reputations are private: individuals maintain their own records, and an observer evaluates the donor's realized action using its own view of the recipient. We examine Scoring, Shunning, Stern Judging and Simple Standing, which differ in their assessment of actions towards recipients regarded as bad. Intended cooperation fails with probability $e_1$, and the sign of an assessment is reversed with probability $e_2$ (Methods).
+
+Under instantaneous updating, a single assessment replaces the observer's previous good or bad image of the donor (Fig.~\ref{fig:model}a). Inertial updating instead records evidence that challenges an established judgment along two separate paths (Fig.~\ref{fig:model}b). Negative assessments of a good individual advance through $k_1$ warning states before the record becomes bad; positive assessments of a bad individual advance through $k_2$ suspicion states before the record becomes good. A positive assessment resets any warning state directly to good, whereas a negative assessment resets any suspicion state directly to bad. Reversal therefore requires $k_1+1$ consecutive negative assessments or $k_2+1$ consecutive positive assessments, respectively.
+
+The internal record determines the binary image consulted during both action choice and moral assessment. Warning state $W_m$ is read as good with probability $\alpha^m$, whereas suspicion state $S_n$ is read as bad with probability $\beta^n$. Increasing $\alpha$ preserves trust during the loss of good standing; increasing $\beta$ withholds trust during recovery from bad standing. Full readout inertia, $\alpha=\beta=1$, preserves the established image until the corresponding path is completed. Thus, $k_1$ and $k_2$ specify how much consistent evidence is required for reversal, while $\alpha$ and $\beta$ specify how intermediate evidence affects current treatment. We first examine reputation formation at fixed strategy composition and then calculate strategy evolution assuming that reputations adjust faster than strategy frequencies (Methods).
+
+\subsection*{Directional memory restores recognition under private assessment}
+
+In homogeneous DISC populations, full one-step inertia supports a high-reputation stationary branch under all four norms (Extended Data Fig.~\ref{ed:resident-reputation}a--d). Scoring, Shunning and Stern Judging also retain a lower stable branch, so high reputation depends on the initial reputation environment. At the representative multi-step depths used below, the lower stable branch disappears and the high-reputation state is the only attractor of the stationary self-consistency calculation. The readout and depth scans show that both the reputation level and the number of stationary branches depend on how persistence is distributed between the two directions (Extended Data Fig.~\ref{ed:resident-reputation}e--l).
+
+A high-reputation state in a homogeneous population does not establish whether private judgments can distinguish behavioural strategies. We therefore simulated finite populations containing equal numbers of DISC, ALLC and ALLD individuals, with each DISC observer maintaining a separate record of every individual. Instantaneous updating produces markedly different failures across norms (Fig.~\ref{fig:recognition}a--d). Under Scoring, ALLC generally receives a good image and ALLD a bad image, but judgments of DISC remain divided. Shunning assigns bad images to almost everyone. Stern Judging produces extensive disagreement without clear strategy separation. Simple Standing sustains good images of cooperative strategies but also grants substantial trust to ALLD.
+
+Full one-step inertia does not resolve these problems uniformly. Under Shunning, agreement remains high chiefly because almost everyone is regarded as bad. Under Stern Judging, observers continue to disagree across all three strategies. These cases illustrate why agreement and recognition must be assessed together: consensus can coexist with indiscriminate condemnation, while a high good-image frequency can coexist with trust in defectors. We therefore measured the separation between cooperative strategies and ALLD and the probability that two distinct observers disagree about the same target (Methods).
+
+Increasing and reallocating memory depth creates regions with both strong strategy separation and low disagreement (Fig.~\ref{fig:recognition}e--h). Using separation of at least $0.8$ and mean disagreement of at most $0.1$ as operational criteria, the minimum total depths are achieved by $(k_1,k_2)=(2,0)$ for Scoring, $(3,0)$ for Shunning, $(4,3)$ for Stern Judging and $(1,2)$ for Simple Standing. Across 30 independent replicates, these configurations yield respective separations of approximately $0.919$, $0.906$, $0.881$ and $0.917$, with mean disagreement of $0.064$, $0.069$, $0.081$ and $0.056$ (Extended Data Fig.~\ref{ed:recognition-selection}). The threshold scan establishes the sensitivity of the selection to these criteria; they are descriptive requirements rather than universal critical values.
+
+The required architecture depends on the norm. Scoring and Shunning recover recognition by allocating memory to the protection of good standing, with immediate recovery from bad standing. Stern Judging requires substantial memory in both directions. Simple Standing achieves the joint criteria with a shallow warning path and a longer recovery path. We use these independently selected configurations in the evolutionary analysis below; their selection does not use evolutionary cooperation or invasion resistance as an optimization target.
+
+\subsection*{Inertia expands the evolutionary routes to cooperation}
+
+We next examined the replicator dynamics of ALLC, ALLD and DISC under the assumption that private reputations equilibrate before strategy frequencies change (Methods). Without inertia, Shunning and Stern Judging lead to defection, whereas Scoring and Simple Standing admit highly cooperative DISC--ALLC configurations (Fig.~\ref{fig:strategy-dynamics}a). Their cooperative outcomes nevertheless coexist with attraction to defection. Full one-step inertia creates high-cooperation attractors under all four norms, but their accessibility differs sharply: the cooperative basin remains particularly narrow under Shunning and limited under Stern Judging (Fig.~\ref{fig:strategy-dynamics}b).
+
+The supplied multi-step portraits show larger cooperative regions than the one-step portraits (Fig.~\ref{fig:strategy-dynamics}c), consistent with the higher basin-weighted cooperation in the independently integrated parameter scans below. The cooperative attractors have intended cooperation of at least $99.99\%$ in the displayed calculations. The comparison concerns both cooperation at the displayed stationary configurations and its accessibility from different initial compositions. Because some grid points in the simplex plotting routine do not converge to stationary reputations, the detailed boundaries of the plotted basins remain numerical estimates (Methods). Under Simple Standing, the selected architecture supports a highly cooperative DISC--ALLC mixture rather than a strictly protected pure-DISC population.
+
+To distinguish accessibility from resistance to invasion, we separately examined rare ALLD and ALLC mutants in a homogeneous DISC resident population. Let $r_{\mathrm R}^*$ be the resident good-image probability. Rare ALLD and ALLC mutants receive stationary reputations from the assessment-to-reputation map, $\mathcal R$, in the resident environment. When both reputation differences in the denominators are positive, strict resistance to both mutants requires
+\begin{equation}
+\frac{r_{\mathrm R}^*}{r_{\mathrm R}^*-\mathcal R\!\left[r_{\mathrm R}^*P^+_{D\mid G}+(1-r_{\mathrm R}^*)P^+_{D\mid B}\right]}
+<\frac bc<
+\frac{1-r_{\mathrm R}^*}{\mathcal R\!\left[r_{\mathrm R}^*P^+_{C\mid G}+(1-r_{\mathrm R}^*)P^+_{C\mid B}\right]-r_{\mathrm R}^*}.
+\label{eq:canonical-window}
+\end{equation}
+The lower bound ensures that ALLD loses enough help to offset its saved cooperation cost. The upper bound prevents ALLC's reputational advantage from outweighing its additional cooperation cost. General parameter cases are classified directly from the payoff differences (Methods).
+
+The benefit-to-cost scan separates these local conditions from the cooperation reached across initial compositions (Extended Data Fig.~\ref{ed:benefit-cost}). Multi-step inertia substantially raises basin-weighted intended cooperation and extends the protected range under Scoring, Shunning and Stern Judging. Under Simple Standing, the representative multi-step architecture loses resistance to ALLC above $b/c\simeq4$, while high cooperation persists in a mixed population. Cooperation therefore need not collapse when the upper invasion bound is crossed. Likewise, the readout scans show that a broad cooperative basin and local resistance of pure DISC occupy different regions of parameter space (Extended Data Fig.~\ref{ed:readout-evolution}).
+
+The two kinds of error also act differently on these conditions (Extended Data Fig.~\ref{ed:error-invasion}). Compared with instantaneous or full one-step updating, the representative multi-step architectures produce broad regions of resistance to both canonical mutants under Scoring and Shunning. Stern Judging exhibits a more pronounced trade-off between the two invasion boundaries, whereas Simple Standing retains high cooperation without generally protecting pure DISC from ALLC. The effect of inertia is consequently determined by the norm and the invasion route, rather than by an undifferentiated reduction of error sensitivity.
+
+\subsection*{The cooperative value of memory depends on its allocation}
+
+To determine whether these gains arise simply from longer memory, we fixed total depth $K=k_1+k_2$ and compared every allocation between warning and recovery states. Configurations with the same $K$ produce widely different basin-weighted cooperation (Fig.~\ref{fig:memory-allocation}). For example, allocating a small budget to tolerance can sustain cooperation under Scoring and Shunning, whereas allocating the same budget to strictness can produce almost no cooperation. Memory depth alone therefore does not predict the evolutionary outcome.
+
+The largest observed cooperation at each scanned depth follows a norm-specific allocation. Scoring and Shunning concentrate the budget in tolerance, with $k_2=0$. Scoring gains most of its improvement within the first few warning states; Shunning benefits over a longer range. Stern Judging first benefits from tolerance and subsequently from a more balanced allocation to both directions. Simple Standing instead favours one or two warning states combined with a longer recovery path. These patterns are also apparent in the full discrete depth planes (Extended Data Fig.~\ref{ed:depth-evolution}).
+
+At the respective total depths of the recognition-selected architectures, those same configurations lie on the observed cooperation envelope. They yield basin-weighted realized cooperation of approximately $0.88$ for Scoring at $K=2$, $0.70$ for Shunning at $K=3$, $0.70$ for Stern Judging at $K=7$ and $0.74$ for Simple Standing at $K=3$. Thus, configurations selected independently for private recognition also allocate memory efficiently for cooperation at their corresponding budgets. This agreement concerns the tested allocations and parameters; it does not imply that the selected configurations maximize cooperation over all depths. Three one-step estimates did not pass the saved convergence gate and are treated as finite-time estimates (Methods). The envelope can saturate or vary slightly as depth increases. The central result is that modest, appropriately allocated memory can provide much larger gains than adding states in the wrong direction.
+
+\subsection*{Reputation readout limits opportunistic exploitation}
+
+Resistance to unconditional defection does not necessarily protect cooperation against more selective exploitation. To test this distinction, we introduced opportunistic discriminators (O-DISC), which defect against bad recipients and withhold intended cooperation from good recipients with probability $\delta$, independently across interactions. This family interpolates continuously between DISC at $\delta=0$ and ALLD at $\delta=1$. A rare O-DISC mutant saves cooperation costs while potentially reducing its reputation and the benefits it receives. In an all-DISC resident population, its normalized invasion exponent is
+\begin{equation}
+\Lambda(\delta)
+=\frac{\Pi_{\mathrm X}-\Pi_{\mathrm R}}{c(1-e_1)}
+=\delta r_{\mathrm R}^*
+-\frac{b}{c}\bigl[r_{\mathrm R}^*-r_{\mathrm X}^*(\delta)\bigr],
+\label{eq:opportunistic-invasion-results}
+\end{equation}
+where $r_{\mathrm R}^*$ and $r_{\mathrm X}^*$ are the probabilities that residents and mutants, respectively, are read as good. The first term is the saving in cooperation costs; the second is the loss of benefits caused by reputational damage. Positive values indicate invasion.
+
+Under Stern Judging, the representative multi-step architecture $(k_1,k_2)=(4,3)$ supports almost complete intended cooperation when $\alpha=\beta=1$, but permits invasion by mutants with $0<\delta<0.3653$ (Fig.~\ref{fig:opportunism}a). ALLD is excluded, so the vulnerability occurs entirely between the two conventional strategy endpoints. The specified aggregation and quantitative benchmarks also exclude ALLD while allowing intermediate O-DISC mutants to invade, with upper invasion boundaries $\delta_c\simeq0.1370$ and $0.3832$, respectively. Full one-step inertia produces a much narrower positive interval, $0<\delta<0.0084$. Thus, a nearly perfect resident reputation and exclusion of unconditional defectors can coexist with a positive incentive to reduce cooperation.
+
+This vulnerability arises when reputational protection also weakens the marginal penalty for deliberate defection. Let $\mathcal R(u)$ map a positive-assessment probability $u$ to the stationary probability of being read as good, and let $\Delta\Phi^*$ denote the assessment contrast between intended cooperation and defection in the resident environment (Methods). The local invasion response is
+\begin{equation}
+\Lambda'(0)
+=r_{\mathrm R}^*\left[1-\frac{b}{c}\,\Delta\Phi^* \mathcal R'(u_{\mathrm R}^*)\right].
+\label{eq:opportunistic-slope-results}
+\end{equation}
+A weak reputation response near the resident state allows a small reduction in cooperation to save more in costs than it loses in benefits. This condition explains invasion near $\delta=0$; resistance to the complete mutant family requires evaluating the full nonlinear response.
+
+Allowing warning states to affect reputation readout provides a way to restore this penalty before a record reaches the bad state. Keeping the norm, memory depths and $\beta$ fixed, reducing $\alpha$ from $1$ to $0.8$ eliminates every positive invasion interval under the representative Stern Judging architecture (Fig.~\ref{fig:opportunism}a). Intended resident cooperation remains $98.65\%$, a reduction of approximately $1.35$ percentage points from full readout. The internal update process continues to buffer conflicting assessments, while the readout now assigns a social consequence to incomplete evidence of reputational deterioration.
+
+Readout adjustment is constrained by the feedback sustaining the cooperative resident itself. For the same architecture, all O-DISC mutants are excluded on the selected stable resident branch when $\alpha_L<\alpha\leq\alpha_U$, with $\alpha_L\simeq0.567$ and $\alpha_U\simeq0.804$ (Fig.~\ref{fig:opportunism}b). These boundaries have different origins. Above $\alpha_U$, the reputational penalty is insufficient to deter weak opportunism. At $\alpha_L$, the high-cooperation resident reaches a fold; below it, the selected resident has lower cooperation and is invadable. The fold itself is marginal and is excluded from the strictly stable interval. The cooperation level approaches $85.15\%$ at this lower boundary and reaches $98.69\%$ at the upper boundary, distinguishing protection against invasion from the level of cooperation that protection sustains.
+
+The existence of protective readout settings extends across the four norms, although their locations depend on the norm and memory architecture (Extended Data Fig.~\ref{ed:opportunism-security}a). At $\alpha=0.8$, $\beta=1$ and $b/c=5$, the representative multi-step implementations all exclude the complete O-DISC family, with intended cooperation between $97.79\%$ and $98.98\%$. Simple Standing with $(k_1,k_2)=(1,2)$ is already protected at $\alpha=1$. Adjusted one-step inertia also has protective intervals, but the common setting $\alpha=0.8$ lies outside those intervals under Shunning and Stern Judging. Varying $b/c$ changes the protection boundaries while leaving the resident reputation dynamics unchanged (Extended Data Fig.~\ref{ed:opportunism-security}b--e). Larger benefits relative to cooperation costs allow a smaller reputational loss to offset the mutant's saving, expanding the protective region. At $b/c=2$, Shunning has no protective interval for either displayed architecture, whereas Stern Judging retains only a narrow interval. These results identify conditions for exclusion of the specified opportunistic family, rather than evolutionary stability against arbitrary strategies.
+
+\section*{Discussion}
+\textit{To be completed following the author's outline.}
+\section*{Methods}
+\label{sec:methods}
+
+\subsection*{Donation game, strategies and private assessment}
+
+We consider a well-mixed population in which a donor can pay a cost $c$ to provide a benefit $b>c$ to a recipient. Defection provides no benefit and incurs no cost. The resident strategy set is $\mathcal S=\{\mathrm{ALLC},\mathrm{ALLD},\mathrm{DISC}\}$. ALLC always intends to cooperate, ALLD always intends to defect, and DISC intends to cooperate if its private image of the recipient is good and to defect otherwise. In the deterministic analyses, $f_I$ denotes the frequency of strategy $I$, with $\sum_I f_I=1$. Donor and recipient roles are sampled without self-interaction.
+
+Reputations are private. A DISC donor chooses its action using its own image of the recipient, whereas an observer assesses the realized action using the observer's image of that recipient. The four second-order norms share positive assessment of cooperation with a good recipient and negative assessment of defection against a good recipient. Their prescriptions for a recipient read as bad are parameterized by $p$ and $q$, the probabilities of positive assessment after cooperation and defection, respectively:
+\begin{equation}
+\phi(C,G)=1,\qquad \phi(D,G)=0,\qquad
+\phi(C,B)=p,\qquad \phi(D,B)=q.
+\label{eq:methods-norm}
+\end{equation}
+Scoring, Shunning, Stern Judging and Simple Standing correspond to $(p,q)=(1,0),(0,0),(0,1)$ and $(1,1)$, respectively.
+
+Intended cooperation fails and becomes defection with probability $e_1$; intended defection is implemented without error. After applying the norm, the observer reverses the prescribed assessment with probability $e_2$. These errors occur independently. Let $P^+_{A\mid R}$ be the probability of a recorded positive assessment conditional on intended action $A\in\{C,D\}$ and the observer's image $R\in\{G,B\}$ of the recipient. Defining $\epsilon=(1-e_1)(1-e_2)+e_1e_2$, we obtain
+\begin{equation}
+\begin{aligned}
+P^+_{C\mid G}&=\epsilon,
+& P^+_{D\mid G}&=e_2,\\
+P^+_{C\mid B}&=p(\epsilon-e_2)+q(1-\epsilon-e_2)+e_2,
+& P^+_{D\mid B}&=q(1-2e_2)+e_2.
+\end{aligned}
+\label{eq:methods-effective-assessment}
+\end{equation}
+The action subscript in Eq.~\eqref{eq:methods-effective-assessment} refers to the intended action; implementation error has already been averaged into these probabilities. Unless varied explicitly, $e_1=e_2=0.02$, $c=1$ and $b/c=5$.
+
+\subsection*{Inertial records and their binary readout}
+
+For every ordered observer--target pair $(i,j)$, the observer retains a latent record $L_{ij}$ in the state space
+\begin{equation}
+\mathcal L=\{G,W_1,\ldots,W_{k_1},B,S_1,\ldots,S_{k_2}\},
+\qquad k_1,k_2\in\mathbb Z_{\geq0}.
+\label{eq:methods-latent-states}
+\end{equation}
+The warning states accumulate evidence against established good standing. A negative assessment advances $G\to W_1\to\cdots\to W_{k_1}\to B$, whereas a positive assessment sends every $W_m$ directly to $G$. The suspicion states accumulate evidence in favor of restoring good standing. A positive assessment advances $B\to S_1\to\cdots\to S_{k_2}\to G$, whereas a negative assessment sends every $S_n$ directly to $B$. Positive assessments leave $G$ unchanged and negative assessments leave $B$ unchanged. An absent path is traversed in one update: $G\to B$ after a negative assessment when $k_1=0$, and $B\to G$ after a positive assessment when $k_2=0$. Thus, reversal requires $k_1+1$ consecutive negative assessments or $k_2+1$ consecutive positive assessments. Evidence supporting the established judgment resets the entire opposing path.
+
+Actions and assessments consult a binary image sampled from the latent record. Its good-readout probability is
+\begin{equation}
+\sigma(\ell)=
+\begin{cases}
+1,&\ell=G,\\
+\alpha^m,&\ell=W_m,\\
+0,&\ell=B,\\
+1-\beta^n,&\ell=S_n,
+\end{cases}
+\qquad 0\leq\alpha,\beta\leq1.
+\label{eq:methods-readout}
+\end{equation}
+Every consultation resamples this binary image independently; consultation does not alter $L_{ij}$. Increasing $\alpha$ increases tolerance of negative evidence, whereas increasing $\beta$ increases strictness about rehabilitation. With $\alpha=\beta=1$, warnings are read as good and suspicion states as bad until a path is completed. The one-step model has $k_1=k_2=1$. At these depths, $(\alpha,\beta)=(0,0)$ reproduces instantaneous binary updating, $(1,0)$ gives tolerance alone, $(0,1)$ gives strictness alone, and $(1,1)$ gives full one-step inertia. The depth pair $(0,0)$ is the binary baseline for the depth scans.
+
+\subsection*{Stationary assessment-to-reputation map}
+
+Let $u$ be the probability of a positive recorded assessment in a fixed assessment environment. Write $T^+$ and $T^-$ for the transition matrices corresponding to positive and negative assessments. The latent chain has transition matrix $T(u)=uT^++(1-u)T^-$. Its stationary distribution satisfies $\boldsymbol\pi=\boldsymbol\pi T(u)$ and $\sum_\ell\pi_\ell=1$. Averaging Eq.~\eqref{eq:methods-readout} over this distribution gives the stationary probability of being read as good:
+\begin{equation}
+\mathcal R(u;\alpha,\beta,k_1,k_2)=
+\frac{
+u^{k_2+1}\!\left[1+\sum_{m=1}^{k_1}\{\alpha(1-u)\}^{m}\right]
++(1-u)^{k_1+1}\!\sum_{n=1}^{k_2}u^n(1-\beta^n)
+}{(1-u)^{k_1}+u^{k_2}-(1-u)^{k_1}u^{k_2}}.
+\label{eq:methods-reputation-map}
+\end{equation}
+Empty sums are zero; the endpoint values are $\mathcal R(0)=0$ and $\mathcal R(1)=1$. For one-step inertia,
+\begin{equation}
+\mathcal R(u)=
+\frac{u^2[1+\alpha(1-u)]+(1-\beta)u(1-u)^2}
+{1-u+u^2}.
+\label{eq:methods-one-step-map}
+\end{equation}
+Setting $\alpha=\beta=0$ gives $\mathcal R(u)=u$. The mapping describes stationary readout probabilities under the specified assessment environment; it does not identify the transient binary readout with a Markov process on two states.
+
+\subsection*{Private-reputation self-consistency and branch selection}
+
+For fixed strategy frequencies, $r_I$ denotes the probability that a type-$I$ target is read as good. We use a mean-field closure in which the donor's and observer's private images of a recipient are conditionally independent given the recipient's strategy. Accordingly,
+\begin{equation}
+\begin{aligned}
+\bar r&=\sum_I f_Ir_I,&
+h_{GG}&=\sum_I f_Ir_I^2,\\
+h_{BB}&=\sum_I f_I(1-r_I)^2,&
+h_{GB}&=\sum_I f_Ir_I(1-r_I).
+\end{aligned}
+\label{eq:methods-private-moments}
+\end{equation}
+Here $h_{GB}$ is the probability of each ordered disagreement, so the total disagreement probability is $2h_{GB}$. The positive-assessment probabilities generated by the three strategies are
+\begin{equation}
+\begin{aligned}
+\Phi_{\mathrm{ALLC}}&=\bar rP^+_{C\mid G}+(1-\bar r)P^+_{C\mid B},\\
+\Phi_{\mathrm{ALLD}}&=\bar rP^+_{D\mid G}+(1-\bar r)P^+_{D\mid B},\\
+\Phi_{\mathrm{DISC}}&=h_{GG}P^+_{C\mid G}
++h_{GB}(P^+_{C\mid B}+P^+_{D\mid G})
++h_{BB}P^+_{D\mid B}.
+\end{aligned}
+\label{eq:methods-positive-assessment}
+\end{equation}
+Stationary reputations satisfy $r_I^*=\mathcal R(\Phi_I^*)$. The deterministic reputation calculations select a solution from initially good records. For continuous equilibration, we use the auxiliary relaxation
+\begin{equation}
+\frac{\mathrm dr_I}{\mathrm d\tau}=\mathcal R(\Phi_I)-r_I,
+\qquad r_I(0)=1.
+\label{eq:methods-reputation-dynamics}
+\end{equation}
+This equation has the required stationary self-consistency solutions as its fixed points. Its auxiliary time $\tau$ is distinct from the microscopic event clock. The corresponding asynchronous latent-state mean-field system is $\dot{\boldsymbol\pi}_I=\boldsymbol\pi_I[T(\Phi_I)-\mathbf I]$, with $r_I=\boldsymbol\pi_I\boldsymbol\sigma$; its stationary equations give the same mapping within this closure. Equality of stationary equations alone does not establish equality of transient dynamics or attraction basins.
+
+For a homogeneous DISC population,
+\begin{equation}
+\Phi_R(r)=r^2P^+_{C\mid G}+r(1-r)(P^+_{C\mid B}+P^+_{D\mid G})
++(1-r)^2P^+_{D\mid B}.
+\label{eq:methods-resident-assessment}
+\end{equation}
+We locate the roots of $F(r)=\mathcal R[\Phi_R(r)]-r$ and classify a non-degenerate root as stable or unstable in the scalar relaxation according to the sign of $F'(r)$. The all-good-selected scalar solution is the highest stable root. Extended Data Fig.~\ref{ed:resident-reputation} reports the stationary roots and the stability of this reduced flow. Root finding partitions $[0,1]$ at the extrema of $F$ before applying bracketed scalar root finding, which permits detection of roots near folds. The drift and depth scans use 2,001-point search grids; the one-step readout plane uses a $161\times161$ grid and a 401-point root-search grid, with finer-grid checks. These classifications refer to the scalar closure; they do not establish the stability of the full latent-state system.
+
+\subsection*{Finite-population simulations and recognition statistics}
+
+The quantitative individual-based reputation simulations contain $N=150$ individuals, with 50 individuals of each strategy. The illustrative image matrices use separately saved realizations with $N=90$, comprising 30 individuals of each strategy. Frequencies remain fixed throughout each run. We store the latent records held by the $m=n_{\mathrm{DISC}}$ DISC observers for all $N$ targets, including self-records. Each event draws a donor and a distinct recipient uniformly from the population, then draws an observer independently and uniformly from the DISC individuals. The observer may coincide with the donor or recipient. The donor selects its intended action, implementation error determines the realized action, and the observer applies the norm using a separately sampled private readout of the recipient. Assessment error determines the recorded sign, which updates the observer's latent record of the donor. This simulation retains target-specific variation and correlations between private records rather than imposing the conditional-independence closure.
+
+One sweep consists of $mN$ events, corresponding to one update per retained record on average. All records start in $G$. The recognition depth grid varies $k_1,k_2$ independently over $0,\ldots,6$ at $\alpha=\beta=1$. The initial depth map in Fig.~\ref{fig:recognition} uses ten independent runs per condition; the selection and sensitivity analysis in Extended Data Fig.~\ref{ed:recognition-selection} use 30. The standard protocol runs for 1,000 sweeps and samples every five sweeps from sweep 800 through sweep 1,000, yielding 41 measurements per run. Two slowly relaxing Stern Judging conditions use longer horizons: $(k_1,k_2)=(4,5)$ uses 3,000 sweeps with 2,400 discarded, and $(3,5)$ uses 50,000 sweeps with 40,000 discarded. Their sampling interval and replicate count are unchanged. Condition-specific seeds are generated from base seed 20260918, norm, depths and replicate index. Matrix panels are separately saved illustrative snapshots; the quantitative depth statistics use time-averaged replicate estimates.
+
+Let $s_{ij}=\sigma(L_{ij})$. For target $j$, its mean goodness and disagreement between distinct DISC observers are
+\begin{equation}
+g_j=\frac{1}{m}\sum_i s_{ij},\qquad
+d_j=\frac{1}{\binom m2}\sum_{i<\ell}
+\left[s_{ij}(1-s_{\ell j})+(1-s_{ij})s_{\ell j}\right].
+\label{eq:methods-finite-estimators}
+\end{equation}
+These estimators average over stochastic readout exactly. We average over targets of strategy $I$ to obtain $g_I$ and $d_I$, then over sampling times within each replicate. Reputational separation and target-weighted mean disagreement are
+\begin{equation}
+\Delta g=\frac{g_{\mathrm{DISC}}+g_{\mathrm{ALLC}}}{2}-g_{\mathrm{ALLD}},
+\qquad \bar d=\sum_I\frac{n_I}{N}d_I.
+\label{eq:methods-recognition-statistics}
+\end{equation}
+We report arithmetic means across independent replicate means. Where uncertainty is evaluated, pointwise 95\% percentile intervals use 2,000 bootstrap resamples of these replicate means. We assess stationarity by comparing the early and late halves of the sampling window; a drift interval contained within $[-0.01,0.01]$ is a practical small-drift diagnostic, rather than a proof of mixing.
+
+The cutoffs $\Delta g\geq0.8$ and $\bar d\leq0.1$ are operational selection criteria. Among qualifying architectures, we minimize total depth $K=k_1+k_2$, then break ties by greater separation and lower disagreement. This gives $(2,0),(3,0),(4,3)$ and $(1,2)$ for Scoring, Shunning, Stern Judging and Simple Standing. These pairs are selected from reputation formation, independently of evolutionary performance. Extended Data Fig.~\ref{ed:recognition-selection} varies the separation cutoff from 0.70 to 0.90 in steps of 0.05 and the disagreement cutoff from 0.050 to 0.150 in steps of 0.025.
+
+\subsection*{Payoffs, strategy evolution and cooperation}
+
+Reputation formation is assumed to be fast relative to strategy evolution. For each strategy composition, we compute stationary reputations before evaluating expected payoffs:
+\begin{equation}
+\begin{aligned}
+\Pi_{\mathrm{ALLC}}&=(1-e_1)\{b(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r_{\mathrm{ALLC}}^*)-c\},\\
+\Pi_{\mathrm{ALLD}}&=(1-e_1)b(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r_{\mathrm{ALLD}}^*),\\
+\Pi_{\mathrm{DISC}}&=(1-e_1)\{b(f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}r_{\mathrm{DISC}}^*)-c\bar r^*\}.
+\end{aligned}
+\label{eq:methods-payoffs}
+\end{equation}
+Strategy frequencies obey
+\begin{equation}
+\frac{\mathrm df_I}{\mathrm dt}=f_I(\Pi_I-\bar\Pi),
+\qquad \bar\Pi=\sum_J f_J\Pi_J.
+\label{eq:methods-replicator}
+\end{equation}
+The intended and realized cooperation rates are, respectively,
+\begin{equation}
+\rho_C^{\mathrm{int}}=f_{\mathrm{ALLC}}+f_{\mathrm{DISC}}\bar r^*,
+\qquad \rho_C=(1-e_1)\rho_C^{\mathrm{int}}.
+\label{eq:methods-cooperation}
+\end{equation}
+Thus, an intended cooperation rate approaching one corresponds to realized cooperation approaching $1-e_1$. The simplex equilibrium percentages and the benefit-to-cost and opportunism cooperation panels use intended cooperation. Figure~\ref{fig:memory-allocation} and the readout and depth cooperation maps in Extended Data Figs.~\ref{ed:readout-evolution} and~\ref{ed:depth-evolution} retain the realized-cooperation scale of their scan data.
+
+For global comparisons we average terminal cooperation over initial strategy compositions sampled uniformly with respect to area on the three-strategy simplex. If $\boldsymbol f_{\mathrm{end}}^{(m)}$ is the terminal composition from initial condition $m$, the estimator is
+\begin{equation}
+\langle\rho_C\rangle_\Delta=
+\frac{1}{M}\sum_{m=1}^{M}\rho_C(\boldsymbol f_{\mathrm{end}}^{(m)}),
+\qquad
+\langle\rho_C^{\mathrm{int}}\rangle_\Delta=
+\frac{1}{M}\sum_{m=1}^{M}\rho_C^{\mathrm{int}}(\boldsymbol f_{\mathrm{end}}^{(m)}).
+\label{eq:methods-basin-average}
+\end{equation}
+We use common initial compositions when comparing parameters. The simplex shading denotes the attraction region of the displayed cooperative state. For the total-depth comparison, we enumerate all allocations $k_1+k_2=K$ and define the upper envelope as the largest observed basin-weighted cooperation at each $K$. This is a maximum over the scanned allocations at fixed depth, rather than a global optimum over unrestricted mechanisms.
+
+\subsection*{Numerical strategy calculations}
+
+The supplied simplex panels evaluate the stationary self-consistency map by synchronous iteration of the two private-image moments $\bar r$ and $h_{GG}$, initialized at one. The stopping criterion is the sum of the absolute changes in these moments below $10^{-10}$, with at most 1,000 iterations. The resulting payoff field is evaluated on a rectangular grid clipped to the simplex, with $84\times74$ grid positions before clipping, to draw streamlines. The plotting routine retains terminal iterates when the stationary-map iteration does not converge. Such points occur under Stern Judging and Simple Standing with inertia; their payoff field and associated basin geometry require a converged reputation calculation before being interpreted as stationary dynamics. Vertex stability uses the two rare-strategy growth rates; the displayed filled or open marker at an edge root refers to the eigenvalue tangent to that invariant edge. The transverse invasion eigenvalue is calculated separately. These edge classifications do not establish stability against a strategy absent from that edge. Synchronous iteration is a numerical stationary-map solver, and its convergence is distinct from the stability of Eq.~\eqref{eq:methods-reputation-dynamics}.
+
+The parameter scans integrate the continuous reputation relaxation by fourth-order Runge--Kutta with step 0.1, using residual tolerances of $10^{-9}$ or $10^{-10}$. Slowly relaxing states are continued with step 0.2 for up to 80,000 additional steps. The equilibrated strategy vector field is tabulated on a triangular mesh and interpolated piecewise linearly for midpoint integration of strategy trajectories. Terminal reputation and cooperation values are recomputed without interpolation. The total-depth scan uses a mesh resolution of 23 and 512 common scrambled Sobol initial compositions, midpoint step 0.1, and up to eight blocks of 4,000 steps. The Scoring binary baseline uses its analytical stationary reputations and midpoint step 0.05. Its mean-cooperation stopping rule requires a change below $2\times10^{-5}$ for two successive block comparisons. Three one-step depth points, under Scoring, Shunning and Simple Standing, did not pass this observable-stability gate within the saved horizon; they are finite-time terminal estimates, not confirmed stationary averages.
+
+The benefit-to-cost scan in Extended Data Fig.~\ref{ed:benefit-cost} uses eight independent scrambled Sobol sets of 512 initial compositions, with seeds 2026--2033 and common compositions within each set. Means and standard errors are calculated across the eight set-level means. This uncertainty concerns the distribution of initial strategy compositions; the dynamical model itself is deterministic. The saved calculations use triangular mesh resolutions of 41 for Scoring and 25 for the other norms, midpoint steps 0.05 and 0.1, respectively, and up to 64 integration blocks. Their stopping gate checks changes in both mean and individual intended cooperation and the 99th percentile of the exact terminal strategy residual for successive blocks. Local invasion boundaries are deterministic and do not depend on the initial-condition samples.
+
+\subsection*{Local resistance to ALLC and ALLD}
+
+For a pure-DISC population on the selected resident branch, write $r_R^*$ for the resident reputation. A rare unconditional mutant does not change the resident environment and receives the reputations
+\begin{equation}
+\begin{aligned}
+r_C^*&=\mathcal R\!\left[r_R^*P^+_{C\mid G}+(1-r_R^*)P^+_{C\mid B}\right],\\
+r_D^*&=\mathcal R\!\left[r_R^*P^+_{D\mid G}+(1-r_R^*)P^+_{D\mid B}\right].
+\end{aligned}
+\label{eq:methods-classical-mutants}
+\end{equation}
+Their invasion growth rates relative to the resident are
+\begin{equation}
+\begin{aligned}
+\lambda_D&=(1-e_1)\{br_D^*-(b-c)r_R^*\},\\
+\lambda_C&=(1-e_1)\{br_C^*-c-(b-c)r_R^*\}.
+\end{aligned}
+\label{eq:methods-classical-invasion}
+\end{equation}
+When $r_R^*>r_D^*$ and $r_C^*>r_R^*$, strict resistance to both mutants requires
+\begin{equation}
+R_L=\frac{r_R^*}{r_R^*-r_D^*}<\frac bc<
+R_U=\frac{1-r_R^*}{r_C^*-r_R^*}.
+\label{eq:methods-classical-thresholds}
+\end{equation}
+If $r_R^*\leq r_D^*$, no finite benefit-to-cost ratio excludes ALLD. If $r_C^*\leq r_R^*$, ALLC imposes no finite upper threshold. We classify local outcomes directly from the signs of $\lambda_D$ and $\lambda_C$, including cases without a finite threshold. A zero growth rate is a marginal boundary. These criteria refer to the two tested unconditional mutants and are separate from cooperative attraction basins.
+
+\subsection*{Independent opportunistic under-cooperation and benchmark filters}
+
+An opportunistic discriminator, denoted O-DISC, follows DISC except that an intended cooperation is replaced by intended defection independently with probability $\delta$. This deliberate choice occurs before the implementation error. In the pure-DISC resident environment, define
+\begin{equation}
+\begin{aligned}
+\Phi_C^*&=r_R^*P^+_{C\mid G}+(1-r_R^*)P^+_{C\mid B},\\
+\Phi_D^*&=r_R^*P^+_{D\mid G}+(1-r_R^*)P^+_{D\mid B},\\
+\Delta\Phi^*&=\Phi_C^*-\Phi_D^*,\qquad
+u_R^*=\Phi_R(r_R^*).
+\end{aligned}
+\label{eq:methods-opportunist-assessment}
+\end{equation}
+Its positive-assessment probability and stationary reputation are
+\begin{equation}
+u_X(\delta)=u_R^*-\delta r_R^*\Delta\Phi^*,\qquad
+r_X^*(\delta)=\mathcal F[u_X(\delta)],
+\label{eq:methods-opportunist-reputation}
+\end{equation}
+where $\mathcal F$ is the reputation filter used by the resident population. The payoff difference gives Eq.~\eqref{eq:opportunistic-invasion-results}. The endpoints are a neutral DISC copy at $\delta=0$ and ALLD at $\delta=1$. Equation~\eqref{eq:opportunistic-slope-results} tests sufficiently small departures from DISC; it does not alone exclude an interior interval of invading mutants.
+
+For inertia, $\mathcal F=\mathcal R$. For the aggregation benchmark, based on Michel-Mata et al.~\cite{michelmata2024}, the filter assigns a good image when at least $Q$ of $M$ independently sampled assessments are positive, giving
+\begin{equation}
+\mathcal F_A(u)=\sum_{j=Q}^{M}\binom Mj u^j(1-u)^{M-j}.
+\label{eq:methods-aggregation-filter}
+\end{equation}
+The displayed setting is $M=2,Q=1$, so $\mathcal F_A(u)=2u-u^2$. For the quantitative benchmark, based on Schmid et al.~\cite{schmid2023}, the filter uses an integer score $s\in\{-R,\ldots,R\}$, incremented by one after a positive assessment and decremented by one after a negative assessment, with reflection at the endpoints. Scores at least $S$ are read as good. With $t=u/(1-u)$,
+\begin{equation}
+\mathcal F_Q(u)=\frac{\sum_{j=R+S}^{2R}t^j}{\sum_{j=0}^{2R}t^j},
+\qquad 0<u<1.
+\label{eq:methods-quantitative-filter}
+\end{equation}
+The displayed setting is $R=5,S=0$, and endpoint values are obtained by their limits. Each filter is evaluated at its own all-good-selected self-consistent resident reputation under the same norm and errors. The comparisons concern these specified settings, rather than an optimization over aggregation or quantitative parameters.
+
+The displayed invasion curves locate stationary resident roots on a 4,001-point grid, refine sign changes by bracketed root finding, and retain the highest stable root. The exploitation grid combines 4,001 uniformly spaced points on $[0,1]$, 1,001 points on $[0,0.025]$, and 100 logarithmically spaced positive values from $10^{-9}$ to $10^{-3}$; nonzero invasion crossings are refined by root finding. Aggregation and quantitative resident solutions are obtained from $r(0)=1$ by damped stationary-map iteration, $r_{n+1}=0.8r_n+0.2\mathcal F[\Phi_R(r_n)]$, until the step is below $2\times10^{-14}$.
+
+\subsection*{Readout security and resident branch boundaries}
+
+For every readout setting, we recompute the resident reputation and its assessment environment. Define the reputation loss per unit of saved cooperation as
+\begin{equation}
+\begin{aligned}
+g_{\alpha,\beta}(\delta)
+&=\frac{r_R^*-\mathcal R\!\left(u_R^*-\delta r_R^*\Delta\Phi^*;\alpha,\beta,k_1,k_2\right)}
+{\delta r_R^*},\qquad \delta>0,\\
+g_{\alpha,\beta}(0)&=\Delta\Phi^*\mathcal R'(u_R^*).
+\end{aligned}
+\label{eq:methods-readout-penalty}
+\end{equation}
+The derivative is with respect to the positive-assessment probability. Exclusion of the entire independently under-cooperating family is equivalent to
+\begin{equation}
+\frac bc\min_{0\leq\delta\leq1}g_{\alpha,\beta}(\delta)\geq1.
+\label{eq:methods-global-security}
+\end{equation}
+Equality permits a marginal mutant; strict inequality gives strict exclusion. The minimum includes the analytical limit at zero, the endpoint at one and all admissible interior stationary points of the rational loss function. For the security planes, these stationary points are obtained from the real roots of its derivative numerator and checked within the physical interval. The numerical security tolerance is $10^{-10}$.
+
+For the high-reputation branch, the upper readout boundary $\alpha_U$ is defined by Eq.~\eqref{eq:methods-global-security}. A lower boundary $\alpha_L$, when present, is the saddle-node at which that branch disappears. It is located from
+\begin{equation}
+F(r,\alpha)=0,\qquad \partial_rF(r,\alpha)=0,
+\quad F(r,\alpha)=\mathcal R_{\alpha,\beta}[\Phi_R(r)]-r,
+\label{eq:methods-resident-fold}
+\end{equation}
+with the norm, errors, depths and $\beta$ fixed. This fold is distinct from an invasion boundary and is excluded when a strictly stable high-reputation resident is required. We retain only physical resident roots with residual below $5\times10^{-13}$ and reduced-flow slope below $-10^{-9}$ in the refined security analysis; fold solutions are checked separately. The intended resident cooperation shown in these panels is $r_R^*$. Security statements concern O-DISC with independent under-cooperation over $0<\delta\leq1$, together with the separately stated ALLC and ALLD checks; they do not constitute an unrestricted evolutionary-stability claim.
+
+\begin{thebibliography}{9}
+\bibitem{michelmata2024}
+Michel-Mata, S., Kawakatsu, M., Sartini, J., Kessinger, T. A., Plotkin, J. B. \& Tarnita, C. E.
+The evolution of private reputations in information-abundant landscapes.
+\textit{Nature} \textbf{634}, 883--889 (2024).
+\url{https://doi.org/10.1038/s41586-024-07977-x}.
+\bibitem{schmid2023}
+Schmid, L., Ekbatani, F., Hilbe, C. \& Chatterjee, K.
+Quantitative assessment can stabilize indirect reciprocity under imperfect information.
+\textit{Nature Communications} \textbf{14}, 2086 (2023).
+\url{https://doi.org/10.1038/s41467-023-37817-x}.
+\end{thebibliography}
+\clearpage
+
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/Fig1.pdf}
+\caption{\textbf{Separate paths for the loss and recovery of reputation.}
+\textbf{a}, Instantaneous binary updating: a negative assessment changes a good image ($G$) to bad ($B$), and a positive assessment changes a bad image to good.
+\textbf{b}, Inertial updating introduces $k_1$ warning states, $W_1,\ldots,W_{k_1}$, and $k_2$ suspicion states, $S_1,\ldots,S_{k_2}$. Consecutive negative assessments advance the warning path from $G$ to $B$; consecutive positive assessments advance the recovery path from $B$ to $G$. A positive assessment returns any warning state directly to $G$, and a negative assessment returns any suspicion state directly to $B$. Established good and bad states remain unchanged after supporting assessments. Pink and blue arrows indicate negative and positive assessments, respectively. State $W_m$ is read as good with probability $\alpha^m$, and state $S_n$ is read as bad with probability $\beta^n$; the figure labels the final state of each path. These binary readouts are used in both action choice and moral assessment.}
+\label{fig:model}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/Fig2.pdf}
+\caption{\textbf{Directional memory restores private strategy recognition.}
+\textbf{a--d}, Representative private-image matrices under Scoring (\textbf{a}), Shunning (\textbf{b}), Stern Judging (\textbf{c}) and Simple Standing (\textbf{d}). Each block contains DISC observers' binary images of DISC, ALLC or ALLD targets, as labelled; blue and white entries denote good and bad images. Rows compare instantaneous updating, full one-step inertia and the representative multi-step architectures $(k_1,k_2)=(2,0),(3,0),(4,3)$ and $(1,2)$, respectively. Self-images are retained.
+\textbf{e--h}, Reputation outcomes across independently varied warning and recovery depths under the same four norms, with $\alpha=\beta=1$. Cell colour gives reputational separation, $\Delta g=(g_{\mathrm{DISC}}+g_{\mathrm{ALLC}})/2-g_{\mathrm{ALLD}}$, and circle area gives mean disagreement between two distinct DISC observers about the same target, averaged equally across the three target strategies. Black and red outlines mark $(0,0)$ and $(1,1)$, respectively. Stars mark the minimum-total-depth architectures satisfying $\Delta g\geq0.8$ and $\bar d\leq0.1$; these operational criteria and their sensitivity are examined in Extended Data Fig.~\ref{ed:recognition-selection}. The depth scan uses equal strategy frequencies in a population of $N=150$. All simulations start with good reputation records and use $e_1=e_2=0.02$ and direct-reset transitions (Methods). The image matrices illustrate individual realizations, whereas the depth planes summarize post-burn-in reputation measurements.}
+\label{fig:recognition}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/Fig3.pdf}
+\caption{\textbf{Reputation inertia expands the basins leading to cooperation.}
+Replicator dynamics of DISC, ALLD and ALLC under Scoring, Shunning, Stern Judging and Simple Standing (columns).
+\textbf{a}, Instantaneous updating.
+\textbf{b}, Full one-step inertia, $k_1=k_2=1$ and $\alpha=\beta=1$.
+\textbf{c}, Full multi-step inertia at the independently recognition-selected depths shown beneath the panels. Arrows follow the strategy vector field and shaded regions identify initial compositions leading to the displayed cooperative attractors. Filled and open symbols show attracting and unstable stationary configurations, respectively; for equilibria on an invariant edge, the marker convention uses stability along that edge (Methods). Neutral directions can occur in the instantaneous Scoring panel. Percentages give intended cooperation at the indicated cooperative configurations; realized cooperation equals $(1-e_1)$ times intended cooperation. Grey, blue and orange distinguish instantaneous, one-step and multi-step updating. The displayed fields use synchronous reputation-map iteration from initially good records. Non-converged terminal iterates are retained by the supplied plotting routine; detailed basin boundaries require convergence verification (Methods). Parameters: $b/c=5$ and $e_1=e_2=0.02$.}
+\label{fig:strategy-dynamics}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/Fig4.pdf}
+\caption{\textbf{The cooperative value of memory depends on its allocation.}
+Basin-weighted realized cooperation as a function of total depth $K=k_1+k_2$ under Scoring (\textbf{a}), Shunning (\textbf{b}), Stern Judging (\textbf{c}) and Simple Standing (\textbf{d}). At each integer $K$, points compare all allocations $(k_1,k_2)$, with small horizontal offsets used only to separate overlapping points. Colour represents the fraction $k_1/K$ allocated to tolerance: blue indicates tolerance-dominated memory, orange indicates strictness-dominated memory and grey indicates balanced allocation; the $K=0$ baseline is grey. Larger outlined points and the black connecting line give the largest observed cooperation at each scanned depth. Labels identify the corresponding allocation. Pale vertical lines indicate the range of cooperation across allocations at fixed $K$. Cooperation is averaged over 512 initial strategy compositions sampled uniformly from the simplex; it combines the accessibility of each outcome with its realized cooperation level (Methods). The envelope compares the tested configurations and is not a bound over arbitrary memory architectures. The $(1,1)$ estimates under Scoring, Shunning and Simple Standing did not pass the saved observable-convergence gate; these points, including the Simple Standing envelope point at $K=2$, remain finite-time estimates. Parameters: $\alpha=\beta=1$, $b/c=5$ and $e_1=e_2=0.02$.}
+\label{fig:memory-allocation}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/Fig5.pdf}
+\caption{\textbf{Reputation readout prevents invasion by opportunistic discriminators.}
+\textbf{a}, Normalized invasion exponent $\Lambda=(\Pi_{\mathrm X}-\Pi_{\mathrm R})/[c(1-e_1)]$ for rare O-DISC mutants in an all-DISC population under Stern Judging. An O-DISC mutant defects against bad recipients and independently withholds intended cooperation from good recipients with probability $\delta$; $\delta=0$ corresponds to DISC and $\delta=1$ to ALLD. Positive exponents indicate invasion. Curves compare full one-step inertia $(k_1,k_2,\alpha,\beta)=(1,1,1,1)$; multi-step inertia $(k_1,k_2,\beta)=(4,3,1)$ with $\alpha=1$ or $0.8$; aggregation with $M=2$ and threshold fraction $q=1/2$; and quantitative reputation with score bound $R=5$ and good-reputation threshold $S=0$. Each curve uses the resident equilibrium of the corresponding mechanism. Full one-step inertia has a small positive interval, $0<\delta<0.0084$, whereas multi-step inertia at $\alpha=0.8$ excludes all non-neutral O-DISC mutants. Open circles mark zero crossings; negative tails extend below the displayed range.
+\textbf{b}, Upper boundary $\delta_c$ of the positive invasion interval (top) and intended resident cooperation $r_{\mathrm R}^*$ (bottom) as $\alpha$ varies for multi-step inertia with $(k_1,k_2,\beta)=(4,3,1)$. In this scan the positive interval, when present, begins immediately above $\delta=0$; $\delta_c=0$ denotes no positive interval. Green shading marks $\alpha_L<\alpha\leq\alpha_U$, where the complete non-neutral O-DISC family is excluded. The lower boundary $\alpha_L\simeq0.567$ is a fold of the high-cooperation resident branch; the open circle indicates its marginal endpoint. The upper boundary $\alpha_U\simeq0.804$ is the loss of protection against weak opportunism. At each $\alpha$, the resident is the largest strictly stable fixed point of the scalar reputation closure. Cooperation is measured before implementation error; realized cooperation is $(1-e_1)r_{\mathrm R}^*$. All panels use $b/c=5$ and $e_1=e_2=0.02$. Benchmark comparisons refer to these specified implementations and the common rare-mutant closure.}
+\label{fig:opportunism}
+\end{figure}
+\clearpage
+
+\setcounter{figure}{0}
+\renewcommand{\figurename}{Extended Data Figure}
+\renewcommand{\theHfigure}{ED\arabic{figure}}
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig1.pdf}
+\caption{\textbf{Operational selection and threshold sensitivity of memory architectures.}
+\textbf{a--d}, Reputational separation $\Delta g$ against mean observer disagreement $\bar d$ under Scoring, Shunning, Stern Judging and Simple Standing, respectively. Points show all 49 depth pairs $k_1,k_2\in\{0,\ldots,6\}$ and colour gives $K=k_1+k_2$. Shading marks the joint criteria $\bar d\leq0.1$ and $\Delta g\geq0.8$. Stars identify the qualifying architecture with minimum $K$; ties are resolved by greater separation, then lower disagreement, then smaller $k_1$ and $k_2$. Insets show the complete set of candidates, with crosses marking instantaneous updating and dashed boxes indicating the main-panel view.
+\textbf{e--h}, Selected depth pairs as the allowed disagreement and required separation are varied. Background colour gives the selected total depth. Gold outlines mark the default criteria, and dark outlines enclose cells selecting the same architecture as the default. Each candidate is based on 30 independent finite-population simulations with $N=150$, equal numbers of the three strategies, $e_1=e_2=0.02$, $\alpha=\beta=1$, initially good records and self-images included. The standard protocol uses an 800-sweep burn-in in a 1,000-sweep run, with measurements every five sweeps; candidates failing the drift criterion are extended before selection (Methods). These are operational recognition criteria, not evolutionary stability thresholds.}
+\label{ed:recognition-selection}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig2.pdf}
+\caption{\textbf{Stationary reputation branches in homogeneous DISC populations.}
+Columns correspond to Scoring, Shunning, Stern Judging and Simple Standing.
+\textbf{a--d}, Scalar self-consistency flow $\dot r_{\mathrm{DISC}}=\mathcal R[\Phi_{\mathrm{DISC}}(r_{\mathrm{DISC}})]-r_{\mathrm{DISC}}$ for instantaneous updating (grey), full one-step inertia (blue) and the representative multi-step depths indicated in each panel (orange). Separate phase lines above the curves show the direction of the scalar flow; filled and open symbols mark stable and unstable stationary solutions. This scalar relaxation locates stationary branches and is not the full transient dynamics of the internal-state Markov chain.
+\textbf{e--h}, Stationary good-image probability across the readout parameters $\alpha$ and $\beta$ at fixed $k_1=k_2=1$.
+\textbf{i--l}, Stationary good-image probability across integer depths at full readout inertia, $\alpha=\beta=1$. Colours show the branch selected by initially good reputation records. Hatching distinguishes bistability from a single stable stationary branch. Outlined squares mark instantaneous and full one-step updating, and stars mark the recognition-selected multi-step depths. Parameters: $e_1=e_2=0.02$. Reputation self-consistency does not depend on $b/c$.}
+\label{ed:resident-reputation}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig3.pdf}
+\caption{\textbf{Readout separates cooperative accessibility from resistance to canonical invasion.}
+Columns correspond to Scoring, Shunning, Stern Judging and Simple Standing.
+\textbf{a--d}, One-step strategy dynamics with tolerance-only readout, $(\alpha,\beta)=(1,0)$ (upper diagrams), or strictness-only readout, $(\alpha,\beta)=(0,1)$ (lower diagrams), retaining $k_1=k_2=1$ in both cases. Shading identifies the cooperative basins, arrows follow the replicator vector field, and percentages give intended cooperation at the indicated stationary configurations. Edge markers classify stability along the invariant edge; they do not by themselves establish stability against the third strategy.
+\textbf{e--h}, Basin-weighted realized cooperation across the one-step readout plane.
+\textbf{i--l}, Local invasion outcomes for rare ALLD and ALLC mutants introduced into a homogeneous DISC population at the same readout parameters. Pink denotes ALLD invasion; purple denotes exclusion of ALLD with invasion by ALLC; green denotes resistance to both tested mutants. Dashed and solid white curves mark the ALLD and ALLC invasion boundaries, respectively. Equality on a boundary is linearly neutral. All panels use $b/c=5$ and $e_1=e_2=0.02$. Changing readout at fixed state space differs from deleting one of the internal paths. The simplex fields retain non-converged terminal reputation iterates where present, as described in Methods.}
+\label{ed:readout-evolution}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig4.pdf}
+\caption{\textbf{Cooperative outcomes and invasion resistance across benefit-to-cost ratios.}
+Basin-weighted intended cooperation under Scoring (\textbf{a}), Shunning (\textbf{b}), Stern Judging (\textbf{c}) and Simple Standing (\textbf{d}). Grey, blue and orange compare instantaneous updating, full one-step inertia and full multi-step inertia at the labelled recognition-selected depths. Solid segments indicate that a homogeneous DISC population strictly resists both rare ALLD and ALLC mutants; dashed segments indicate that this local protection condition fails. Segment boundaries are determined from $R_{\mathrm L}$ and $R_{\mathrm U}$, or directly from mutant payoff differences when the ratio form is degenerate (Methods). Arrows show protected segments continuing beyond the displayed range. The vertical dashed line marks $b/c=5$. Curves give means from eight independent samplings of 512 initial compositions each; faint bands show $\pm1$ standard error across samplings. The deterministic dynamics are repeated over independently sampled initial conditions, rather than demographic realizations. Parameters: $e_1=e_2=0.02$. Intended cooperation is shown here; realized cooperation is $(1-e_1)$ times this value.}
+\label{ed:benefit-cost}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig5.pdf}
+\caption{\textbf{Error-dependent resistance to unconditional mutants.}
+Local invasion outcomes across implementation error $e_1$ and assessment error $e_2$. Columns correspond to Scoring, Shunning, Stern Judging and Simple Standing.
+\textbf{a}, Instantaneous updating.
+\textbf{b}, Full one-step inertia, $k_1=k_2=1$ and $\alpha=\beta=1$.
+\textbf{c}, Full multi-step inertia at the recognition-selected architectures labelled within the panels. For each error pair, stationary reputations are recomputed in a homogeneous DISC population initialized on the good-reputation branch, and rare ALLD and ALLC payoff differences determine the invasion class. Pink denotes ALLD invasion; purple denotes exclusion of ALLD with invasion by ALLC; green denotes resistance to both tested mutants. Dashed and solid white curves mark the ALLD and ALLC invasion boundaries, respectively; equality is linearly neutral. Parameters: $b/c=5$. These local tests concern the two unconditional mutants and do not establish resistance to arbitrary strategies.}
+\label{ed:error-invasion}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig6.pdf}
+\caption{\textbf{Cooperation and canonical protection across discrete memory depths.}
+Basin-weighted realized cooperation across tolerance depth $k_1$ and strictness depth $k_2$ under Scoring (\textbf{a}), Shunning (\textbf{b}), Stern Judging (\textbf{c}) and Simple Standing (\textbf{d}). Each cell is a separate integer-depth architecture with full readout inertia, $\alpha=\beta=1$. Colour gives cooperation averaged across initial strategy compositions. Dotted cells indicate that a homogeneous DISC population also resists rare ALLD and ALLC mutants under the local payoff criterion. The colour and dots measure different properties: attraction to cooperative outcomes across the simplex and resistance of pure DISC to the two tested invaders. Depths are discrete; no continuous invasion boundary between cells is implied. The $(1,1)$ cooperation estimates under Scoring, Shunning and Simple Standing remain finite-time estimates because they did not pass the saved observable-convergence gate. Parameters: $b/c=5$ and $e_1=e_2=0.02$.}
+\label{ed:depth-evolution}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering
+\figureasset{figures/ED_Fig7.pdf}
+\caption{\textbf{Protective readout intervals depend on the norm, memory architecture and benefit-to-cost ratio.}
+\textbf{a}, Intended cooperation in all-DISC resident populations across the full readout range $0\leq\alpha\leq1$, under Scoring (SC), Shunning (SH), Stern Judging (SJ) and Simple Standing (SS), with $b/c=5$. Within each norm, the upper strip shows one-step inertia $(k_1,k_2)=(1,1)$ and the lower strip shows the representative multi-step architecture indicated at left: SC $(2,0)$, SH $(3,0)$, SJ $(4,3)$ and SS $(1,2)$. Color encodes intended resident cooperation, including invadable parameter regions. Black frames delimit intervals in which no O-DISC mutant with $0<\delta\leq1$ has a positive invasion exponent. Endpoints arising from resident folds are excluded because the fold is marginal; security boundaries on a strictly stable branch and domain endpoints are included.
+\textbf{b--e}, Cooperation and protection as functions of $\alpha$ and $b/c$ under Scoring (\textbf{b}), Shunning (\textbf{c}), Stern Judging (\textbf{d}) and Simple Standing (\textbf{e}). The upper row uses one-step inertia and the lower row the representative multi-step architectures from \textbf{a}. Colors use the same cooperation scale as \textbf{a}; the black boundaries enclose the region protected against the complete O-DISC family. Empty protective regions are not enclosed. Open circles mark the common reference setting $(\alpha,b/c)=(0.8,5)$; this setting protects all four multi-step implementations, but only Scoring and Simple Standing under one-step inertia. Resident cooperation is independent of $b/c$, whereas the invasion condition depends on the benefit-to-cost ratio. All panels use $\beta=1$, $e_1=e_2=0.02$ and the largest strictly stable fixed point of the scalar resident closure. Protection imposes no separate minimum cooperation threshold. Because the representative multi-step architecture differs among norms, comparisons across these implementations do not isolate a norm effect at matched memory depth.}
+\label{ed:opportunism-security}
+\end{figure}
+\clearpage
+
+\section*{Supplementary Information}
+\textit{To be completed following the author's outline. Detailed derivations, additional validation and supplementary analyses will be added here.}
+\end{document}
