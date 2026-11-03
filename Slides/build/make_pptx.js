@@ -45,9 +45,9 @@ pres.defineSlideMaster({
   background: { color: C.text1 },
   objects: [
     { placeholder: { options: { name: "title", type: "title", x: 0.75, y: 1.15, w: 8.5, h: 1.25,
-        fontSize: 32, bold: true, color: C.background1, valign: "bottom", margin: 0 }, text: "" } },
+        fontSize: 32, bold: true, color: C.background1, valign: "bottom", align: "left", margin: 0 }, text: "" } },
     { placeholder: { options: { name: "subtitle", type: "body", x: 0.75, y: 2.5, w: 8.5, h: 0.45,
-        fontSize: 18, color: C.accent1, margin: 0 }, text: "" } },
+        fontSize: 18, color: C.accent1, align: "left", margin: 0 }, text: "" } },
   ],
 });
 pres.defineSlideMaster({
@@ -55,7 +55,7 @@ pres.defineSlideMaster({
   background: { color: C.text1 },
   objects: [
     { placeholder: { options: { name: "title", type: "title", x: 0.75, y: 2.35, w: 8.5, h: 0.75,
-        fontSize: 32, bold: true, color: C.background1, valign: "top", margin: 0 }, text: "" } },
+        fontSize: 32, bold: true, color: C.background1, valign: "top", align: "left", margin: 0 }, text: "" } },
   ],
 });
 pres.defineSlideMaster({
@@ -63,7 +63,7 @@ pres.defineSlideMaster({
   background: { color: C.background1 },
   objects: [
     { placeholder: { options: { name: "title", type: "title", x: MX, y: 0.2, w: 7.4, h: 0.6,
-        fontSize: FS.title, bold: true, color: C.text1, valign: "middle", margin: 0 }, text: "" } },
+        fontSize: FS.title, bold: true, color: C.text1, valign: "middle", align: "left", margin: 0 }, text: "" } },
   ],
   slideNumber: { x: 9.05, y: 5.2, w: 0.5, h: 0.3, fontSize: 10, color: HEX.muted, align: "right" },
 });
@@ -72,7 +72,7 @@ pres.defineSlideMaster({
   background: { color: C.text1 },
   objects: [
     { placeholder: { options: { name: "title", type: "title", x: 0.95, y: 0.95, w: 8.1, h: 2.15,
-        fontSize: 26, bold: true, color: C.background1, valign: "middle", margin: 0 }, text: "" } },
+        fontSize: 26, bold: true, color: C.background1, valign: "middle", align: "left", margin: 0 }, text: "" } },
   ],
 });
 
@@ -100,7 +100,7 @@ function paragraphs(list, base, bullet) {
   const out = [];
   list.forEach((runs, i) => {
     const t = runsToText(runs, base);
-    if (bullet) t.forEach((x) => { x.options.bullet = { code: "25B8", indent: 14 }; x.options.paraSpaceAfter = 4; });
+    if (bullet && t.length) { t[0].options.bullet = { code: "25B8", indent: 14 }; t[0].options.paraSpaceAfter = 4; }
     if (i < list.length - 1 && t.length) t[t.length - 1].options.breakLine = true;
     out.push(...t);
   });
@@ -142,7 +142,7 @@ function measure(el, w) {
       const pt = FS[el.size] - 1;
       let h = 0;
       const rows = [el.header].concat(el.rows);
-      rows.forEach((r) => { h += Math.max(...r.map((c, j) => lines(c, w * el.widths[j], pt))) * LH(pt) + 0.09; });
+      rows.forEach((r) => { h += Math.max(...r.map((c, j) => lines(c, w * el.widths[j] - 0.14, pt))) * LH(pt) + 0.11; });
       return h + 0.08;
     }
     case "flow": return 0.92;
@@ -244,7 +244,7 @@ function render(slide, el, x, y, w) {
       const pt = FS[el.size] - 1;
       const rows = [];
       const nrows = el.rows.length;
-      const cell = (runs, opts) => ({ text: runsToText(runs, { fontSize: pt, color: C.text1, bold: !!opts.bold }), options: opts.o });
+      const cell = (runs, opts) => ({ text: runsToText(runs.length ? runs : [{ text: " " }], { fontSize: pt, color: C.text1, bold: !!opts.bold }), options: Object.assign({ fontSize: pt }, opts.o) });
       rows.push(el.header.map((c) => cell(c, { bold: true, o: { fill: { color: C.background2 },
         border: [{ pt: 1, color: HEX.ink }, { type: "none" }, { pt: 0.75, color: HEX.ink }, { type: "none" }] } })));
       el.rows.forEach((r, i) => rows.push(r.map((c, j) => cell(c, { bold: el.first_bold && j === 0, o: {
