@@ -1,0 +1,42 @@
+% Introduction version 2, reframed (3 November 2026).
+% Central question: should losing a good reputation require as much evidence as
+% regaining one? Second question (stakes): can a reputation system forgive honest
+% mistakes without excusing deliberate defection?
+% Citation keys refer to Manuscript_doc/latex_file/references.bib.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+\title{\large Indirect reciprocity with inertial reputation updating\\[0.3em]
+\normalsize Introduction, version 2 (reframed draft)}
+\date{}
+\begin{document}
+\maketitle
+
+% -- 1. Hook: losing and regaining standing follow different rules in society
+Reputations are rarely lost and regained in the same way. A single betrayal can destroy trust that took years to build, whereas rebuilding it requires a long record of good conduct\cite{slovic1993}. Communities that manage shared resources punish first offences mildly and escalate sanctions only after repeated violations\cite{ostrom1990,cox2010}, and a criminal record stops signaling elevated risk only after years without a further offence\cite{blumstein2009}. People also revise their impressions of others gradually and asymmetrically, although the direction of the asymmetry depends on context\cite{mendesiedlecki2013neural,mendesiedlecki2013diagnostic,siegel2018}. These practices treat the loss and the recovery of standing as two separate processes, each with its own requirement for evidence.
+
+% -- 2. Why reputations matter, and why private information breaks them
+Reputations matter because they allow cooperation among individuals who may never meet again. Under indirect reciprocity, individuals who help others acquire a good reputation and are more likely to receive help in return\cite{nowak1998,wedekind2000,milinski2002,nowak2005}. Social norms determine which actions earn a good reputation\cite{ohtsuki2004,santos2018,kessinger2023,murase2024computational}, and several norms sustain high levels of cooperation when all individuals share the same view of each other's standing\cite{leimar2001,panchanathan2003,ohtsuki2006}. In reality, observations are noisy and privately interpreted\cite{takahashi2006,uchida2010}. Observers then disagree about who is good, and these disagreements undermine cooperation under most norms\cite{hilbe2018,okada2018,fujimoto2023,murase2024synchronization}.
+
+% -- 3. Root cause and the tacit symmetry assumption
+Part of this fragility comes from how models update reputations. In the standard binary framework, every new assessment overwrites an individual's reputation\cite{ohtsuki2004}. One erroneous observation can therefore undo a reputation built over many interactions, and observers who happened to see different events reach different verdicts about the same person\cite{hilbe2018,radzvilavicius2019}. Recent work has made reputations more robust in two ways. Some mechanisms restore agreement among observers, through public institutions, gossip, empathetic evaluation or the synchronization of private opinions\cite{radzvilavicius2021,kawakatsu2024,radzvilavicius2019,murase2024synchronization,tham2026,okada2024}. Others use more information before a reputation changes, through generous or stochastic assessment\cite{schmid2021,murase2023}, graded or quantitative reputations\cite{tanabe2013,murase2022,schmid2023,clark2020}, reasoning about errors\cite{pandula2024,morsky2024} and the aggregation of several observations\cite{michelmata2024}. These mechanisms share a tacit assumption. Losing and regaining standing are governed by the same rule, whether a single score, a single threshold or a single observation window\cite{schmid2023,michelmata2024,yamamoto2025}.
+
+% -- 4. The two questions and their stakes
+Relaxing this assumption raises two questions with direct consequences for cooperation. First, should losing a good reputation require as much evidence as regaining one? If observers forgive too little, honest mistakes trigger cascades of disagreement. If they restore standing too readily, defectors escape the consequences of their behavior. Which of these risks dominates may depend on the norm that defines good conduct. Second, how should evidence that is accumulating, but not yet conclusive, affect how someone is treated? Waiting for conclusive evidence protects cooperators from errors, but the same forbearance may shelter individuals who defect deliberately, provided they do so only occasionally\cite{schmid2021,michelmata2024}. Whether a reputation system can forgive honest mistakes without excusing deliberate defection therefore remains open.
+
+% -- 5. Approach
+Here we develop a model of indirect reciprocity in which the loss and the recovery of standing follow separate paths (Fig.~1). Negative evidence moves an individual in good standing through a sequence of warning states before the reputation turns bad, and positive evidence moves an individual in bad standing through recovery states before it turns good. The two paths can differ in length, and each intermediate state can already affect how the individual is treated. The framework thus separates two design choices of a reputation system: how much evidence changes an established reputation, and how strongly incomplete evidence is expressed in the meantime.
+
+% -- 6. Findings and implication
+We find that the direction of reputational inertia, rather than its amount, determines whether private observers agree with one another and still distinguish cooperators from defectors. The beneficial direction depends on the norm. Compact architectures, selected solely by these reputational criteria, make cooperation stable and accessible under Scoring, Shunning, Stern Judging and Simple Standing, whereas adding memory in the wrong direction can eliminate cooperation altogether. We further show that the tolerance that protects cooperators also invites opportunists who defect only occasionally, even when unconditional defectors are excluded. Allowing warning states to carry partial consequences closes this loophole while cooperation remains high. Reputation-based cooperation therefore depends not only on which behaviors a society judges as good, but also on how quickly it revises its judgments in each direction.
+
+\bibliographystyle{../latex_file/naturemag-doi}
+\bibliography{../latex_file/references}
+\end{document}

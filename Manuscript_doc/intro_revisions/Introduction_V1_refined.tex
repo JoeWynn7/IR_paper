@@ -1,0 +1,41 @@
+% Introduction version 1, refined (3 November 2026).
+% Same argument and references as Introduction_V1.docx; edited for concision,
+% flow and terminology ("readout" replaced). Citation keys refer to
+% Manuscript_doc/latex_file/references.bib.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+\title{\large Indirect reciprocity with inertial reputation updating\\[0.3em]
+\normalsize Introduction, version 1 (refined draft)}
+\date{}
+\begin{document}
+\maketitle
+
+% -- 1. Classical result and the central problem
+Cooperation among unrelated individuals is sustained in part by reputation\cite{milinski2016,nowak2005}. By helping others, individuals improve their standing and become more likely to receive help from third parties, a mechanism known as indirect reciprocity\cite{nowak1998,leimar2001,wedekind2000,milinski2002}. Theory has identified social norms that make reputation-based cooperation evolutionarily stable\cite{panchanathan2003,ohtsuki2004}, most notably the leading-eight norms, which sustain cooperation when reputations are public, even in the presence of occasional errors\cite{ohtsuki2004,ohtsuki2006}. These results rest on agreement about who is good and who is bad. When reputations are private and assessments are noisy, individuals hold different views of the same person\cite{takahashi2006,uchida2010}, and most leading-eight norms no longer maintain stable cooperation\cite{hilbe2018,okada2018,perret2021,fujimoto2023}. A central problem for indirect reciprocity is therefore how reputations can remain both accurate and shared under private assessment. They must distinguish those who cooperate from those who do not, and different observers must largely agree about who is who\cite{fujimoto2022,murase2024synchronization}.
+
+% -- 2. Root cause: overwrite updating and disagreement cascades
+Part of this fragility lies in how reputations are updated. In the standard binary framework, each new assessment replaces the previous image of an individual\cite{ohtsuki2004,hilbe2018}. An isolated error can therefore reverse a reputation built over many interactions, and the next observation can reverse it again. Under private assessment, such reversals do not remain local. They amplify disagreements among observers and feed back into behavior. A discriminator who refuses to help a recipient it regards as bad may itself be condemned by an observer who regards that recipient as good\cite{hilbe2018,radzvilavicius2019,okada2020}. Because this cascade can start whenever a single assessment overturns an established image, cooperation depends not only on which social norm people use, but also on how much behavioral evidence they require before revising a judgment.
+
+% -- 3. Existing remedies and the gap
+Several lines of work have sought to make reputation-based cooperation robust to private and noisy information. One line restores agreement among observers, through public institutions that broadcast reputations\cite{radzvilavicius2021}, gossip\cite{kawakatsu2024}, empathetic evaluation from the donor's perspective\cite{radzvilavicius2019} or updating rules that synchronize private opinions\cite{murase2024synchronization,tham2026,okada2024}. Another line changes how individuals assess and integrate information, through generous or stochastic assessment\cite{schmid2021,murase2023}, graded reputations\cite{tanabe2013,murase2022}, Bayesian or abductive reasoning about errors\cite{pandula2024,morsky2024}, quantitative scores\cite{schmid2023,clark2020} and the aggregation of several observations\cite{michelmata2024}. Quantitative scores can correct errors that would otherwise persist\cite{schmid2023}, and aggregating observations before assigning a binary reputation can generate agreement and cooperation without centralized information\cite{michelmata2024}. These studies show that processing more than the latest observation stabilizes indirect reciprocity, and that doing so typically requires some tolerance of bad actions\cite{clark2020,michelmata2024,okada2017}. Tolerance has a cost, however, because rules that forgive errors may also forgive deliberate defection\cite{schmid2021,michelmata2024}. Existing approaches also treat the loss and the recovery of good standing as one process, governed by a single score, threshold or observation window\cite{schmid2023,michelmata2024,yamamoto2025}. Two questions therefore remain open. Should losing and regaining standing require different amounts of evidence? And how should evidence that is accumulating, but not yet conclusive, affect how a person is treated?
+
+% -- 4. Motivation from human societies and impression formation
+Human societies already separate an accumulating record from a final verdict. Communities that successfully manage shared resources apply graduated sanctions that escalate with repeated violations\cite{ostrom1990,cox2010}, online marketplaces summarize long histories of feedback\cite{tadelis2016}, and a criminal record stops signaling elevated risk only after years without further offences\cite{blumstein2009}. Human impressions are likewise not overwritten by the latest observation. People update impressions as new behavioral information arrives\cite{yamamoto2025,mendesiedlecki2013neural}, and the impact of new information depends on its diagnostic value and on the existing impression of the person being judged\cite{mendesiedlecki2013diagnostic,siegel2018}. Updating is also asymmetric, but the direction of the asymmetry varies. Immoral acts typically weigh more heavily than moral ones\cite{mendesiedlecki2013diagnostic,skowronski1989} and trust is easier to lose than to regain\cite{slovic1993}, yet beliefs about people who have behaved badly are more volatile than beliefs about people who have behaved well\cite{siegel2018}. These findings motivate a representation in which standing persists while contrary evidence accumulates, and in which losing and regaining standing need not require the same amount of evidence.
+
+% -- 5. Approach
+Here we develop a framework for indirect reciprocity with inertial reputation updating (Fig.~1). Evidence for losing good standing and evidence for recovering it accumulate along separate paths of warning and recovery states, whose depths can be set independently. A second pair of parameters determines how strongly these intermediate states are expressed, and hence how incomplete evidence affects current treatment.
+
+% -- 6. Findings
+We show that the allocation of inertia between the two paths shapes both agreement among private observers and their ability to distinguish cooperative from defective strategies, and that the allocation achieving both depends on the social norm. Compact architectures selected solely by these two reputational criteria support highly cooperative evolutionary outcomes across four canonical social norms and enlarge the basins of attraction of cooperative states. At the same total depth, alternative allocations produce markedly different levels of cooperation, and greater depth does not necessarily increase cooperation. Finally, the tolerance that protects cooperation against isolated negative assessments can be exploited by opportunists who withhold help only occasionally, even when unconditional defectors are excluded. Allowing warning states to influence current treatment restores a reputational cost to such partial defection and, in the cases we analyze, prevents opportunistic invasion while preserving high cooperation. The framework thus separates two components of reputation processing, how evidence accumulates and how incomplete evidence is interpreted, and shows that both shape the evolution of cooperation.
+
+\bibliographystyle{../latex_file/naturemag-doi}
+\bibliography{../latex_file/references}
+\end{document}
