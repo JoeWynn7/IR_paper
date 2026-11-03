@@ -1,0 +1,41 @@
+% Introduction, final integrated version (3 November 2026).
+% Combines Introduction V1 (paragraph 1 and the account of overwrite updating)
+% with Introduction V2 (tacit symmetry assumption, the two questions, approach
+% and findings). This text is also the Introduction of
+% ../latex_file/Manuscript_full_20261103.tex.
+% Citation keys refer to Manuscript_doc/latex_file/references.bib.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+\title{\large Indirect reciprocity with inertial reputation updating\\[0.3em]
+\normalsize Introduction (final version)}
+\date{}
+\begin{document}
+\maketitle
+
+% -- 1. Classical result and the central problem
+Cooperation among unrelated individuals is sustained in part by reputation\cite{milinski2016,nowak2005}. By helping others, individuals improve their standing and become more likely to receive help from third parties, a mechanism known as indirect reciprocity\cite{nowak1998,leimar2001,wedekind2000,milinski2002}. Theory has identified social norms that make reputation-based cooperation evolutionarily stable\cite{panchanathan2003,ohtsuki2004}, most notably the leading-eight norms, which sustain cooperation when reputations are public, even in the presence of occasional errors\cite{ohtsuki2004,ohtsuki2006}. These results rest on agreement about who is good and who is bad. When reputations are private and assessments are noisy, individuals hold different views of the same person\cite{takahashi2006,uchida2010}, and most leading-eight norms no longer maintain stable cooperation\cite{hilbe2018,okada2018,perret2021,fujimoto2023}. A central problem for indirect reciprocity is therefore how reputations can remain both accurate and shared under private assessment. They must distinguish those who cooperate from those who do not, and different observers must largely agree about who is who\cite{fujimoto2022,murase2024synchronization}.
+
+% -- 2. Root cause (overwrite updating, disagreement cascades) and the tacit
+%       symmetry assumption of existing remedies
+Part of this fragility lies in how reputations are updated. In the standard binary framework, each new assessment replaces the previous image of an individual\cite{ohtsuki2004,hilbe2018}. An isolated error can therefore reverse a reputation built over many interactions, and the next observation can reverse it again. Under private assessment, such reversals do not remain local. They amplify disagreements among observers and feed back into behavior. A discriminator who refuses to help a recipient it regards as bad may itself be condemned by an observer who regards that recipient as good\cite{hilbe2018,radzvilavicius2019,okada2020}. Recent work has made reputation systems more robust to errors and disagreement in two ways. Some mechanisms restore agreement among observers, through public institutions\cite{radzvilavicius2021}, gossip\cite{kawakatsu2024}, empathetic evaluation\cite{radzvilavicius2019} or the synchronization of private opinions\cite{murase2024synchronization,tham2026,okada2024}. Others use more information before a reputation changes, through generous or stochastic assessment\cite{schmid2021,murase2023}, graded or quantitative reputations\cite{tanabe2013,murase2022,schmid2023,clark2020}, reasoning about errors\cite{pandula2024,morsky2024} and the aggregation of several observations\cite{michelmata2024}. Most of these mechanisms share a tacit assumption. Losing and regaining standing are governed by the same rule, such as a single score, threshold or observation window\cite{schmid2023,michelmata2024,yamamoto2025}.
+
+% -- 3. The two questions and their stakes
+Relaxing this assumption raises two questions with direct consequences for cooperation. First, should losing a good reputation require as much evidence as regaining one? If observers forgive too little, honest mistakes trigger cascades of disagreement. If they restore standing too readily, defectors escape the consequences of their behavior. Which of these risks dominates may depend on the norm that defines good conduct. Second, how should evidence that is accumulating, but not yet conclusive, affect how someone is treated? Waiting for conclusive evidence protects cooperators from errors, but the same forbearance may shelter individuals who defect deliberately, provided they do so only occasionally\cite{schmid2021,michelmata2024}. Whether a reputation system can forgive honest mistakes without excusing deliberate defection therefore remains open.
+
+% -- 4. Approach, motivated by two institutional examples; introduces inertia
+Human institutions often treat the two directions differently. Communities that successfully manage shared resources sanction a first offence mildly and escalate only after repeated violations\cite{ostrom1990,cox2010}. In such communities, losing good standing takes repeated evidence, and each step along the way already carries a partial consequence. Recovering standing follows a separate process. A criminal record, for instance, stops signaling elevated risk only after years without a further offence\cite{blumstein2009}. Building on these examples, we develop a model of indirect reciprocity in which reputations have inertia (Fig.~1). An established reputation changes only after contrary evidence has accumulated, and the amount of evidence required can differ between losing and regaining standing. Negative evidence moves an individual in good standing through a sequence of warning states before the reputation turns bad, and positive evidence moves an individual in bad standing through recovery states before it turns good. The length of each path sets the inertia in that direction. Like a first sanction, each intermediate state can already affect how the individual is treated. The framework thus separates two design choices of a reputation system, namely how much evidence is needed to change an established reputation in each direction and how strongly incomplete evidence is expressed in the meantime.
+
+% -- 5. Findings and implication
+We find that the allocation of inertia between the two directions, rather than its total amount, determines whether private observers agree with one another and still distinguish cooperators from defectors. The beneficial direction depends on the norm. Compact architectures, selected solely by these reputational criteria, make cooperation stable and easy to reach under each of four classical social norms (Scoring, Shunning, Stern Judging and Simple Standing). At the same depth, inertia placed on the wrong path can leave no cooperation at all. We further show that the tolerance that protects cooperators can also shelter opportunists who defect only occasionally, even when unconditional defectors are excluded. Allowing warning states to carry partial consequences closes this loophole for the opportunistic strategies we consider, while cooperation remains high. Reputation-based cooperation therefore depends not only on which behaviors a society judges as good, but also on how readily it revises those judgments in each direction and on how it treats individuals before a judgment changes.
+
+\bibliographystyle{../latex_file/naturemag-doi}
+\bibliography{../latex_file/references}
+\end{document}

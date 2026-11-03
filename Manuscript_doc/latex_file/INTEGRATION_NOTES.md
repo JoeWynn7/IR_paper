@@ -9,6 +9,10 @@ This is the complete LaTeX manuscript: main text, Methods, Extended Data and Sup
 - **Figures:** the file looks for them in `figures/` (the Overleaf package) and in `../` (this repository). Replacing a PDF in `Manuscript_doc/` therefore updates the repository build.
 - **Draft notes** print in dark red. Set `\draftnotesfalse` to hide them.
 
+## Introduction (final version)
+
+The Introduction is now the final version that combines versions 1 and 2. Its standalone source is `../intro_revisions/Introduction_final.tex`, and the two should be edited together. Paragraph 1 and the account of overwrite updating come from version 1. The tacit symmetry assumption, the two questions, the approach and the findings come from version 2. The approach paragraph now introduces inertia through two institutional examples, graduated sanctions and the expiry of criminal records. The Discussion paragraph that returns to these examples was shortened so that it refers back to them instead of introducing them again.
+
 ## Changes in revision 2
 
 ### Abstract
@@ -71,7 +75,7 @@ Details are in `Manuscript_doc/figure_checks/README.md`.
 - **Fig. 2 legend:** black and blue outlines (not red).
 - **ED Fig. 9 legend:** the "filled/open" marker clause was removed.
 - **Equations (1)–(4)** appear only in the Results and are cited from the Methods. The conceptual description of Fig. 1 appears only in the Results.
-- **Reference keys.** `references.bib` contains the 42 Introduction references plus Hofbauer & Sigmund (1998) and Virtanen et al. (2020). The SI cites duplicate entries with `SI-` keys, so that its reference list numbers from 1. If you edit one of these entries, edit its copy as well.
+- **Reference keys.** `references.bib` contains the references of both Introduction versions plus Hofbauer & Sigmund (1998) and Virtanen et al. (2020). BibTeX lists only the cited entries, so unused ones do no harm. The SI cites duplicate entries with `SI-` keys, so that its reference list numbers from 1. If you edit one of these entries, edit its copy as well.
 
 ## Open items
 
