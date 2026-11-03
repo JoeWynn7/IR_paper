@@ -1,0 +1,11 @@
+# LaTeX build files (the compiled PDF is kept under version control)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.ptc
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
