@@ -1,0 +1,14 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.nav
+*.snm
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# Python cache
+__pycache__/
