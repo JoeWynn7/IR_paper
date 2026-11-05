@@ -1,17 +1,17 @@
 # Section 1 slides: Motivation and research gap
 
-`../IR_motivation_section.pptx` is the PowerPoint version of the first section of the talk (version 3, 5 November 2026). It has eight slides. It follows `Manuscript_doc/intro_revisions/final/`, which holds the final Storylines 1 and 3 and the framework of two routes out of the punishment dilemma. On the slides, Storyline 1 is called **A** and Storyline 3 is called **B**.
+`../IR_motivation_section.pptx` is the PowerPoint version of the first section of the talk (version 4, 5 November 2026). It has eight slides. The argument is norm-neutral: it speaks of misjudgements (cooperators wrongly condemned, defectors wrongly excused) rather than of punishment only, and of asymmetry rather than direction.
 
 | # | Slide | Content |
 |---|---|---|
 | 1 | Title | |
-| 2 | Two ways to frame the work | Storylines A and B row by row: opening, problem, gap, approach, message |
+| 2 | Two ways to frame the work | A, "How should reputations change?", versus B, "Can reputations work without sharing information?", compared row by row (opening, problem, gap, approach, message) |
 | 3 | Cooperation needs reputations that are accurate and shared | The two steps of reputation formation (judge, revise); public versus private information |
-| 4 | The punishment dilemma | The three-step cascade; punishing protects cooperation but risks the punisher's standing |
-| 5 | Two routes out of the dilemma | Loss of standing = how often one is condemned × how much each condemnation weighs; route 1 at step 1, route 2 at step 2 |
-| 6 | Open problem: how should judgements be revised? | Models use one symmetric rule; societies revise asymmetrically and gradually; two open questions |
-| 7 | Why the open problem matters | A hidden assumption, an unavoidable trade-off, open to every observer; what our work provides |
-| 8 | Here, we give judgements inertia | Warning and recovery paths; depths (direction) and strengths (partial consequences) |
+| 4 | Private assessment produces misjudgements | Mechanism of disagreement; wrongful condemnation versus wrongful excuse; which dominates depends on the norm |
+| 5 | Two routes to robust reputations | Distortion = how often misjudgements occur × how much each one weighs; route 1 at step 1, route 2 at step 2; "Revising is the one lever every observer holds" |
+| 6 | Two open problems | How should judgements change? Can reputations work without shared information? What makes both hard |
+| 7 | Why these problems matter | A hidden assumption; the lever every observer holds; rules designed in practice; what our work provides |
+| 8 | Here, we give reputations asymmetric inertia | Warning and recovery paths; depths (asymmetry) and strengths (partial consequences) |
 
 Everything on the slides is native and editable, and each slide has speaker notes. The deck uses the same theme and layouts as the other section decks.
 
