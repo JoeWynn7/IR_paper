@@ -1,7 +1,7 @@
 // Section 1 of the talk, "Motivation and research gap", as an editable PowerPoint deck.
-// Version 2 (5 November 2026): follows Manuscript_doc/intro_revisions/final/
-// (Storylines 1 and 3 and the two routes out of the punishment dilemma), with one
-// slide that compares the two storylines.
+// Version 3 (5 November 2026): follows Manuscript_doc/intro_revisions/final/.
+// The two candidate storylines are presented first (A = Storyline 1, B = Storyline 3),
+// followed by the shared argument and the approach.
 // Usage: NODE_PATH=<dir with pptxgenjs, react, react-dom, react-icons, sharp> \
 //        PPTX_SKILL=<pptx skill dir> node make_motivation_pptx.js <output.pptx>
 const path = require("path");
@@ -105,6 +105,7 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
     donor: await iconData(fa.FaHandHoldingHeart), observer: await iconData(fa.FaEye),
     help: await iconData(fa.FaHandsHelping), shield: await iconData(fa.FaShieldAlt), warn: await iconData(fa.FaExclamationTriangle),
     model: await iconData(fa.FaCogs), society: await iconData(fa.FaLandmark),
+    hidden: await iconData(fa.FaEyeSlash), balance: await iconData(fa.FaBalanceScale), person: await iconData(fa.FaUserCheck),
   };
 
   // ================================================================ 1. Title
@@ -124,11 +125,47 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
       if (i < 3) arrow(s, "Motif arrow " + (i + 1), xs[i] + d + 0.05, y + d / 2, xs[i + 1] - 0.05, y + d / 2, BAD, { width: 1.5 });
     });
   }
-  s.addNotes("This part motivates the question and ends with the two ways in which we could tell the story. The small diagram is the idea in one line: a good reputation does not turn bad at once, but passes through warning states.");
+  s.addNotes("This part first presents the two ways in which we could frame the paper, and then develops the argument they share. The small diagram is the idea in one line: a good reputation does not turn bad at once, but passes through warning states.");
 
   pres.addSection({ title: SEC });
 
-  // ================================================================ 2. Accurate and shared
+  // ================================================================ 2. Two storylines
+  s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
+  s.addText("Two ways to frame the work", { placeholder: "title" });
+  {
+    const head = (letter, name) => ({ text: [{ text: `${letter}  `, options: { bold: true, color: ORANGE } }, { text: name, options: { bold: true, color: WHITE } }],
+      options: { fill: { color: INK }, fontSize: 15, valign: "middle" } });
+    const label = (t) => ({ text: t.toUpperCase(), options: { bold: true, color: ORANGE_TEXT, fontSize: 10.5, charSpacing: 1, valign: "top" } });
+    const rowsText = [
+      ["Opening",
+       "Reputations form in two steps. An observer judges an action, then revises its view of the actor.",
+       "From villages to online markets, people help those in good standing, but each person forms a private view."],
+      ["Problem",
+       "Under private assessment, justified punishment is condemned by observers who disagree, so punishing puts one's own standing at risk.",
+       "Punishers are condemned by observers who disagree. The harm depends on what observers know and on how they revise what they believe."],
+      ["Gap",
+       "Remedies mostly improve judging. Revising is modelled as one symmetric rule, unlike human impressions and institutional practice.",
+       "Remedies improve what observers know. How a verdict should be revised, between condemning cooperators and excusing defectors, is open."],
+      ["Approach",
+       "Reputations with inertia that can differ between losing and regaining standing, and graded consequences while evidence accumulates.",
+       "Judgements with inertia, partial consequences for those under suspicion or on probation, and no shared information."],
+      ["Message",
+       "How a society revises its judgements in each direction matters as much as which behaviours it judges good.",
+       "Cooperation depends not only on what individuals know about each other, but also on how they revise what they believe."],
+    ];
+    const rows = [[{ text: "", options: { fill: { color: INK } } }, head("A", "How reputations change"), head("B", "From information to judgement")]];
+    rowsText.forEach((r, i) => {
+      const fill = { color: i % 2 ? WHITE : CARD };
+      const strong = r[0] === "Message";
+      rows.push([Object.assign(label(r[0]), { options: Object.assign(label(r[0]).options, { fill }) }),
+                 { text: r[1], options: { fill, bold: strong } }, { text: r[2], options: { fill, bold: strong } }]);
+    });
+    s.addTable(rows, { objectName: "Storyline table", x: MX, y: 1.05, w: CW, colW: [0.96, 4.02, 4.02], rowH: [0.4, 0.46, 0.62, 0.62, 0.62, 0.62],
+      fontSize: 12, color: INK, valign: "middle", margin: [0.03, 0.09, 0.03, 0.09], border: { type: "solid", pt: 0.5, color: "C4CED1" } });
+  }
+  s.addNotes("Before the argument itself, here are the two ways in which we could frame the paper. Both rest on the same argument, which the next slides develop. Storyline A stays close to the field. Reputations form in two steps, judging and revising. Remedies for the punishment dilemma have mostly improved judging, while revising has been modelled as one symmetric rule. Its message is that how a society revises its judgements in each direction matters as much as which behaviours it judges good. Storyline B is written for a broad readership. It contrasts what observers know with how they revise what they believe, and it treats revision as a balance between condemning cooperators and excusing defectors. Its message is that cooperation depends not only on what individuals know about each other, but also on how they revise what they believe. We would like your view on which framing to adopt.");
+
+  // ================================================================ 3. Accurate and shared
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
   s.addText("Cooperation needs reputations that are accurate and shared", { placeholder: "title" });
   {
@@ -162,7 +199,7 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
   sources(s, "Nowak & Sigmund 1998, 2005 · Ohtsuki & Iwasa 2004, 2006 · Takahashi & Mashima 2006 · Hilbe et al. 2018 · Fujimoto & Ohtsuki 2022, 2023");
   s.addNotes("Indirect reciprocity: those who help gain a good reputation, and a good reputation attracts help from third parties. Reputations are built in two steps. An observer judges each action against a social norm, and it revises its view of the actor in light of that judgement. Keep these two steps in mind, because the whole argument is organized around them. With public information, the leading-eight norms keep cooperation stable even with errors. With private, noisy information, observers hold different views of the same person, and most leading-eight norms fail. Reputations must therefore be both accurate and shared.");
 
-  // ================================================================ 3. Punishment dilemma
+  // ================================================================ 4. Punishment dilemma
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
   s.addText("The punishment dilemma", { placeholder: "title" });
   {
@@ -194,14 +231,16 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
   sources(s, "Okada 2020 · Hilbe et al. 2018 · Uchida & Sasaki 2013 · Radzvilavicius et al. 2019 · Michel-Mata et al. 2024 · Pires & Santos 2025");
   s.addNotes("The difficulty is sharpest for the norms that work best under public information. They let a discriminator refuse help to someone in bad standing without losing its own standing, because the refusal counts as justified punishment. But this only works if the observer agrees about the recipient. An observer who still regards the recipient as good sees an unjustified refusal and condemns the discriminator. Disagreement about one individual becomes disagreement about those who act towards it, and it spreads. This is the punishment dilemma, a term from Okada 2020 that Michel-Mata et al. and Pires and Santos also use. Punishing defectors protects cooperation, yet it risks the punisher's own reputation.");
 
-  // ================================================================ 4. Two routes
+  // ================================================================ 5. Two routes
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
   s.addText("Two routes out of the dilemma", { placeholder: "title" });
-  text(s, [{ text: "Harm  =  " }, { text: "how often", options: { bold: true, color: GOOD } }, { text: " disputed judgements occur  ×  " },
-           { text: "how much", options: { bold: true, color: ORANGE_TEXT } }, { text: " each one changes a reputation" }],
-    { objectName: "Product statement", x: MX, y: 1.05, w: CW, h: 0.42, fontSize: 16, align: "center", valign: "middle" });
+  text(s, [{ text: "Loss of standing  =  " }, { text: "how often", options: { bold: true, color: GOOD } }, { text: " one is condemned  ×  " },
+           { text: "how much", options: { bold: true, color: ORANGE_TEXT } }, { text: " each condemnation weighs" }],
+    { objectName: "Product statement", x: MX, y: 1.0, w: CW, h: 0.4, fontSize: 16, align: "center", valign: "middle" });
+  text(s, "Justified punishers are condemned wrongly, through disagreement or error. Defectors are condemned rightly.",
+    { objectName: "Product note", x: MX, y: 1.4, w: CW, h: 0.26, fontSize: FS.small, color: MUTED, align: "center", valign: "middle" });
   {
-    const y = 1.98, h = 0.72;
+    const y = 2.08, h = 0.72;
     const boxes = [
       { name: "Action", x: 0.6, w: 1.45, t: [{ text: "Action", options: { bold: true } }], fill: CARD },
       { name: "Step 1", x: 2.45, w: 2.3, t: [{ text: "Step 1 · judge", options: { bold: true, color: GOOD, breakLine: true } }, { text: "norm + view of recipient", options: { fontSize: FS.small } }], fill: GOOD },
@@ -214,36 +253,31 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
       text(s, b.t, { objectName: `Pipeline ${b.name} text`, x: b.x, y, w: b.w, h, align: "center", valign: "middle" });
       if (i < 3) arrow(s, `Pipeline arrow ${i + 1}`, b.x + b.w + 0.04, y + h / 2, boxes[i + 1].x - 0.04, y + h / 2, INK);
     });
-    // feedback loop above the pipeline: the actor is later a recipient
-    const fy = 1.72;
+    const fy = 1.9;
     line(s, "Feedback up", 8.62, y, 8.62, fy, MUTED, { width: 1.25, dashType: "dash" });
     line(s, "Feedback across", 8.62, fy, 3.6, fy, MUTED, { width: 1.25, dashType: "dash" });
     arrow(s, "Feedback down", 3.6, fy, 3.6, y - 0.02, MUTED, { width: 1.25, dashType: "dash" });
-    text(s, "feedback: the actor is later a recipient", { objectName: "Feedback label", x: 4.6, y: fy - 0.25, w: 3.2, h: 0.22, fontSize: FS.ref, color: MUTED, align: "center" });
-    // route cards
+    text(s, "feedback: the actor is later a recipient", { objectName: "Feedback label", x: 4.6, y: fy - 0.22, w: 3.2, h: 0.2, fontSize: FS.ref, color: MUTED, align: "center" });
     const routes = [
-      { x: 0.6, c: GOOD, head: "Route 1 · fewer disputed judgements", body: "Institutions, gossip, opinion synchronization, empathy, lenient assessment", target: 3.6 },
-      { x: 5.15, c: ORANGE, head: "Route 2 · less impact per judgement", body: "Scores, records, aggregation, and directional inertia (this work)", target: 6.3 },
+      { x: 0.6, c: GOOD, head: "Route 1 · fewer wrongful condemnations",
+        body: "Align what observers know (institutions, gossip, opinion synchronization, empathy), or judge leniently", target: 3.6 },
+      { x: 5.15, c: ORANGE, head: "Route 2 · less impact per condemnation",
+        body: "Pool evidence before revising (scores, records, aggregation), or give reputations inertia (this work)", target: 6.3 },
     ];
     routes.forEach((r, i) => {
-      card(s, `Route ${i + 1}`, r.x, 3.02, 4.25, 1.0, { fill: { color: WHITE }, line: { color: r.c, width: 1.5 } });
+      card(s, `Route ${i + 1}`, r.x, 3.08, 4.25, 1.1, { fill: { color: WHITE }, line: { color: r.c, width: 1.5 } });
       text(s, [{ text: r.head, options: { bold: true, color: i === 0 ? GOOD : ORANGE_TEXT, breakLine: true } }, { text: r.body }],
-        { objectName: `Route ${i + 1} text`, x: r.x + 0.18, y: 3.02, w: 3.9, h: 1.0, valign: "middle" });
-      arrow(s, `Route ${i + 1} arrow`, r.target, 3.0, r.target, y + h + 0.04, r.c, { width: 1.5 });
+        { objectName: `Route ${i + 1} text`, x: r.x + 0.18, y: 3.08, w: 3.9, h: 1.1, valign: "middle" });
+      arrow(s, `Route ${i + 1} arrow`, r.target, 3.08, r.target, y + h + 0.04, r.c, { width: 1.5 });
     });
   }
-  // formal anchor and design rule
-  card(s, "Exact in our model", MX, 4.22, 4.35, 0.68);
-  text(s, [{ text: "Exact in our model: ", options: { bold: true } }, { text: "cost ∝ ΔΦ" }, { text: "*", options: { superscript: true } },
-           { text: " × ℛ′(u" }, { text: "R", options: { subscript: true } }, { text: "*", options: { superscript: true } }, { text: ")" }],
-    { objectName: "Exact text", x: MX + 0.18, y: 4.22, w: 4.0, h: 0.68, valign: "middle", fontSize: 13 });
-  card(s, "Design rule", 5.15, 4.22, 4.35, 0.68, { fill: { color: INK }, line: { color: INK, width: 0 } });
-  text(s, [{ text: "Leniency also protects defectors. ", options: { color: WHITE } }, { text: "Costly but not catastrophic.", options: { bold: true, color: ORANGE } }],
-    { objectName: "Design rule text", x: 5.33, y: 4.22, w: 4.0, h: 0.68, valign: "middle", fontSize: 13 });
+  card(s, "Route contrast", MX, 4.33, CW, 0.56, { fill: { color: INK }, line: { color: INK, width: 0 } });
+  text(s, [{ text: "Route 1 relies mostly on shared information. ", options: { color: WHITE } }, { text: "Route 2 is open to every observer on its own.", options: { bold: true, color: ORANGE } }],
+    { objectName: "Route contrast text", x: 0.75, y: 4.33, w: 8.5, h: 0.56, valign: "middle", fontSize: 15 });
   sources(s, "Route 1: Radzvilavicius et al. 2019, 2021 · Kawakatsu et al. 2024 · Murase & Hilbe 2024 · Tham et al. 2026 · Schmid et al. 2021. Route 2: Schmid et al. 2023 · Clark et al. 2020 · Michel-Mata et al. 2024");
-  s.addNotes("This is the framework behind both storylines. The harm that disputed judgements do to justified punishers is a product of two factors: how often they occur, and how much each one changes a reputation. The first factor belongs to step one, judging. Institutions, gossip, opinion synchronization, empathetic evaluation and lenient assessment all reduce it. The second belongs to step two, revising. Scores, records, aggregation and our inertia reduce it. In our theory the product is exact at the margin: the reputational cost of withholding help near a resident population is the assessment contrast, a step-one quantity, times the slope of the reputation map, a step-two quantity. That is Eq. 3 of the paper. Two consequences. The routes are complementary, and robust revision can even produce agreement without shared information. But leniency at either step also protects deliberate defectors. So disputed evidence should be costly but not catastrophic: it should not overturn a reputation, but it should still cost something at the margin.");
+  s.addNotes("The framework behind both storylines. How much reputation an individual loses is the product of two factors: how often it is condemned, and how much each condemnation moves its reputation. This holds for every condemnation. Justified punishers are condemned wrongly, either because the observer disagrees about the recipient, which is the punishment dilemma, or because of plain errors. Defectors are condemned rightly. The first factor is set at step one, judging. Aligning what observers know, through institutions, gossip, opinion synchronization or empathy, reduces wrongful condemnations, and lenient judgement reduces condemnations in general. The second factor is set at step two, revising. Pooling evidence, through scores, records or aggregation, or giving reputations inertia, reduces the impact of each condemnation. Route one relies mostly on shared information. Route two is open to every observer on its own. In our model the same product appears explicitly: the reputational cost of deliberately withholding help is the assessment contrast times the slope of the reputation map, Eq. 3. We come back to what this means for defectors in the results.");
 
-  // ================================================================ 5. Open problem
+  // ================================================================ 6. Open problem
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
   s.addText("Open problem: how should judgements be revised?", { placeholder: "title" });
   {
@@ -272,46 +306,38 @@ const it = (t, o = {}) => ({ text: t, options: Object.assign({ italic: true }, o
       text(s, t, { objectName: `Societies item ${i + 1}`, x: 5.65, y: 1.95 + i * 0.58, w: 3.7, h: 0.5 });
     });
   }
-  card(s, "Gap statement", MX, 4.1, CW, 0.78, { fill: { color: INK }, line: { color: INK, width: 0 } });
-  text(s, [{ text: "Open: ", options: { bold: true, color: ORANGE } }, { text: "how the direction of revision and the treatment of incomplete evidence shape the punishment dilemma." }],
-    { objectName: "Gap statement text", x: 0.75, y: 4.1, w: 8.5, h: 0.78, color: WHITE, valign: "middle", fontSize: 15 });
+  card(s, "Gap statement", MX, 4.08, CW, 0.82, { fill: { color: INK }, line: { color: INK, width: 0 } });
+  text(s, [{ text: "Open  ", options: { bold: true, color: ORANGE } }, { text: "Should losing and regaining standing follow the same rule?", options: { breakLine: true } },
+           { text: "Open  ", options: { bold: true, color: ORANGE } }, { text: "How should incomplete evidence be treated, so that errors are forgiven but defection is not?" }],
+    { objectName: "Gap statement text", x: 0.75, y: 4.08, w: 8.5, h: 0.82, color: WHITE, valign: "middle", fontSize: 15 });
   sources(s, "Ohtsuki & Iwasa 2004 · Schmid et al. 2023 · Michel-Mata et al. 2024 · Ostrom 1990 · Cox et al. 2010 · Blumstein & Nakamura 2009 · Skowronski & Carlston 1989 · Siegel et al. 2018");
-  s.addNotes("Most remedies work at step one. At step two, the standard model lets the latest assessment overwrite a reputation, and the models that accumulate evidence, such as scores, records and aggregation, still use one symmetric rule: positive and negative evidence enter through the same score, threshold or window. Human societies do it differently. Sanctions escalate only with repeated violations, standing is restored only after a period of good conduct, and impressions are revised asymmetrically. So the open question is how the direction of revision, and the treatment of evidence that is not yet conclusive, shape the punishment dilemma.");
+  s.addNotes("Most remedies work at step one. At step two, the standard model lets the latest assessment overwrite a reputation, and the models that accumulate evidence, such as scores, records and aggregation, still use one symmetric rule: positive and negative evidence enter through the same score, threshold or window. Human societies do it differently. Sanctions escalate only with repeated violations, standing is restored only after a period of good conduct, and impressions are revised asymmetrically. This leaves two open questions. Should losing and regaining standing follow the same rule? And how should evidence that is not yet conclusive be treated, so that honest errors are forgiven but deliberate defection is not? The second question carries the tension of the dilemma: whatever shields justified punishers from wrongful condemnations may also shield defectors from rightful ones.");
 
-  // ================================================================ 6. Two storylines
+  // ================================================================ 7. Why it matters
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
-  s.addText("Two ways to tell the story", { placeholder: "title" });
-  {
-    const cols = [
-      { n: "1", x: MX, head: "How reputations change", rows: [
-        ["Opening", "Reputations form in two steps, judging an action and revising a view."],
-        ["Gap", "Remedies target judging. Revising is modelled as one symmetric rule."],
-        ["Message", "How judgements are revised in each direction matters as much as the norm."],
-        ["Audience", "Indirect reciprocity community · PNAS, Nat. Commun."]] },
-      { n: "3", x: 5.15, head: "From information to judgement", rows: [
-        ["Opening", "From villages to online markets, people help those in good standing."],
-        ["Gap", "Remedies improve what observers know, not how they revise what they believe."],
-        ["Message", "Cooperation depends on what we know and on how we revise what we believe."],
-        ["Audience", "Broad readership · Nature, Nat. Hum. Behav."]] },
-    ];
-    cols.forEach((c) => {
-      card(s, `Storyline ${c.n} card`, c.x, 1.08, 4.35, 3.3);
-      dot(s, `Storyline ${c.n} badge`, c.x + 0.2, 1.17, 0.42, { color: ORANGE }, c.n, WHITE, 16);
-      text(s, c.head, { objectName: `Storyline ${c.n} head`, x: c.x + 0.75, y: 1.17, w: 3.45, h: 0.42, bold: true, fontSize: FS.cardTitle, valign: "middle" });
-      c.rows.forEach((r, i) => {
-        const y = 1.66 + i * 0.68;
-        text(s, r[0].toUpperCase(), { objectName: `Storyline ${c.n} ${r[0]} label`, x: c.x + 0.22, y, w: 1.0, h: 0.25, fontSize: 10, bold: true, color: ORANGE_TEXT, charSpacing: 1 });
-        text(s, r[1], { objectName: `Storyline ${c.n} ${r[0]}`, x: c.x + 0.22, y: y + 0.2, w: 3.95, h: 0.42, fontSize: 12.5 });
-      });
-    });
-  }
-  card(s, "Storyline note", MX, 4.48, CW, 0.42, { fill: { color: INK }, line: { color: INK, width: 0 } });
-  text(s, [{ text: "Same model, same results, same Discussion. ", options: { bold: true, color: ORANGE } }, { text: "The choice is about framing and audience.", options: { color: WHITE } }],
-    { objectName: "Storyline note text", x: 0.75, y: 4.48, w: 8.5, h: 0.42, valign: "middle" });
-  sources(s, "Storyline 2 (agreement without shared information) enters the Discussion in either case.");
-  s.addNotes("We would like your view on which framing to use. Both share the two-route framework and the same results, and differ in framing and audience. Storyline 1 stays close to the field: reputations form in two steps, remedies have mostly targeted the first, and the second has been modelled as one symmetric rule. Its message is that how a society revises its judgements in each direction matters as much as which behaviours it judges good. Storyline 3 is written for a broad journal. It contrasts what observers know with how they revise what they believe, and treats revision as a trade-off between condemning cooperators on disputed evidence and excusing defectors. Its message is that cooperation depends not only on what individuals know about each other, but also on how they revise what they believe. A third storyline, agreement without shared information, overlaps too much with Michel-Mata et al. 2024 to lead the paper, so it enters the Discussion in both versions.");
+  s.addText("Why the open problem matters", { placeholder: "title" });
+  [
+    { icon: ic.hidden, head: "A hidden assumption",
+      body: "Every model needs a revision rule. Conclusions about which norms sustain cooperation rest on one symmetric rule, so they may change with it." },
+    { icon: ic.balance, head: "An unavoidable trade-off",
+      body: "Every revision rule weighs condemning cooperators against excusing defectors. Existing models fix this balance implicitly." },
+    { icon: ic.person, head: "Open to every observer",
+      body: "Revising needs no shared information or institutions. Communities and online platforms design such rules routinely." },
+  ].forEach((c, i) => {
+    const x = MX + i * 3.1;
+    card(s, `Reason ${i + 1}`, x, 1.15, 2.8, 2.85);
+    iconCircle(s, `Reason ${i + 1}`, c.icon, x + 0.2, 1.32, 0.55);
+    text(s, c.head, { objectName: `Reason ${i + 1} title`, x: x + 0.2, y: 2.0, w: 2.45, h: 0.34, bold: true, fontSize: FS.cardTitle });
+    text(s, c.body, { objectName: `Reason ${i + 1} body`, x: x + 0.2, y: 2.4, w: 2.45, h: 1.5, fontSize: 13.5 });
+  });
+  card(s, "Our work", MX, 4.18, CW, 0.7, { fill: { color: INK }, line: { color: INK, width: 0 } });
+  text(s, [{ text: "Our work  ", options: { bold: true, color: ORANGE } },
+           { text: "A model in which losing and regaining standing follow different rules, and incomplete evidence has graded consequences.", options: { color: WHITE } }],
+    { objectName: "Our work text", x: 0.75, y: 4.18, w: 8.5, h: 0.7, valign: "middle", fontSize: 15 });
+  sources(s, "Hilbe et al. 2018 · Kessinger et al. 2023 · Murase & Hilbe 2024 · Ostrom 1990 · Tadelis 2016");
+  s.addNotes("Why does this matter? First, it is a hidden assumption. Every model of indirect reciprocity has to specify how judgements become reputations, and the conclusions of the field about which norms sustain cooperation under private assessment were drawn with one symmetric rule, mostly the overwrite rule. If the rule matters, those conclusions may change. Second, there is a trade-off that no rule can avoid: any rule weighs condemning cooperators on disputed or erroneous evidence against excusing defectors whose misconduct is not yet conclusive. Existing models fix this balance implicitly, through their single rule. Third, revising is the one lever that every observer holds. It needs no shared information and no institution, which is exactly what route one requires. Communities and online platforms design such rules all the time, through escalating sanctions, probation and rating systems, but theory gives little guidance on how. Our work provides a model in which losing and regaining standing follow different rules, and incomplete evidence has graded consequences.");
 
-  // ================================================================ 7. Here, we
+  // ================================================================ 8. Here, we
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: SEC });
   s.addText("Here, we give judgements inertia", { placeholder: "title" });
   text(s, "A reputation changes only after a run of contrary assessments, and the run can differ between losing and regaining standing. Observers share no information.",

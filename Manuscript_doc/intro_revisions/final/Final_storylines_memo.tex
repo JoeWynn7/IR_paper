@@ -41,7 +41,7 @@
 \begin{keypoint}
 \textbf{Summary.}
 \begin{itemize}[leftmargin=1.2em]
-\item \textbf{A framework for the field (Section~1).} Reputations are formed in two steps: an action is \emph{judged}, and the judgement \emph{revises} a reputation. The harm that disputed judgements do to justified punishers is the product of how often they occur (step~1) and how strongly each changes a reputation (step~2). Existing remedies sort cleanly into the two steps. The product structure is exact in our theory near a resident population (Eq.~(3)). It yields four implications:
+\item \textbf{A framework for the field (Section~1).} Reputations are formed in two steps: an action is \emph{judged}, and the judgement \emph{revises} a reputation. The reputation an individual loses is the product of how often it is condemned (step~1) and how strongly each condemnation changes its reputation (step~2). This holds for wrongful condemnation of justified punishers, through disagreement or error, and for rightful condemnation of defectors. Existing remedies sort cleanly into the two steps. In our theory the product is explicit for rightful condemnation (Eq.~(3)), and the same slope $\Rmap'$ weighs wrongful condemnation. It yields four implications:
   \begin{itemize}[leftmargin=1.2em]
   \item the two routes are complementary;
   \item robust revision generates agreement;
@@ -86,17 +86,20 @@ The punishment dilemma arises at step~1: a justified refusal is condemned by an 
 \small\textbf{Fig.~A} | Two steps of reputation formation and the two routes out of the punishment dilemma.
 \end{center}
 
-\subsection*{The harm is a product, and our theory makes the product explicit}
-The reputational harm that disputed judgements do to a justified punisher has two factors: how often a disputed condemnation occurs (step~1) and how strongly one condemnation changes the punisher's standing (step~2). In our theory the product is exact at the margin. For a mutant that withholds help with small probability $\delta$ from a resident population, the reputation lost per unit of withheld cooperation is $\Delta\Phi^*\,\Rmap'(u_{\mathrm R}^*)$, and the invasion payoff has slope (Eq.~(3) of the manuscript)
+\subsection*{Reputation loss is a product, for wrongful and rightful condemnation alike}
+The reputation an individual loses depends on two factors: how often it is condemned (step~1) and how strongly each condemnation changes its reputation (step~2). The relation is general. It covers \emph{wrongful} condemnation of justified punishers, whether through disagreement about the recipient (the punishment dilemma) or through plain errors. It also covers \emph{rightful} condemnation of defectors. The punishment dilemma is the wrongful case, and deterrence is the rightful case.
+
+In our theory, the relation is explicit for rightful condemnation. For a mutant that withholds help with small probability $\delta$, the reputation lost per unit of withheld cooperation is $\Delta\Phi^*\,\Rmap'(u_{\mathrm R}^*)$, and the invasion payoff has slope (Eq.~(3) of the manuscript)
 \[
 \Lambda'(0)=r_{\mathrm R}^*\Bigl[1-\frac{b}{c}\,\underbrace{\Delta\Phi^*}_{\text{step 1}}\;\underbrace{\Rmap'(u_{\mathrm R}^*)}_{\text{step 2}}\Bigr].
 \]
-The two factors are the following.
 \begin{itemize}[leftmargin=1.2em]
-\item \textbf{Assessment contrast} $\Delta\Phi^*=\kappa\,[r+(p-q)(1-r)]$. It is a step-1 quantity: how differently cooperation and defection are judged, given the norm $(p,q)$, the errors and the observers' views $r$ of recipients. Disagreement enters through $r$.
-\item \textbf{Slope} $\Rmap'$ of the reputation map. It is a step-2 quantity: how strongly a change in assessments moves a reputation.
+\item \textbf{Assessment contrast} $\Delta\Phi^*=\kappa\,[r+(p-q)(1-r)]$. A step-1 quantity: how differently cooperation and defection are judged, given the norm $(p,q)$, the errors and the observers' views $r$ of recipients.
+\item \textbf{Slope} $\Rmap'$ of the reputation map. A step-2 quantity: how strongly a change in assessments moves a reputation.
 \end{itemize}
-The protection window has the same split (Eq.~(1)). The points $\Phi^*_{\mathrm D}$ and $\Phi^*_{\mathrm C}$ come from step~1, and whether $\Rmap$ lies above its chord between them is a property of step~2.
+The same slope weighs wrongful condemnations, since a small loss $\Delta u$ in positive assessments changes the reputation by about $\Rmap'(u)\,\Delta u$. This is the formal reason why route~2 shields defectors as well as punishers. The protection window has the same split (Eq.~(1)). The points $\Phi^*_{\mathrm D}$ and $\Phi^*_{\mathrm C}$ come from step~1, and whether $\Rmap$ lies above its chord between them is a property of step~2.
+
+\textbf{Correction to the previous slide version.} An earlier slide stated the product as ``harm to justified punishers $\propto \Delta\Phi^*\times\Rmap'$''. That attribution was imprecise, because Eq.~(3) concerns deliberate withholding of help. The slides and the drafts now state the general relation, and the formula belongs to the Model section.
 
 \subsection*{The literature sorted by step}
 \begin{center}\small
@@ -119,7 +122,7 @@ Each implication is labelled with the support it has.
 \begin{enumerate}[leftmargin=1.5em]
 \item \textbf{The routes are complementary} (conceptual, consistent with known results). A shortfall at one step can be offset at the other. Under public information, step-1 agreement makes fragile revision harmless, which is the classical leading-eight result. Under private information, robust revision can compensate for disagreement, which is our result.
 \item \textbf{Robust revision generates agreement} (supported by Fig.~2). Revision acts at step~2, yet it reduces disagreement at step~1 through the feedback loop. Reliable private verdicts coincide, because two independent observers disagree with probability $2r(1-r)$. The condition is that inertia is placed in the direction that separates the assessments of cooperators from those of defectors. If it is not, agreement forms on the wrong verdict (one-step Shunning).
-\item \textbf{Leniency has a price at either step} (supported by Fig.~5a; for generosity, see Schmid et al.\cite{schmid2021}). Anything that lowers the reputational impact of negative evidence, whether lenient judgement or tolerant revision, also lowers the cost of deliberate defection. In the formula above, a small $\Delta\Phi^*$ or a small $\Rmap'$ both make $\Lambda'(0)>0$ more likely.
+\item \textbf{Leniency has a price at either step} (supported by Fig.~5a; for generosity, see Schmid et al.\cite{schmid2021}). Anything that lowers the reputational impact of negative evidence, whether lenient judgement or tolerant revision, also lowers the cost of deliberate defection. In the formula above, a small $\Delta\Phi^*$ or a small $\Rmap'$ both make $\Lambda'(0)>0$ more likely. Inertia separates wrongful from rightful condemnation only by pattern. It absorbs isolated condemnations, which are typical of errors, but not repeated ones. Occasional defection produces isolated condemnations, which is why it slips through.
 \item \textbf{Costly but not catastrophic} (design principle, supported by Fig.~5). The impact of a single negative assessment has two parts.
   \begin{itemize}[leftmargin=1.2em]
   \item Whether it can overturn a reputation. This is the global shape of $\Rmap$, controlled by the depths. Suppressing it stops cascades.
@@ -189,8 +192,8 @@ The paragraphs are 153, 181, 197, 147 and 187 words long.
 
 The first paragraph replaces, or merges with, the current Discussion paragraph on the vulnerability to opportunism, which makes a related point more narrowly. The second carries Storyline~2 and can follow the current paragraph on agreement and accuracy.
 
-\begin{draft}{Two routes, Storyline 1 version (219 words)}\input{paragraphs/disc_routes_s1}\end{draft}
-\begin{draft}{Two routes, Storyline 3 version (218 words)}\input{paragraphs/disc_routes_s3}\end{draft}
+\begin{draft}{Two routes, Storyline 1 version}\input{paragraphs/disc_routes_s1}\end{draft}
+\begin{draft}{Two routes, Storyline 3 version}\input{paragraphs/disc_routes_s3}\end{draft}
 \begin{draft}{Agreement from private revision, core of Storyline 2, either storyline (180 words)}\input{paragraphs/disc_agreement}\end{draft}
 
 % =============================================================================
