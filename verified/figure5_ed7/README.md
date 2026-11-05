@@ -15,8 +15,8 @@ Run the notebooks from this directory using Python 3.11 and the packages in `req
 
 - Both figures test an independent, identically distributed (IID) O-DISC family. A mutant independently skips an intended cooperative act toward an individually perceived good recipient with probability $\delta$. These figures do not use the separately excluded time-correlated or persistent opportunism variants.
 - Figure 5 shows normalized mutant payoff advantages for SJ and a readout scan at $b/c=5$. The full one-step mechanism has a narrow positive-invasion window near $\delta=0$, even though it is difficult to see at the plotted scale.
-- ED7 shows intended resident cooperation on the sequential blue scale used by the other cooperation maps (green is reserved for the secure interval in Figure 5b); black outlines indicate resistance to the tested IID O-DISC family. They do not establish resistance to every mutant. The first rows of the original result set also contained an alternative invasion-window background; only the cooperation-background version was selected for the final ED7.
-- Some lower boundaries are resident-branch folds and are excluded. The original assembled figure's uniformly closed-interval legend is not valid for those boundaries. Current strip panels mark excluded fold endpoints with open circles; endpoint flags are retained in the data.
+- ED7 shows intended resident cooperation on the sequential blue scale used by the other cooperation maps (green is reserved for the secure interval in Figure 5b); orange outlines (a) and curves (b–e) indicate resistance to the tested IID O-DISC family. They do not establish resistance to every mutant. The first rows of the original result set also contained an alternative invasion-window background; only the cooperation-background version was selected for the final ED7.
+- Some lower boundaries are resident-branch folds and are excluded. The original assembled figure's uniformly closed-interval legend is not valid for those boundaries. Excluded fold endpoints are not marked in the panels (the caption gives them with round brackets); endpoint flags are retained in the data.
 
 ## Data and verification
 
