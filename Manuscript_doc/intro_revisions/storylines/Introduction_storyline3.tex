@@ -1,0 +1,32 @@
+% Introduction, storyline 3 (5 November 2026).
+% Paragraphs live in paragraphs/ and are shared with Storylines_memo.tex (round 2).
+% Citation keys refer to Manuscript_doc/latex_file/references.bib.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+\title{\large Indirect reciprocity with inertial reputation updating\\[0.3em]
+\normalsize Introduction, Storyline 3: from information to judgement}
+\date{}
+\begin{document}
+\maketitle
+
+\input{paragraphs/common_p1}
+
+\input{paragraphs/common_p2}
+
+\input{paragraphs/s3_p3}
+
+\input{paragraphs/s3_p4}
+
+\input{paragraphs/s3_p5}
+
+\bibliographystyle{../../latex_file/naturemag-doi}
+\bibliography{../../latex_file/references}
+\end{document}
