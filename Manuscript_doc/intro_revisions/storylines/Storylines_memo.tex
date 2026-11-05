@@ -1,0 +1,240 @@
+% Memo: two storylines for the Introduction (5 November 2026).
+% Draft paragraphs are \input from paragraphs/, so the memo and the two
+% Introduction drafts always show the same text.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{times}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage{booktabs,tabularx,array,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlist{itemsep=0.15em,topsep=0.25em}
+\definecolor{ink}{HTML}{23373B}
+\definecolor{accent}{HTML}{A65A10}
+\newtcolorbox{draft}[1]{colback=ink!3,colframe=ink!45,boxrule=0.4pt,arc=1.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\small\bfseries,coltitle=ink,
+  colbacktitle=ink!10,title={#1}}
+\newtcolorbox{keypoint}{colback=accent!6,colframe=accent!70,boxrule=0.5pt,arc=1.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\title{\large\bfseries Two storylines for the Introduction\\[0.2em]
+\normalsize Narrative logic, positioning against the closest work, and a recommendation}
+\date{5 November 2026}
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{keypoint}
+\textbf{Summary.}
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Shared opening.} Paragraph~1 is unchanged. Paragraph~2 now states the \emph{punishment dilemma} precisely, using the established term\cite{okada2020dilemmas,michelmata2024,pires2025}. It ends with a requirement that both storylines answer, namely to keep justified punishers in good standing without letting genuine defectors escape condemnation.
+\item \textbf{Storyline~1} locates the gap in \emph{how reputations change}. Change is instantaneous in the standard framework, and symmetric and threshold-based in the models that accumulate evidence. Our model adds two properties, direction and graded expression of incomplete evidence.
+\item \textbf{Storyline~2} locates the gap in \emph{where agreement comes from}. Agreement is usually produced by aligning information across observers. We ask whether it can arise from how each individual integrates its own observations, without sharing and without extra observations.
+\item \textbf{Recommendation.} Use Storyline~1 as the main line and state the central insight of Storyline~2 as a consequence. The reason is that the headline of Storyline~2 has largely been claimed by Michel-Mata et al.\ (\textit{Nature} 2024)\cite{michelmata2024} and Tham, Hilbe and Murase (\textit{PNAS} 2026)\cite{tham2026}. Its distinctive part reduces to the content of Storyline~1 (Section~5).
+\end{itemize}
+\end{keypoint}
+
+% =============================================================================
+\section{Common skeleton}
+
+Both storylines use the same five-paragraph structure. Only paragraphs~3 to~5 differ.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}l L L@{}}
+\toprule
+& \textbf{Storyline 1} (cumulative change) & \textbf{Storyline 2} (agreement from individual integration) \\
+\midrule
+\P1 & \multicolumn{2}{l}{Classical result and the central problem: reputations must be accurate and shared.} \\
+\P2 & \multicolumn{2}{l}{The punishment dilemma under private assessment.} \\
+\P3 & Instantaneous change, what accumulation models still assume, how human evaluation differs, two questions & Remedies that align information, their conditions, individual-level routes that add information, the open question \\
+\P4 & ``Here, we'' model of cumulative, directional, graded change & ``Here, we'' model of private integration over time, nothing shared \\
+\P5 & Direction, not amount; partial consequences deter & Agreement without sharing, provided direction is right; same caveats \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{Paragraph 2: the punishment dilemma}
+
+The outline describes paragraph~2 as the punishment dilemma arising from disagreement. The term comes from Okada\cite{okada2020dilemmas}, who distinguishes the social dilemma, the scoring dilemma and the dilemma of punishment. Michel-Mata et al.\cite{michelmata2024} and Pires and Santos\cite{pires2025} use it in the same sense: under private assessment, a justified refusal to help can look unjustified to an observer who disagrees about the recipient. The draft makes the logic explicit in four steps.
+\begin{enumerate}[leftmargin=1.5em]
+\item Second-order norms exempt justified punishment.
+\item The exemption needs the observer to share the donor's view.
+\item Under private assessment that view is often not shared, so punishers are condemned and disagreement spreads.
+\item The dilemma is that punishment protects cooperation but costs the punisher's reputation.
+\end{enumerate}
+The last sentence turns the dilemma into a requirement on any remedy. Storyline~1 answers it through how evidence is buffered, and Storyline~2 through agreement. It also prepares the opportunism result, because ``without letting genuine defectors escape'' is exactly what Fig.~5 tests.
+
+\begin{draft}{Paragraph 2 (both storylines), 144 words}
+\input{paragraphs/common_p2}
+\end{draft}
+
+The account of overwrite updating, which used to sit in paragraph~2, now belongs to Storyline~1 alone, where it is the object of the critique.
+
+% =============================================================================
+\section{Storyline 1: from instantaneous to cumulative reputational change}
+
+\subsection*{Thesis}
+Reputations in models change instantaneously, or symmetrically once evidence accumulates. Real evaluation treats losing and regaining standing differently and grades its response to incomplete evidence. Both features bear on the punishment dilemma.
+
+\subsection*{Logic chain}
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Standard assumption.} In the standard framework the latest assessment replaces the image. Change is instantaneous and fully determined by one observation\cite{ohtsuki2004,hilbe2018}.
+\item \textbf{Link to paragraph 2.} One disputed act of punishment then overturns a long-standing reputation, which is how the punishment dilemma cascades.
+\item \textbf{Existing departures.} Quantitative scores, simple records, graded reputations, aggregation and gradual dynamics draw on more evidence and can make cooperation more robust\cite{schmid2023,clark2020,tanabe2013,murase2022,michelmata2024,yamamoto2025}.
+\item \textbf{What they still assume.} Most treat change as one symmetric process, and evidence affects treatment only when a threshold is crossed. Aggregation is also memoryless between updates. Each round the observer samples $M$ fresh interactions and assigns a new reputation (Michel-Mata et al., Supplementary Information). Scores carry memory, but they move by the same step in both directions and act through a threshold\cite{schmid2023}.
+\item \textbf{Contrast with human evaluation.} Impressions are revised asymmetrically, in a direction that depends on context\cite{skowronski1989,slovic1993,mendesiedlecki2013diagnostic,siegel2018}. Institutions escalate sanctions gradually and restore standing slowly\cite{ostrom1990,cox2010,blumstein2009}.
+\item \textbf{Gap.} Should losing a good reputation require as much evidence as regaining one (Q1)? How should individuals be treated while evidence accumulates (Q2)?
+\item \textbf{Stakes.} Buffering negative evidence protects justified punishers but may shelter occasional defectors\cite{schmid2021,michelmata2024}.
+\end{enumerate}
+
+\subsection*{How the results answer it}
+Q1 is answered by Figs.~2--4. Direction decides accuracy and agreement (Fig.~2) and cooperation (Fig.~3), and allocation matters more than amount (Fig.~4). Q2 is answered by Fig.~5, where tolerance invites opportunists and partial consequences restore deterrence. Every main figure answers one of the two questions, and the two design dimensions of the model, depth and strength, map one to one onto them.
+
+\subsection*{Wording discipline}
+\begin{itemize}[leftmargin=1.2em]
+\item Do not write that ``existing research assumes instantaneous change''. That is false for scores, records and gradual dynamics. Write ``in the standard framework'' for instantaneity and ``most models'' for symmetry and thresholds.
+\item Do not present inertia as an established fact about human cognition. The evidence concerns asymmetric impression updating and institutional practice. Inertia is our model of these features.
+\item Present the probabilistic interpretation of intermediate states as a minimal model of \emph{graded treatment}, not as a claim that people randomize. In a population it means that an individual with an incomplete record is treated well by some observers and badly by others.
+\end{itemize}
+
+\subsection*{Likely objections and answers}
+\begin{itemize}[leftmargin=1.2em]
+\item \emph{``Accumulating evidence is not new.''} Agreed. The novelty is direction and graded expression. Fig.~4 shows that, at the same amount of memory, allocation decides between no cooperation and high cooperation. Fig.~5a shows that symmetric buffers (aggregation, scores) share the opportunism window.
+\item \emph{``Stochastic assessment already exists.''} Generous and stochastic norms\cite{schmid2021,murase2023} randomize the assessment of an \emph{action}. We randomize how an incomplete record about a \emph{person} is read. These are different objects.
+\item \emph{``With enough parameters, something will work.''} The architectures are selected on reputational criteria alone and then tested in evolution. They are compact, and the selection is robust to the thresholds (ED Fig.~1).
+\item \emph{Closest precedent by title}: Yamamoto, Okada and Suzuki, ``Gradual reputation dynamics evolve and sustain cooperation'' (\textit{PLoS ONE} 2025)\cite{yamamoto2025}. I could not access this paper from here. Before finalizing, check whether it lets gains and losses differ, or grades treatment of intermediate reputations. If it does, paragraph~3 must cite it as the closest precedent and narrow the claim accordingly.
+\end{itemize}
+
+\begin{draft}{Storyline 1, paragraph 3, 222 words}
+\input{paragraphs/s1_p3}
+\end{draft}
+If a shorter paragraph is preferred, split it after ``\dots only once a threshold is crossed'' and move the questions into a paragraph of their own.
+
+\begin{draft}{Storyline 1, paragraph 4, 129 words}
+\input{paragraphs/s1_p4}
+\end{draft}
+\begin{draft}{Storyline 1, paragraph 5, 166 words}
+\input{paragraphs/s1_p5}
+\end{draft}
+
+% =============================================================================
+\section{Storyline 2: agreement from individual integration of evidence}
+
+\subsection*{Thesis}
+Most remedies for the punishment dilemma produce agreement by aligning information across observers. Agreement can instead emerge from how each observer integrates its own observations over time. It does so because independent observers agree whenever each reaches a reliable verdict.
+
+\subsection*{Logic chain}
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Premise.} The punishment dilemma is a problem of agreement. Cooperation is stable only when individual opinions are sufficiently correlated\cite{murase2024synchronization}.
+\item \textbf{Dominant approach.} Remedies align information across observers. Examples are institutions\cite{radzvilavicius2021}, gossip\cite{sommerfeld2007,kawakatsu2024}, opinion synchronization\cite{murase2024synchronization} and empathetic evaluation, which needs knowledge of the donor's view\cite{radzvilavicius2019}.
+\item \textbf{Conditions (the ``intuitive evidence'').} Institutions need monitoring capacity and adherence\cite{radzvilavicius2021}. Gossip needs a minimum volume and becomes less effective when transmission is noisy, biased or false\cite{kawakatsu2024,seki2016}. Empathy needs access to others' views. These conditions are strained where empathy, communication and institutional trust are compromised\cite{iyengar2019,michelmata2024}.
+\item \textbf{Individual-level routes so far.} Aggregation uses $M$ fresh observations per update\cite{michelmata2024}. Dual assessment adds assessments of recipients\cite{tham2026}. Both enlarge the evidence behind each judgement.
+\item \textbf{Gap.} Can agreement arise from how individuals integrate the evidence they already receive, one observation at a time?
+\item \textbf{Principle.} Two independent observers who each regard a target as good with probability $r$ disagree with probability $2r(1-r)$. Agreement therefore follows from reliable private verdicts ($r$ near 0 or 1) without any shared information. In our theory this is how agreement arises under the mean-field closure. The simulations, which keep all correlations, confirm it (Fig.~2).
+\item \textbf{Tension.} A rule that makes verdicts reliable by discounting contrary evidence may also discount genuine defection. This sets up both the accuracy requirement (Fig.~2) and the opportunism result (Fig.~5).
+\end{enumerate}
+
+\subsection*{How the results answer it}
+Fig.~2 shows agreement and accuracy from private observation alone. It also shows that agreement alone is insufficient, because under one-step Shunning observers agree that everyone is bad. Fig.~3 gives cooperation without sharing. Fig.~4 reads as ``how evidence is processed matters more than how much is retained''. Fig.~5 is the cost of individual tolerance and its individual-level fix. Figs.~4 and~5 fit, but less directly than in Storyline~1.
+
+\subsection*{Wording discipline}
+\begin{itemize}[leftmargin=1.2em]
+\item The outline's premise that ``most studies rely on group-level synchronization'' must acknowledge the 2024--2026 individual-level work\cite{michelmata2024,tham2026}. Otherwise a referee familiar with these papers will reject the premise. The draft does this explicitly.
+\item The outline's ``greater global consistency'' cannot be claimed against gossip or institutions, because we never compare with them. We can claim high agreement without sharing information, compared with instantaneous and one-step updating.
+\item Do not suggest that gossip is rare or unrealistic. It is common. The argument is that its effectiveness has conditions\cite{kawakatsu2024}.
+\item ``Without more information'' is defensible only in a precise form: the same observation rate as standard private-assessment models, one observation per update. Observers do use memory of their own past observations, and the text should say so.
+\end{itemize}
+
+\subsection*{Likely objections and answers}
+\begin{itemize}[leftmargin=1.2em]
+\item \emph{``Michel-Mata et al.\ already obtained emergent agreement without enforcement mechanisms.''} Their abstract says exactly this, and it uses the same feasibility argument about empathy, communication and institutional trust. Our difference has three parts.
+  \begin{itemize}[leftmargin=1.2em]
+  \item \emph{Evidence per update.} Aggregation needs $M$ fresh observations per update and keeps no memory between updates. Inertia uses one observation per update and carries memory.
+  \item \emph{Structure.} Inertia is directional and graded.
+  \item \emph{Exploitation.} The tolerant aggregation rule we test shares the opportunism window (Fig.~5a).
+  \end{itemize}
+  This difference is real, but it is a difference of mechanism rather than of headline.
+\item \emph{``Tham et al.\ 2026 also rely only on directly observable information.''} Dual assessment adds recipient updates to each observed interaction. It is complementary to inertia and could be combined with it.
+\item \emph{``The feasibility argument is not evidence.''} Keep it short and cited. The claim of the paper does not require synchronization to be impossible, only costly or unavailable in some settings.
+\end{itemize}
+
+\begin{draft}{Storyline 2, paragraph 3, 197 words}
+\input{paragraphs/s2_p3}
+\end{draft}
+\begin{draft}{Storyline 2, paragraph 4, 122 words}
+\input{paragraphs/s2_p4}
+\end{draft}
+\begin{draft}{Storyline 2, paragraph 5, 183 words}
+\input{paragraphs/s2_p5}
+\end{draft}
+
+% =============================================================================
+\section{Side-by-side comparison}
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.6cm} L L@{}}
+\toprule
+& \textbf{Storyline 1} & \textbf{Storyline 2} \\
+\midrule
+Central question & Should losing a reputation require as much evidence as regaining one, and how should incomplete evidence be treated? & Can agreement emerge from how individuals process their own observations? \\
+What is new & Direction of reputational change and graded expression of incomplete evidence & Agreement from temporal integration of one observation at a time \\
+Closest work & Scores\cite{schmid2023}, records\cite{clark2020}, aggregation\cite{michelmata2024}, gradual dynamics\cite{yamamoto2025} & Aggregation\cite{michelmata2024}, dual assessment\cite{tham2026}, synchronization\cite{murase2024synchronization} \\
+How we differ & Those models have no direction and no graded expression. This is a difference in kind. & Fewer observations per update, plus memory, direction and grading. This is a difference in mechanism. \\
+Fit to Figs.\ 2--5 & Direct for all four & Direct for Figs.~2--3, indirect for Figs.~4--5 \\
+Evidence burden & Asymmetric updating and institutional practice (in hand) & Feasibility limits of synchronization (indirect, mostly theoretical sources) \\
+Main referee risk & ``Accumulation is not new'' (answered by Figs.~4--5); unchecked Yamamoto 2025 & ``Michel-Mata already showed this'' (answerable, but the headline overlaps) \\
+Appeal & Conceptual and general (how societies should revise judgements) & Broad (decentralized consensus, online and multi-agent systems) \\
+Suggested title & \emph{Directional inertia in private reputations sustains cooperation} & \emph{Consensus without communication through inertial private reputations} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% =============================================================================
+\section{Recommendation}
+
+I recommend Storyline~1 as the main line, for three reasons.
+\begin{enumerate}[leftmargin=1.5em]
+\item Its gap is defined by properties that only our model has. The novelty therefore does not depend on a contrast with a crowded literature.
+\item All four main figures answer its two questions directly, so the Introduction, Results and Discussion tell one story.
+\item The headline of Storyline~2, agreement without enforcement or without shared information, overlaps with two recent high-profile papers\cite{michelmata2024,tham2026}. Once Storyline~2 is made precise, its distinctive content is temporal integration with direction and graded expression, which is Storyline~1.
+\end{enumerate}
+
+The insight of Storyline~2 should still appear, as a consequence rather than the frame:
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Paragraph~5.} Add one sentence after the first finding: ``Because observers share no information, this agreement emerges from how each individual processes its own evidence.''
+\item \textbf{Discussion.} The paragraph on agreement (``Agreement is necessary but not sufficient'') should contrast inertia with synchronization mechanisms and with aggregation, along the lines of Section~3.
+\end{itemize}
+
+Storyline~2 is the better choice in two cases: if the target journal or audience values decentralized consensus (for example, multi-agent or online systems), or if engaging directly with the synchronization literature is a priority. In that case use the refined version above, which positions the work explicitly against Michel-Mata et al.\ and Tham et al.
+
+% =============================================================================
+\section{Consequences for the rest of the paper}
+
+\textbf{Abstract, gap sentence.}
+\begin{itemize}[leftmargin=1.2em]
+\item Storyline 1: ``Most models let a single assessment change a reputation, or let evidence accumulate symmetrically, and it is unclear how the direction of reputational change and the treatment of incomplete evidence affect cooperation.''
+\item Storyline 2: ``Agreement is usually attributed to mechanisms that share or synchronize information, and it is unclear whether it can emerge from how individuals process their own observations.''
+\end{itemize}
+
+\textbf{Section 1 of the slides (to build after the decision).}
+\begin{itemize}[leftmargin=1.2em]
+\item Storyline 1, seven slides: reputation sustains cooperation; accurate and shared; the punishment dilemma; instantaneous change and what accumulation models still assume; human and institutional evaluation; the two questions; ``Here, we''.
+\item Storyline 2, seven slides: the first three as above; remedies that align information and their conditions; individual-level routes that add information; the open question with the reliability principle and its tension; ``Here, we''.
+\end{itemize}
+
+\textbf{To check before finalizing.}
+\begin{itemize}[leftmargin=1.2em]
+\item The model of Yamamoto et al.\ 2025\cite{yamamoto2025} (see Section~2).
+\item With Christian Hilbe, whether ``agreement through reliable private verdicts'' is consistent with the correlation result of Murase and Hilbe\cite{murase2024synchronization}. I expect it is, because reliable verdicts make opinions correlated across targets even when they are independent given the target's strategy, but the wording should match their definitions.
+\item The six new references (Okada 2020, Pires \& Santos 2025, Uchida \& Sasaki 2013, Sommerfeld et al.\ 2007, Seki \& Nakamaru 2016, Iyengar et al.\ 2019). Their data were taken from local PDFs or from the reference list of Michel-Mata et al.\ Author first names are given as initials.
+\end{itemize}
+
+\bibliographystyle{../../latex_file/naturemag-doi}
+\bibliography{../../latex_file/references}
+\end{document}
