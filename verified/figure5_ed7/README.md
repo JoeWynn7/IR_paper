@@ -6,7 +6,7 @@ Start with [Results_Figure5_and_ED7.md](Results_Figure5_and_ED7.md) for the mode
 
 | Notebook | Contents |
 |---|---|
-| [Figure5_Opportunistic_Invasion.ipynb](Figure5_Opportunistic_Invasion.ipynb) | Two individual panels and one composite for manuscript Figure 5. |
+| [Figure5_Opportunistic_Invasion.ipynb](Figure5_Opportunistic_Invasion.ipynb) | Two single panels (tick marks only, no numbers or text, for manual assembly) and one composite (PDF, SVG, 300-dpi PNG) for manuscript Figure 5. |
 | [Extended_Data_Figure7.ipynb](Extended_Data_Figure7.ipynb) | The cross-norm strip panel, eight one-step/multi-step maps and the colour scale (single panels: tick marks only, no numbers or text, for manual assembly), and one composite (PDF, SVG, 300-dpi PNG). |
 
 Run the notebooks from this directory using Python 3.11 and the packages in `requirements.txt`. By default they load supplied external data and perform small checks; they do not repeat the complete parameter scans. `RECOMPUTE=True` explicitly repeats the displayed calculations and may be expensive. Keep a separate copy of the supplied data before regeneration.
