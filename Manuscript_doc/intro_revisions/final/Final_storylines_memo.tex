@@ -1,0 +1,223 @@
+% Final storylines memo (5 November 2026): two routes out of the punishment dilemma,
+% final Storyline 1 and Storyline 3, and the Discussion additions.
+% Draft paragraphs are \input from paragraphs/, so the memo and the two final
+% files always show the same text.
+% Compile: pdflatex -> bibtex -> pdflatex x2 (from this directory).
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{times}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage[superscript,biblabel,nomove]{cite}
+\usepackage{booktabs,tabularx,array,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\JournalTitle}[1]{#1}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlist{itemsep=0.15em,topsep=0.25em}
+\definecolor{ink}{HTML}{23373B}
+\definecolor{accent}{HTML}{A65A10}
+\definecolor{orange}{HTML}{E07B16}
+\definecolor{good}{HTML}{2F6E9E}
+\definecolor{bad}{HTML}{C9506A}
+\newtcolorbox{draft}[1]{colback=ink!3,colframe=ink!45,boxrule=0.4pt,arc=1.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\small\bfseries,coltitle=ink,
+  colbacktitle=ink!10,title={#1}}
+\newtcolorbox{keypoint}{colback=accent!6,colframe=accent!70,boxrule=0.5pt,arc=1.5pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcommand{\Rmap}{\mathscr{R}}
+\title{\large\bfseries Final storylines for the Introduction\\[0.2em]
+\normalsize Two routes out of the punishment dilemma, Storylines 1 and 3, and the Discussion additions}
+\date{5 November 2026}
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{keypoint}
+\textbf{Summary.}
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{A framework for the field (Section~1).} Reputations are formed in two steps: an action is \emph{judged}, and the judgement \emph{revises} a reputation. The harm that disputed judgements do to justified punishers is the product of how often they occur (step~1) and how strongly each changes a reputation (step~2). Existing remedies sort cleanly into the two steps. The product structure is exact in our theory near a resident population (Eq.~(3)). It yields four implications:
+  \begin{itemize}[leftmargin=1.2em]
+  \item the two routes are complementary;
+  \item robust revision generates agreement;
+  \item leniency at either step has a price;
+  \item disputed evidence should be \emph{costly but not catastrophic}.
+  \end{itemize}
+\item \textbf{Storyline 1 (final).} Paragraph~1 introduces the two steps. Paragraph~2 ends with the two places where remedies can act. Paragraph~3 shows that the first step is well studied and that the second is treated symmetrically, which is the gap. 865 words.
+\item \textbf{Storyline 3 (final, for \textit{Nature}).} The paper opens with everyday reputation and states the dilemma in plain language. The two steps become ``what observers know'' and ``how they revise what they believe''. The judgement problem is framed as a trade-off between two errors. 656 words, with no jargon before paragraph~4.
+\item \textbf{Discussion additions.} One paragraph sets out the two routes, in a version for each storyline. A second carries the core of Storyline~2, agreement from private revision.
+\end{itemize}
+\end{keypoint}
+
+% =============================================================================
+\section{Two routes out of the punishment dilemma}
+
+\subsection*{Two steps of reputation formation}
+Every model of indirect reciprocity contains two steps, usually without naming them.
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Step 1, judgement.} An observer judges an action against a norm. Under second-order norms, the judgement depends on the observer's view of the recipient.
+\item \textbf{Step 2, revision.} The judgement updates the observer's view of the actor. In the standard model the update overwrites, and in ours it moves a record with inertia.
+\end{itemize}
+The punishment dilemma arises at step~1: a justified refusal is condemned by an observer who disagrees about the recipient. It propagates through step~2, because the condemnation overturns the punisher's standing. It then feeds back into step~1, because the punisher is now seen differently and disagreement spreads (Fig.~A).
+
+\begin{center}
+\begin{tikzpicture}[font=\small, node distance=8mm,
+  box/.style={draw=ink!60, rounded corners=2pt, fill=ink!4, align=center, minimum height=11mm, inner sep=4pt},
+  route/.style={rounded corners=2pt, align=left, font=\footnotesize, inner sep=4pt}]
+\node[box] (act) {Action\\[-1pt]\footnotesize help or refuse};
+\node[box, right=of act, fill=good!10, draw=good!70] (judge) {\textbf{Step 1: judgement}\\[-1pt]\footnotesize norm $+$ observer's view\\[-2pt]\footnotesize of the recipient};
+\node[box, right=of judge, fill=orange!12, draw=orange!80] (rev) {\textbf{Step 2: revision}\\[-1pt]\footnotesize judgement $\to$ standing};
+\node[box, right=of rev] (rep) {Reputation\\[-1pt]\footnotesize of the actor};
+\draw[-{Stealth}, thick, ink] (act) -- (judge);
+\draw[-{Stealth}, thick, ink] (judge) -- (rev);
+\draw[-{Stealth}, thick, ink] (rev) -- (rep);
+\draw[-{Stealth}, thick, ink, dashed] (rep.south) -- ++(0,-0.55) -| node[pos=0.25, below, font=\footnotesize] {feedback: the actor is a recipient of later actions} (judge.south);
+\node[route, above=4mm of judge, text width=48mm, fill=good!6] (r1) {\textbf{Route 1} reduces \emph{how often} disputed judgements occur: institutions, gossip, synchronization, empathy, lenient assessment};
+\node[route, above=4mm of rev, text width=46mm, xshift=16mm, fill=orange!8] (r2) {\textbf{Route 2} reduces \emph{how much} each disputed judgement changes a reputation: scores, records, aggregation, \textbf{directional inertia}};
+\draw[-{Stealth}, good!80] (r1.south) -- (judge.north);
+\draw[-{Stealth}, orange!90] ([xshift=-16mm]r2.south) -- (rev.north);
+\end{tikzpicture}
+
+\small\textbf{Fig.~A} | Two steps of reputation formation and the two routes out of the punishment dilemma.
+\end{center}
+
+\subsection*{The harm is a product, and our theory makes the product explicit}
+The reputational harm that disputed judgements do to a justified punisher has two factors: how often a disputed condemnation occurs (step~1) and how strongly one condemnation changes the punisher's standing (step~2). In our theory the product is exact at the margin. For a mutant that withholds help with small probability $\delta$ from a resident population, the reputation lost per unit of withheld cooperation is $\Delta\Phi^*\,\Rmap'(u_{\mathrm R}^*)$, and the invasion payoff has slope (Eq.~(3) of the manuscript)
+\[
+\Lambda'(0)=r_{\mathrm R}^*\Bigl[1-\frac{b}{c}\,\underbrace{\Delta\Phi^*}_{\text{step 1}}\;\underbrace{\Rmap'(u_{\mathrm R}^*)}_{\text{step 2}}\Bigr].
+\]
+The two factors are the following.
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Assessment contrast} $\Delta\Phi^*=\kappa\,[r+(p-q)(1-r)]$. It is a step-1 quantity: how differently cooperation and defection are judged, given the norm $(p,q)$, the errors and the observers' views $r$ of recipients. Disagreement enters through $r$.
+\item \textbf{Slope} $\Rmap'$ of the reputation map. It is a step-2 quantity: how strongly a change in assessments moves a reputation.
+\end{itemize}
+The protection window has the same split (Eq.~(1)). The points $\Phi^*_{\mathrm D}$ and $\Phi^*_{\mathrm C}$ come from step~1, and whether $\Rmap$ lies above its chord between them is a property of step~2.
+
+\subsection*{The literature sorted by step}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{4.2cm} L@{}}
+\toprule
+Step & Lever & Mechanisms \\
+\midrule
+1, judgement & Align information & Public institutions\cite{radzvilavicius2021}, gossip\cite{sommerfeld2007,kawakatsu2024}, opinion synchronization\cite{murase2024synchronization}, dual assessment\cite{tham2026} \\
+ & Change perspective & Empathetic evaluation\cite{radzvilavicius2019} \\
+ & Judge leniently & Generous assessment\cite{schmid2021}, the principle of generosity\cite{okada2020dilemmas}, norms prioritizing positive assessments\cite{okada2024} \\
+\midrule
+2, revision & Pool evidence symmetrically & Quantitative scores\cite{schmid2023}, simple records\cite{clark2020}, graded reputations\cite{tanabe2013,murase2022}, aggregation\cite{michelmata2024}, gradual dynamics\cite{yamamoto2025} \\
+ & Directional inertia with graded expression & This work \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{Four implications}
+Each implication is labelled with the support it has.
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{The routes are complementary} (conceptual, consistent with known results). A shortfall at one step can be offset at the other. Under public information, step-1 agreement makes fragile revision harmless, which is the classical leading-eight result. Under private information, robust revision can compensate for disagreement, which is our result.
+\item \textbf{Robust revision generates agreement} (supported by Fig.~2). Revision acts at step~2, yet it reduces disagreement at step~1 through the feedback loop. Reliable private verdicts coincide, because two independent observers disagree with probability $2r(1-r)$. The condition is that inertia is placed in the direction that separates the assessments of cooperators from those of defectors. If it is not, agreement forms on the wrong verdict (one-step Shunning).
+\item \textbf{Leniency has a price at either step} (supported by Fig.~5a; for generosity, see Schmid et al.\cite{schmid2021}). Anything that lowers the reputational impact of negative evidence, whether lenient judgement or tolerant revision, also lowers the cost of deliberate defection. In the formula above, a small $\Delta\Phi^*$ or a small $\Rmap'$ both make $\Lambda'(0)>0$ more likely.
+\item \textbf{Costly but not catastrophic} (design principle, supported by Fig.~5). The impact of a single negative assessment has two parts.
+  \begin{itemize}[leftmargin=1.2em]
+  \item Whether it can overturn a reputation. This is the global shape of $\Rmap$, controlled by the depths. Suppressing it stops cascades.
+  \item What it costs at the margin. This is the slope $\Rmap'(1)=1-\alpha$, controlled by the strength. Keeping it positive keeps deterrence.
+  \end{itemize}
+  Standard updating makes every disputed judgement catastrophic. Symmetric tolerant rules make it nearly costless. Inertia with partial consequences is costly but not catastrophic. The right direction mirrors the errors that step~1 produces under each norm. Norms and revision rules should therefore be designed together.
+\end{enumerate}
+
+\subsection*{Why this advances the field}
+\begin{itemize}[leftmargin=1.2em]
+\item It turns a list of disparate remedies into two factors, so that mechanisms can be compared by which factor they reduce and at what price.
+\item It explains why agreement-based and robustness-based remedies can substitute for each other, and why robust revision can produce agreement without communication.
+\item It identifies a trade-off shared by every lenient remedy and a design rule that escapes it.
+\item It yields testable predictions for experiments that measure the two factors separately:
+  \begin{itemize}[leftmargin=1.2em]
+  \item how often people dispute a justified refusal;
+  \item how strongly one disputed act changes their impression of the punisher, and whether a single lapse is treated as costly but not catastrophic.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Where it appears.}
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Storyline~1:} paragraphs~1--3 (the two steps) and the Discussion paragraph on the two routes.
+\item \textbf{Storyline~3:} paragraph~2 (``what observers know'' and ``how they revise what they believe''), paragraph~3, and the Discussion paragraph.
+\item \textbf{Figure:} Fig.~A could become a schematic panel of Fig.~1 or an Extended Data figure.
+\end{itemize}
+
+% =============================================================================
+\section{Storyline 1, final}
+
+\textbf{Tailoring.}
+\begin{itemize}[leftmargin=1.2em]
+\item Paragraph~1 now names the two steps (``Observers judge each action against a social norm, and they revise their view of the actor in light of that judgement'').
+\item Paragraph~2 ends with the product (``how often \dots\ and how strongly \dots'') and the two places where remedies act.
+\item Paragraph~3 sorts the literature into the two steps, so the gap appears where the second step is treated symmetrically.
+\item Paragraph~5 notes that inertia, acting at the second step, also reduces disagreement.
+\end{itemize}
+The paragraphs are 153, 181, 197, 147 and 187 words long.
+
+\begin{draft}{Storyline 1, paragraph 1}\input{paragraphs/s1_p1}\end{draft}
+\begin{draft}{Storyline 1, paragraph 2}\input{paragraphs/s1_p2}\end{draft}
+\begin{draft}{Storyline 1, paragraph 3}\input{paragraphs/s1_p3}\end{draft}
+\begin{draft}{Storyline 1, paragraph 4}\input{paragraphs/s1_p4}\end{draft}
+\begin{draft}{Storyline 1, paragraph 5}\input{paragraphs/s1_p5}\end{draft}
+
+% =============================================================================
+\section{Storyline 3, final (for a multidisciplinary journal)}
+
+\textbf{Tailoring for \textit{Nature}.}
+\begin{itemize}[leftmargin=1.2em]
+\item Paragraph~1 opens with everyday reputation (``From village communities to online marketplaces'') and avoids technical terms.
+\item Paragraph~2 states the dilemma in plain words and ends with the product split into ``what observers know'' and ``how they revise what they believe''.
+\item Paragraph~3 turns the second factor into a general problem of judgement with a trade-off between two errors.
+\item Paragraph~4 opens with ``Here, we show'' and uses intuitive labels (``under suspicion or on probation'') for the intermediate states.
+\item Paragraph~5 ends with the one-sentence message.
+\item Total 656 words. Norm names and model terms appear only from paragraph~4 onward.
+\end{itemize}
+
+\begin{draft}{Storyline 3, paragraph 1}\input{paragraphs/s3_p1}\end{draft}
+\begin{draft}{Storyline 3, paragraph 2}\input{paragraphs/s3_p2}\end{draft}
+\begin{draft}{Storyline 3, paragraph 3}\input{paragraphs/s3_p3}\end{draft}
+\begin{draft}{Storyline 3, paragraph 4}\input{paragraphs/s3_p4}\end{draft}
+\begin{draft}{Storyline 3, paragraph 5}\input{paragraphs/s3_p5}\end{draft}
+
+% =============================================================================
+\section{Discussion additions}
+
+The first paragraph replaces, or merges with, the current Discussion paragraph on the vulnerability to opportunism, which makes a related point more narrowly. The second carries Storyline~2 and can follow the current paragraph on agreement and accuracy.
+
+\begin{draft}{Two routes, Storyline 1 version (219 words)}\input{paragraphs/disc_routes_s1}\end{draft}
+\begin{draft}{Two routes, Storyline 3 version (218 words)}\input{paragraphs/disc_routes_s3}\end{draft}
+\begin{draft}{Agreement from private revision, core of Storyline 2, either storyline (180 words)}\input{paragraphs/disc_agreement}\end{draft}
+
+% =============================================================================
+\section{The choice between Storylines 1 and 3}
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.8cm} L L@{}}
+\toprule
+& \textbf{Storyline 1} & \textbf{Storyline 3} \\
+\midrule
+One-line message & How a society revises its judgements in each direction matters as much as which behaviours it judges good & Cooperation depends not only on what individuals know about each other, but also on how they revise what they believe \\
+Frame & Two steps of reputation formation; the second is treated symmetrically & Information versus judgement; judgement is a trade-off between two errors \\
+Audience & Indirect reciprocity and evolutionary game theory & Broad (social science, institutions, online and multi-agent systems) \\
+Science & \multicolumn{2}{l}{Identical: same model, same results, same Discussion additions} \\
+Venue & \textit{PNAS}, \textit{Nat.\ Commun.} & \textit{Nature}, \textit{Nat.\ Hum.\ Behav.} \\
+Risk & Reads as a model extension & Broad claims must be carried by the Discussion \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{To check before finalizing.}
+\begin{itemize}[leftmargin=1.2em]
+\item Yamamoto et al.\ 2025\cite{yamamoto2025}: whether it lets gains and losses differ or grades treatment. I could not access it from here.
+\item The Discussion's ``mirrors the errors'' argument supports one sentence in Storyline~3, paragraph~5. Keep both consistent.
+\item That Schmid et al.\ 2021\cite{schmid2021} and Okada et al.\ 2024\cite{okada2024} are best described as lenient \emph{assessment}. This is how they are placed in the table and in Storyline~1, paragraph~3.
+\end{itemize}
+
+\bibliographystyle{../../latex_file/naturemag-doi}
+\bibliography{../../latex_file/references}
+\end{document}
