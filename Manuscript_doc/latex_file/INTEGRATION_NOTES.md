@@ -1,5 +1,7 @@
 # Integration notes: Manuscript_full_20261103.tex (revision 2)
 
+> **Superseded.** The current manuscript is `Manuscript_full_20261114.tex` (revision 3). See `REVISION_NOTES_20261114.md`. The notes below describe revision 2 and remain valid for the parts that revision 3 did not change (build, figure layout, reference keys).
+
 This is the complete LaTeX manuscript: main text, Methods, Extended Data and Supplementary Information in one file. The compiled PDF is `Manuscript_full_20261103.pdf` (about 41 pages). The Overleaf package is `Manuscript_doc/IR_manuscript_overleaf_20261103.zip`.
 
 ## Build
