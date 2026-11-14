@@ -21,7 +21,8 @@
 %   Extended Data Fig. 5    <-  ED_Fig6.pdf   (tolerance and strictness)
 %   Extended Data Fig. 6    <-  ED_Fig7.pdf   (error rates)
 %   Extended Data Fig. 7    <-  ED_Fig8.pdf   (depth plane)
-%   Extended Data Fig. 8    <-  ED_Fig9.pdf   (secure tolerance strengths)
+%   Extended Data Fig. 8    <-  ED_Fig9.pdf   (secure tolerance strengths;
+%                                              updated 14 November 2026)
 %
 % Build:  pdflatex -> bibtex <jobname> -> bibtex SI -> pdflatex -> pdflatex
 %         (latexmk -pdf also works). The second bibtex run builds the
@@ -229,8 +230,7 @@ We compared all allocations $(k_1,k_2)$ with the same total depth $K$ (Fig.~\ref
 \centering
 \includegraphics[width=0.85\linewidth]{Fig4}
 \caption{\textbf{Allocation matters more than the amount of inertia.}
-\textbf{a--d}, Mean realized cooperation $\bar\rho$ under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}) as a function of total depth $K=k_1+k_2$. Each point represents one allocation $(k_1,k_2)$, with color indicating the tolerance fraction $k_1/K$. $K=0$ is the instantaneous baseline. Large outlined points connected by black lines identify the largest sampled mean at each $K$, with depth pairs labeled. Cooperation is averaged over 512 initial strategy compositions sampled uniformly from the simplex (Methods). Parameters: $b/c=5$, $e_1=e_2=0.02$ and $\alpha=\beta=1$.
-\draftnote{Draft: this figure was drawn from the pre-verification data. In the verified data the SS envelope labels are (0,1) at $K=1$ and (1,5) at $K=6$. Redraw from verified/figure4\_ed6/data/figure4.}}
+\textbf{a--d}, Mean realized cooperation $\bar\rho$ under SC (\textbf{a}), SH (\textbf{b}), SJ (\textbf{c}) and SS (\textbf{d}) as a function of total depth $K=k_1+k_2$. Each point represents one allocation $(k_1,k_2)$, with color indicating the tolerance fraction $k_1/K$. $K=0$ is the instantaneous baseline. Large outlined points connected by black lines identify the largest sampled mean at each $K$, with depth pairs labeled. Cooperation is averaged over 512 initial strategy compositions sampled uniformly from the simplex (Methods). Parameters: $b/c=5$, $e_1=e_2=0.02$ and $\alpha=\beta=1$.}
 \label{fig:depth}
 \end{figure}
 
@@ -694,8 +694,8 @@ The code and figure scripts used in this study are provided in the same package,
 \centering
 \figfile{ED_Fig9}
 \caption{\textbf{Protective tolerance strengths exist for every norm.}
-\textbf{a}, Secure intervals in which an established DISC population resists the tested O-DISC family at $b/c=5$, comparing the one-step architecture $(k_1,k_2)=(1,1)$ with the selected multi-step architecture for each norm. Blue shading gives resident intended cooperation. Black outlines identify numerically secure intervals, and interval endpoints that coincide with branch folds are excluded.
-\textbf{b--e}, Resident intended cooperation and O-DISC security across $\alpha$ and $b/c$ under SC, SH, SJ and SS, respectively. The upper and lower rows show one-step and selected multi-step inertia. Black curves delimit the secure region, and white circles mark $(\alpha,b/c)=(0.8,5)$. At this reference point the selected multi-step architectures maintain high resident cooperation and resist the tested opportunistic family under all four norms, whereas the outcome under one-step inertia depends on the norm. Secure ranges narrow at low $b/c$ and close under SH at $b/c=2$. Security against O-DISC and high resident cooperation are distinct quantities. The selected multi-step depths are $(2,0)$, $(3,0)$, $(4,3)$ and $(1,2)$ for SC, SH, SJ and SS, respectively. Parameters: $e_1=e_2=0.02$ and $\beta=1$.}
+\textbf{a}, Secure intervals in which an established DISC population resists the tested O-DISC family at $b/c=5$, comparing the one-step architecture $(k_1,k_2)=(1,1)$ with the selected multi-step architecture for each norm. Blue shading gives resident intended cooperation. Orange outlines identify numerically secure intervals, and interval endpoints that coincide with branch folds are excluded.
+\textbf{b--e}, Resident intended cooperation and O-DISC security across $\alpha$ and $b/c$ under SC, SH, SJ and SS, respectively. The upper and lower rows show one-step and selected multi-step inertia. Orange curves delimit the secure region, and white circles mark $(\alpha,b/c)=(0.8,5)$. At this reference point the selected multi-step architectures maintain high resident cooperation and resist the tested opportunistic family under all four norms, whereas the outcome under one-step inertia depends on the norm. Secure ranges narrow at low $b/c$ and close under SH at $b/c=2$. Security against O-DISC and high resident cooperation are distinct quantities. The selected multi-step depths are $(2,0)$, $(3,0)$, $(4,3)$ and $(1,2)$ for SC, SH, SJ and SS, respectively. Parameters: $e_1=e_2=0.02$ and $\beta=1$.}
 \label{ed:security}
 \end{figure}
 

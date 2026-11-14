@@ -47,3 +47,7 @@ Suggested drawing:
 The verified notebook already draws this set as a single dashed segment (`neutral_segment`). The only change needed is to split it at f_ALLC ≈ 0.266.
 
 `Fig3a_SC_single_line_preview.png` shows this layout. It was made with `fig3a_sc_preview.py`, which uses the closed-form reputations of this case. Its shaded basin covers 62% of a triangular grid, against 63.5% in the verified Halton sample. The preview only illustrates the layout; it is not production artwork.
+
+## Update, 14 November 2026
+
+`Manuscript_doc/Fig4.pdf` was replaced by the version drawn from the verified data. Its Simple Standing envelope is labelled (0,1) at K = 1 and (1,5) at K = 6, as in `total_depth_results.csv`, so the Fig. 4 item above is resolved. `Manuscript_doc/ED_Fig9.pdf` (secure tolerance strengths, Extended Data Fig. 8 of `Manuscript_full_20261114.tex`) was replaced by the version with orange outlines.

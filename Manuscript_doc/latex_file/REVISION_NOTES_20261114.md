@@ -180,7 +180,8 @@ All values in the existing SI tables (S8, S9, S12 and the worked example) were r
 
 ## 8. Open items
 
-- **Fig. 4** is still the pre-verification drawing (the draft note in the legend remains). The numbers quoted in the text come from `verified/figure4_ed6/data/figure4/total_depth_results.csv`.
+- **Fig. 4** was replaced on 14 November by the version drawn from the verified data (`Manuscript_doc/Fig4.pdf`). Its envelope labels agree with `verified/figure4_ed6/data/figure4/total_depth_results.csv`, and the draft note in the legend was removed.
+- **Extended Data Fig. 8** (secure tolerance strengths) was replaced on 14 November by the version with orange outlines and boundary curves. It is stored as `Manuscript_doc/ED_Fig9.pdf`, because the figure files keep their original names, and the legend now says "orange" instead of "black". `Manuscript_doc/ED_Fig8.pdf` is still the depth-plane figure (Extended Data Fig. 7).
 - **Fig. 3a (SC)** redraw, as before.
 - **Fig. 3c (SS)** labels the stable DISC–ALLC equilibrium with "99.99%". The verified data (`equilibria.csv`, `multi_step_SS`, edge ALLC–DISC) give an intended cooperation of 99.52% at f_ALLC = 0.197. Please check the label.
 - **Extended Data file names.** If you want the files renamed to the new numbers, the slide scripts need the same change. I left both alone.
