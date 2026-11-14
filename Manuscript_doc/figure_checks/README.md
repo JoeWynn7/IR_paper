@@ -50,4 +50,4 @@ The verified notebook already draws this set as a single dashed segment (`neutra
 
 ## Update, 14 November 2026
 
-`Manuscript_doc/Fig4.pdf` was replaced by the version drawn from the verified data. Its Simple Standing envelope is labelled (0,1) at K = 1 and (1,5) at K = 6, as in `total_depth_results.csv`, so the Fig. 4 item above is resolved. `Manuscript_doc/ED_Fig9.pdf` (secure tolerance strengths, Extended Data Fig. 8 of `Manuscript_full_20261114.tex`) was replaced by the version with orange outlines.
+`Manuscript_doc/Fig4.pdf` was replaced by the version drawn from the verified data. Its Simple Standing envelope is labelled (0,1) at K = 1 and (1,5) at K = 6, as in `total_depth_results.csv`, so the Fig. 4 item above is resolved. The secure-tolerance figure (Extended Data Fig. 8 of `Manuscript_full_20261114.tex`) was replaced by the version with orange outlines. The Extended Data files were then renamed to the numbering of that manuscript, so this figure is now `Manuscript_doc/ED_Fig8.pdf`, and the former `ED_Fig4.pdf` (ALLD–DISC edge) was deleted.

@@ -14,15 +14,9 @@
 %   - Supplementary Information reorganized into nine notes.
 %
 % Figures are searched in figures/ (Overleaf package) and in ../ (repository).
-% Extended Data figure FILES keep their original names. Because the former
-% Extended Data Fig. 4 was removed, the mapping is
-%   Extended Data Fig. 1-3  <-  ED_Fig1.pdf - ED_Fig3.pdf
-%   Extended Data Fig. 4    <-  ED_Fig5.pdf   (benefit-to-cost ratio)
-%   Extended Data Fig. 5    <-  ED_Fig6.pdf   (tolerance and strictness)
-%   Extended Data Fig. 6    <-  ED_Fig7.pdf   (error rates)
-%   Extended Data Fig. 7    <-  ED_Fig8.pdf   (depth plane)
-%   Extended Data Fig. 8    <-  ED_Fig9.pdf   (secure tolerance strengths;
-%                                              updated 14 November 2026)
+% Extended Data figure files are numbered as in this manuscript: ED_FigN.pdf
+% is Extended Data Fig. N (N = 1-8). The files were renamed on 14 November
+% 2026, after the former Extended Data Fig. 4 (ALLD--DISC edge) was removed.
 %
 % Build:  pdflatex -> bibtex <jobname> -> bibtex SI -> pdflatex -> pdflatex
 %         (latexmk -pdf also works). The second bibtex run builds the
@@ -612,7 +606,7 @@ The code and figure scripts used in this study are provided in the same package,
 
 % =============================================================================
 % Extended Data figures. The former Extended Data Fig. 4 (ALLD--DISC edge) was
-% removed in revision 3. File names are unchanged (see the header).
+% removed in revision 3, and the figure files were renumbered accordingly.
 % =============================================================================
 \clearpage
 \setcounter{figure}{0}
@@ -651,19 +645,19 @@ The code and figure scripts used in this study are provided in the same package,
 \label{ed:reputation-planes}
 \end{figure}
 
-% ----- Extended Data Fig. 4 (file ED_Fig5.pdf)
+% ----- Extended Data Fig. 4 (file ED_Fig4.pdf)
 \begin{figure}[!htbp]
 \centering
-\figfile{ED_Fig5}
+\figfile{ED_Fig4}
 \caption{\textbf{The advantage of the selected architectures holds across benefit-to-cost ratios.}
 \textbf{a--d}, Mean cooperation $\bar\rho$ across initial strategy compositions as $b/c$ varies under SC, SH, SJ and SS. Gray, blue and orange lines denote instantaneous updating, full one-step inertia and the selected multi-step architectures. Solid segments indicate local protection of pure DISC against ALLC and ALLD ($R_{\mathrm L}<b/c<R_{\mathrm U}$; Eq.~\eqref{eq:window}), whereas dashed segments indicate that at least one of these mutants can invade pure DISC. Labels give the window bounds, and arrowheads indicate $R_{\mathrm U}>10$. The vertical dotted line marks $b/c=5$. Curves are means over eight independent samples of 512 initial compositions (Methods). The selected multi-step architectures support higher mean cooperation across much of the range. Under SS, high cooperation can persist even where pure DISC is not locally protected. Parameters: $e_1=e_2=0.02$ and $\alpha=\beta=1$.}
 \label{ed:benefit-cost}
 \end{figure}
 
-% ----- Extended Data Fig. 5 (file ED_Fig6.pdf)
+% ----- Extended Data Fig. 5 (file ED_Fig5.pdf)
 \begin{figure}[!htbp]
 \centering
-\figfile[0.6]{ED_Fig6}
+\figfile[0.6]{ED_Fig5}
 \caption{\textbf{Tolerance and strictness are not interchangeable.}
 \textbf{a--d}, Strategy dynamics under SC, SH, SJ and SS. In each column, the upper simplex shows tolerance only, $(\alpha,\beta)=(1,0)$, and the lower simplex shows strictness only, $(\alpha,\beta)=(0,1)$. Arrows indicate the direction of evolution, filled and open circles denote stable and unstable equilibria, shading marks the cooperative basin, and percentages indicate intended cooperation at the highlighted equilibria.
 \textbf{e--h}, Mean cooperation $\bar\rho$ across the one-step $(\alpha,\beta)$ plane.
@@ -671,28 +665,28 @@ The code and figure scripts used in this study are provided in the same package,
 \label{ed:readout}
 \end{figure}
 
-% ----- Extended Data Fig. 6 (file ED_Fig7.pdf)
+% ----- Extended Data Fig. 6 (file ED_Fig6.pdf)
 \begin{figure}[!htbp]
 \centering
-\figfile{ED_Fig7}
+\figfile{ED_Fig6}
 \caption{\textbf{Asymmetric inertia protects discriminators across error rates.}
 \textbf{a--c}, Local invasion classes of a pure-DISC resident across implementation error $e_1$ and assessment error $e_2$ under instantaneous updating (\textbf{a}), full one-step inertia (\textbf{b}) and the selected multi-step architectures (\textbf{c}), with SC, SH, SJ and SS in columns. Pink denotes that ALLD invades, purple that ALLD is excluded but ALLC invades, and green that DISC resists both mutants. Without inertia or with one-step inertia, ALLD invades almost everywhere under SH and SJ. The selected architectures exclude ALLD over most of the error plane under these norms and, under SC and SH, make DISC resistant to both mutants over most of it. These maps concern local resistance only and are not cooperation scans. Parameters: $b/c=5$ and $\alpha=\beta=1$.}
 \label{ed:errors}
 \end{figure}
 
-% ----- Extended Data Fig. 7 (file ED_Fig8.pdf)
+% ----- Extended Data Fig. 7 (file ED_Fig7.pdf)
 \begin{figure}[!htbp]
 \centering
-\figfile{ED_Fig8}
+\figfile{ED_Fig7}
 \caption{\textbf{High cooperation and local protection are different properties.}
 \textbf{a--d}, Mean realized cooperation $\bar\rho$ over the $(k_1,k_2)$ plane under SC, SH, SJ and SS, respectively. Color denotes cooperation averaged over initial strategy compositions, and dots identify depth pairs at which a pure-DISC population resists rare ALLC and ALLD mutants. SC and SH show high cooperation for allocations dominated by the warning path, SJ benefits from a combination of both paths, and SS supports the highest cooperation when a short warning path is combined with a longer recovery path. The dots show that the depths that protect pure DISC are not the same as those that give the most cooperation. Parameters: $b/c=5$, $e_1=e_2=0.02$ and $\alpha=\beta=1$.}
 \label{ed:depth-plane}
 \end{figure}
 
-% ----- Extended Data Fig. 8 (file ED_Fig9.pdf)
+% ----- Extended Data Fig. 8 (file ED_Fig8.pdf)
 \begin{figure}[!htbp]
 \centering
-\figfile{ED_Fig9}
+\figfile{ED_Fig8}
 \caption{\textbf{Protective tolerance strengths exist for every norm.}
 \textbf{a}, Secure intervals in which an established DISC population resists the tested O-DISC family at $b/c=5$, comparing the one-step architecture $(k_1,k_2)=(1,1)$ with the selected multi-step architecture for each norm. Blue shading gives resident intended cooperation. Orange outlines identify numerically secure intervals, and interval endpoints that coincide with branch folds are excluded.
 \textbf{b--e}, Resident intended cooperation and O-DISC security across $\alpha$ and $b/c$ under SC, SH, SJ and SS, respectively. The upper and lower rows show one-step and selected multi-step inertia. Orange curves delimit the secure region, and white circles mark $(\alpha,b/c)=(0.8,5)$. At this reference point the selected multi-step architectures maintain high resident cooperation and resist the tested opportunistic family under all four norms, whereas the outcome under one-step inertia depends on the norm. Secure ranges narrow at low $b/c$ and close under SH at $b/c=2$. Security against O-DISC and high resident cooperation are distinct quantities. The selected multi-step depths are $(2,0)$, $(3,0)$, $(4,3)$ and $(1,2)$ for SC, SH, SJ and SS, respectively. Parameters: $e_1=e_2=0.02$ and $\beta=1$.}
