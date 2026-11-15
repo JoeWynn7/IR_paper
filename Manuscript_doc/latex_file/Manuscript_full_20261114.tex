@@ -192,11 +192,11 @@ Without inertia, SH and SJ do not support cooperation, and under SC and SS a pur
 \includegraphics[width=0.9\linewidth]{Fig3}
 \caption{\textbf{Asymmetric inertia makes cooperation stable and easy to reach.}
 \textbf{a--c}, Evolutionary dynamics of ALLC, ALLD and DISC under SC, SH, SJ and SS (columns) without inertia (\textbf{a}), with full one-step inertia (\textbf{b}) and with the selected multi-step architectures (\textbf{c}). Arrows indicate the direction of evolution. Filled and open circles denote stable and unstable equilibria, respectively. For equilibria on an edge of the simplex, markers refer to stability along that edge (Methods). Percentages give intended cooperation at the indicated equilibria, and shading marks the basin of attraction of a cooperative state. Without inertia, SC has a line of equilibria on which all three payoffs are equal (Supplementary Note~\ref{si:evolution}). The selected depths $(k_1,k_2)$ are $(2,0)$, $(3,0)$, $(4,3)$ and $(1,2)$ for SC, SH, SJ and SS, respectively. Reputations are relaxed from initially good records at every composition. Parameters: $b/c=5$, $e_1=e_2=0.02$ and $\alpha=\beta=1$.
-\draftnote{Draft: the SC panel in a will be redrawn, with the line of equilibria shown as a single line (solid where it attracts, dashed where it repels).}}
+\draftnote{Draft: the SC panel in a will be redrawn, with the line of equilibria shown as a single line (solid where it attracts, dashed where it repels). In c, the label of the SS equilibrium should read 99.52\% instead of 99.99\% (Supplementary Table~\ref{tab:si-equilibria}).}}
 \label{fig:dynamics}
 \end{figure}
 
-The selected architectures make cooperation both stable and easy to reach (Fig.~\ref{fig:dynamics}c). Under SC, SH and SJ, a pure DISC population is a stable equilibrium with near-complete intended cooperation, and it is reached from 88\%, 71\% and 71\% of the initial compositions, respectively. Under SS, the cooperative attractor is a stable mixture of DISC and ALLC, which is reached from 76\% of the initial compositions. Whenever a cooperative state is reached, with or without inertia, realized cooperation is 96--98\%, close to the maximum of 98\% that implementation errors permit. Mean cooperation therefore follows the size of the cooperative basin (Supplementary Table~\ref{tab:si-basins}).
+The selected architectures make cooperation both stable and easy to reach (Fig.~\ref{fig:dynamics}c). Under SC, SH and SJ, a pure DISC population is a stable equilibrium with near-complete intended cooperation, and it is reached from 88\%, 71\% and 71\% of the initial compositions, respectively. Under SS, the cooperative attractor is a stable mixture of about 80\% DISC and 20\% ALLC, which is reached from 76\% of the initial compositions (Supplementary Table~\ref{tab:si-equilibria}). Whenever a cooperative state is reached, with or without inertia, realized cooperation is 96--98\%, close to the maximum of 98\% that implementation errors permit. Mean cooperation therefore follows the size of the cooperative basin (Supplementary Table~\ref{tab:si-basins}).
 
 Whether an established DISC population resists rare unconditional mutants has a compact answer. Let $\rR$ denote the probability that a resident is regarded as good, and let $\PhiCs$ and $\PhiDs$ denote the probabilities that intended cooperation and intended defection towards a resident are assessed positively (Methods). Rare ALLC and ALLD mutants then have the reputations $\Rmap(\PhiCs)$ and $\Rmap(\PhiDs)$. When ALLD is regarded worse and ALLC better than the residents, pure DISC resists both mutants if and only if
 \begin{equation}
@@ -1363,6 +1363,36 @@ SC & 0.635 & 0.610 & 0.605 & 0.591 & 0.883 & 0.865\\
 SH & 0 & 0 & 0.078 & 0.076 & 0.705 & 0.691\\
 SJ & 0 & 0 & 0.230 & 0.225 & 0.713 & 0.699\\
 SS & 0.561 & 0.543 & 0.713 & 0.696 & 0.760 & 0.741\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Cooperation at the equilibria of Fig.~\ref{fig:dynamics}.} The percentages in Fig.~\ref{fig:dynamics} are intended cooperation rates, $\rho_{\mathrm{int}}=f_{\ALLC}+f_{\DISC}\,\bar r^*$ (Eq.~\eqref{eq:m-cooperation}). ALLC always intends to help, and a DISC donor intends to help with probability $\bar r^*$, the probability that it regards a random member of the population as good. At a pure DISC equilibrium this reduces to $\rho_{\mathrm{int}}=\rR$. On the ALLC--DISC edge, $\bar r^*=f_{\ALLC}\,r^*_{\ALLC}+f_{\DISC}\,r^*_{\DISC}$. For the selected SS architecture, for example, the stable mixture has $f_{\ALLC}=0.19671$ and $f_{\DISC}=0.80329$, with $r^*_{\ALLC}=0.99524$ and $r^*_{\DISC}=0.99376$. A DISC donor therefore intends to help with probability $\bar r^*=0.99405$, and
+\begin{equation}
+\rho_{\mathrm{int}}=0.19671+0.80329\times0.99405=0.99522.
+\label{eq:s-ss-mixture}
+\end{equation}
+Supplementary Table~\ref{tab:si-equilibria} lists the values for all stable cooperative equilibria of Fig.~\ref{fig:dynamics}.
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Cooperation at the stable cooperative equilibria of Fig.~\ref{fig:dynamics}} ($b/c=5$, $e_1=e_2=0.02$, $\alpha=\beta=1$). $\bar r^*$ is the probability that a DISC donor intends to help, and intended and realized cooperation are $\rho_{\mathrm{int}}=f_{\ALLC}+f_{\DISC}\,\bar r^*$ and $\rho=(1-e_1)\,\rho_{\mathrm{int}}$. Under SH and SJ without inertia there is no cooperative equilibrium. Under SC without inertia, the row refers to the endpoint of the line of equilibria on the ALLC--DISC edge (Proposition~\ref{prop:neutral}).}
+\label{tab:si-equilibria}
+\small
+\begin{tabular}{@{}lllccccc@{}}
+\toprule
+Setting & Norm & Equilibrium & $f_{\ALLC}$ & $f_{\DISC}$ & $\bar r^*$ & $\rho_{\mathrm{int}}$ & $\rho$\\
+\midrule
+No inertia & SC & ALLC--DISC edge & 0.7874 & 0.2126 & 0.9510 & 0.9896 & 0.9698\\
+ & SS & ALLC--DISC mixture & 0.7752 & 0.2248 & 0.9521 & 0.9892 & 0.9695\\
+One-step $(1,1)$ & SC & pure DISC & 0 & 1 & 0.9963 & 0.9963 & 0.9764\\
+ & SH & pure DISC & 0 & 1 & 0.9953 & 0.9953 & 0.9754\\
+ & SJ & pure DISC & 0 & 1 & 0.9953 & 0.9953 & 0.9754\\
+ & SS & pure DISC & 0 & 1 & 0.9963 & 0.9963 & 0.9764\\
+Selected multi-step & SC $(2,0)$ & pure DISC & 0 & 1 & 0.9999 & 0.9999 & 0.9799\\
+ & SH $(3,0)$ & pure DISC & 0 & 1 & 1.0000 & 1.0000 & 0.9800\\
+ & SJ $(4,3)$ & pure DISC & 0 & 1 & 1.0000 & 1.0000 & 0.9800\\
+ & SS $(1,2)$ & ALLC--DISC mixture & 0.1967 & 0.8033 & 0.9941 & 0.9952 & 0.9753\\
 \bottomrule
 \end{tabular}
 \end{table}
