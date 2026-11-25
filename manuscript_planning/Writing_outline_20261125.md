@@ -16,24 +16,18 @@ The deck states each step of the argument as one message per slide. The manuscri
 
 ---
 
-## 1. Introduction (about 1,230 words, 8 paragraphs; revised 25 November, third pass)
+## 1. Introduction (about 1,040 words, 6 paragraphs; fourth pass, 25 November)
 
-**Opening pattern** (from Hilbe et al. 2018, Schmid et al. 2023, Michel-Mata et al. 2024, Murase & Hilbe 2024 and Tham et al. 2026): an empirical statement about reputation; the mechanism and its evidence; how models formalize it (donor, recipient, observer); the field's central question (which norms?); the standard assumption, acknowledged for why it was adopted; why it fails; what we change. Tham et al. 2026 has the closest structure: "most prior work assumes X; we instead allow Y".
+One thread, framing A only. The shared-information argument (framing B) goes to the Discussion. The word "remedy" is not used.
 
-**The question.** How should private reputations be revised as evidence accumulates, and in particular, should losing a good reputation require as much evidence as regaining one? It is stated once, at the end of ¶6, and answered in the first sentence of ¶8.
-- Importance: it is the counterpart of the field's central question (¶2–¶3); overwriting is what lets misjudgments spread (¶4); revision is the one lever each observer controls without shared information (¶5).
-- Novelty: existing rules tie loss to recovery, whereas misjudgments, people and institutions are directional (¶6).
-
-| ¶ | Purpose | Slides |
-|---|---|---|
-| 1 | Reputation, indirect reciprocity, roles, two steps | 5 |
-| 2 | The judging step: why it is subtle; which norms; leading eight | 5 |
-| 3 | The revising step: colleague example; overwrite assumption; why it was acceptable | 4 (Opening) |
-| 4 | Private assessment: two kinds of misjudgment; overwriting lets them spread | 6 |
-| 5 | Remedies act on judging and need shared information; revision is each observer's lever; models that absorb misjudgments | 7 |
-| 6 | Gap: those models tie loss to recovery; misjudgments, people and institutions are directional → the question | 4 (Gap), 7 |
-| 7 | Approach | 8 |
-| 8 | Answer, its condition, the general result, take-home | 16, 27, 29, 30 |
+| ¶ | Purpose |
+|---|---|
+| 1 | Indirect reciprocity; judging is subtle; which norms; leading eight |
+| 2 | Revising: colleague example; the overwrite assumption; innocuous when reputations are public |
+| 3 | Private assessment: directional misjudgments spread under overwriting; most work changes judging or information |
+| 4 | Revision rules tie loss to recovery; reasons to separate them (directional misjudgments; people and institutions) → *asymmetric inertia* named → question: should losing a good reputation require as much evidence as regaining one? |
+| 5 | Approach |
+| 6 | Answer, its condition, the general result, take-home |
 
 ## 2. Results
 
