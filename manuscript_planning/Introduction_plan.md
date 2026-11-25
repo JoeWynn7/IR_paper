@@ -1,5 +1,7 @@
 # Introduction plan (version 2, 25 November 2026)
 
+> **Status:** set aside on 25 November 2026. The Introduction was redrafted from scratch; see the manuscript (revision 8).
+
 This is a plan only; it contains no draft text. It replaces version 1, which is in the git history (commit `0d4d1c0`). The current draft in the manuscript (commit `8e0c289`) stays in place until a new draft based on this plan is agreed.
 
 ## 1. The argument in one line
