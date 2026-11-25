@@ -1,5 +1,7 @@
 # Introduction plan
 
+> **Status (25 November 2026):** superseded. Following feedback, the Introduction was redrafted around one central point: defining goodness is not enough, because every assessment must also be turned into a reputation. The current text is in `manuscript/Manuscript_full .tex`. This plan is kept for reference; the terminology and style rules below still apply.
+
 **Guiding question:** *How should reputations change in response to new assessments?*
 
 **The gap behind it:** the rule that turns assessments into reputations is fixed by convention (the latest assessment replaces the previous view). Under private information, this rule decides whether misjudgments are absorbed or amplified.
