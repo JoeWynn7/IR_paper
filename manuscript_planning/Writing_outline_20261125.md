@@ -16,18 +16,14 @@ The deck states each step of the argument as one message per slide. The manuscri
 
 ---
 
-## 1. Introduction (about 1,040 words, 6 paragraphs; fourth pass, 25 November)
-
-One thread, framing A only. The shared-information argument (framing B) goes to the Discussion. The word "remedy" is not used.
+## 1. Introduction (about 790 words, 4 paragraphs; fifth pass, 25 November)
 
 | ¶ | Purpose |
 |---|---|
-| 1 | Indirect reciprocity; judging is subtle; which norms; leading eight |
-| 2 | Revising: colleague example; the overwrite assumption; innocuous when reputations are public |
-| 3 | Private assessment: directional misjudgments spread under overwriting; most work changes judging or information |
-| 4 | Revision rules tie loss to recovery; reasons to separate them (directional misjudgments; people and institutions) → *asymmetric inertia* named → question: should losing a good reputation require as much evidence as regaining one? |
-| 5 | Approach |
-| 6 | Answer, its condition, the general result, take-home |
+| 1 | Indirect reciprocity; judging is well studied (leading eight); revising is assumed to overwrite, which does little harm when reputations are public |
+| 2 | Private assessment: overwriting turns directional misjudgments into opinions that spread; most proposals act on judgments or information |
+| 3 | Revision is a different lever; existing rules buffer both directions alike, but misjudgments and human practice are directional → asymmetric reputational inertia → question |
+| 4 | Model; key finding (direction > amount) and why; condition (partial consequences); implication |
 
 ## 2. Results
 
