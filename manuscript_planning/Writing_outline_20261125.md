@@ -16,54 +16,19 @@ The deck states each step of the argument as one message per slide. The manuscri
 
 ---
 
-## 1. Introduction (target 1,050–1,150 words, 7 paragraphs)
+## 1. Introduction (about 1,040 words, 5 paragraphs; revised 25 November after feedback)
 
-The argument runs: what indirect reciprocity is → the revising step and the assumption theory makes about it → why that assumption matters under private information → what existing remedies do → what people and institutions do instead → our model → findings.
+**One gap, one question.** The gap is that existing revision rules tie the evidence needed to lose a reputation to the evidence needed to regain it. People, institutions and the misjudgments of private assessment itself all treat the two directions differently. The question is: *should losing a good reputation require as much evidence as regaining one?* Partial consequences are not a second question. They are the condition attached to the answer (¶5).
 
-**¶1 Indirect reciprocity and the judging step** (slide 5, loop rows 1–2 and "Public information"; about 170 words)
-- Opening phenomenon in everyday terms: people help strangers they will not meet again (directions, colleagues, anonymous online trade\cite{tadelis2016}).
-- Reputation explains it: helping earns standing, and standing attracts help from third parties. Name the mechanism\cite{nowak1998,nowak2005,milinski2016} and cite experimental support\cite{wedekind2000,milinski2002}.
-- Reputations are useful only if they track behavior, which needs a shared standard of what counts as good. Use the concrete puzzle: helping a cooperator is clearly good, but is refusing to help a defector good? Condemning justified refusals undermines discriminators\cite{leimar2001,panchanathan2003}.
-- That is why theory has asked which norms sustain cooperation. With public information the leading eight do\cite{ohtsuki2004,ohtsuki2006}.
-- End on a transition: judging an action is only half of forming a reputation.
+| ¶ | Purpose | Message | Slides |
+|---|---|---|---|
+| 1 | Background and assumption | Indirect reciprocity; the two steps (judge, revise); the judging step is well studied (the justified-refusal puzzle, the leading eight); the revising step is modeled as overwriting, which is innocuous with public information | 4 (Opening), 5 |
+| 2 | Problem | Under private assessment, overwriting turns every misjudgment (wrongful condemnation, wrongful excuse) into an opinion, misjudgments spread, and reputations stop being accurate and consistent | 6 |
+| 3 | Gap and question | Damage = frequency × weight. Remedies for frequency mostly need shared information. Revision rules that reduce the weight tie loss to recovery. People, institutions and the misjudgments themselves are directional, so the question is whether losing a good reputation should require as much evidence as regaining one | 7, 4 (Gap) |
+| 4 | Approach | Warning and recovery paths of independent depths; partial consequences; no shared information; methods in one sentence | 8 |
+| 5 | Answer and message | The two directions should generally differ, in a norm-specific way; the direction matters more than the amount. Condition: tolerance invites occasional defectors unless warnings carry partial consequences. General result on deterministic images. Take-home | 16, 27, 29, 30 |
 
-**¶2 The revising step and the overwrite assumption** (slide 4, OPENING row "Reputations are judgements that change as evidence accumulates"; slide 5, loop row 2; about 170 words)
-- Topic sentence: a reputation is an opinion that changes as evidence accumulates, not a single judgment.
-- Concrete example (a colleague with years of help, seen refusing once). Whether the refusal is bad is a question for the norm. Whether it should turn a good opinion bad is a separate question about revision.
-- The default answer in theory: the latest judgment replaces the previous opinion, however well supported\cite{ohtsuki2004,hilbe2018}. Higher-order norms condition the judgment on the actor's reputation\cite{ohtsuki2004,santos2018}, but one observation still decides.
-- Why the assumption has been acceptable: with public information an erroneous judgment is shared by everyone, and under the leading eight the next cooperative act restores standing\cite{ohtsuki2006}.
-- Closing sentence that opens the gap: the assumption becomes consequential once judgments are neither reliable nor shared.
-
-**¶3 Private assessment produces two kinds of misjudgment** (slide 6; about 190 words)
-- Private, noisy observation leads to divergent opinions\cite{takahashi2006,uchida2010}, and most leading-eight norms fail\cite{hilbe2018,okada2018,perret2021,fujimoto2023}.
-- Mechanism: an action is judged through the observer's own view of the recipient, and misjudgments spread\cite{hilbe2018,radzvilavicius2019}.
-- Two kinds: wrongful condemnation (the punishment dilemma\cite{okada2020dilemmas,pires2025}) and wrongful excuse. Which dominates depends on the norm\cite{fujimoto2022,fujimoto2023}.
-- Requirement: accurate and consistent reputations\cite{fujimoto2022,murase2024synchronization}.
-- Change from the current draft: shorter, because ¶2 now carries the transition.
-
-**¶4 Two factors, and what existing remedies do** (slide 7; about 190 words)
-- Distortion depends on how often misjudgments occur and how much each one weighs.
-- Route 1 (frequency): institutions, gossip, empathy, synchronization\cite{radzvilavicius2021,kawakatsu2024,radzvilavicius2019,murase2024synchronization,tham2026}; generous or stochastic norms\cite{schmid2021,okada2024,murase2023}. Most of these need shared information, and revision is the one lever every observer holds (slide 7).
-- Route 2 (weight): scores, records, aggregation, multi-level reputations\cite{schmid2023,clark2020,michelmata2024,tanabe2013,murase2022,yamamoto2025}. In these, a single quantity ties how standing is lost to how it is regained.
-- Check before finalizing: whether "tied" fits Clark et al. 2020.
-
-**¶5 The gap: asymmetric, graded revision in people and institutions** (slide 4, GAP row; about 150 words)
-- Impressions change at different rates for good and bad conduct\cite{skowronski1989,mendesiedlecki2013diagnostic,siegel2018}; graduated sanctions\cite{ostrom1990,cox2010}; redemption of criminal records\cite{blumstein2009}.
-- Incomplete evidence has graded consequences.
-- The three open questions, which the Results answer in order: should losing standing take as much evidence as regaining it? Which direction deserves more inertia under a given norm? How should individuals be treated while the evidence is incomplete?
-
-**¶6 Approach** (slide 8; about 140 words)
-- Warning and recovery paths of independent depths, and partial consequences through the strengths. No shared information, one observation at a time.
-- Methods in one sentence: closed-form reputation map, mean-field theory, evolutionary dynamics, individual-based simulations, four norms.
-
-**¶7 Findings and message** (slides 16, 27, 29, 30; about 190 words)
-- Placement matters more than amount, and the norm-specific direction is stated explicitly.
-- Accurate and consistent reputations without communication; cooperation stable and easy to reach; the wrong path can destroy cooperation.
-- The cost of tolerance (occasional defectors), shared by aggregation and scores; partial consequences exclude opportunists ("costly but not catastrophic").
-- The general result for filters with deterministic images.
-- Take-home: how a society revises its judgments can matter as much as which behaviors it judges as good.
-
----
+Data check behind ¶5. "Generally" is needed. In the Fig. 4 data (`verified/figure4_ed6/data/figure4/`), the symmetric allocation is never the best at its depth, with one exception: SS at $K=2$, where (1,1) gives $\bar\rho=0.696$ and is the best allocation. The selected SS architecture (1,2) reaches 0.741.
 
 ## 2. Results
 
