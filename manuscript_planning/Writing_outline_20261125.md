@@ -16,19 +16,24 @@ The deck states each step of the argument as one message per slide. The manuscri
 
 ---
 
-## 1. Introduction (about 1,040 words, 5 paragraphs; revised 25 November after feedback)
+## 1. Introduction (about 1,230 words, 8 paragraphs; revised 25 November, third pass)
 
-**One gap, one question.** The gap is that existing revision rules tie the evidence needed to lose a reputation to the evidence needed to regain it. People, institutions and the misjudgments of private assessment itself all treat the two directions differently. The question is: *should losing a good reputation require as much evidence as regaining one?* Partial consequences are not a second question. They are the condition attached to the answer (¶5).
+**Opening pattern** (from Hilbe et al. 2018, Schmid et al. 2023, Michel-Mata et al. 2024, Murase & Hilbe 2024 and Tham et al. 2026): an empirical statement about reputation; the mechanism and its evidence; how models formalize it (donor, recipient, observer); the field's central question (which norms?); the standard assumption, acknowledged for why it was adopted; why it fails; what we change. Tham et al. 2026 has the closest structure: "most prior work assumes X; we instead allow Y".
 
-| ¶ | Purpose | Message | Slides |
-|---|---|---|---|
-| 1 | Background and assumption | Indirect reciprocity; the two steps (judge, revise); the judging step is well studied (the justified-refusal puzzle, the leading eight); the revising step is modeled as overwriting, which is innocuous with public information | 4 (Opening), 5 |
-| 2 | Problem | Under private assessment, overwriting turns every misjudgment (wrongful condemnation, wrongful excuse) into an opinion, misjudgments spread, and reputations stop being accurate and consistent | 6 |
-| 3 | Gap and question | Damage = frequency × weight. Remedies for frequency mostly need shared information. Revision rules that reduce the weight tie loss to recovery. People, institutions and the misjudgments themselves are directional, so the question is whether losing a good reputation should require as much evidence as regaining one | 7, 4 (Gap) |
-| 4 | Approach | Warning and recovery paths of independent depths; partial consequences; no shared information; methods in one sentence | 8 |
-| 5 | Answer and message | The two directions should generally differ, in a norm-specific way; the direction matters more than the amount. Condition: tolerance invites occasional defectors unless warnings carry partial consequences. General result on deterministic images. Take-home | 16, 27, 29, 30 |
+**The question.** How should private reputations be revised as evidence accumulates, and in particular, should losing a good reputation require as much evidence as regaining one? It is stated once, at the end of ¶6, and answered in the first sentence of ¶8.
+- Importance: it is the counterpart of the field's central question (¶2–¶3); overwriting is what lets misjudgments spread (¶4); revision is the one lever each observer controls without shared information (¶5).
+- Novelty: existing rules tie loss to recovery, whereas misjudgments, people and institutions are directional (¶6).
 
-Data check behind ¶5. "Generally" is needed. In the Fig. 4 data (`verified/figure4_ed6/data/figure4/`), the symmetric allocation is never the best at its depth, with one exception: SS at $K=2$, where (1,1) gives $\bar\rho=0.696$ and is the best allocation. The selected SS architecture (1,2) reaches 0.741.
+| ¶ | Purpose | Slides |
+|---|---|---|
+| 1 | Reputation, indirect reciprocity, roles, two steps | 5 |
+| 2 | The judging step: why it is subtle; which norms; leading eight | 5 |
+| 3 | The revising step: colleague example; overwrite assumption; why it was acceptable | 4 (Opening) |
+| 4 | Private assessment: two kinds of misjudgment; overwriting lets them spread | 6 |
+| 5 | Remedies act on judging and need shared information; revision is each observer's lever; models that absorb misjudgments | 7 |
+| 6 | Gap: those models tie loss to recovery; misjudgments, people and institutions are directional → the question | 4 (Gap), 7 |
+| 7 | Approach | 8 |
+| 8 | Answer, its condition, the general result, take-home | 16, 27, 29, 30 |
 
 ## 2. Results
 
