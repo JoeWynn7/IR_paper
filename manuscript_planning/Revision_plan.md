@@ -2,6 +2,11 @@
 
 *Drafted 25 November 2026. The Introduction has a working draft (commit `8e0c289`). This plan covers the remaining sections.*
 
+> **Progress (25 November 2026).**
+> - Round 1 (Results): revised and checked against an independent implementation (commit `8b73fc9`).
+> - Round 2 (Discussion): revised to seven paragraphs and about 1,180 words. The general theory of reputation filters and the "which filter is best" question now live in Supplementary Note `si:filters`. The missing reference `iyengar2019` was dropped, and the missing SI keys (`SI-murase2024synchronization`, `SI-schmid2021`, `SI-murase2023`) were added.
+> - Main text (Introduction + Results + Discussion) is now about 5,150 words. About 150 more need to go to meet the 5,000-word NHB limit, for example by condensing the robustness paragraph in Results 3.
+
 ## 1. Where the manuscript stands
 
 | Part | Now | Target (Nature Human Behaviour) |
