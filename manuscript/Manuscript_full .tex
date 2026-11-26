@@ -513,6 +513,11 @@ The code and figure scripts used in this study are provided in the same package,
 % population simulations, (8) numerical methods, (9) notation.
 % Formulas already displayed in the main text or Methods are cited, not
 % repeated. Displayed equations carry one relation per line.
+% Revised 26 November 2026 for readability: overviews and summaries for the
+% theory notes, tables of assumptions and of where each figure is explained,
+% the sources of misjudgment under each norm, a worked example of a record,
+% the explicit maps of the settings used, closed-form residents without
+% inertia, and intermediate steps in several derivations.
 % =============================================================================
 \clearpage
 \renewcommand{\figurename}{Supplementary Fig.}
@@ -536,7 +541,9 @@ The code and figure scripts used in this study are provided in the same package,
 {\raggedright\sffamily\fontsize{11}{14}\selectfont Wenqiang Zhu et al.\par}
 \vskip14pt
 
-This Supplementary Information provides the derivations and numerical details behind the main text and the Methods. It follows the logic of the theory. Supplementary Note~\ref{si:model} specifies the model. Supplementary Note~\ref{si:map} analyzes a single reputation record and derives the reputation map. Supplementary Note~\ref{si:population} closes the model at the level of the population, and Supplementary Note~\ref{si:evolution} describes the evolutionary dynamics. Supplementary Note~\ref{si:invasion} analyzes the invasion of a discriminator population by unconditional and opportunistic mutants. Supplementary Note~\ref{si:filters} places the inertial record in the wider class of reputation filters and derives the aggregation and score-based filters used for comparison. Supplementary Notes~\ref{si:simulations} and~\ref{si:numerics} describe the finite-population simulations and the numerical methods, and Supplementary Note~\ref{si:notation} summarizes the notation. Supplementary Table~\ref{tab:si-overview} lists the main analytical results. Equation numbers without the prefix S refer to the main text and Methods.
+This Supplementary Information sets out the model in full, derives the analytical statements of the main text and Methods, and documents the simulations and numerical procedures. The notes follow the logic of the theory, from a single interaction to the evolution of strategies. Supplementary Note~\ref{si:model} specifies the model and shows which misjudgments each norm produces under private assessment. Supplementary Note~\ref{si:map} analyzes a single reputation record and derives the reputation map, the function through which the record enters every population-level result. Supplementary Note~\ref{si:population} closes the model at the level of the population, and Supplementary Note~\ref{si:evolution} describes the evolutionary dynamics. Supplementary Note~\ref{si:invasion} analyzes when an established discriminator population resists unconditional, opportunistic and generous mutants. Supplementary Note~\ref{si:filters} places the inertial record in the wider class of rules that turn assessments into reputations, which we call reputation filters, and derives the aggregation and score-based filters used for comparison. Supplementary Notes~\ref{si:simulations} and~\ref{si:numerics} describe the finite-population simulations and the numerical methods, and Supplementary Note~\ref{si:notation} summarizes the notation.
+
+Each note opens with an overview of what it shows, and the notes on the theory close with a summary. Formal statements are followed by their proofs and, where useful, by a reading of the result in words, and worked examples at the reference parameters ($b/c=5$, $e_1=e_2=0.02$) illustrate the main formulas. Supplementary Table~\ref{tab:si-assumptions} lists the modelling assumptions and where each is varied or tested, Supplementary Table~\ref{tab:si-overview} lists the main analytical results, and Supplementary Table~\ref{tab:si-figures} shows where the content of each figure is explained. Equation numbers without the prefix S refer to the main text and Methods.
 
 \startcontents[si]
 \vskip10pt
@@ -554,9 +561,11 @@ This Supplementary Information provides the derivations and numerical details be
 \toprule
 Result & Statement & Used in\\
 \midrule
+Supplementary Table~\ref{tab:si-misjudgments} & Misjudgments that each norm produces without any error & Fig.~\ref{fig:recognition}a--d, choice of architectures\\
 Proposition~\ref{prop:stationary} & Stationary distribution of an inertial record & Reputation map, Eq.~\eqref{eq:m-map}\\
 Propositions~\ref{prop:monotone}--\ref{prop:concave} & Monotonicity, derivative, boundary behavior and concavity of the reputation map & Figs.~\ref{fig:dynamics} and~\ref{fig:opportunism}\\
 Proposition~\ref{prop:equivalence} & Stationary states of the latent-state dynamics solve the self-consistency equations & Eq.~\eqref{eq:m-selfconsistency}\\
+Supplementary Table~\ref{tab:si-instantaneous} & Resident reputations without inertia in closed form & Fig.~\ref{fig:dynamics}a, Extended Data Fig.~\ref{ed:resident}a--d\\
 Proposition~\ref{prop:neutral} & Line of equilibria under Scoring without inertia & Fig.~\ref{fig:dynamics}a\\
 Propositions~\ref{prop:window} and~\ref{prop:chord} & Window of benefit-to-cost ratios that excludes ALLC and ALLD, and the chord condition & Eq.~\eqref{eq:window}\\
 Corollary~\ref{cor:nowindow} & No such window without inertia & Fig.~\ref{fig:dynamics}a\\
@@ -569,12 +578,61 @@ Propositions~\ref{prop:price} and~\ref{prop:slope} & Price of one negative asses
 \end{tabular}
 \end{table}
 
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Modelling assumptions.} The last column states where an assumption is varied or tested, or that it is kept throughout.}
+\label{tab:si-assumptions}
+\small
+\begin{tabular}{@{}p{0.34\linewidth}p{0.2\linewidth}p{0.38\linewidth}@{}}
+\toprule
+Assumption & Enters in & Varied or tested\\
+\midrule
+Infinite, well-mixed population with random matching & Notes~\ref{si:population}--\ref{si:invasion} & Finite populations of 90 or 150 individuals in the simulations (Note~\ref{si:simulations})\\
+Donation game with $b>c>0$ & Notes~\ref{si:evolution} and~\ref{si:invasion} & $b/c$ varied in Extended Data Figs.~\ref{ed:benefit-cost} and~\ref{ed:security}\\
+Strategies ALLC, ALLD and DISC & Notes~\ref{si:evolution} and~\ref{si:invasion} & Opportunistic and generous discriminators as rare mutants (Note~\ref{si:invasion})\\
+One second-order norm, shared by everyone & Note~\ref{si:model} & Four norms compared throughout\\
+Private assessment by one observer per interaction & Notes~\ref{si:model} and~\ref{si:population} & Kept throughout (see Discussion)\\
+Independent implementation and assessment errors & Note~\ref{si:model} & $e_1$ and $e_2$ varied in Extended Data Fig.~\ref{ed:errors}\\
+One inertial architecture $(k_1,k_2,\alpha,\beta)$, shared by everyone and fixed & Notes~\ref{si:model} and~\ref{si:map} & Depths and strengths scanned across figures; architectures do not evolve\\
+Mean-field closure (A1) and (A2) & Note~\ref{si:population} & Not imposed in the simulations (Note~\ref{si:simulations})\\
+Reputations equilibrate faster than strategies & Notes~\ref{si:population} and~\ref{si:evolution} & Kept throughout (see Discussion)\\
+Records start in good standing & Notes~\ref{si:population} and~\ref{si:simulations} & All-bad initial records in Extended Data Fig.~\ref{ed:resident}e--h\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Where the figures are explained.}}
+\label{tab:si-figures}
+\small
+\begin{tabular}{@{}p{0.2\linewidth}p{0.38\linewidth}p{0.34\linewidth}@{}}
+\toprule
+Figure & Content & Supplementary Notes and Tables\\
+\midrule
+Fig.~\ref{fig:model} & Inertial records & Note~\ref{si:model}; Tables~\ref{tab:si-transitions} and~\ref{tab:si-example}\\
+Fig.~\ref{fig:recognition} & Accuracy and consistency of private reputations & Notes~\ref{si:model} and~\ref{si:simulations}; Tables~\ref{tab:si-misjudgments} and~\ref{tab:si-selected}\\
+Fig.~\ref{fig:dynamics} & Evolutionary dynamics & Notes~\ref{si:population}--\ref{si:invasion}; Tables~\ref{tab:si-instantaneous}, \ref{tab:si-basins}, \ref{tab:si-equilibria} and~\ref{tab:si-thresholds}\\
+Fig.~\ref{fig:depth} & Allocation versus amount of inertia & Notes~\ref{si:map} and~\ref{si:evolution}; Tables~\ref{tab:si-maps} and~\ref{tab:si-basins}\\
+Fig.~\ref{fig:opportunism} & Occasional defectors and partial consequences & Notes~\ref{si:invasion} and~\ref{si:filters}; Tables~\ref{tab:si-secure}, \ref{tab:si-filter-forms} and~\ref{tab:si-filters}\\
+Extended Data Fig.~\ref{ed:selection} & Robustness of the selected architectures & Note~\ref{si:simulations}; Table~\ref{tab:si-selected}\\
+Extended Data Fig.~\ref{ed:resident} & Resident reputation dynamics and initial reputations & Note~\ref{si:population}\\
+Extended Data Fig.~\ref{ed:reputation-planes} & Resident equilibria across depths and strengths & Notes~\ref{si:map} and~\ref{si:population}\\
+Extended Data Fig.~\ref{ed:benefit-cost} & Benefit-to-cost ratio & Notes~\ref{si:invasion} and~\ref{si:numerics}; Table~\ref{tab:si-thresholds}\\
+Extended Data Fig.~\ref{ed:readout} & Tolerance only and strictness only & Notes~\ref{si:model} and~\ref{si:invasion}\\
+Extended Data Fig.~\ref{ed:errors} & Error rates & Notes~\ref{si:invasion} and~\ref{si:numerics}\\
+Extended Data Fig.~\ref{ed:depth-plane} & Cooperation and local protection across depths & Notes~\ref{si:evolution} and~\ref{si:invasion}\\
+Extended Data Fig.~\ref{ed:security} & Secure tolerance strengths & Note~\ref{si:opportunism}; Table~\ref{tab:si-secure}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 % -----------------------------------------------------------------------------
 \FloatBarrier
 \section{Model}
 \label{si:model}
 
-This note specifies the model, from a single interaction to the reputation record that each observer keeps. Two notational conventions are used throughout. The letters G and B name both the two values of a binary image (good, bad) and the two established latent states. Because an established state is always interpreted as the image of the same name, this use is unambiguous. Subscripts C and D denote intended actions, strategy-level quantities carry full strategy names ($r_{\ALLC}$, $u_{\DISC}$, \ldots), the subscript R denotes the resident of a homogeneous DISC population and X a rare mutant.
+This note specifies the model, from a single interaction to the reputation record that each observer keeps. It also shows which misjudgments private assessment produces under each norm (Supplementary Table~\ref{tab:si-misjudgments}), the observation that the norm-specific architectures of the main text build on. Two notational conventions are used throughout. The letters G and B name both the two values of a binary image (good, bad) and the two established latent states. Because an established state is always interpreted as the image of the same name, this use is unambiguous. Subscripts C and D denote intended actions, strategy-level quantities carry full strategy names ($r_{\ALLC}$, $u_{\DISC}$, \ldots), the subscript R denotes the resident of a homogeneous DISC population and X a rare mutant.
 
 \subsection{Interactions, social norms and errors}
 \label{si:interactions}
@@ -629,6 +687,8 @@ Simple Standing (SS) & 1 & 1 & $\varepsilon$ & $e_2$ & $1-e_2$ & $1-e_2$\\
 \end{tabular}
 \end{table}
 
+\paragraph{The four norms in words.} All four norms judge actions towards a recipient in good standing in the same way: helping is good and refusing is bad. They differ only in how they judge actions towards a recipient in bad standing. Scoring ($p=1$, $q=0$) ignores the recipient's standing, so that every act of help is good and every refusal is bad. Shunning ($p=0$, $q=0$) judges every action towards a bad recipient as bad, so that a donor can be judged good only by helping someone in good standing. Stern Judging ($p=0$, $q=1$) judges helping a bad recipient as bad and refusing one as good. Simple Standing ($p=1$, $q=1$) judges every action towards a bad recipient as good.
+
 \paragraph{Action-conditional assessment probabilities.} If the observer regards the recipient as good with probability $r$, independently of the donor's image, intended cooperation and intended defection are assessed positively with probabilities
 \begin{equation}
 \begin{aligned}
@@ -655,10 +715,40 @@ Their difference, the assessment contrast, is
 \end{equation}
 because $\Pp{C|G}-\Pp{D|G}=\kappa$ and $\Pp{C|B}-\Pp{D|B}=(p-q)\kappa$. Thus $\Delta\Phi=\kappa$ under SC, $\kappa r$ under SH and SS, and $\kappa(2r-1)$ under SJ. Under SJ the contrast changes sign at $r=1/2$, so on a low-reputation branch defection is assessed better than cooperation.
 
+\paragraph{Where misjudgments come from.} We call an assessment a misjudgment when it contradicts the donor's strategy. A misjudgment is either a negative assessment of a donor that follows a cooperative strategy (ALLC, or DISC acting on its own image of the recipient) or a positive assessment of ALLD. Errors produce misjudgments under every norm. Under private assessment, misjudgments also arise without any error, because the donor acts on its own image of the recipient whereas the observer judges by its own. Supplementary Table~\ref{tab:si-misjudgments} lists the prescribed assessment for each combination of realized action and observer's image. Three of the four combinations produce misjudgments.
+\begin{enumerate}
+\item \textit{Refusing a recipient whom the observer regards as good} is condemned under every norm. A discriminator that refuses because it regards the recipient as bad is therefore condemned whenever the observer disagrees.
+\item \textit{Refusing a recipient whom the observer regards as bad} is condemned under Scoring and Shunning and approved under Stern Judging and Simple Standing. Under Scoring and Shunning, discriminators are condemned even when they agree with the observer, that is, for doing exactly what their strategy prescribes. Under Stern Judging and Simple Standing, ALLD, which refuses everyone, is excused whenever the observer regards its recipient as bad.
+\item \textit{Helping a recipient whom the observer regards as bad} is approved under Scoring and Simple Standing and condemned under Shunning and Stern Judging. Under the last two norms, disagreements about recipients therefore also turn into negative assessments of cooperators, and ALLC is condemned whenever it helps someone the observer regards as bad.
+\end{enumerate}
+Cooperators are thus condemned by mistake mainly under Scoring and Shunning, defectors are excused by mistake mainly under Simple Standing, and Stern Judging produces both kinds of misjudgment, through items 2 and 3. The selected architectures of the main text mirror this pattern. Warning states, which protect good standing, suffice under Scoring and Shunning. Under Simple Standing a short warning path is combined with a longer recovery path, which protects bad standing, and Stern Judging needs long paths in both directions.
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Prescribed assessments and the misjudgments they produce.} Entries give the assessment ($+$ positive, $-$ negative) that each norm prescribes for a realized action, given the observer's image of the recipient, before assessment errors. The last column lists the donors that are misjudged although they follow their strategy without error. Implementation errors add further misjudgments by turning intended cooperation into defection.}
+\label{tab:si-misjudgments}
+\small
+\begin{tabular}{@{}llccccp{0.4\linewidth}@{}}
+\toprule
+Action & Observer's image & SC & SH & SJ & SS & Misjudged donors\\
+\midrule
+C & G & $+$ & $+$ & $+$ & $+$ & none\\
+C & B & $+$ & $-$ & $-$ & $+$ & SH and SJ: ALLC, and DISC that regards the recipient as good (condemned)\\
+D & G & $-$ & $-$ & $-$ & $-$ & all norms: DISC that regards the recipient as bad (condemned)\\
+D & B & $-$ & $-$ & $+$ & $+$ & SC and SH: DISC that also regards the recipient as bad (condemned); SJ and SS: ALLD (excused)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{The inertial reputation record}
 \label{si:record}
 
-\paragraph{States and transitions.} Each observer holds, for each target, a latent record in the state space $\Lspace=\{\st G,\st W_1,\ldots,\st W_{k_1},\st B,\st S_1,\ldots,\st S_{k_2}\}$, with $k_1,k_2\in\{0,1,2,\ldots\}$. The established states G and B represent good and bad standing. Warning states $\st W_m$ count consecutive negative assessments that challenge good standing, and recovery states $\st S_n$ count consecutive positive assessments that challenge bad standing. Supplementary Table~\ref{tab:si-transitions} lists the transitions. Two rules generate it. Evidence against the established judgment advances along the corresponding path, and evidence supporting it resets the whole path (direct reset). The record has $K+2$ states. Consecutiveness refers to the assessments made by one observer about one target, which need not be consecutive interactions of the target.
+\paragraph{States and transitions.} Each observer holds, for each target, a latent record in the state space
+\begin{equation}
+\Lspace=\{\st G,\st W_1,\ldots,\st W_{k_1},\st B,\st S_1,\ldots,\st S_{k_2}\},
+\label{eq:s-states}
+\end{equation}
+with $k_1,k_2\in\{0,1,2,\ldots\}$. The established states G and B represent good and bad standing. Warning states $\st W_m$ count consecutive negative assessments that challenge good standing, and recovery states $\st S_n$ count consecutive positive assessments that challenge bad standing. Supplementary Table~\ref{tab:si-transitions} lists the transitions. Two rules generate it. Evidence against the established judgment advances along the corresponding path, and evidence supporting it resets the whole path (direct reset). The record has $K+2$ states. Consecutiveness refers to the assessments made by one observer about one target, which need not be consecutive interactions of the target.
 
 \begin{table}[!htbp]
 \centering
@@ -686,6 +776,27 @@ T(u)=\begin{pmatrix}u&v&0&0\\u&0&v&0\\0&0&v&u\\u&0&v&0\end{pmatrix}.
 \end{equation}
 
 \paragraph{Binary images.} When a record in state $\ell$ is consulted, it yields the image G with probability $\sigma(\ell)$ given by Eq.~\eqref{eq:m-readout}, and B otherwise. Each consultation draws a fresh image, independently of all other consultations given the current state, and does not change the state. In particular, when a DISC donor is also the observer of its own action, the image used to act and the image used to judge are independent draws from the same record. The geometric form makes successive warning states progressively less likely to be treated as good, and successive recovery states progressively more likely to be treated as good. The depths control how much consistent evidence completes a reversal of the latent state, whereas the strengths control how strongly incomplete evidence already affects behavior and assessment.
+
+\paragraph{A worked example.} Consider the selected Scoring architecture, $(k_1,k_2)=(2,0)$, and an observer whose record of a target is in G. The sequence of assessments $-,-,+,-,-,-$ moves the record to $\st W_1$ and $\st W_2$, back to G, and then through $\st W_1$ and $\st W_2$ to B (Supplementary Table~\ref{tab:si-example}). The first two negative assessments do not change the target's standing, because the positive assessment that follows them resets the warning path. Only the uninterrupted run of three negative assessments at the end completes a reversal. With full tolerance strength, the target is treated as good throughout the warning path. With $\alpha=0.8$, it is treated as good with probability 0.8 in $\st W_1$ and 0.64 in $\st W_2$, so that each negative assessment already has a partial consequence. The recovery path works in the same way in the opposite direction. Under the selected Simple Standing architecture, $(1,2)$, a record in B returns to G only after three positive assessments in a row, and any negative assessment on the way returns it to B.
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{A record under the selected Scoring architecture} $(k_1,k_2)=(2,0)$. The record starts in G and receives the assessments shown. The last two rows give the probability $\sigma$ that the target is treated as good.}
+\label{tab:si-example}
+\small
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+Step & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\midrule
+Assessment &  & $-$ & $-$ & $+$ & $-$ & $-$ & $-$\\
+State & G & $\st W_1$ & $\st W_2$ & G & $\st W_1$ & $\st W_2$ & B\\
+$\sigma$ for $\alpha=1$ & 1 & 1 & 1 & 1 & 1 & 1 & 0\\
+$\sigma$ for $\alpha=0.8$ & 1 & 0.8 & 0.64 & 1 & 0.8 & 0.64 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Why a direct reset.} A single assessment that supports the established judgment returns a record from anywhere on a path to the established state. Contrary evidence therefore counts only while it is uninterrupted. Isolated contrary assessments, which are typical of errors, never add up to a reversal, whereas a lasting change in behavior produces long runs and is detected. A quantitative score, in which supporting evidence undoes contrary evidence one step at a time, is compared with the inertial record in Supplementary Note~\ref{si:filters}.
 
 \paragraph{Instantaneous updating.} Instantaneous updating can be implemented in two equivalent ways.
 
@@ -719,6 +830,8 @@ Initial records & all latent records in G ($r_I=1$) & all-bad: Extended Data Fig
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Summary.} Every interaction produces one private assessment of the donor, whose probabilities $\Pp{A|Y}$ follow from the norm and the two errors. Under private assessment, Scoring and Shunning mainly condemn cooperators by mistake, Simple Standing mainly excuses defectors, and Stern Judging does both. An inertial record changes the established judgment only after an uninterrupted run of contrary assessments, of length $k_1+1$ to lose good standing and $k_2+1$ to regain it. The strengths determine how strongly incomplete evidence counts in the meantime.
 
 % -----------------------------------------------------------------------------
 \FloatBarrier
@@ -842,6 +955,29 @@ Tolerance raises and strictness lowers the stationary reputation relative to ins
 \end{equation}
 and $\beta$ has no effect.
 
+\paragraph{The maps of the settings used in the paper.} Supplementary Table~\ref{tab:si-maps} lists the maps of instantaneous updating, full one-step inertia and the four selected architectures, all with full strengths, and their values at a few input probabilities. At the reference parameters, a rare ALLD in a population of discriminators that regard one another as good is assessed positively only through assessment errors, so that $u\approx e_2=0.02$, whereas the residents themselves have $u\approx\Pp{C|G}=0.96$.
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Reputation maps of the settings used in the paper} ($\alpha=\beta=1$, $v=1-u$). The value columns give the probability that a target is regarded as good when it is assessed positively with probability $u$ (first three) and the probability that a mostly good target is regarded as bad (last two).}
+\label{tab:si-maps}
+\small
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+Setting & $\Rmap(u)$ & $\Rmap(0.02)$ & $\Rmap(0.1)$ & $\Rmap(0.5)$ & $1-\Rmap(0.9)$ & $1-\Rmap(0.96)$\\
+\midrule
+No inertia $(0,0)$ & $u$ & 0.02 & 0.1 & 0.5 & 0.1 & 0.04\\[2pt]
+One-step $(1,1)$ & $\dfrac{u^2(2-u)}{1-u+u^2}$ & $8.1\times10^{-4}$ & 0.021 & 0.5 & 0.021 & $3.3\times10^{-3}$\\[8pt]
+SC $(2,0)$ & $1-v^3$ & 0.059 & 0.271 & 0.875 & $1.0\times10^{-3}$ & $6.4\times10^{-5}$\\[2pt]
+SH $(3,0)$ & $1-v^4$ & 0.078 & 0.344 & 0.938 & $1.0\times10^{-4}$ & $2.6\times10^{-6}$\\[2pt]
+SJ $(4,3)$ & $\dfrac{u^3(1-v^5)}{v^4+u^3-v^4u^3}$ & $8.3\times10^{-7}$ & $6.2\times10^{-4}$ & 0.674 & $4.7\times10^{-5}$ & $4.4\times10^{-7}$\\[8pt]
+SS $(1,2)$ & $\dfrac{u^2(1-v^2)}{v+u^2-vu^2}$ & $1.6\times10^{-5}$ & $2.1\times10^{-3}$ & 0.300 & 0.033 & $5.0\times10^{-3}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reading the map.} Supplementary Table~\ref{tab:si-maps} shows how the two paths filter the two kinds of misjudgment. Without inertia, a resident that is assessed negatively 4\% of the time is regarded as bad 4\% of the time. Two warning states (SC) reduce this probability to $6.4\times10^{-5}$, and three (SH) to $2.6\times10^{-6}$, so that occasional wrongful condemnations barely affect cooperators. The same warning states, however, also raise the reputation of a target that is almost always assessed negatively. A rare ALLD with $u=0.02$ is regarded as good with probability 0.059 under SC $(2,0)$ and 0.078 under SH $(3,0)$, compared with 0.02 without inertia. A single erroneous positive assessment restores its good standing at once, and the warning path then delays the loss of this standing. Recovery states have the opposite effect. Under SJ $(4,3)$ and SS $(1,2)$, the same ALLD is regarded as good with probability below $2\times10^{-5}$, because one erroneous positive assessment no longer restores good standing. Which of these effects helps cooperation depends on which misjudgment a norm produces (Supplementary Table~\ref{tab:si-misjudgments}).
+
 The two paths of a record play mirror-image roles, which the following lemma makes precise.
 
 \begin{lemma}[Duality of the two paths]\label{lem:duality}
@@ -867,7 +1003,7 @@ Exchanging the roles of good and bad standing thus exchanges tolerance and stric
 
 \subsection{Interpretation through passage times}
 
-Let $\Theta_{\mathrm G\to\mathrm B}$ be the number of assessments a record starting in G receives until it first enters B, and $\Theta_{\mathrm B\to\mathrm G}$ the number from B until it first enters G. Leaving good standing requires a run of $k_1+1$ negative assessments, and leaving bad standing a run of $k_2+1$ positive ones. The classical waiting time for a run gives
+Let $\Theta_{\mathrm G\to\mathrm B}$ be the number of assessments a record starting in G receives until it first enters B, and $\Theta_{\mathrm B\to\mathrm G}$ the number from B until it first enters G. Leaving good standing requires a run of $k_1+1$ negative assessments, and leaving bad standing a run of $k_2+1$ positive ones. To compute the mean of $\Theta_{\mathrm G\to\mathrm B}$, let $t_m$ be the expected number of further assessments before B is entered, starting from $\st W_m$, with $t_0$ for G. A negative assessment moves the record one step along the warning path, and a positive one returns it to G, so that $t_m=1+v\,t_{m+1}+u\,t_0$ for $0\leq m<k_1$ and $t_{k_1}=1+u\,t_0$. Solving these equations, or equivalently using the classical waiting time for a run of $k_1+1$ successes in independent trials with success probability $v$, and arguing in the same way for the recovery path, gives
 \begin{equation}
 \begin{aligned}
 \mathbb E\bigl[\Theta_{\mathrm G\to\mathrm B}\bigr]&=\frac{1-v^{k_1+1}}{u\,v^{k_1+1}},\\[2pt]
@@ -977,6 +1113,8 @@ To verify this identity, note that the coefficient of $u\,v^i$ on the right-hand
 
 Proposition~\ref{prop:concave} covers the selected SC $(2,0)$ and SH $(3,0)$ architectures. With a recovery path and $\beta=1$, $\Rmap$ is not concave. By Proposition~\ref{prop:properties}, it starts as $u^{k_2+1}$ near $u=0$, which is convex, and for $k_1\geq1$ and $\alpha=1$ it approaches 1 as $1-\mathrm{const}\times v^{k_1+1}$ near $u=1$, which is concave. In numerical checks over randomly drawn depths and strengths, $\Rmap$ was always increasing in $u$.
 
+\paragraph{Summary.} A record with independent inputs has the closed-form reputation map of Eq.~\eqref{eq:s-map}. Warning states make the reputation of a mostly good individual insensitive to occasional negative assessments, and recovery states make the reputation of a mostly bad individual insensitive to occasional positive ones (Proposition~\ref{prop:properties}). With full strengths, the remaining sensitivity is of order $v^{k_1+1}$ and $u^{k_2+1}$, respectively. Partial strengths keep a first-order response, $\Rmap'(1)=1-\alpha$, which becomes the reputational price of an occasional defection (Supplementary Note~\ref{si:opportunism}).
+
 % -----------------------------------------------------------------------------
 \FloatBarrier
 \section{Private reputations in a population}
@@ -986,7 +1124,7 @@ This note turns the single-record result into equations for the reputations in a
 
 \subsection{Mean-field closure}
 
-At fixed strategy composition $\bm f$, let $r_I$ be the probability that a randomly chosen observer regards a randomly chosen type-$I$ individual as good, that is, the expected image probability $\sigma(L_{ij})$ over observers $i$ and type-$I$ targets $j$, and let $\bar r=\sum_If_Ir_I$. Because all individuals use the same norm and record mechanism, all observers are statistically equivalent in the mean-field description. Two assumptions turn the single-record result into population equations. Both are standard in analyses of private assessment\citeSI{SI-okada2018,SI-radzvilavicius2019,SI-kessinger2023,SI-michelmata2024,SI-kawakatsu2024}.
+At fixed strategy composition $\bm f$, let $r_I$ be the probability that a randomly chosen observer regards a randomly chosen type-$I$ individual as good. It is the expected image probability $\sigma(L_{ij})$ over observers $i$ and type-$I$ targets $j$, and we write $\bar r=\sum_If_Ir_I$. Because all individuals use the same norm and record mechanism, all observers are statistically equivalent in the mean-field description. Two assumptions turn the single-record result into population equations. Both are standard in analyses of private assessment\citeSI{SI-okada2018,SI-radzvilavicius2019,SI-kessinger2023,SI-michelmata2024,SI-kawakatsu2024}.
 \begin{enumerate}
 \item[(A1)] \textit{Conditional independence of images.} The images that the donor and the observer hold of a recipient are independent given the recipient's strategy.
 \item[(A2)] \textit{Independent inputs.} The successive assessments entering any record about a type-$I$ target are independent, each positive with the same probability $u_I$.
@@ -1111,12 +1249,33 @@ F'(r)=\Rmap'\bigl[u_{\mathrm R}(r)\bigr]\,u_{\mathrm R}'(r)-1.
 \end{equation}
 A simple root is stable in the scalar flow $\dd r/\dd\tau=F(r)$ if $F'<0$ and unstable if $F'>0$. The product $\Rmap'u_{\mathrm R}'$ measures how strongly a small change in the residents' reputation feeds back on itself. A root is stable if this feedback is weaker than one. Because $F(0)\geq0$ and $F(1)\leq0$, roots alternate in stability, and a pair of roots appears or disappears at a fold, $F=F'=0$. Bistability (Extended Data Figs.~\ref{ed:resident} and~\ref{ed:reputation-planes}) means two stable roots separated by an unstable one. With errors, $F(1)<0$, so the highest root is approached from $r=1$. For every root in the depth planes with $\alpha=\beta=1$ ($0\leq k_1,k_2\leq8$), the classification by $F'$ agreed with the leading eigenvalue of Eq.~\eqref{eq:s-fullstate} linearized about $\bm\pi(u_{\mathrm R}(r))$ on the probability simplex. This linearization includes the dependence of $u_{\mathrm R}$ on the current image probabilities.
 
+\paragraph{Example: resident reputations without inertia.} With $\Rmap(u)=u$, the resident reputation solves $r=u_{\mathrm R}(r)$, which by Supplementary Table~\ref{tab:si-resident} is linear under SC and quadratic under the other norms. Each equation has exactly one root in $[0,1]$, and this root is stable for all error rates (Supplementary Table~\ref{tab:si-instantaneous}). The four roots show how each norm fails without inertia. Under SC, a discriminator is assessed positively essentially only when it helps, and it helps only recipients that it regards as good. Its reputation therefore reproduces the reputation of others, discounted by errors, and settles at $e_2/(1-\kappa)\approx0.34$. Under SH, which condemns every action towards a bad recipient, almost every resident is regarded as bad. Under SJ, the resident reputation is exactly $1/2$ for every error rate, so that images carry no more information than a coin flip. Under SS, the resident reputation is high, but a rare ALLD is regarded as good with probability $\PhiDs=0.18$ (Supplementary Table~\ref{tab:si-thresholds}), because its refusals of residents regarded as bad are approved.
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Resident reputations without inertia.} The root of $r=u_{\mathrm R}(r)$ in $[0,1]$ for each norm, with its value at $e_1=e_2=0.02$ ($\kappa=0.9408$).}
+\label{tab:si-instantaneous}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Norm & Resident reputation $\rR$ & Value\\
+\midrule
+SC & $e_2/(1-\kappa)$ & 0.3378\\
+SH & $\bigl[1-\sqrt{1-4\kappa e_2}\,\bigr]/(2\kappa)$ & 0.0204\\
+SJ & $1/2$ & 0.5000\\
+SS & $\bigl[1-e_2-\sqrt{(1-e_2)(1-e_2-\kappa)}\,\bigr]/\kappa$ & 0.8333\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \paragraph{Dependence on the strengths.} On a regular stable branch ($F'<0$), implicit differentiation of $F(r^*;\theta)=0$ for $\theta\in\{\alpha,\beta\}$ gives
 \begin{equation}
 \frac{\partial r^*}{\partial\theta}=-\frac{\partial_\theta\Rmap\bigl[u_{\mathrm R}(r^*)\bigr]}{F'(r^*)}.
 \label{eq:s-sensitivity}
 \end{equation}
 By Proposition~\ref{prop:monotone}, the resident reputation therefore increases with $\alpha$ and decreases with $\beta$ along a stable branch. The derivative diverges at a fold, where the branch ends.
+
+\paragraph{Summary.} Under the closure (A1)--(A2), the reputations in a population solve the self-consistency equations~\eqref{eq:m-selfconsistency}, whose solutions are exactly the stationary states of the full latent-state dynamics (Proposition~\ref{prop:equivalence}). A homogeneous discriminator population reduces to the scalar equation $F(r)=0$. Its roots, their stability and the folds at which branches of roots end determine the resident states from which the invasion analysis of Supplementary Note~\ref{si:invasion} starts.
 
 % -----------------------------------------------------------------------------
 \FloatBarrier
@@ -1192,7 +1351,7 @@ At a composition, intended and realized cooperation are
 \end{aligned}
 \label{eq:s-cooperation}
 \end{equation}
-and in a homogeneous DISC population $\rho_{\mathrm{int}}=\rR$. Across all scans, every final state belonged to one of two classes. The first is the zero-cooperation set, comprising the ALLD vertex together with the low-reputation segment of the ALLD--DISC edge, on which DISC regard one another as bad, earn slightly less than ALLD and drift slowly towards ALLD (final $\rho\leq7\times10^{-4}$). The second is an attractor with positive cooperation (final $\rho\geq0.34$, and between 0.974 and 0.980 in nearly all conditions). The cooperative basin is the set of initial compositions whose trajectories reach the second class. With $\bar\rho_{\mathrm D}$ the mean final cooperation of the remaining trajectories,
+and in a homogeneous DISC population $\rho_{\mathrm{int}}=\rR$. Across all scans, every final state belonged to one of two classes. The first is the zero-cooperation set. It comprises the ALLD vertex and the low-reputation segment of the ALLD--DISC edge, on which DISC regard one another as bad, earn slightly less than ALLD and drift slowly towards ALLD (final $\rho\leq7\times10^{-4}$). The second is an attractor with positive cooperation (final $\rho\geq0.34$, and between 0.974 and 0.980 in nearly all conditions). The cooperative basin is the set of initial compositions whose trajectories reach the second class. With $\bar\rho_{\mathrm D}$ the mean final cooperation of the remaining trajectories,
 \begin{equation}
 \bar\rho=\omega_{\mathrm C}\,\bar\rho_{\mathrm C}+(1-\omega_{\mathrm C})\,\bar\rho_{\mathrm D}\approx\omega_{\mathrm C}\,\bar\rho_{\mathrm C}.
 \label{eq:s-decomposition}
@@ -1241,6 +1400,8 @@ Selected multi-step & SC $(2,0)$ & pure DISC & 0 & 1 & 0.9999 & 0.9999 & 0.9799\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Summary.} Payoffs follow from the stationary reputations at each composition (Eq.~\eqref{eq:s-payoffs}), and strategy frequencies follow the replicator dynamics. Every trajectory ends either in a zero-cooperation set or at an attractor with positive cooperation, which is almost fully cooperative in nearly all conditions. Mean cooperation over initial compositions is therefore determined almost entirely by the size of the cooperative basin (Supplementary Table~\ref{tab:si-basins}).
 
 % -----------------------------------------------------------------------------
 \FloatBarrier
@@ -1371,19 +1532,19 @@ SS & none $(0,0)$ & 0.833333 & 0.180000 & 0.964000 & 1.2755 & 1.2755\\
 \subsection{Opportunistic discriminators and secure tolerance strengths}
 \label{si:opportunism}
 
-\paragraph{The mutant family.} An opportunistic discriminator (O-DISC) uses the residents' norm and record mechanism and follows DISC, except that whenever its own image of the recipient is G it independently replaces the intended cooperation by intended defection with probability $\delta\in[0,1]$. This choice precedes implementation error, and O-DISC never cooperates with recipients it regards as bad. Its images of resident recipients are good with probability $\rR$ and are independent of the observer's images by (A1), so it intends to help with probability $\chi_{\mathrm X}=(1-\delta)\rR$. Lemma~\ref{lem:mutant} gives the assessment probability $\uX(\delta)=\uR-\delta\,\rR\,\dPhi$, the reputation $\rX(\delta)=\Rmap[\uX(\delta)]$ and the invasion payoff $\Lambda(\delta)$ of Eq.~\eqref{eq:lambda}. Equivalently,
+\paragraph{The mutant family.} An opportunistic discriminator (O-DISC) uses the residents' norm and record mechanism and follows DISC, with one exception. Whenever its own image of the recipient is G, it independently replaces the intended cooperation by intended defection with probability $\delta\in[0,1]$. This choice precedes implementation error, and O-DISC never cooperates with recipients it regards as bad. Its images of resident recipients are good with probability $\rR$ and are independent of the observer's images by (A1), so it intends to help with probability $\chi_{\mathrm X}=(1-\delta)\rR$. Lemma~\ref{lem:mutant} gives the assessment probability $\uX(\delta)=\uR-\delta\,\rR\,\dPhi$, the reputation $\rX(\delta)=\Rmap[\uX(\delta)]$ and the invasion payoff $\Lambda(\delta)$ of Eq.~\eqref{eq:lambda}. Equivalently,
 \begin{equation}
 \uX(\delta)=(1-\delta)\,\uR+\delta\,\PhiDs,
 \label{eq:s-odisc-u}
 \end{equation}
 so the mutant's assessment probability moves linearly from the resident's ($\delta=0$) to that of ALLD ($\delta=1$). Hence $\Lambda(0)=0$, the mutant being a neutral copy of a resident, and $\Lambda(1)=\lambda_{\ALLD}/[c(1-e_1)]$. The family contains neither ALLC nor mutants whose omissions are correlated in time.
 
-\paragraph{Weak opportunism.} Differentiating Eq.~\eqref{eq:lambda}, with
+\paragraph{Weak opportunism.} Because $\uX(\delta)=\uR-\delta\,\rR\,\dPhi$ is linear in $\delta$, the chain rule gives
 \begin{equation}
-\frac{\dd\rX}{\dd\delta}=-\rR\,\dPhi\,\Rmap'\bigl[\uX(\delta)\bigr],
+\frac{\dd\rX}{\dd\delta}=-\rR\,\dPhi\,\Rmap'\bigl[\uX(\delta)\bigr].
 \label{eq:s-drX}
 \end{equation}
-gives Eq.~\eqref{eq:lambda-slope}. If $\Lambda'(0)>0$, all sufficiently weak opportunists invade. If $\Lambda'(0)<0$, they are excluded, but larger $\delta$ may still invade. The product $\dPhi\,\Rmap'(\uR)$ is the reputation lost per unit of withheld cooperation for an infinitesimal deviation. The norm converts withheld cooperation into a lower positive-assessment probability at rate $\dPhi$, and the record converts this into a lower reputation at rate $\Rmap'(\uR)$. The two factors thus belong to the two steps of reputation formation, judging and revising.
+Differentiating Eq.~\eqref{eq:lambda} then gives $\Lambda'(\delta)=\rR+(b/c)\,\dd\rX/\dd\delta=\rR\,\{1-(b/c)\,\dPhi\,\Rmap'[\uX(\delta)]\}$, and at $\delta=0$, where $\uX=\uR$, this is Eq.~\eqref{eq:lambda-slope}. If $\Lambda'(0)>0$, all sufficiently weak opportunists invade. If $\Lambda'(0)<0$, they are excluded, but larger $\delta$ may still invade. The product $\dPhi\,\Rmap'(\uR)$ is the reputation lost per unit of withheld cooperation for an infinitesimal deviation. The norm converts withheld cooperation into a lower positive-assessment probability at rate $\dPhi$, and the record converts this into a lower reputation at rate $\Rmap'(\uR)$. The two factors thus belong to the two steps of reputation formation, judging and revising.
 
 \paragraph{Resistance to the whole family.} For $\rR>0$ and $0<\delta\leq1$, the reputation lost per unit of withheld cooperation, $H(\delta)=[\rR-\rX(\delta)]/(\delta\rR)$, can be written as
 \begin{equation}
@@ -1483,7 +1644,7 @@ Suppose that near a fold $(r_{\mathrm L},\alpha_{\mathrm L})$ of the high branch
 At the fold, $\Rmap'u_{\mathrm R}'=1$, so the local security condition $(b/c)\Delta\Phi\,\Rmap'\geq1$ reads $b/c\geq u_{\mathrm R}'/\Delta\Phi$. Under SH, $u_{\mathrm R}(r)=e_2+\kappa r^2$ and $\Delta\Phi(r)=\kappa r$ (Supplementary Table~\ref{tab:si-resident}), so $u_{\mathrm R}'/\Delta\Phi=2\kappa r/(\kappa r)=2$.
 \end{proof}
 
-For SJ, $u_{\mathrm R}'(r)/\Delta\Phi(r)=2-e_1(1-2e_2)/\Delta\Phi(r)$, which is 1.9710 at the fold of the selected $(4,3)$ architecture. For SC, $u_{\mathrm R}'/\Delta\Phi=1$, so a fold never closes the interval for $b/c>1$. These results explain why the secure intervals of SH close at $b/c=2$ in Extended Data Fig.~\ref{ed:security}c, whereas that of the selected SJ architecture is still open, though narrow, at $b/c=2$. Supplementary Table~\ref{tab:si-secure} lists the secure intervals of all architectures at $b/c=5$.
+For SJ, $u_{\mathrm R}'(r)/\Delta\Phi(r)=2-e_1(1-2e_2)/\Delta\Phi(r)$, which is 1.9710 at the fold of the selected $(4,3)$ architecture. For SC, $u_{\mathrm R}'/\Delta\Phi=1$, and for SS, $u_{\mathrm R}'(r)/\Delta\Phi(r)=2-1/[(1-e_1)\,r]$, which is at most 1. Under these two norms, a fold therefore never closes the interval for $b/c>1$. These results explain why the secure intervals of SH close at $b/c=2$ in Extended Data Fig.~\ref{ed:security}c, whereas that of the selected SJ architecture is still open, though narrow, at $b/c=2$. Supplementary Table~\ref{tab:si-secure} lists the secure intervals of all architectures at $b/c=5$.
 
 \paragraph{Worked example: Stern Judging with depths (4,3).} At $e_1=e_2=0.02$, $\Pp{C|G}=0.9608$, $\Pp{D|G}=0.02$, $\Pp{C|B}=0.0392$ and $\Pp{D|B}=0.98$, so that
 \begin{equation}
@@ -1555,7 +1716,7 @@ The slopes of the invasion payoffs of opportunistic and generous discriminators 
 If $\mathcal M<1$, mutants that help slightly less than residents invade. If $\mathcal M>1$, mutants that help slightly more invade. Only for $\mathcal M=1$ are both kinds of mutant neutral to first order.
 \end{proposition}
 \begin{proof}
-The first line is Eq.~\eqref{eq:lambda-slope}. The second follows by differentiating Eq.~\eqref{eq:s-generous} at $\gamma=0$.
+The first line is Eq.~\eqref{eq:lambda-slope}, written with $\mathcal M$. Differentiating Eq.~\eqref{eq:s-generous} gives $\Lambda_{\mathrm{gen}}'(\gamma)=-(1-\rR)+(b/c)\,(1-\rR)\,\dPhi\,\Rmap'[\uR+\gamma(1-\rR)\dPhi]$, which equals $(1-\rR)(\mathcal M-1)$ at $\gamma=0$.
 \end{proof}
 
 Proposition~\ref{prop:twosided} shows that a discriminator population cannot strictly resist marginal deviations in both directions. The reason is that, under (A1), a discriminator's own image of the recipient is uninformative about the image of the observer. From the perspective of its future reputation, a discriminator is therefore equivalent to an individual that helps with the fixed probability $\rR$, and whether this probability is optimal is a matter of the slope $\mathcal M$ alone. This is the counterpart, for inertial records, of the result that cooperative strategies are at most neutrally stable when private opinions are statistically independent\citeSI{SI-murase2024synchronization}. The boundary case $\mathcal M=1$ corresponds to the upper boundary $\alpha_{\mathrm U}$ of a secure interval.
@@ -1580,6 +1741,8 @@ SS & $(1,2)$ & 2.557 & 2.211 & 0.543 & 0.993 & $-1.23$\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Summary.} Every mutant considered here is described by its probability of helping a resident, and its payoff follows from the values of the reputation map on a single segment (Lemma~\ref{lem:mutant}). Discriminators resist both unconditional strategies when the map lies above its chord (Proposition~\ref{prop:chord}), which requires inertia (Corollary~\ref{cor:nowindow}). They resist weak opportunists when the map is steep enough at the resident state, which full tolerance strength prevents and partial tolerance strength restores (Propositions~\ref{prop:family} and~\ref{prop:errorfree}). No resident strictly resists marginal deviations in both directions, but with inertia the deviations towards more cooperation lead to populations that remain almost fully cooperative (Proposition~\ref{prop:twosided} and Supplementary Table~\ref{tab:si-generous}).
 
 % -----------------------------------------------------------------------------
 \FloatBarrier
@@ -1810,7 +1973,7 @@ Supplementary Table~\ref{tab:si-filter-forms} compares the filters, and Suppleme
 
 The three filters have one property in common. Whenever they fully forgive an isolated negative assessment, their response is flat at $u=1$, and the slope at a resident close to $u=1$ is small. This is the origin of the shared vulnerability to opportunists. They differ in the feature of the evidence to which they respond, and in whether the price of one negative assessment can be tuned. Only the probabilistic interpretation of warning states makes this price fractional.
 
-\paragraph{Which filter is best?} The filters compared here were designed rather than derived, and each was evaluated for a given norm, error rate and benefit-to-cost ratio. A more general theory would state what a filter should achieve without reference to such a context. A natural target is a response that is close to one and flat for the assessments that cooperators receive, close to zero for those that defectors receive, and steep enough at the resident state to deter occasional defection but not so steep that misjudgments spread (Proposition~\ref{prop:slope}). These goals conflict. A sharper response requires more states, and it reacts more slowly when an individual's behavior changes. Moreover, the assessments that a filter has to separate are not given in advance. They depend on the norm and on the reputations that the filter itself produces, which is why the best architecture differed between norms. Whether some filter performs well across norms, or whether norms and filters have to evolve together, is an open question. It could be addressed by letting filters compete in evolutionary simulations, by characterizing the responses that filters with a given number of states can realize, or by asking which filters observers would adopt if they reasoned about the reliability of their own assessments\citeSI{SI-pandula2024,SI-morsky2024}.
+\paragraph{Which filter is best?} The filters compared here were designed rather than derived, and each was evaluated for a given norm, error rate and benefit-to-cost ratio. A more general theory would state what a filter should achieve without reference to such a context. A natural target is a response that is close to one and flat for the assessments that cooperators receive and close to zero for those that defectors receive. At the resident state, it should be steep enough to deter occasional defection but not so steep that misjudgments spread (Proposition~\ref{prop:slope}). These goals conflict. A sharper response requires more states, and it reacts more slowly when an individual's behavior changes. Moreover, the assessments that a filter has to separate are not given in advance. They depend on the norm and on the reputations that the filter itself produces, which is why the best architecture differed between norms. Whether some filter performs well across norms, or whether norms and filters have to evolve together, is an open question. It could be addressed by letting filters compete in evolutionary simulations, by characterizing the responses that filters with a given number of states can realize, or by asking which filters observers would adopt if they reasoned about the reliability of their own assessments\citeSI{SI-pandula2024,SI-morsky2024}.
 
 \begin{table}[!htbp]
 \centering
@@ -1846,6 +2009,8 @@ Quantitative score, $z_{\max}=5$, $z_0=0$ & 0.99999999 & $-4.000$ & 0.383206\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Summary.} Any rule that turns assessments into reputations enters the population theory only through its stationary response. The slope of this response at $u=1$ is the price of one isolated negative assessment (Proposition~\ref{prop:price}). When errors are rare, this price must be at least $c/b$ to deter opportunists and below $1/(2-p)$ to keep the all-good state stable (Proposition~\ref{prop:slope}). No filter whose states are read deterministically as good or bad meets both requirements (Corollary~\ref{cor:deterministic}). Graded or probabilistic consequences, such as warning states that are read as bad with probability $1-\alpha$, resolve the conflict.
 
 % -----------------------------------------------------------------------------
 \FloatBarrier
@@ -1889,7 +2054,7 @@ where $i$ ranges over the DISC observers (including $j$ itself if $j$ uses DISC)
 d_j=\binom{n_{\DISC}}{2}^{-1}\Bigl[(n_{\DISC}-1)\,\mu_{1,j}-\mu_{1,j}^2+\mu_{2,j}\Bigr].
 \label{eq:s-estimators}
 \end{equation}
-For deterministic images with a fraction $x_j$ of observers interpreting $j$ as good, $d_j=2n_{\DISC}x_j(1-x_j)/(n_{\DISC}-1)$, the finite-observer version of $2x_j(1-x_j)$. The strategy-level quantities $g_I$ and $d_I$ average $g_j$ and $d_j$ over the $n_I$ targets of strategy $I$ and over sampling times, and they enter the separation $\Delta g$ of Eq.~\eqref{eq:separation} and the mean disagreement $\bar d=\sum_I(n_I/N)\,d_I$. $\Delta g$ measures how differently cooperative strategies and unconditional defectors are treated and is not a classification accuracy. Low $\bar d$ alone is not evidence of good reputation formation, because observers can agree that everyone is bad (one-step SH in Fig.~\ref{fig:recognition}b). The two statistics are therefore interpreted jointly.
+For deterministic images with a fraction $x_j$ of observers interpreting $j$ as good, $d_j=2n_{\DISC}x_j(1-x_j)/(n_{\DISC}-1)$, the finite-observer version of $2x_j(1-x_j)$. The strategy-level quantities $g_I$ and $d_I$ average $g_j$ and $d_j$ over the $n_I$ targets of strategy $I$ and over sampling times. They enter the separation $\Delta g$ of Eq.~\eqref{eq:separation} and the mean disagreement $\bar d=\sum_I(n_I/N)\,d_I$. $\Delta g$ measures how differently cooperative strategies and unconditional defectors are treated and is not a classification accuracy. Low $\bar d$ alone is not evidence of good reputation formation, because observers can agree that everyone is bad (one-step SH in Fig.~\ref{fig:recognition}b). The two statistics are therefore interpreted jointly.
 
 \subsection{Runs, replication and uncertainty}
 
@@ -1902,7 +2067,7 @@ For deterministic images with a fraction $x_j$ of observers interpreting $j$ as 
 
 \subsection{Selection of representative architectures}
 
-Among conditions that pass the drift criterion and satisfy $\Delta g\geq0.8$ and $\bar d\leq0.1$, we choose the smallest total depth $K$, then the larger $\Delta g$, the smaller $\bar d$, the smaller $k_1$ and the smaller $k_2$. This selects SC $(2,0)$, SH $(3,0)$, SJ $(4,3)$ and SS $(1,2)$ (Supplementary Table~\ref{tab:si-selected}). The cutoffs are operational criteria, not theoretical thresholds, and selection uses no evolutionary or invasion outcome. The stars in Fig.~\ref{fig:recognition}e--h apply the same cutoffs and tie-breaking rule to the single-run maps (without the drift criterion) and select the same four pairs. Extended Data Fig.~\ref{ed:selection}e--h repeats the selection for minimum separations $0.70,0.75,\ldots,0.90$ and maximum disagreements $0.050,0.075,\ldots,0.150$.
+Among conditions that pass the drift criterion and satisfy $\Delta g\geq0.8$ and $\bar d\leq0.1$, we choose the smallest total depth $K$, then the larger $\Delta g$, the smaller $\bar d$, the smaller $k_1$ and the smaller $k_2$. This selects SC $(2,0)$, SH $(3,0)$, SJ $(4,3)$ and SS $(1,2)$ (Supplementary Table~\ref{tab:si-selected}). The cutoffs are operational criteria, not theoretical thresholds. A separation of at least 0.8 requires that cooperative strategies are regarded as good with probability at least 0.8 on average, and ALLD with probability at most 0.2. A mean disagreement of at most 0.1 means that two randomly chosen observers hold different images of at most about one individual in ten. Selection uses no evolutionary or invasion outcome. The stars in Fig.~\ref{fig:recognition}e--h apply the same cutoffs and tie-breaking rule to the single-run maps (without the drift criterion) and select the same four pairs. Extended Data Fig.~\ref{ed:selection}e--h repeats the selection for minimum separations $0.70,0.75,\ldots,0.90$ and maximum disagreements $0.050,0.075,\ldots,0.150$.
 
 \begin{table}[!htbp]
 \centering
@@ -1925,6 +2090,8 @@ SS & $(1,2)$ & 0.9174 [0.9171, 0.9177] & 0.0562 [0.0560, 0.0564]\\
 \FloatBarrier
 \section{Numerical methods}
 \label{si:numerics}
+
+This note lists the numerical procedures behind every figure, with grid sizes, tolerances, random seeds and validation checks. Wherever a closed form is available, it is used instead of a numerical approximation.
 
 \subsection{Reputations}
 
