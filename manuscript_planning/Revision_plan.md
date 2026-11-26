@@ -6,6 +6,8 @@
 > - Round 1 (Results): revised and checked against an independent implementation (commit `8b73fc9`).
 > - Round 2 (Discussion): revised to seven paragraphs and about 1,180 words. The general theory of reputation filters and the "which filter is best" question now live in Supplementary Note `si:filters`. The missing reference `iyengar2019` was dropped, and the missing SI keys (`SI-murase2024synchronization`, `SI-schmid2021`, `SI-murase2023`) were added.
 > - Round 4 (Methods, 26 November 2026): cut from about 3,400 to about 2,360 words and from 34 to 7 displayed equations (image probabilities, reputation map, self-consistency, relaxation, payoffs, replicator dynamics, rare-mutant payoff). Equations the SI relied on (Φ, h, u_I, the one-step map, cooperation measures, fold and upper-boundary conditions, simulation estimators) now live in the SI, and numerical settings that existed only in the Methods were added to Supplementary Note `si:numerics`.
+> - Round 3 (Abstract, 26 November 2026): rewritten at 149 words, unreferenced, following the Introduction's thread (how goodness is defined, then how reputations should change). Title unchanged.
+> - NHB limits confirmed on the journal's content-types page (nature.com/nathumbehav/content): Article main text up to 5,000 words, excluding abstract, Methods, references and figure legends; abstract up to 150 words, unreferenced; up to 8 display items.
 > - Main text (Introduction + Results + Discussion) is now about 5,150 words. About 150 more need to go to meet the 5,000-word NHB limit, for example by condensing the robustness paragraph in Results 3.
 
 ## 1. Where the manuscript stands
